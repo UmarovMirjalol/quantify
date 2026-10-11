@@ -1,0 +1,100 @@
+company_id,company_name,year,patent_count,source,year_complete
+2488,ADVANCED MICRO DEVICES INC,2015,152,legacy_manual_bigquery,True
+2488,ADVANCED MICRO DEVICES INC,2016,106,legacy_manual_bigquery,True
+2488,ADVANCED MICRO DEVICES INC,2017,84,legacy_manual_bigquery,True
+2488,ADVANCED MICRO DEVICES INC,2018,75,legacy_manual_bigquery,True
+2488,ADVANCED MICRO DEVICES INC,2019,77,legacy_manual_bigquery,True
+2488,ADVANCED MICRO DEVICES INC,2020,81,legacy_manual_bigquery,True
+2488,ADVANCED MICRO DEVICES INC,2021,55,legacy_manual_bigquery,True
+2488,ADVANCED MICRO DEVICES INC,2022,59,legacy_manual_bigquery,True
+2488,ADVANCED MICRO DEVICES INC,2023,46,legacy_manual_bigquery,True
+2488,ADVANCED MICRO DEVICES INC,2024,43,legacy_manual_bigquery,True
+2488,ADVANCED MICRO DEVICES INC,2025,10,legacy_manual_bigquery,False
+50863,INTEL CORP,2015,13710,legacy_manual_bigquery,True
+50863,INTEL CORP,2016,14577,legacy_manual_bigquery,True
+50863,INTEL CORP,2017,15158,legacy_manual_bigquery,True
+50863,INTEL CORP,2018,14122,legacy_manual_bigquery,True
+50863,INTEL CORP,2019,14525,legacy_manual_bigquery,True
+50863,INTEL CORP,2020,13639,legacy_manual_bigquery,True
+50863,INTEL CORP,2021,13768,legacy_manual_bigquery,True
+50863,INTEL CORP,2022,12348,legacy_manual_bigquery,True
+50863,INTEL CORP,2023,8887,legacy_manual_bigquery,True
+50863,INTEL CORP,2024,5887,legacy_manual_bigquery,True
+50863,INTEL CORP,2025,2790,legacy_manual_bigquery,False
+320193,Apple Inc.,2015,4499,legacy_manual_bigquery,True
+320193,Apple Inc.,2016,4688,legacy_manual_bigquery,True
+320193,Apple Inc.,2017,4387,legacy_manual_bigquery,True
+320193,Apple Inc.,2018,4854,legacy_manual_bigquery,True
+320193,Apple Inc.,2019,5291,legacy_manual_bigquery,True
+320193,Apple Inc.,2020,6523,legacy_manual_bigquery,True
+320193,Apple Inc.,2021,5571,legacy_manual_bigquery,True
+320193,Apple Inc.,2022,5819,legacy_manual_bigquery,True
+320193,Apple Inc.,2023,5606,legacy_manual_bigquery,True
+320193,Apple Inc.,2024,3914,legacy_manual_bigquery,True
+320193,Apple Inc.,2025,1941,legacy_manual_bigquery,False
+789019,MICROSOFT CORP,2015,5068,legacy_manual_bigquery,True
+789019,MICROSOFT CORP,2016,5750,legacy_manual_bigquery,True
+789019,MICROSOFT CORP,2017,5897,legacy_manual_bigquery,True
+789019,MICROSOFT CORP,2018,4743,legacy_manual_bigquery,True
+789019,MICROSOFT CORP,2019,4846,legacy_manual_bigquery,True
+789019,MICROSOFT CORP,2020,2915,legacy_manual_bigquery,True
+789019,MICROSOFT CORP,2021,3558,legacy_manual_bigquery,True
+789019,MICROSOFT CORP,2022,4004,legacy_manual_bigquery,True
+789019,MICROSOFT CORP,2023,3122,legacy_manual_bigquery,True
+789019,MICROSOFT CORP,2024,1970,legacy_manual_bigquery,True
+789019,MICROSOFT CORP,2025,526,legacy_manual_bigquery,False
+1018724,AMAZON COM INC,2015,2729,legacy_manual_bigquery,True
+1018724,AMAZON COM INC,2016,2475,legacy_manual_bigquery,True
+1018724,AMAZON COM INC,2017,2640,legacy_manual_bigquery,True
+1018724,AMAZON COM INC,2018,2557,legacy_manual_bigquery,True
+1018724,AMAZON COM INC,2019,2611,legacy_manual_bigquery,True
+1018724,AMAZON COM INC,2020,2332,legacy_manual_bigquery,True
+1018724,AMAZON COM INC,2021,1742,legacy_manual_bigquery,True
+1018724,AMAZON COM INC,2022,1736,legacy_manual_bigquery,True
+1018724,AMAZON COM INC,2023,1160,legacy_manual_bigquery,True
+1018724,AMAZON COM INC,2024,489,legacy_manual_bigquery,True
+1018724,AMAZON COM INC,2025,149,legacy_manual_bigquery,False
+1045810,NVIDIA CORP,2015,278,legacy_manual_bigquery,True
+1045810,NVIDIA CORP,2016,157,legacy_manual_bigquery,True
+1045810,NVIDIA CORP,2017,156,legacy_manual_bigquery,True
+1045810,NVIDIA CORP,2018,333,legacy_manual_bigquery,True
+1045810,NVIDIA CORP,2019,578,legacy_manual_bigquery,True
+1045810,NVIDIA CORP,2020,785,legacy_manual_bigquery,True
+1045810,NVIDIA CORP,2021,985,legacy_manual_bigquery,True
+1045810,NVIDIA CORP,2022,1175,legacy_manual_bigquery,True
+1045810,NVIDIA CORP,2023,1094,legacy_manual_bigquery,True
+1045810,NVIDIA CORP,2024,1025,legacy_manual_bigquery,True
+1045810,NVIDIA CORP,2025,441,legacy_manual_bigquery,False
+1318605,"Tesla, Inc.",2015,79,legacy_manual_bigquery,True
+1318605,"Tesla, Inc.",2016,95,legacy_manual_bigquery,True
+1318605,"Tesla, Inc.",2017,170,legacy_manual_bigquery,True
+1318605,"Tesla, Inc.",2018,203,legacy_manual_bigquery,True
+1318605,"Tesla, Inc.",2019,146,legacy_manual_bigquery,True
+1318605,"Tesla, Inc.",2020,73,legacy_manual_bigquery,True
+1318605,"Tesla, Inc.",2021,114,legacy_manual_bigquery,True
+1318605,"Tesla, Inc.",2022,150,legacy_manual_bigquery,True
+1318605,"Tesla, Inc.",2023,153,legacy_manual_bigquery,True
+1318605,"Tesla, Inc.",2024,109,legacy_manual_bigquery,True
+1318605,"Tesla, Inc.",2025,65,legacy_manual_bigquery,False
+1326801,"Meta Platforms, Inc.",2015,2252,legacy_manual_bigquery,True
+1326801,"Meta Platforms, Inc.",2016,2005,legacy_manual_bigquery,True
+1326801,"Meta Platforms, Inc.",2017,2038,legacy_manual_bigquery,True
+1326801,"Meta Platforms, Inc.",2018,2037,legacy_manual_bigquery,True
+1326801,"Meta Platforms, Inc.",2019,2137,legacy_manual_bigquery,True
+1326801,"Meta Platforms, Inc.",2020,2263,legacy_manual_bigquery,True
+1326801,"Meta Platforms, Inc.",2021,2300,legacy_manual_bigquery,True
+1326801,"Meta Platforms, Inc.",2022,2763,legacy_manual_bigquery,True
+1326801,"Meta Platforms, Inc.",2023,1887,legacy_manual_bigquery,True
+1326801,"Meta Platforms, Inc.",2024,1187,legacy_manual_bigquery,True
+1326801,"Meta Platforms, Inc.",2025,588,legacy_manual_bigquery,False
+1341439,ORACLE CORP,2015,1484,legacy_manual_bigquery,True
+1341439,ORACLE CORP,2016,1248,legacy_manual_bigquery,True
+1341439,ORACLE CORP,2017,1300,legacy_manual_bigquery,True
+1341439,ORACLE CORP,2018,1135,legacy_manual_bigquery,True
+1341439,ORACLE CORP,2019,1205,legacy_manual_bigquery,True
+1341439,ORACLE CORP,2020,1293,legacy_manual_bigquery,True
+1341439,ORACLE CORP,2021,1197,legacy_manual_bigquery,True
+1341439,ORACLE CORP,2022,1224,legacy_manual_bigquery,True
+1341439,ORACLE CORP,2023,1182,legacy_manual_bigquery,True
+1341439,ORACLE CORP,2024,965,legacy_manual_bigquery,True
+1341439,ORACLE CORP,2025,344,legacy_manual_bigquery,False

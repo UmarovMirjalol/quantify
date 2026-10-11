@@ -1,0 +1,53 @@
+# Validation report
+
+Generated 2026-09-26 11:09. Summary: {'PASS': 40, 'WARN': 7}
+
+| Dataset | Check | Status | Flagged | Total | Detail |
+|---|---|---|---|---|---|
+| companies_master | duplicate company_id | PASS | 0 | 7385 |  |
+| companies_master | missing CIK | PASS | 0 | 7385 |  |
+| companies_master | missing ticker | PASS | 0 | 7385 |  |
+| companies_master | missing SIC | WARN | 790 | 7385 | SEC submissions without SIC (mostly foreign/non-operating filers) |
+| companies_master | missing country | WARN | 1036 | 7385 |  |
+| startups_clean | duplicate dedupe_key | PASS | 0 | 19820 |  |
+| startups_clean | duplicate normalized startup names (distinct websites) | WARN | 797 | 19820 | kept: same name, different domain = different startup |
+| startups_clean | impossible cohort years | PASS | 0 | 19820 |  |
+| patent_counts | duplicate company-year observations | PASS | 0 | 99 |  |
+| patent_counts | negative patent counts | PASS | 0 | 99 |  |
+| patent_counts | impossible years | PASS | 0 | 99 |  |
+| patent_counts | companies without patent data (treated as missing) | WARN | 7376 | 7385 | BigQuery extraction not yet run for the full universe |
+| technology_index | duplicate company-year rows | PASS | 0 | 73850 |  |
+| technology_index | years outside INDEX_YEARS | PASS | 0 | 73850 |  |
+| technology_index | patent_score outside [0,100] | PASS | 0 | 73850 |  |
+| technology_index | startup_score outside [0,100] | PASS | 0 | 73850 |  |
+| technology_index | technology_disruption_index outside [0,100] | PASS | 0 | 73850 |  |
+| technology_index | infinite values in patent_score | PASS | 0 | 73850 |  |
+| technology_index | infinite values in startup_score | PASS | 0 | 73850 |  |
+| technology_index | infinite values in technology_disruption_index | PASS | 0 | 73850 |  |
+| technology_index | NaN propagation: component present but index NaN | PASS | 0 | 73850 |  |
+| technology_index | index present without any component | PASS | 0 | 73850 |  |
+| technology_index | components_available inconsistent | PASS | 0 | 73850 |  |
+| technology_index | universe companies missing from index | PASS | 0 | 7385 |  |
+| technology_index | company-years without any component | WARN | 9640 | 73850 | kept in file with NaN index |
+| financials | duplicate company-year rows | PASS | 0 | 55221 |  |
+| financials | impossible years | PASS | 0 | 55221 |  |
+| financials | infinite values in revenue | PASS | 0 | 55221 |  |
+| financials | infinite values in assets | PASS | 0 | 55221 |  |
+| financials | negative assets | PASS | 0 | 55221 |  |
+| financials | infinite values in rd | PASS | 0 | 55221 |  |
+| financials | negative rd | PASS | 0 | 55221 |  |
+| financials | infinite values in capex | PASS | 0 | 55221 |  |
+| financials | negative capex | PASS | 0 | 55221 |  |
+| financials | infinite values in cash | PASS | 0 | 55221 |  |
+| financials | negative cash | PASS | 0 | 55221 |  |
+| financials | infinite values in debt | PASS | 0 | 55221 |  |
+| financials | negative debt | PASS | 0 | 55221 |  |
+| financials | infinite values in public_float | PASS | 0 | 55221 |  |
+| financials | negative public_float | PASS | 0 | 55221 |  |
+| financials | zero assets (division by zero risk in ratios) | WARN | 177 | 55221 | ratios use assets > 0 only |
+| financials | market_cap unavailable | WARN | 55221 | 55221 | no reliable SEC price source; public_float used instead |
+| final_panel | duplicate company-year rows | PASS | 0 | 88620 |  |
+| final_panel | universe companies missing from panel | PASS | 0 | 7385 |  |
+| final_panel | infinite values in technology_disruption_index | PASS | 0 | 88620 |  |
+| final_panel | infinite values in revenue | PASS | 0 | 88620 |  |
+| final_panel | infinite values in assets | PASS | 0 | 88620 |  |
