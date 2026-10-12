@@ -128,7 +128,7 @@ tbody tr{cursor:pointer}tbody tr:hover{background:#f5f6ff}td.r,th.r{text-align:r
 .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;background:#eef2ff;color:#3730a3;margin:2px 6px 2px 0}
 .badge{font-size:11px;padding:2px 8px;border-radius:999px;background:#f1f5f9;color:var(--muted)}
 .pager{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;justify-content:flex-end;margin-top:12px;color:var(--muted);font-size:13px}
-.pager #pg{margin-right:auto}.pager select{padding:6px 10px;border-radius:10px}.pager input{width:70px;padding:6px 8px;border:1px solid var(--line);border-radius:10px;font:inherit;text-align:center}
+.pager #pg{margin-right:auto}.pager select{padding:6px 10px;border-radius:10px}.pager input{flex:0 0 70px;width:70px;min-width:0;padding:6px 8px;border:1px solid var(--line);border-radius:10px;font:inherit;text-align:center}
 .pager button:disabled{opacity:.4;cursor:default}
 .tw.scroll{max-height:75vh;overflow-y:auto}.tw thead th{position:sticky;top:0;background:#fff;z-index:1}
 button{font:inherit;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 14px;cursor:pointer}
