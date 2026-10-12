@@ -71,7 +71,8 @@ def build_payload() -> dict:
                        for r in by_industry.itertuples(index=False)],
         "yearly": [[int(y), float(v)] for y, v in yearly.items()],
         "coverage": {k: clean(v) for k, v in cov.items()},
-        "results": [{k: clean(v) if k != "p_value" else (None if pd.isna(v) else float(v))
+        "results": [{k: (None if pd.isna(v) else (float(v) if k in ("coef", "std_err", "p_value")
+                                                     else clean(v)))
                      for k, v in r.items()} for r in main[
             ["model", "spec", "coef", "std_err", "p_value", "n_obs", "n_firms"]].to_dict("records")],
         "weights": config.INDEX_WEIGHTS,
@@ -126,7 +127,10 @@ tbody tr{cursor:pointer}tbody tr:hover{background:#f5f6ff}td.r,th.r{text-align:r
 .meter{display:inline-block;width:70px;height:6px;border-radius:6px;background:#eef0f6;vertical-align:middle;margin-left:8px;overflow:hidden}.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
 .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;background:#eef2ff;color:#3730a3;margin:2px 6px 2px 0}
 .badge{font-size:11px;padding:2px 8px;border-radius:999px;background:#f1f5f9;color:var(--muted)}
-.pager{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:12px;color:var(--muted);font-size:13px}
+.pager{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;justify-content:flex-end;margin-top:12px;color:var(--muted);font-size:13px}
+.pager #pg{margin-right:auto}.pager select{padding:6px 10px;border-radius:10px}.pager input{width:70px;padding:6px 8px;border:1px solid var(--line);border-radius:10px;font:inherit;text-align:center}
+.pager button:disabled{opacity:.4;cursor:default}
+.tw.scroll{max-height:75vh;overflow-y:auto}.tw thead th{position:sticky;top:0;background:#fff;z-index:1}
 button{font:inherit;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 14px;cursor:pointer}
 .tw{overflow-x:auto}.muted{color:var(--muted)}.small{font-size:13px}.sig{color:var(--good);font-weight:600}
 .big{font-size:44px;font-weight:700;letter-spacing:-.03em}
@@ -159,7 +163,11 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <select id="lst"><option value="">All companies</option><option value="1">Currently listed</option><option value="0">Historical filers</option></select></div>
 <div class="tw"><table><thead><tr><th data-k="name">Company</th><th data-k="ticker">Ticker</th><th data-k="industry">Industry</th>
 <th data-k="tdi" class="r">Index</th><th data-k="startup" class="r">Startup</th><th data-k="patent" class="r">Patent</th></tr></thead><tbody id="tb"></tbody></table></div>
-<div class="pager"><span id="pg"></span><button id="prev">←</button><button id="next">→</button></div></div>
+<div class="pager"><span id="pg"></span>
+<select id="per"><option value="25">25 per page</option><option value="50" selected>50 per page</option><option value="100">100 per page</option><option value="500">500 per page</option><option value="0">Show all</option></select>
+<button id="first" title="First page">«</button><button id="prev" title="Previous page">←</button>
+<span>Page <input id="pno" type="number" min="1" value="1"> of <b id="pmax">1</b></span>
+<button id="next" title="Next page">→</button><button id="last" title="Last page">»</button></div></div>
 
 <div class="g2" style="margin-top:20px"><div class="card" id="detail"><h3 style="margin:0">Company profile</h3><p class="muted">Select a company to see details.</p></div>
 <div class="card"><h3 style="margin:0 0 6px">Score distribution</h3><div id="hist"></div><p class="small muted">Amber bar: industries not linked to any tracked technology category (score 0).</p></div></div>
@@ -184,7 +192,9 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 </div></section>
 
 <section id="about"><div class="kicker">About</div><h2>Open and reproducible</h2>
-<p class="sub">The full pipeline — data collection, scoring, validation and regressions — runs with one command. The index is a measurable proxy for technology exposure, not an objective measure of “true” disruption.</p></section>
+<p class="sub">The full pipeline — data collection, scoring, validation and regressions — runs with one command. The index is a measurable proxy for technology exposure, not an objective measure of “true” disruption.</p>
+<div class="card" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between"><div><h3 style="margin:0">Download the data</h3><p class="muted small" style="margin:4px 0 0">Latest scores for all __NCOMP__ companies and the full regression results (CSV).</p></div>
+<div><a class="btn p" href="data/company_technology_index_latest.csv" download>Index scores (CSV)</a><a class="btn s" href="data/regression_results.csv" download>Regression results</a></div></div></section>
 </div>
 <footer>Technology Disruption Index · Data: SEC EDGAR, Google Patents Public Data, accelerator portfolios · Not investment advice</footer>
 
@@ -195,24 +205,31 @@ const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&g
 const cv=D.coverage,pct=(a,b)=>Math.round(100*a/b)+'%';
 $('stats').innerHTML=[[cv.total_companies.toLocaleString(),'companies scored'],[D.n_startups.toLocaleString(),'startups analysed'],[pct(cv.index_coverage,cv.total_companies),'index coverage'],[D.years.length+' yrs','of company-year data']]
  .map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
+const FL={sic_linked:'Industry linked to technology',"sic_linked+name":'Industry + company name',name_only:'Company name only',industry_unlinked:'Industry not linked (score 0)',missing_sic:'No industry data',uninformative_sic:'Industry code too broad'};
 const cats=['AI','Fintech','Cloud','Robotics','Cybersecurity','Biotech','Semiconductors','Energy','Quantum'];
 cats.forEach(c=>$('cat').insertAdjacentHTML('beforeend',`<option>${c}</option>`));
 [...new Set(C.map(c=>c.industry).filter(Boolean))].sort().forEach(i=>$('ind').insertAdjacentHTML('beforeend',`<option>${esc(i)}</option>`));
 $('top').innerHTML=C.filter(c=>c.tdi!=null&&c.listed).sort((a,b)=>b.tdi-a.tdi||a.name.localeCompare(b.name)).slice(0,10)
  .map(c=>`<div class="tc" data-id="${c.id}"><div class="s">${c.tdi.toFixed(1)}</div><div class="n">${esc(c.name)}</div><div class="t">${esc(c.ticker)} · ${esc(c.industry)}</div></div>`).join('');
 $('top').onclick=e=>{const t=e.target.closest('.tc');if(t){detail(C.find(c=>c.id==t.dataset.id));$('detail').scrollIntoView({behavior:'smooth',block:'center'})}};
-let sortK='tdi',dir=-1,page=0;const PER=20;
+let sortK='tdi',dir=-1,page=0;
 function rows(){const q=$('q').value.trim().toLowerCase(),i=$('ind').value,c=$('cat').value,l=$('lst').value;
  return C.filter(x=>(!q||x.name.toLowerCase().includes(q)||(x.ticker||'').toLowerCase().includes(q))&&(!i||x.industry===i)&&(!c||(x.categories||'').includes(c+'='))&&(l===''||x.listed==+l))
  .sort((a,b)=>{const x=a[sortK],y=b[sortK];if(x==null)return 1;if(y==null)return -1;return(x>y?1:x<y?-1:0)*dir})}
-function render(){const r=rows(),P=Math.max(1,Math.ceil(r.length/PER));page=Math.min(page,P-1);
+function render(){const r=rows(),PER=+$('per').value||r.length||1,P=Math.max(1,Math.ceil(r.length/PER));page=Math.max(0,Math.min(page,P-1));
  $('tb').innerHTML=r.slice(page*PER,page*PER+PER).map(c=>`<tr data-id="${c.id}"><td>${esc(c.name)} ${c.listed?'':'<span class="badge">historical</span>'}</td><td>${esc(c.ticker)}</td><td class="muted">${esc(c.industry)}</td>
  <td class="r"><b>${fmt(c.tdi)}</b>${c.tdi!=null?`<span class="meter"><i style="width:${c.tdi}%"></i></span>`:''}</td><td class="r">${fmt(c.startup)}</td><td class="r">${fmt(c.patent)}</td></tr>`).join('');
- $('pg').textContent=`${r.length.toLocaleString()} companies · page ${page+1} of ${P}`}
+ const a=r.length?page*PER+1:0,b=Math.min(r.length,page*PER+PER);
+ $('pg').textContent=`Showing ${a.toLocaleString()}–${b.toLocaleString()} of ${r.length.toLocaleString()} companies`;
+ $('pno').value=page+1;$('pno').max=P;$('pmax').textContent=P.toLocaleString();
+ $('first').disabled=$('prev').disabled=page===0;$('next').disabled=$('last').disabled=page>=P-1;
+ document.querySelector('.tw').classList.toggle('scroll',PER>100)}
 document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;dir=sortK===k?-dir:(['name','ticker','industry'].includes(k)?1:-1);sortK=k;render()});
-['q','ind','cat','lst'].forEach(id=>$(id).oninput=()=>{page=0;render()});
-$('prev').onclick=()=>{page=Math.max(0,page-1);render()};$('next').onclick=()=>{page++;render()};
-$('tb').onclick=e=>{const t=e.target.closest('tr');if(t)detail(C.find(c=>c.id==t.dataset.id))};
+['q','ind','cat','lst','per'].forEach(id=>$(id).oninput=()=>{page=0;render()});
+$('prev').onclick=()=>{page--;render()};$('next').onclick=()=>{page++;render()};
+$('first').onclick=()=>{page=0;render()};$('last').onclick=()=>{page=1e9;render()};
+$('pno').onchange=()=>{page=(+$('pno').value||1)-1;render()};
+$('tb').onclick=e=>{const t=e.target.closest('tr');if(t){detail(C.find(c=>c.id==t.dataset.id));$('detail').scrollIntoView({behavior:'smooth',block:'center'})}};
 function line(v){const W=640,H=210,P=32,ys=D.years,X=i=>P+i*(W-2*P)/(ys.length-1),Y=s=>H-P-(s/100)*(H-2*P);
  let d='',o=false,area='';v.forEach((s,i)=>{if(s==null){o=false;return}d+=(o?'L':'M')+X(i)+','+Y(s);o=true});
  const pts=v.map((s,i)=>s==null?null:[X(i),Y(s)]).filter(Boolean);if(pts.length>1)area=`<path d="M${pts[0][0]},${H-P} L${pts.map(p=>p.join(',')).join(' L')} L${pts[pts.length-1][0]},${H-P}Z" fill="url(#g)"/>`;
@@ -226,10 +243,10 @@ function detail(c){const tags=(c.categories||'').split(';').map(s=>s.trim()).fil
  <div style="display:flex;gap:28px;margin:16px 0"><div><div class="big">${fmt(c.tdi)}</div><div class="muted small">Index ${D.years[D.years.length-1]}</div></div>
  <div><div class="big" style="font-size:28px;margin-top:12px">${fmt(c.startup)}</div><div class="muted small">Startup score</div></div>
  <div><div class="big" style="font-size:28px;margin-top:12px">${fmt(c.patent)}</div><div class="muted small">Patent score</div></div></div>
- <div>${tags}</div>${line(c.history||[])}<div class="muted small">Components available: ${c.components}/2 · coverage: ${esc(c.flag||'none')}</div>`}
+ <div>${tags}</div>${line(c.history||[])}<div class="muted small">Components available: ${c.components}/2 · ${esc(FL[c.flag]||'no data')}</div>`}
 (function(){const b=new Array(10).fill(0);let z=0;C.forEach(c=>{if(c.tdi==null)return;if(c.tdi===0){z++;return}b[Math.min(9,Math.floor(c.tdi/10))]++});
- const bins=[['0',z],...b.map((n,i)=>[i*10+'',n])],W=640,H=230,P=26,m=Math.max(...bins.map(x=>x[1])),bw=(W-2*P)/bins.length;
- $('hist').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%">`+bins.map((x,i)=>{const h=x[1]/m*(H-2*P-14);return `<rect x="${P+i*bw+3}" y="${H-P-h}" width="${bw-6}" height="${h}" rx="6" fill="${i?'#6366f1':'#f59e0b'}" opacity="${i?.85:1}"/><text x="${P+i*bw+bw/2-8}" y="${H-8}">${x[0]}</text><text x="${P+i*bw+bw/2-12}" y="${H-P-h-6}">${x[1].toLocaleString()}</text>`}).join('')+'</svg>'})();
+ const bins=[['=0',z],...b.map((n,i)=>[i?i*10+'+':'>0',n])],W=640,H=230,P=26,m=Math.max(...bins.map(x=>x[1])),bw=(W-2*P)/bins.length;
+ $('hist').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%">`+bins.map((x,i)=>{const h=x[1]/m*(H-2*P-14);return `<rect x="${P+i*bw+3}" y="${H-P-h}" width="${bw-6}" height="${h}" rx="6" fill="${i?'#6366f1':'#f59e0b'}" opacity="${i?.85:1}"/><text x="${P+i*bw+bw/2-8}" y="${H-8}">${x[0]}</text><text x="${P+i*bw+bw/2-12}" y="${H-P-h-6}">${x[1]>=1000?(x[1]/1000).toFixed(1)+'k':x[1]}</text>`}).join('')+'</svg>'})();
 $('inds').innerHTML='<table>'+D.industries.map(r=>`<tr><td>${esc(r[0])}</td><td class="r"><b>${r[1].toFixed(1)}</b><span class="meter"><i style="width:${r[1]}%"></i></span></td><td class="r muted small">${r[2].toLocaleString()}</td></tr>`).join('')+'</table>';
 (function(){const L={M1:'Market valuation',M1b:'Valuation change',M2:'Revenue growth',M3:'R&D / assets',M4:'CAPEX / assets'},S={main_year:'Year FE',main_year_sic2:'+ Industry FE',main_sic2xyear:'Industry×year FE',main_firm_year:'Firm FE'};
  const specs=Object.keys(S);let h='<table><tr><th>Outcome (t+1)</th>'+specs.map(s=>`<th class="r">${S[s]}</th>`).join('')+'</tr>';
@@ -253,6 +270,10 @@ def main() -> None:
             .replace("__WS__", f"{int(p['weights']['startup_score'] * 100)}"))
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     OUT.write_text(html, encoding="utf-8")
+    import shutil
+    (OUT_DIR / "data").mkdir(exist_ok=True)
+    shutil.copy(config.TECH_INDEX_LATEST, OUT_DIR / "data" / "company_technology_index_latest.csv")
+    shutil.copy(config.REGRESSION_RESULTS, OUT_DIR / "data" / "regression_results.csv")
     (OUT_DIR / "vercel.json").write_text('{"cleanUrls": true}\n', encoding="utf-8")
     (OUT_DIR / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
     log.info("Website: %d companies, %.1f MB -> %s", len(p["companies"]), OUT.stat().st_size / 1e6, OUT)
