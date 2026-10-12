@@ -42,9 +42,23 @@ def build_payload() -> dict:
     ).merge(startup[["company_id", "technology_categories"]], on="company_id", how="left")
     series = idx.pivot(index="company_id", columns="year", values="technology_disruption_index")
 
+    fin = pd.read_csv(config.FINANCIALS, usecols=["company_id", "year", "revenue", "assets", "rd",
+                                                  "public_float", "cash"])
+    fin = fin[fin["year"].isin(config.INDEX_YEARS)]
+    money = ["revenue", "assets", "rd", "public_float", "cash"]
+    fin[money] = (fin[money] / 1e6).round(1)
+    rev_hist = fin.pivot(index="company_id", columns="year", values="revenue").reindex(
+        columns=config.INDEX_YEARS)
+    last_fin = (fin.dropna(subset=["revenue", "assets"], how="all")
+                .sort_values("year").groupby("company_id").tail(1).set_index("company_id"))
+
     rows = []
     for r in latest.itertuples(index=False):
         hist = series.loc[r.company_id].tolist() if r.company_id in series.index else []
+        f = last_fin.loc[r.company_id] if r.company_id in last_fin.index else None
+        fvals = None if f is None else [int(f["year"])] + [clean(f[k]) for k in money]
+        rh = (None if r.company_id not in rev_hist.index
+              else [clean(v) for v in rev_hist.loc[r.company_id].tolist()])
         rows.append([
             int(r.company_id), r.company_name if isinstance(r.company_name, str) else f"CIK {r.company_id}",
             clean(r.ticker), clean(r.industry), clean(r.sic_description), clean(r.country),
@@ -52,6 +66,7 @@ def build_payload() -> dict:
             clean(r.patent_score), int(r.components_available), clean(r.startup_coverage_flag),
             clean(r.technology_categories), [clean(v) for v in hist],
             1 if r.universe_source == "sec_ticker_list" else 0,
+            None if fvals is None else fvals[1], fvals, rh,
         ])
 
     by_industry = (latest.dropna(subset=["industry", "technology_disruption_index"])
@@ -64,7 +79,8 @@ def build_payload() -> dict:
 
     return {
         "fields": ["id", "name", "ticker", "industry", "sic", "country", "exchange", "tdi",
-                   "startup", "patent", "components", "flag", "categories", "history", "listed"],
+                   "startup", "patent", "components", "flag", "categories", "history", "listed",
+                   "revenue", "fin", "rev"],
         "years": config.INDEX_YEARS,
         "companies": rows,
         "industries": [[r.industry, round(float(r.avg), 1), int(r.n)]
@@ -77,6 +93,8 @@ def build_payload() -> dict:
             ["model", "spec", "coef", "std_err", "p_value", "n_obs", "n_firms"]].to_dict("records")],
         "weights": config.INDEX_WEIGHTS,
         "n_startups": n_startups,
+        "n_fin": int(len(last_fin)),
+        "n_patent": int(latest["patent_score"].notna().sum()),
         "n_listed": int((master["universe_source"] == "sec_ticker_list").sum()),
         "n_regressions": int(results["coef"].notna().sum()),
     }
@@ -139,6 +157,8 @@ button{font:inherit;background:#fff;border:1px solid var(--line);border-radius:1
 .note{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:12px;padding:14px 16px;font-size:14px}
 footer{margin-top:80px;border-top:1px solid var(--line);padding:32px 24px;color:var(--muted);font-size:13px;text-align:center}
 svg text{fill:var(--muted);font-size:11px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}.kpi{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.kpi b{display:block;font-size:18px}.kpi span{color:var(--muted);font-size:12px}#detail h4{margin:18px 0 8px;font-size:14px}
 body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:auto}
 @media(max-width:900px){.stats,.top{grid-template-columns:repeat(2,1fr)}.g2,.g3{grid-template-columns:1fr}.nav .links{display:none}}
 </style></head><body>
@@ -162,7 +182,7 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <select id="cat"><option value="">All technologies</option></select>
 <select id="lst"><option value="">All companies</option><option value="1">Currently listed</option><option value="0">Historical filers</option></select></div>
 <div class="tw"><table><thead><tr><th data-k="name">Company</th><th data-k="ticker">Ticker</th><th data-k="industry">Industry</th>
-<th data-k="tdi" class="r">Index</th><th data-k="startup" class="r">Startup</th><th data-k="patent" class="r">Patent</th></tr></thead><tbody id="tb"></tbody></table></div>
+<th data-k="tdi" class="r">Index</th><th data-k="startup" class="r">Startup</th><th data-k="revenue" class="r">Revenue</th></tr></thead><tbody id="tb"></tbody></table></div>
 <div class="pager"><span id="pg"></span>
 <select id="per"><option value="25">25 per page</option><option value="50" selected>50 per page</option><option value="100">100 per page</option><option value="500">500 per page</option><option value="0">Show all</option></select>
 <button id="first" title="First page">«</button><button id="prev" title="Previous page">←</button>
@@ -203,7 +223,8 @@ const D=__DATA__;const F=D.fields,C=D.companies.map(r=>Object.fromEntries(F.map(
 const $=id=>document.getElementById(id),fmt=v=>v==null?'<span class="muted">–</span>':v.toFixed(1);
 const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 const cv=D.coverage,pct=(a,b)=>Math.round(100*a/b)+'%';
-$('stats').innerHTML=[[cv.total_companies.toLocaleString(),'companies scored'],[D.n_startups.toLocaleString(),'startups analysed'],[pct(cv.index_coverage,cv.total_companies),'index coverage'],[D.years.length+' yrs','of company-year data']]
+const usd=v=>{if(v==null)return '<span class="muted">–</span>';const a=Math.abs(v),s=v<0?'−$':'$';return a>=1e6?s+(a/1e6).toFixed(2)+'T':a>=1e3?s+(a/1e3).toFixed(1)+'B':a>=1?s+a.toFixed(0)+'M':s+(a*1000).toFixed(0)+'K'};
+$('stats').innerHTML=[[cv.total_companies.toLocaleString(),'companies in the universe'],[pct(cv.index_coverage,cv.total_companies),'with an index score'],[D.n_fin.toLocaleString(),'with SEC financials'],[D.n_startups.toLocaleString(),'startups analysed']]
  .map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
 const FL={sic_linked:'Industry linked to technology',"sic_linked+name":'Industry + company name',name_only:'Company name only',industry_unlinked:'Industry not linked (score 0)',missing_sic:'No industry data',uninformative_sic:'Industry code too broad'};
 const cats=['AI','Fintech','Cloud','Robotics','Cybersecurity','Biotech','Semiconductors','Energy','Quantum'];
@@ -218,7 +239,7 @@ function rows(){const q=$('q').value.trim().toLowerCase(),i=$('ind').value,c=$('
  .sort((a,b)=>{const x=a[sortK],y=b[sortK];if(x==null)return 1;if(y==null)return -1;return(x>y?1:x<y?-1:0)*dir})}
 function render(){const r=rows(),PER=+$('per').value||r.length||1,P=Math.max(1,Math.ceil(r.length/PER));page=Math.max(0,Math.min(page,P-1));
  $('tb').innerHTML=r.slice(page*PER,page*PER+PER).map(c=>`<tr data-id="${c.id}"><td>${esc(c.name)} ${c.listed?'':'<span class="badge">historical</span>'}</td><td>${esc(c.ticker)}</td><td class="muted">${esc(c.industry)}</td>
- <td class="r"><b>${fmt(c.tdi)}</b>${c.tdi!=null?`<span class="meter"><i style="width:${c.tdi}%"></i></span>`:''}</td><td class="r">${fmt(c.startup)}</td><td class="r">${fmt(c.patent)}</td></tr>`).join('');
+ <td class="r"><b>${fmt(c.tdi)}</b>${c.tdi!=null?`<span class="meter"><i style="width:${c.tdi}%"></i></span>`:''}</td><td class="r">${fmt(c.startup)}</td><td class="r">${usd(c.revenue)}</td></tr>`).join('');
  const a=r.length?page*PER+1:0,b=Math.min(r.length,page*PER+PER);
  $('pg').textContent=`Showing ${a.toLocaleString()}–${b.toLocaleString()} of ${r.length.toLocaleString()} companies`;
  $('pno').value=page+1;$('pno').max=P;$('pmax').textContent=P.toLocaleString();
@@ -237,13 +258,24 @@ function line(v){const W=640,H=210,P=32,ys=D.years,X=i=>P+i*(W-2*P)/(ys.length-1
  ${[0,50,100].map(g=>`<line x1="${P}" x2="${W-P}" y1="${Y(g)}" y2="${Y(g)}" stroke="#e6e9f0"/><text x="4" y="${Y(g)+4}">${g}</text>`).join('')}
  ${ys.map((y,i)=>i%3==0||i==ys.length-1?`<text x="${X(i)-14}" y="${H-10}">${y}</text>`:'').join('')}${area}<path d="${d}" fill="none" stroke="#4f46e5" stroke-width="2.5"/>
  ${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" stroke="#4f46e5" stroke-width="2"/>`).join('')}</svg>`}
+const WHY={missing_sic:'SEC filings list no industry code for this company, so its technology exposure cannot be measured. The index is left blank rather than set to zero.',uninformative_sic:'The company’s SEC industry code is a catch-all category (e.g. “business services, not elsewhere classified”) that says nothing about its technology domain. The index is left blank rather than set to zero.',industry_unlinked:'The company’s industry is not linked to any of the nine tracked technology categories, so its startup-ecosystem exposure is 0.'};
+function bars(v){if(!v||v.every(x=>x==null))return '';const W=640,H=170,P=32,ys=D.years,bw=(W-2*P)/ys.length,m=Math.max(...v.map(x=>Math.abs(x||0)))||1;
+ return `<svg viewBox="0 0 ${W} ${H}" width="100%">`+v.map((x,i)=>{if(x==null)return '';const h=Math.abs(x)/m*(H-2*P-10);return `<rect x="${P+i*bw+4}" y="${H-P-h}" width="${bw-8}" height="${h}" rx="5" fill="${x<0?'#f43f5e':'#06b6d4'}" opacity=".85"><title>${ys[i]}: ${usd(x).replace(/<[^>]+>/g,'')}</title></rect>`}).join('')
+ +ys.map((y,i)=>i%3==0||i==ys.length-1?`<text x="${P+i*bw+bw/2-14}" y="${H-10}">${y}</text>`:'').join('')+`<text x="4" y="14">max ${usd(m).replace(/<[^>]+>/g,'')}</text></svg>`}
+function kpi(v,l){return `<div class="kpi"><b>${v}</b><span>${l}</span></div>`}
 function detail(c){const tags=(c.categories||'').split(';').map(s=>s.trim()).filter(Boolean).map(s=>`<span class="pill">${esc(s.replace('=',' · '))}</span>`).join('')||'<span class="muted small">No tracked technology linked</span>';
- $('detail').innerHTML=`<div class="muted small">${esc(c.ticker||'no ticker')} · ${esc(c.exchange||'')} ${c.listed?'':'· historical filer'}</div><h3 style="margin:2px 0 4px;font-size:22px">${esc(c.name)}</h3>
- <div class="muted small">${esc(c.sic||'')} · ${esc(c.country||'')}</div>
- <div style="display:flex;gap:28px;margin:16px 0"><div><div class="big">${fmt(c.tdi)}</div><div class="muted small">Index ${D.years[D.years.length-1]}</div></div>
+ const f=c.fin,rdp=f&&f[1]>0&&f[3]!=null?(100*f[3]/f[1]).toFixed(1)+'%':'<span class="muted">–</span>';
+ const pat=c.patent!=null?fmt(c.patent):'<span class="muted small" style="font-size:13px">not yet collected</span>';
+ $('detail').innerHTML=`<div class="muted small">${esc(c.ticker||'no ticker')}${c.exchange?' · '+esc(c.exchange):''}${c.listed?'':' · <span class="badge">historical filer</span>'}</div><h3 style="margin:2px 0 4px;font-size:22px">${esc(c.name)}</h3>
+ <div class="muted small">${esc(c.sic||'Industry unknown')}${c.country?' · '+esc(c.country):''}</div>
+ <div style="display:flex;flex-wrap:wrap;gap:28px;margin:16px 0"><div><div class="big">${fmt(c.tdi)}</div><div class="muted small">Index ${D.years[D.years.length-1]}</div></div>
  <div><div class="big" style="font-size:28px;margin-top:12px">${fmt(c.startup)}</div><div class="muted small">Startup score</div></div>
- <div><div class="big" style="font-size:28px;margin-top:12px">${fmt(c.patent)}</div><div class="muted small">Patent score</div></div></div>
- <div>${tags}</div>${line(c.history||[])}<div class="muted small">Components available: ${c.components}/2 · ${esc(FL[c.flag]||'no data')}</div>`}
+ <div><div class="big" style="font-size:28px;margin-top:12px">${pat}</div><div class="muted small">Patent score</div></div></div>
+ ${WHY[c.flag]?`<div class="note" style="margin-bottom:12px;font-size:13px">${WHY[c.flag]}</div>`:''}
+ <div>${tags}</div>${c.history&&c.history.some(x=>x!=null)?'<h4>Index history</h4>'+line(c.history):''}
+ <h4>Fundamentals${f?` <span class="muted small">(SEC XBRL, FY${f[0]})</span>`:''}</h4>
+ ${f?`<div class="kpis">${kpi(usd(f[1]),'Revenue')}${kpi(usd(f[2]),'Total assets')}${kpi(rdp,'R&amp;D / revenue')}${kpi(usd(f[4]),'Public float')}${kpi(usd(f[5]),'Cash')}</div>${bars(c.rev)?'<div class="muted small" style="margin-top:10px">Revenue by year</div>'+bars(c.rev):''}`:'<p class="muted small">No XBRL financial statements reported to the SEC for 2015–2024.</p>'}
+ <div class="muted small" style="margin-top:8px">Components available: ${c.components}/2 · ${esc(FL[c.flag]||'no data')} · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${c.id}" target="_blank" rel="noopener">SEC filings ↗</a></div>`}
 (function(){const b=new Array(10).fill(0);let z=0;C.forEach(c=>{if(c.tdi==null)return;if(c.tdi===0){z++;return}b[Math.min(9,Math.floor(c.tdi/10))]++});
  const bins=[['=0',z],...b.map((n,i)=>[i?i*10+'+':'>0',n])],W=640,H=230,P=26,m=Math.max(...bins.map(x=>x[1])),bw=(W-2*P)/bins.length;
  $('hist').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%">`+bins.map((x,i)=>{const h=x[1]/m*(H-2*P-14);return `<rect x="${P+i*bw+3}" y="${H-P-h}" width="${bw-6}" height="${h}" rx="6" fill="${i?'#6366f1':'#f59e0b'}" opacity="${i?.85:1}"/><text x="${P+i*bw+bw/2-8}" y="${H-8}">${x[0]}</text><text x="${P+i*bw+bw/2-12}" y="${H-P-h-6}">${x[1]>=1000?(x[1]/1000).toFixed(1)+'k':x[1]}</text>`}).join('')+'</svg>'})();
@@ -252,7 +284,7 @@ $('inds').innerHTML='<table>'+D.industries.map(r=>`<tr><td>${esc(r[0])}</td><td 
  const specs=Object.keys(S);let h='<table><tr><th>Outcome (t+1)</th>'+specs.map(s=>`<th class="r">${S[s]}</th>`).join('')+'</tr>';
  Object.keys(L).forEach(m=>{h+=`<tr><td>${L[m]}</td>`+specs.map(s=>{const r=D.results.find(x=>x.model==m&&x.spec==s);return r&&r.coef!=null?`<td class="r ${r.p_value<.05?'sig':''}">${r.coef.toFixed(3)}</td>`:'<td class="r muted">–</td>'}).join('')+'</tr>'});
  $('res').innerHTML=h+'</table>'})();
-render();
+render();detail(C.find(c=>c.id==$('top').firstElementChild.dataset.id));
 </script></body></html>
 """
 
