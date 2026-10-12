@@ -45,7 +45,13 @@ def main() -> None:
         n = len(master)
         check("companies_master", "duplicate company_id", master["company_id"].duplicated().sum(), n)
         check("companies_master", "missing CIK", master["cik"].isna().sum(), n)
-        check("companies_master", "missing ticker", master["ticker"].isna().sum(), n)
+        listed = master.get("universe_source", pd.Series("sec_ticker_list", index=master.index)) \
+            == "sec_ticker_list"
+        check("companies_master", "missing ticker (listed companies)",
+              master.loc[listed, "ticker"].isna().sum(), int(listed.sum()))
+        check("companies_master", "missing ticker (historical XBRL filers, expected)",
+              master.loc[~listed, "ticker"].isna().sum(), int((~listed).sum()), False,
+              "delisted/historical filers often have no current ticker")
         check("companies_master", "missing SIC", master["sic"].isna().sum(), n, False,
               "SEC submissions without SIC (mostly foreign/non-operating filers)")
         check("companies_master", "missing country", master["country"].isna().sum(), n, False)

@@ -24,6 +24,9 @@ COMPANIES_RAW = DATA / "companies.csv"                 # SEC ticker snapshot (ti
 COMPANIES_CLEAN = DATA / "companies_clean.csv"         # cleaned, ticker level
 COMPANIES_ENRICHED = DATA / "companies_enriched.csv"   # one row per company_id (CIK)
 COMPANIES_MASTER = DATA / "companies_master.csv"       # + SIC, country, industry, flags
+# Add every company that filed XBRL total assets in any index year (incl. delisted firms).
+# Reduces survivorship bias; such firms may have no current ticker.
+INCLUDE_XBRL_FILERS = True
 SEC_TICKERS_EXCHANGE_JSON = RAW_SEC / "company_tickers_exchange.json"
 SEC_SUBMISSIONS_CACHE = RAW_SEC / "submissions_cache.jsonl"
 

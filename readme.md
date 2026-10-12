@@ -161,7 +161,8 @@ not causal effects**. Output: `results/regression_results.csv`, `results/researc
 3. The SIC -> technology mapping is an expert, documented judgment, not an estimated model.
    SIC codes are current, not point-in-time.
 4. Accelerator data over-represent software and the US; cohort year is not founding year.
-5. **Survivorship bias:** the universe is today's listed companies.
+5. **Survivorship bias** is reduced but not eliminated: historical XBRL filers are included,
+   but firms that never filed XBRL total assets in 2015-2024 are not.
 6. The current SEC ticker file lists ~8,000 unique registrants; after removing funds/warrants
    about 7,400 unique operating-company CIKs remain. Earlier "8,865 companies" counted tickers
    (1,789 were extra share classes of the same company). Reaching 10,000+ genuine companies
@@ -173,15 +174,15 @@ not causal effects**. Output: `results/regression_results.csv`, `results/researc
 
 | Item | Value |
 |---|---|
-| SEC tickers (snapshot) -> cleaned tickers -> unique companies | 10,415 -> 9,295 -> **7,385** |
-| SIC known / country known | 6,595 (89.3%) / 6,349 |
-| Startup component available | 6,421 (86.9%): 3,645 SIC-linked, 62 name-only, 2,714 industry-unlinked (score 0) |
-| Startup component missing | 964 (773 no SIC, 191 catch-all SIC such as 7389) |
-| Patent component available | 9 (0.12%) - legacy manual pull only |
-| Index rows (company x 2015-2024) | 73,850 (all 7,385 companies) |
-| Companies with any SEC financials | 5,646 (76.5%; missing are mainly IFRS/foreign filers) |
-| Research panel rows (2014-2025) | 88,620 |
-| Validation | 40 PASS, 7 WARN (documented limitations), 0 FAIL |
+| Universe | **13,702** companies = 7,385 currently listed (unique CIK) + 6,317 historical XBRL filers 2015-2024 (`INCLUDE_XBRL_FILERS`) |
+| SIC known / country known | 12,769 (93.2%) / 12,599 |
+| Startup component available | 12,445 (90.8%): 6,555 SIC-linked, 132 name-only, 5,758 industry-unlinked (score 0) |
+| Startup component missing | 1,257 (916 no SIC, 341 catch-all SIC such as 7389) |
+| Patent component available | 9 - legacy manual pull only |
+| Index rows (company x 2015-2024) | 137,020 (all 13,702 companies) |
+| Companies with any SEC financials | 11,963 (87.3%) |
+| Research panel rows (2014-2025) | 164,424 |
+| Validation | 40 PASS, 8 WARN (documented limitations), 0 FAIL |
 
 Research findings (year FE, t -> t+1; see `results/research_report.md`): a higher index is
 associated with higher subsequent public float, revenue growth and R&D intensity and lower

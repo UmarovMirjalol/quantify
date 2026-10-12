@@ -1,16 +1,16 @@
-# Do Markets Price Technology Exposure Before Fundamentals? Evidence from a Technology Disruption Index for 7,385 U.S.-Listed Companies
+# Do Markets Price Technology Exposure Before Fundamentals? Evidence from a Technology Disruption Index for 13,702 U.S.-Listed Companies
 
 *Draft research paper. All figures are generated automatically from the project pipeline.*
 
 ## Abstract
 
-I construct a reproducible, company-year Technology Disruption Index (TDI) for 7,385 SEC-registered
+I construct a reproducible, company-year Technology Disruption Index (TDI) for 13,702 SEC-registered
 public companies over 2015-2024. The index combines (i) patent volume and momentum and (ii) the intensity of
 startup activity, measured across 19,820 accelerator-backed startups, in the technology domains
 in which each company operates. Linking the index to SEC XBRL fundamentals, I test whether technology exposure
 predicts market valuation before it predicts revenue growth, R&D intensity and capital expenditure. A 10-point
-higher index is associated with about 2.8% higher public float one year later (p < 0.001)
-and with 0.57 percentage points higher revenue growth (p < 0.001), controlling for
+higher index is associated with about 3.1% higher public float one year later (p < 0.001)
+and with 0.49 percentage points higher revenue growth (p < 0.001), controlling for
 size and year effects. Associations with valuation survive industry, industry-by-year and firm fixed effects, while associations with fundamentals disappear within firms. Because patent data currently cover few firms,
 the index is mainly an industry-level exposure measure; results are predictive associations, not causal effects.
 
@@ -32,7 +32,7 @@ and documented; (3) results are reported for every specification, without select
 ## 2. Data
 
 **Company universe.** SEC's public ticker list, cleaned of ETFs, funds, warrants, units and SPAC shells, and
-collapsed to one record per Central Index Key (CIK): 7,385 companies. Industry (SIC), country and entity type
+collapsed to one record per Central Index Key (CIK): 13,702 companies. Industry (SIC), country and entity type
 come from the SEC submissions API.
 
 **Startups.** 19,820 unique startups from seven accelerators (Y Combinator, Techstars, Plug and Play,
@@ -44,7 +44,7 @@ Semiconductors, Energy, Quantum) using word-bounded keyword rules on tags and de
 available for 9 companies; the extraction query for the full universe is part of the pipeline.
 
 **Fundamentals.** Revenue, total assets, R&D, capital expenditure, cash, long-term debt and public float from the
-SEC XBRL frames API for 5,646 companies. Market capitalisation is not used because SEC does
+SEC XBRL frames API for 11,963 companies. Market capitalisation is not used because SEC does
 not publish prices; public float (the market value of non-affiliate equity reported by the company) is the
 valuation measure.
 
@@ -55,15 +55,15 @@ from documented SIC-to-category rules (1 = core activity, 0.5 = adjacent industr
 from the company's legal name. Category activity in year t is intensity(c,t) = log(1+n(c,t)) / log(1+N(t)), where n
 counts startups of category c in cohorts t-2..t. The company's raw activity is the exposure-weighted sum, converted to a
 within-year percentile (0-100). Companies whose industry is known but not linked to any category score 0
-(2,714 firms, flagged); companies without a usable industry code are missing
-(964 firms).
+(5,758 firms, flagged); companies without a usable industry code are missing
+(1,257 firms).
 
 **Patent score.** volume score = 100 * log(1+patents) / log(1+10,000); momentum = (recent 3-year mean + 1) / (previous
 3-year mean + 1), mapped to 0-100 through log2; patent score = average of the two. Only complete patent years are used.
 
 **Index.** TDI = weighted average of available components (default 50/50), with the number of available components
 and a coverage score reported for every company-year. In 2024, the index is available for
-6,421 companies (mean 28.9, median 17.7).
+12,445 companies (mean 26.9, median 5.2).
 
 **Empirical model.** For outcome Y and horizon h:
 
@@ -80,15 +80,15 @@ at 1%/99% by year. Non-operating entities are excluded.
 
 | Outcome (t+1) | Year FE | Year + SIC2 FE | SIC2 x year FE | Firm + year FE | N obs | N firms |
 |---|---|---|---|---|---|---|
-| M1: ln public float | 0.0284***<br>(0.0067) | 0.0406***<br>(0.0108) | 0.0402***<br>(0.0110) | 0.0612***<br>(0.0215) | 33,678 | 4,373 |
-| M1b: valuation change | 0.0078***<br>(0.0027) | 0.0142***<br>(0.0048) | 0.0142***<br>(0.0048) | 0.0532***<br>(0.0186) | 31,572 | 4,183 |
-| M2: revenue growth | 0.0057***<br>(0.0011) | 0.0062***<br>(0.0016) | 0.0063***<br>(0.0016) | 0.0120<br>(0.0074) | 31,122 | 4,332 |
-| M3: R&D / assets | 0.0143***<br>(0.0017) | 0.0134***<br>(0.0027) | 0.0138***<br>(0.0027) | 0.0010<br>(0.0030) | 17,240 | 2,483 |
-| M4: CAPEX / assets | -0.0022***<br>(0.0001) | -0.0006***<br>(0.0002) | -0.0006***<br>(0.0002) | 0.0004<br>(0.0005) | 30,535 | 4,283 |
+| M1: ln public float | 0.0315***<br>(0.0054) | 0.0410***<br>(0.0091) | 0.0408***<br>(0.0092) | 0.0496***<br>(0.0185) | 47,137 | 7,863 |
+| M1b: valuation change | 0.0085***<br>(0.0022) | 0.0109***<br>(0.0040) | 0.0107***<br>(0.0040) | 0.0480***<br>(0.0155) | 43,656 | 7,363 |
+| M2: revenue growth | 0.0049***<br>(0.0009) | 0.0063***<br>(0.0014) | 0.0063***<br>(0.0014) | 0.0074<br>(0.0085) | 43,788 | 7,556 |
+| M3: R&D / assets | 0.0175***<br>(0.0020) | 0.0132***<br>(0.0031) | 0.0133***<br>(0.0032) | -0.0018<br>(0.0108) | 23,395 | 4,009 |
+| M4: CAPEX / assets | -0.0024***<br>(0.0001) | -0.0009***<br>(0.0002) | -0.0009***<br>(0.0002) | 0.0003<br>(0.0005) | 42,197 | 7,235 |
 
-With year effects, a 10-point higher index is associated with about 2.8% higher public float
+With year effects, a 10-point higher index is associated with about 3.1% higher public float
 one year later (p < 0.001). The valuation-change model (M1b), which conditions on current public float,
-yields a coefficient of 0.0078 (p = 0.004), i.e. the index is also associated with subsequent
+yields a coefficient of 0.0085 (p < 0.001), i.e. the index is also associated with subsequent
 valuation *changes*, not only levels. Comparing firms within the same two-digit industry, and absorbing
 industry-specific annual shocks (SIC2 x year), makes a pure sector-cycle explanation less likely, although it
 cannot rule out other omitted firm characteristics.
@@ -99,21 +99,21 @@ Fundamentals show a different pattern. Revenue growth and R&D intensity are high
 
 | Outcome | t+1 | t+2 | t+3 |
 |---|---|---|---|
-| M1: ln public float | 0.0284***<br>(0.0067) | 0.0286***<br>(0.0072) | 0.0274***<br>(0.0078) |
-| M1b: valuation change | 0.0078***<br>(0.0027) | 0.0119***<br>(0.0040) | 0.0125**<br>(0.0052) |
-| M2: revenue growth | 0.0057***<br>(0.0011) | 0.0047***<br>(0.0011) | 0.0043***<br>(0.0012) |
-| M3: R&D / assets | 0.0143***<br>(0.0017) | 0.0144***<br>(0.0018) | 0.0143***<br>(0.0018) |
-| M4: CAPEX / assets | -0.0022***<br>(0.0001) | -0.0023***<br>(0.0001) | -0.0023***<br>(0.0001) |
+| M1: ln public float | 0.0315***<br>(0.0054) | 0.0320***<br>(0.0059) | 0.0290***<br>(0.0066) |
+| M1b: valuation change | 0.0085***<br>(0.0022) | 0.0114***<br>(0.0034) | 0.0117***<br>(0.0045) |
+| M2: revenue growth | 0.0049***<br>(0.0009) | 0.0039***<br>(0.0010) | 0.0039***<br>(0.0011) |
+| M3: R&D / assets | 0.0175***<br>(0.0020) | 0.0185***<br>(0.0020) | 0.0185***<br>(0.0019) |
+| M4: CAPEX / assets | -0.0024***<br>(0.0001) | -0.0024***<br>(0.0001) | -0.0024***<br>(0.0001) |
 
 **Table 3. Robustness** (year FE, t+1)
 
 | Outcome | Unwinsorized ratios | Excl. largest 10% | Tech-linked industries only | Startup component only |
 |---|---|---|---|---|
-| M1: ln public float | n/a | 0.0316***<br>(0.0068) | 0.0626***<br>(0.0107) | 0.0282***<br>(0.0067) |
-| M1b: valuation change | n/a | 0.0091***<br>(0.0029) | 0.0178***<br>(0.0045) | 0.0078***<br>(0.0027) |
-| M2: revenue growth | 0.0056***<br>(0.0013) | 0.0056***<br>(0.0011) | 0.0049***<br>(0.0015) | 0.0056***<br>(0.0011) |
-| M3: R&D / assets | -0.1684<br>(0.1676) | 0.0151***<br>(0.0018) | 0.0098***<br>(0.0022) | 0.0143***<br>(0.0017) |
-| M4: CAPEX / assets | -0.0005<br>(0.0081) | -0.0022***<br>(0.0001) | -0.0012***<br>(0.0002) | -0.0022***<br>(0.0001) |
+| M1: ln public float | n/a | 0.0379***<br>(0.0055) | 0.0670***<br>(0.0088) | 0.0314***<br>(0.0054) |
+| M1b: valuation change | n/a | 0.0108***<br>(0.0024) | 0.0197***<br>(0.0038) | 0.0084***<br>(0.0022) |
+| M2: revenue growth | 0.0048***<br>(0.0011) | 0.0050***<br>(0.0010) | 0.0049***<br>(0.0013) | 0.0049***<br>(0.0009) |
+| M3: R&D / assets | -0.1088<br>(0.1207) | 0.0197***<br>(0.0021) | 0.0135***<br>(0.0027) | 0.0175***<br>(0.0020) |
+| M4: CAPEX / assets | -0.0196<br>(0.0190) | -0.0024***<br>(0.0001) | -0.0016***<br>(0.0002) | -0.0024***<br>(0.0001) |
 
 ## 5. Discussion
 
@@ -121,7 +121,7 @@ Taken together, the evidence is *consistent with* markets assigning higher and r
 
 First, the within-firm variation of the index comes from shifts in the composition of accelerator cohorts, an
 industry-level signal; it does not identify firm-specific innovation. Second, the R&D result is sensitive to extreme
-values: without winsorisation its coefficient is -0.168 (p = 0.315). Third, 60 of
+values: without winsorisation its coefficient is -0.109 (p = 0.368). Third, 60 of
 78 estimated coefficients have p < 0.05; consistent patterns across specifications are more informative than
 any single p-value.
 
@@ -136,7 +136,7 @@ any single p-value.
 
 ## 7. Conclusion
 
-A transparent technology-exposure index covering 7,385 listed companies is associated with subsequent
+A transparent technology-exposure index covering 13,702 listed companies is associated with subsequent
 valuations and fundamentals in the ways summarised in Tables 1-3. Associations with valuation survive industry, industry-by-year and firm fixed effects, while associations with fundamentals disappear within firms. Extending patent coverage to the full universe would turn the index into a firm-specific
 measure and allow a sharper test of whether markets price technological disruption before fundamentals.
 

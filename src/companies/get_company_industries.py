@@ -41,6 +41,8 @@ def extract(cik: int, data: dict) -> dict:
     return {
         "cik": cik,
         "status": "ok",
+        "name": data.get("name"),
+        "sec_tickers": ";".join(t for t in (data.get("tickers") or []) if t),
         "sic": data.get("sic") or None,
         "sic_description": data.get("sicDescription") or None,
         "entity_type": data.get("entityType"),
@@ -101,6 +103,13 @@ def main(retry_failed: bool = False, offline: bool = False) -> None:
         meta = pd.DataFrame(columns=["cik"])
     meta = meta.rename(columns={"cik": "company_id"})
     master = companies.merge(meta, on="company_id", how="left")
+    for col in ["name", "sec_tickers"]:
+        if col not in master:
+            master[col] = None
+    master["company_name"] = master["company_name"].fillna(master["name"])
+    master["ticker"] = master["ticker"].fillna(
+        master["sec_tickers"].replace("", None).str.split(";").str[0])
+    master["tickers"] = master["tickers"].fillna(master["sec_tickers"].replace("", None))
     master["sic"] = pd.to_numeric(master.get("sic"), errors="coerce").astype("Int64")
     master["sic2"] = (master["sic"] // 100).astype("Int64")
     master["industry"] = master["sic"].map(sic_division)
@@ -112,7 +121,7 @@ def main(retry_failed: bool = False, offline: bool = False) -> None:
     cols = ["company_id", "company_name", "ticker", "tickers", "n_tickers", "cik",
             "exchange", "sic", "sic2", "sic_description", "industry", "country",
             "state_of_incorporation", "entity_type", "fiscal_year_end",
-            "is_non_operating", "status"]
+            "is_non_operating", "universe_source", "status"]
     master = master[[c for c in cols if c in master.columns]].rename(
         columns={"status": "sec_lookup_status"})
     write_csv(master, config.COMPANIES_MASTER)

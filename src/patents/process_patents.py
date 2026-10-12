@@ -75,7 +75,8 @@ def load_legacy(master: pd.DataFrame) -> pd.DataFrame:
     if not config.PATENTS_LEGACY_BY_YEAR.exists():
         return pd.DataFrame()
     legacy = pd.read_csv(config.PATENTS_LEGACY_BY_YEAR)
-    ticker_to_id = master.set_index("ticker")["company_id"]
+    ticker_to_id = master.dropna(subset=["ticker"]).drop_duplicates("ticker").set_index(
+        "ticker")["company_id"]
     legacy["ticker"] = legacy["company"].map(config.LEGACY_PATENT_NAME_TO_TICKER)
     legacy["company_id"] = legacy["ticker"].map(ticker_to_id)
     unmapped = legacy[legacy["company_id"].isna()]["company"].unique()

@@ -15,6 +15,22 @@ from src.companies.build_companies import load_exchange_json
 log = get_logger("enrich_company_data")
 
 
+def xbrl_filers(known: set) -> pd.DataFrame:
+    """Companies with us-gaap:Assets in any index year (cached SEC frames), not in the ticker list."""
+    ciks = set()
+    for year in config.INDEX_YEARS:
+        path = config.RAW_FRAMES / f"us-gaap_Assets_CY{year}Q4I.csv.gz"
+        if path.exists():
+            ciks |= set(pd.read_csv(path, usecols=["cik"])["cik"].astype(int))
+        else:
+            log.warning("Missing cached frame %s; run the financials step first.", path.name)
+    extra = pd.DataFrame({"company_id": sorted(ciks - known)})
+    extra["n_tickers"] = 0   # names and tickers are filled from SEC submissions
+    extra["universe_source"] = "xbrl_filer"
+    log.info("Added %d XBRL filers not on the current ticker list", len(extra))
+    return extra
+
+
 def main() -> None:
     df = pd.read_csv(config.COMPANIES_CLEAN)
     df["company_id"] = normalize_cik(df["company_id"])
@@ -39,8 +55,12 @@ def main() -> None:
         n_tickers=("ticker", "size"),
         tickers=("ticker", lambda s: ";".join(s)),
     ).reset_index()
+    out["universe_source"] = "sec_ticker_list"
+    if config.INCLUDE_XBRL_FILERS:
+        out = pd.concat([out, xbrl_filers(set(out["company_id"].astype(int)))], ignore_index=True)
     out["cik"] = out["company_id"].astype(str).str.zfill(10)
-    out = out[["company_id", "company_name", "ticker", "tickers", "n_tickers", "cik", "exchange"]]
+    out = out[["company_id", "company_name", "ticker", "tickers", "n_tickers", "cik", "exchange",
+               "universe_source"]]
 
     write_csv(out, config.COMPANIES_ENRICHED)
     log.info("Companies (unique CIK): %d | with >1 ticker: %d | exchange known: %d -> %s",
