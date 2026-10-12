@@ -156,7 +156,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 24545,MOLSON COORS BEVERAGE CO,TAP,2024,39.6,0.0,19.8,2,1.0,industry_unlinked,0.0,True,2082.0,Manufacturing,False
 24741,CORNING INC /NY,GLW,2024,59.1,0.0,29.6,2,1.0,industry_unlinked,473.0,True,3357.0,Manufacturing,False
 25232,COUSINS PROPERTIES INC,CUZ,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
-25445,"Crane NXT, Co.",CXT,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3490.0,Manufacturing,False
+25445,"Crane NXT, Co.",CXT,2024,6.0,0.0,3.0,2,1.0,industry_unlinked,2.0,True,3490.0,Manufacturing,False
 25475,CRAWFORD & CO,CRD-A,2024,14.6,40.3,27.4,2,1.0,sic_linked,0.0,True,6411.0,"Finance, Insurance & Real Estate",False
 25598,ONEMAIN FINANCE CORP,,2024,,40.3,40.3,1,0.5,sic_linked,,,6141.0,"Finance, Insurance & Real Estate",False
 25743,"TherapeuticsMD, Inc.",TXMD,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2834.0,Manufacturing,False
@@ -258,7 +258,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 40545,GENERAL ELECTRIC CO,GE,2024,30.2,18.1,24.2,2,1.0,sic_linked,260.0,True,3600.0,Manufacturing,False
 40570,GEE Group Inc.,JOB,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7361.0,Services,False
 40704,GENERAL MILLS INC,GIS,2024,41.0,0.0,20.5,2,1.0,industry_unlinked,20.0,True,2040.0,Manufacturing,False
-40729,Ally Financial Inc.,ALLY,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
+40729,Ally Financial Inc.,ALLY,2024,57.5,40.3,48.9,2,1.0,sic_linked,3.0,True,6022.0,"Finance, Insurance & Real Estate",False
 40730,Motors Liquidation Co,,2024,9.7,76.9,43.3,2,1.0,sic_linked,5.0,True,3711.0,Manufacturing,False
 40888,"AEROJET ROCKETDYNE HOLDINGS, INC.",,2024,16.4,10.6,13.5,2,1.0,sic_linked,7.0,True,3760.0,Manufacturing,False
 40987,GENUINE PARTS CO,GPC,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5013.0,Wholesale Trade,False
@@ -561,7 +561,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 93556,"STANLEY BLACK & DECKER, INC.",SWK,2024,40.6,0.0,20.3,2,1.0,industry_unlinked,13.0,True,3420.0,Manufacturing,False
 93676,STARRETT L S CO,,2024,17.0,0.0,8.5,2,1.0,industry_unlinked,0.0,True,3420.0,Manufacturing,False
 93751,STATE STREET CORP,STT,2024,35.7,40.3,38.0,2,1.0,sic_linked,3.0,True,6022.0,"Finance, Insurance & Real Estate",False
-93859,OBH Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5812.0,Retail Trade,False
+93859,OBH Inc.,,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,5812.0,Retail Trade,False
 94049,STEPAN CO,SCL,2024,27.4,0.0,13.7,2,1.0,industry_unlinked,13.0,True,2840.0,Manufacturing,False
 94344,STEWART INFORMATION SERVICES CORP,STC,2024,,40.3,40.3,1,0.5,sic_linked,,,6361.0,"Finance, Insurance & Real Estate",False
 94845,LEVI STRAUSS & CO,LEVI,2024,65.4,0.0,32.7,2,1.0,industry_unlinked,16.0,True,2300.0,Manufacturing,False
@@ -685,7 +685,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 201779,EXCALIBUR INDUSTRIES,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1090.0,Mining,False
 202058,"L3HARRIS TECHNOLOGIES, INC. /DE/",LHX,2024,47.0,10.6,28.8,2,1.0,sic_linked,32.0,True,3812.0,Manufacturing,False
 202947,CAPITAL PROPERTIES INC /RI/,CPTP,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6519.0,"Finance, Insurance & Real Estate",False
-203077,"ST JUDE MEDICAL, LLC",,2024,,5.2,5.2,1,0.5,sic_linked,,,3845.0,Manufacturing,False
+203077,"ST JUDE MEDICAL, LLC",,2024,25.0,5.2,15.1,2,1.0,sic_linked,0.0,True,3845.0,Manufacturing,False
 203527,VARIAN MEDICAL SYSTEMS INC,,2024,36.9,5.2,21.0,2,1.0,sic_linked,47.0,True,3845.0,Manufacturing,False
 203596,WESBANCO INC,WSBC,2024,,40.3,40.3,1,0.5,sic_linked,,,6021.0,"Finance, Insurance & Real Estate",False
 205402,GRAYBAR ELECTRIC CO INC,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5063.0,Wholesale Trade,False
@@ -783,7 +783,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 318996,KEY ENERGY SERVICES INC,,2024,25.0,18.1,21.6,2,1.0,sic_linked,0.0,True,1389.0,Mining,False
 319016,"Fuse Medical, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5047.0,Wholesale Trade,False
 319200,REGENT TECHNOLOGIES INC,,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
-319201,KLA CORP,KLAC,2024,35.9,0.0,18.0,2,1.0,industry_unlinked,99.0,True,3827.0,Manufacturing,False
+319201,KLA CORP,KLAC,2024,35.6,0.0,17.8,2,1.0,industry_unlinked,99.0,True,3827.0,Manufacturing,False
 319458,Enservco Corp,,2024,14.6,18.1,16.4,2,1.0,sic_linked,0.0,True,1389.0,Mining,False
 319654,PERMIAN BASIN ROYALTY TRUST,PBT,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6792.0,"Finance, Insurance & Real Estate",True
 319655,SAN JUAN BASIN ROYALTY TRUST,SJT,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6792.0,"Finance, Insurance & Real Estate",True
@@ -888,7 +888,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 704366,"WOD Retail Solutions, Inc.",,2024,,5.2,5.2,1,0.5,sic_linked,,,3842.0,Manufacturing,False
 704415,"TIVITY HEALTH, INC.",,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,8090.0,Services,False
 704440,"KORU Medical Systems, Inc.",KRMD,2024,12.5,5.2,8.8,2,1.0,sic_linked,1.0,True,3841.0,Manufacturing,False
-704532,ONTO INNOVATION INC.,ONTO,2024,0.0,10.6,5.3,2,1.0,sic_linked,0.0,True,3829.0,Manufacturing,False
+704532,ONTO INNOVATION INC.,ONTO,2024,40.3,10.6,25.4,2,1.0,sic_linked,9.0,True,3829.0,Manufacturing,False
 704562,"Avid Bioservices, Inc.",,2024,25.0,64.1,44.6,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
 705432,SOUTHSIDE BANCSHARES INC,SBSI,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
 706129,HORIZON BANCORP INC /IN/,HBNC,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
@@ -1088,7 +1088,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 742112,INVACARE HOLDINGS Corp,,2024,35.4,5.2,20.3,2,1.0,sic_linked,3.0,True,3842.0,Manufacturing,False
 742126,"US Ecology Holdings, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4953.0,"Transportation, Communications & Utilities",False
 742278,RPC INC,RES,2024,14.6,18.1,16.4,2,1.0,sic_linked,0.0,True,1389.0,Mining,False
-743238,"SHYFT GROUP, INC.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3531.0,Manufacturing,False
+743238,"SHYFT GROUP, INC.",,2024,26.5,0.0,13.2,2,1.0,industry_unlinked,3.0,True,3531.0,Manufacturing,False
 743316,MAXIM INTEGRATED PRODUCTS INC,,2024,37.7,79.5,58.6,2,1.0,sic_linked,31.0,True,3674.0,Manufacturing,False
 743367,BAR HARBOR BANKSHARES,BHB,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
 743758,"AiAdvertising, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5900.0,Retail Trade,False
@@ -1115,7 +1115,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 749037,ORBOTECH LTD,,2024,10.4,10.6,10.5,2,1.0,sic_linked,0.0,True,3823.0,Manufacturing,False
 749038,"CCUR Holdings, Inc.",,2024,,40.3,40.3,1,0.5,sic_linked,,,6199.0,"Finance, Insurance & Real Estate",False
 749098,MAGNA INTERNATIONAL INC,MGA,2024,50.2,76.9,63.6,2,1.0,sic_linked,174.0,True,3714.0,Manufacturing,False
-749251,GARTNER INC,IT,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8741.0,Services,False
+749251,GARTNER INC,IT,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,True,8741.0,Services,False
 749647,"Imunon, Inc.",IMNN,2024,14.6,64.1,39.3,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
 749660,ICAD INC,,2024,6.6,5.2,5.9,2,1.0,sic_linked,0.0,True,3841.0,Manufacturing,False
 750004,"Light & Wonder, Inc.",LAWIL,2024,10.6,83.6,47.1,2,1.0,sic_linked,6.0,True,7373.0,Services,False
@@ -1410,7 +1410,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 813672,CADENCE DESIGN SYSTEMS INC,CDNS,2024,23.0,93.7,58.4,2,1.0,sic_linked,62.0,True,7372.0,Services,False
 813716,CIRTRAN CORP,CIRX,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2080.0,Manufacturing,False
 813762,ICAHN ENTERPRISES L.P.,IEP,2024,,18.1,18.1,1,0.5,sic_linked,,,2911.0,Manufacturing,False
-813828,Paramount Global,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4833.0,"Transportation, Communications & Utilities",False
+813828,Paramount Global,,2024,35.2,0.0,17.6,2,1.0,industry_unlinked,4.0,True,4833.0,"Transportation, Communications & Utilities",False
 813920,CEC ENTERTAINMENT INC,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5812.0,Retail Trade,False
 814046,ALP LIQUIDATING TRUST,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1531.0,Construction,False
 814052,TELEFONICA S A,TEFOF,2024,0.0,26.0,13.0,2,1.0,sic_linked,0.0,True,4813.0,"Transportation, Communications & Utilities",False
@@ -1538,7 +1538,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 832988,SIGNET JEWELERS LTD,SIG,2024,35.4,0.0,17.7,2,1.0,industry_unlinked,0.0,True,5944.0,Retail Trade,False
 833040,FRANKLIN UNIVERSAL TRUST,FT,2024,,,,0,0.0,missing_sic,,,,,False
 833079,Meritage Homes CORP,MTH,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1531.0,Construction,False
-833444,Johnson Controls International plc,JCI,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3585.0,Manufacturing,False
+833444,Johnson Controls International plc,JCI,2024,57.0,0.0,28.5,2,1.0,industry_unlinked,141.0,True,3585.0,Manufacturing,False
 833640,POWER INTEGRATIONS INC,POWI,2024,24.4,79.5,52.0,2,1.0,sic_linked,21.0,True,3674.0,Manufacturing,False
 833795,HOMEFED CORP,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6500.0,"Finance, Insurance & Real Estate",False
 834071,TOYOTA MOTOR CREDIT CORP,,2024,,40.3,40.3,1,0.5,sic_linked,,,6141.0,"Finance, Insurance & Real Estate",False
@@ -2082,7 +2082,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 908315,WINMARK CORP,WINA,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5900.0,Retail Trade,False
 908598,"ATRM Holdings, Inc.",,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,2452.0,Manufacturing,False
 908732,SINOPEC SHANGHAI PETROCHEMICAL CO LTD,SPTJF,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2821.0,Manufacturing,False
-908937,SIRIUS XM HOLDINGS INC.,SIRI,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4832.0,"Transportation, Communications & Utilities",False
+908937,SIRIUS XM HOLDINGS INC.,SIRI,2024,34.9,0.0,17.4,2,1.0,industry_unlinked,11.0,True,4832.0,"Transportation, Communications & Utilities",False
 908993,Invesco Advantage Municipal Income Trust II,VKI,2024,,,,0,0.0,missing_sic,,,,,False
 909037,CHEMICAL & MINING CO OF CHILE INC,SQM,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1400.0,Mining,False
 909108,DIAMOND HILL INVESTMENT GROUP INC,,2024,,40.3,40.3,1,0.5,sic_linked,,,6282.0,"Finance, Insurance & Real Estate",False
@@ -2095,7 +2095,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 909954,"KEURIG GREEN MOUNTAIN, INC.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2090.0,Manufacturing,False
 910073,"FLAGSTAR BANK, NATIONAL ASSOCIATION",FLG,2024,25.0,40.3,32.6,2,1.0,sic_linked,0.0,True,6036.0,"Finance, Insurance & Real Estate",False
 910108,LXP Industrial Trust,LXP,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
-910267,TITAN PHARMACEUTICALS INC,,2024,,64.1,64.1,1,0.5,sic_linked,,,2836.0,Manufacturing,False
+910267,TITAN PHARMACEUTICALS INC,,2024,25.0,64.1,44.6,2,1.0,sic_linked,0.0,True,2836.0,Manufacturing,False
 910322,ASTORIA FINANCIAL CORP,,2024,,40.3,40.3,1,0.5,sic_linked,,,6035.0,"Finance, Insurance & Real Estate",False
 910329,MEDIFAST INC,MED,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2090.0,Manufacturing,False
 910406,HAIN CELESTIAL GROUP INC,HAIN,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2000.0,Manufacturing,False
@@ -2150,7 +2150,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 913497,WNC HOUSING TAX CREDIT FUND IV L P SERIES 2,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6513.0,"Finance, Insurance & Real Estate",False
 913760,StoneX Group Inc.,SNEX,2024,,40.3,40.3,1,0.5,sic_linked,,,6200.0,"Finance, Insurance & Real Estate",False
 913778,BF Garden Tax Credit Fund IV L.P.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6513.0,"Finance, Insurance & Real Estate",False
-914025,PLANTRONICS INC /CA/,,2024,20.0,26.0,23.0,2,1.0,sic_linked,0.0,True,3661.0,Manufacturing,False
+914025,PLANTRONICS INC /CA/,,2024,11.4,26.0,18.7,2,1.0,sic_linked,0.0,True,3661.0,Manufacturing,False
 914122,"Perma-Pipe International Holdings, Inc.",PPIH,2024,25.0,10.6,17.8,2,1.0,sic_linked,0.0,True,3564.0,Manufacturing,False
 914138,MIDDLEBURG FINANCIAL CORP,,2024,,40.3,40.3,1,0.5,sic_linked,,,6021.0,"Finance, Insurance & Real Estate",False
 914139,PARKERVISION INC,PRKR,2024,0.0,26.0,13.0,2,1.0,sic_linked,0.0,True,3663.0,Manufacturing,False
@@ -2192,7 +2192,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 918160,Cleveland-Cliffs Steel Holding Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3312.0,Manufacturing,False
 918251,MOTORCAR PARTS OF AMERICA INC,MPAA,2024,25.0,76.9,51.0,2,1.0,sic_linked,0.0,True,3714.0,Manufacturing,False
 918386,QLOGIC CORP,,2024,25.0,82.3,53.6,2,1.0,sic_linked,0.0,True,3576.0,Manufacturing,False
-918541,NN INC,NNBR,2024,,10.6,10.6,1,0.5,sic_linked,,,3540.0,Manufacturing,False
+918541,NN INC,NNBR,2024,14.6,10.6,12.6,2,1.0,sic_linked,0.0,True,3540.0,Manufacturing,False
 918543,CASTLE GROUP INC,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7011.0,Services,False
 918545,BALTIC INTERNATIONAL USA INC,BISA,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 918573,GROOVE BOTANICALS INC.,GRVE,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
@@ -2455,7 +2455,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1000694,NOVAVAX INC,NVAX,2024,22.1,64.1,43.1,2,1.0,sic_linked,3.0,True,2836.0,Manufacturing,False
 1000697,WATERS CORP /DE/,WAT,2024,63.0,5.2,34.1,2,1.0,sic_linked,10.0,True,3826.0,Manufacturing,False
 1000753,"INSPERITY, INC.",NSP,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7363.0,Services,False
-1001039,TWDC Enterprises 18 Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7990.0,Services,False
+1001039,TWDC Enterprises 18 Corp.,,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,7990.0,Services,False
 1001082,DISH Network CORP,,2024,79.5,0.0,39.8,2,1.0,industry_unlinked,227.0,True,4841.0,"Transportation, Communications & Utilities",False
 1001085,BROOKFIELD Corp /ON/,BN,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6512.0,"Finance, Insurance & Real Estate",False
 1001115,GEOSPACE TECHNOLOGIES CORP,GEOS,2024,14.6,10.6,12.6,2,1.0,sic_linked,0.0,True,3829.0,Manufacturing,False
@@ -2486,7 +2486,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1002638,OPEN TEXT CORP,OTEX,2024,53.3,83.6,68.4,2,1.0,sic_linked,232.0,True,7373.0,Services,False
 1002771,"Integrated Cannabis Solutions, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,100.0,"Agriculture, Forestry & Fishing",False
 1002788,BANCA MONTE DEI PASCHI DI SIENA SPA,BMDPF,2024,,,,0,0.0,uninformative_sic,,,8880.0,Services,False
-1002910,AMEREN CORP,AEE,2024,,18.1,18.1,1,0.5,sic_linked,,,4931.0,"Transportation, Communications & Utilities",False
+1002910,AMEREN CORP,AEE,2024,35.4,18.1,26.8,2,1.0,sic_linked,0.0,True,4931.0,"Transportation, Communications & Utilities",False
 1003078,MSC INDUSTRIAL DIRECT CO INC,MSM,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5084.0,Wholesale Trade,False
 1003201,"MMA Capital Holdings, LLC",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6500.0,"Finance, Insurance & Real Estate",False
 1003344,HEADWATERS INC,,2024,23.2,0.0,11.6,2,1.0,industry_unlinked,1.0,True,3272.0,Manufacturing,False
@@ -2867,7 +2867,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1043337,STONERIDGE INC,SRI,2024,61.9,76.9,69.4,2,1.0,sic_linked,8.0,True,3714.0,Manufacturing,False
 1043509,SONIC AUTOMOTIVE INC,SAH,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5500.0,Retail Trade,False
 1043565,POTOMAC FUTURES FUND LP,,2024,,40.3,40.3,1,0.5,sic_linked,,,6221.0,"Finance, Insurance & Real Estate",True
-1043604,JUNIPER NETWORKS INC,,2024,,82.3,82.3,1,0.5,sic_linked,,,3576.0,Manufacturing,False
+1043604,JUNIPER NETWORKS INC,,2024,55.2,82.3,68.8,2,1.0,sic_linked,272.0,True,3576.0,Manufacturing,False
 1043894,WOLF ENERGY SERVICES INC.,,2024,,53.1,53.1,1,0.5,sic_linked,,,3559.0,Manufacturing,False
 1043951,CAMPBELL FUND TRUST,,2024,,40.3,40.3,1,0.5,sic_linked,,,6221.0,"Finance, Insurance & Real Estate",True
 1043961,"Precipio, Inc.",PRPO,2024,25.0,5.2,15.1,2,1.0,sic_linked,0.0,True,3826.0,Manufacturing,False
@@ -2908,7 +2908,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1048286,MARRIOTT INTERNATIONAL INC /MD/,MAR,2024,14.1,0.0,7.0,2,1.0,industry_unlinked,1.0,True,7011.0,Services,False
 1048477,BIOMARIN PHARMACEUTICAL INC,BMRN,2024,19.1,64.1,41.6,2,1.0,sic_linked,3.0,True,2834.0,Manufacturing,False
 1048695,"F5, INC.",FFIV,2024,19.1,82.3,50.7,2,1.0,sic_linked,10.0,True,3576.0,Manufacturing,False
-1048911,FEDEX CORP,FDX,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4513.0,"Transportation, Communications & Utilities",False
+1048911,FEDEX CORP,FDX,2024,19.3,0.0,9.6,2,1.0,industry_unlinked,6.0,True,4513.0,"Transportation, Communications & Utilities",False
 1049011,KID CASTLE EDUCATIONAL CORP,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5040.0,Wholesale Trade,False
 1049502,MKS INC,MKSI,2024,38.1,10.6,24.4,2,1.0,sic_linked,20.0,True,3823.0,Manufacturing,False
 1049521,MERCURY SYSTEMS INC,MRCY,2024,8.6,0.6,4.6,2,1.0,sic_linked,1.0,True,3670.0,Manufacturing,False
@@ -3084,7 +3084,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1069152,ATEL CAPITAL EQUIPMENT FUND VIII LLC,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7359.0,Services,False
 1069157,EAST WEST BANCORP INC,EWBC,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
 1069183,"AXON ENTERPRISE, INC.",AXON,2024,46.0,0.0,23.0,2,1.0,industry_unlinked,30.0,True,3480.0,Manufacturing,False
-1069202,LENNOX INTERNATIONAL INC,LII,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3585.0,Manufacturing,False
+1069202,LENNOX INTERNATIONAL INC,LII,2024,43.3,0.0,21.6,2,1.0,industry_unlinked,49.0,True,3585.0,Manufacturing,False
 1069258,"KRATOS DEFENSE & SECURITY SOLUTIONS, INC.",KTOS,2024,25.0,10.6,17.8,2,1.0,sic_linked,0.0,True,3760.0,Manufacturing,False
 1069308,Acer Therapeutics Inc.,,2024,28.8,64.1,46.4,2,1.0,sic_linked+name,1.0,True,2834.0,Manufacturing,False
 1069336,SWISSCOM AG,SCMWY,2024,17.4,26.0,21.7,2,1.0,sic_linked,6.0,True,4813.0,"Transportation, Communications & Utilities",False
@@ -3224,7 +3224,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1084267,"Mobiquity Technologies, Inc.",MOBQ,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7310.0,Services,False
 1084332,SALON MEDIA GROUP INC,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7310.0,Services,False
 1084370,"Blockchain Industries, Inc.",,2024,,40.3,40.3,1,0.5,name_only,,,7389.0,Services,False
-1084384,PARETEUM Corp,,2024,,83.6,83.6,1,0.5,sic_linked,,,7373.0,Services,False
+1084384,PARETEUM Corp,,2024,14.6,83.6,49.1,2,1.0,sic_linked,0.0,True,7373.0,Services,False
 1084475,"Video River Networks, Inc.",NIHK,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6500.0,"Finance, Insurance & Real Estate",False
 1084551,Community Redevelopment Inc.,CRDV,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6552.0,"Finance, Insurance & Real Estate",False
 1084554,LIGHTBRIDGE Corp,LTBR,2024,14.6,0.0,7.3,2,1.0,industry_unlinked,0.0,True,2810.0,Manufacturing,False
@@ -3298,7 +3298,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1091491,HCSB FINANCIAL CORP,,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
 1091587,ABB LTD,ABBNY,2024,49.1,18.1,33.6,2,1.0,sic_linked,255.0,True,3613.0,Manufacturing,False
 1091596,"Nuo Therapeutics, Inc.",AURX,2024,25.0,5.2,15.1,2,1.0,sic_linked+name,0.0,True,3841.0,Manufacturing,False
-1091667,"CHARTER COMMUNICATIONS, INC. /MO/",CHTR,2024,25.9,0.0,13.0,2,1.0,industry_unlinked,21.0,True,4841.0,"Transportation, Communications & Utilities",False
+1091667,"CHARTER COMMUNICATIONS, INC. /MO/",CHTR,2024,75.7,0.0,37.8,2,1.0,industry_unlinked,192.0,True,4841.0,"Transportation, Communications & Utilities",False
 1091748,"Argo Group International Holdings, Inc.",,2024,,40.3,40.3,1,0.5,sic_linked,,,6361.0,"Finance, Insurance & Real Estate",False
 1091862,LANXESS Solutions US Inc.,,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,2820.0,Manufacturing,False
 1091883,CIRCOR INTERNATIONAL INC,,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,True,3490.0,Manufacturing,False
@@ -3345,7 +3345,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1095348,O2MICRO INTERNATIONAL LTD,,2024,34.5,79.5,57.0,2,1.0,sic_linked,9.0,True,3674.0,Manufacturing,False
 1095435,Alpha Compute Corp,ALP,2024,,40.3,40.3,1,0.5,sic_linked,,,6199.0,"Finance, Insurance & Real Estate",False
 1095565,HEALTHSTREAM INC,HSTM,2024,25.4,93.7,59.6,2,1.0,sic_linked,2.0,True,7370.0,Services,False
-1095651,Safehold Inc.,SAFE,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
+1095651,Safehold Inc.,SAFE,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,6798.0,"Finance, Insurance & Real Estate",False
 1095747,JACADA LTD,,2024,25.0,93.7,59.4,2,1.0,sic_linked,0.0,True,7372.0,Services,False
 1095981,"CERENOME, INC.",CNSY,2024,25.0,5.2,15.1,2,1.0,sic_linked,0.0,True,3841.0,Manufacturing,False
 1095996,WILLIAM LYON HOMES,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1531.0,Construction,False
@@ -3453,10 +3453,10 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1106215,KDDI CORP,KDDIF,2024,,,,0,0.0,missing_sic,,,,,False
 1106644,"CHINA PHARMA HOLDINGS, INC.",CPHI,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
 1106645,DEBT RESOLVE INC,,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
-1106838,"Sonnet BioTherapeutics Holdings, Inc.",,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2834.0,Manufacturing,False
+1106838,"Sonnet BioTherapeutics Holdings, Inc.",,2024,39.0,64.1,51.6,2,1.0,sic_linked+name,2.0,True,2834.0,Manufacturing,False
 1106861,CS DIAGNOSTICS CORP.,CSDX,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2842.0,Manufacturing,False
 1107280,OCULUS INC.,OVTZ,2024,,,,0,0.0,uninformative_sic,,,7389.0,Services,False
-1107421,"Alaunos Therapeutics, Inc.",TCRT,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2834.0,Manufacturing,False
+1107421,"Alaunos Therapeutics, Inc.",TCRT,2024,25.0,64.1,44.6,2,1.0,sic_linked+name,0.0,True,2834.0,Manufacturing,False
 1107457,INFINEON TECHNOLOGIES AG,IFNNY,2024,52.0,79.5,65.8,2,1.0,sic_linked,546.0,True,3674.0,Manufacturing,False
 1107694,"RACKSPACE HOSTING, INC.",,2024,0.0,93.7,46.8,2,1.0,sic_linked,0.0,True,7370.0,Services,False
 1107796,MOTIVATING THE MASSES INC,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7200.0,Services,False
@@ -3518,7 +3518,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1113809,BUILD-A-BEAR WORKSHOP INC,BBW,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,5945.0,Retail Trade,False
 1114208,"NightCulture, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7900.0,Services,False
 1114220,KERYX BIOPHARMACEUTICALS INC,,2024,14.6,64.1,39.3,2,1.0,sic_linked+name,0.0,True,2834.0,Manufacturing,False
-1114446,UBS AG,AMUB,2024,,40.3,40.3,1,0.5,sic_linked,,,6021.0,"Finance, Insurance & Real Estate",False
+1114446,UBS AG,AMUB,2024,25.0,40.3,32.6,2,1.0,sic_linked,0.0,True,6021.0,"Finance, Insurance & Real Estate",False
 1114448,NOVARTIS AG,NVS,2024,30.1,64.1,47.1,2,1.0,sic_linked,91.0,True,2834.0,Manufacturing,False
 1114483,Integer Holdings Corp,ITGR,2024,25.5,5.2,15.4,2,1.0,sic_linked,16.0,True,3845.0,Manufacturing,False
 1114700,GRUPO FINANCIERO GALICIA SA,GGAL,2024,,40.3,40.3,1,0.5,sic_linked,,,6029.0,"Finance, Insurance & Real Estate",False
@@ -3622,7 +3622,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1126328,PRINCIPAL FINANCIAL GROUP INC,PFG,2024,14.6,40.3,27.4,2,1.0,sic_linked,0.0,True,6321.0,"Finance, Insurance & Real Estate",False
 1126741,GSI TECHNOLOGY INC,GSIT,2024,18.4,79.5,49.0,2,1.0,sic_linked,13.0,True,3674.0,Manufacturing,False
 1126874,ENERPLUS Corp,,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
-1126956,SPIRE INC,SR,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4924.0,"Transportation, Communications & Utilities",False
+1126956,SPIRE INC,SR,2024,3.8,0.0,1.9,2,1.0,industry_unlinked,1.0,True,4924.0,"Transportation, Communications & Utilities",False
 1126961,GRANDSOUTH BANCORPORATION,,2024,,40.3,40.3,1,0.5,sic_linked,,,6036.0,"Finance, Insurance & Real Estate",False
 1126975,"Magellan Midstream Partners, L.P.",,2024,39.1,0.0,19.6,2,1.0,industry_unlinked,1.0,True,4610.0,"Transportation, Communications & Utilities",False
 1127160,CAROLINA BANK HOLDINGS INC,,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
@@ -3650,7 +3650,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1129928,ONCOLYTICS BIOTECH INC,ONCY,2024,17.0,64.1,40.6,2,1.0,sic_linked+name,0.0,True,2834.0,Manufacturing,False
 1130144,SIERRA BANCORP,BSRR,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
 1130166,"Bio Green Med Solution, Inc.",BGMS,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5099.0,Wholesale Trade,False
-1130310,CENTERPOINT ENERGY INC,CNP,2024,,18.1,18.1,1,0.5,sic_linked,,,4911.0,"Transportation, Communications & Utilities",False
+1130310,CENTERPOINT ENERGY INC,CNP,2024,39.6,18.1,28.8,2,1.0,sic_linked,0.0,True,4911.0,"Transportation, Communications & Utilities",False
 1130464,BLACK HILLS CORP /SD/,BKH,2024,45.0,18.1,31.6,2,1.0,sic_linked,6.0,True,4911.0,"Transportation, Communications & Utilities",False
 1130591,XENOPORT INC,,2024,25.0,64.1,44.6,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
 1130598,"Traws Pharma, Inc.",TRAW,2024,36.8,64.1,50.4,2,1.0,sic_linked,1.0,True,2834.0,Manufacturing,False
@@ -3839,7 +3839,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1162896,Prairie Operating Co.,PROP,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
 1163165,CONOCOPHILLIPS,COP,2024,42.5,18.1,30.3,2,1.0,sic_linked,61.0,True,2911.0,Manufacturing,False
 1163199,FNB BANCORP/CA/,,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
-1163302,UNITED STATES STEEL CORP,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3312.0,Manufacturing,False
+1163302,UNITED STATES STEEL CORP,,2024,47.1,0.0,23.6,2,1.0,industry_unlinked,3.0,True,3312.0,Manufacturing,False
 1163348,"Allied World Assurance Co Holdings, GmbH",,2024,,40.3,40.3,1,0.5,sic_linked,,,6331.0,"Finance, Insurance & Real Estate",False
 1163370,NORTHRIM BANCORP INC,NRIM,2024,,40.3,40.3,1,0.5,sic_linked,,,6035.0,"Finance, Insurance & Real Estate",False
 1163389,NEW PEOPLES BANKSHARES INC,NWPP,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
@@ -4204,7 +4204,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1275229,"General Moly, Inc",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1000.0,Mining,False
 1275283,REYNOLDS AMERICAN INC,,2024,36.6,0.0,18.3,2,1.0,industry_unlinked,25.0,True,2111.0,Manufacturing,False
 1275477,"BIMINI CAPITAL MANAGEMENT, INC.",BMNM,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
-1276187,Energy Transfer LP,ET,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4922.0,"Transportation, Communications & Utilities",False
+1276187,Energy Transfer LP,ET,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,4922.0,"Transportation, Communications & Utilities",False
 1276520,GENWORTH FINANCIAL INC,GNW,2024,25.0,40.3,32.6,2,1.0,sic_linked,0.0,True,6311.0,"Finance, Insurance & Real Estate",False
 1276531,"SCIENTIFIC ENERGY, INC",,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,6794.0,"Finance, Insurance & Real Estate",False
 1276591,HANSEN MEDICAL INC,,2024,25.0,5.2,15.1,2,1.0,sic_linked,0.0,True,3842.0,Manufacturing,False
@@ -4321,7 +4321,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1289850,"NeuroMetrix, Inc.",,2024,28.1,5.2,16.7,2,1.0,sic_linked,2.0,True,3841.0,Manufacturing,False
 1289877,SFL Corp Ltd.,SFL,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4412.0,"Transportation, Communications & Utilities",False
 1289945,"Spok Holdings, Inc",SPOK,2024,14.6,26.0,20.3,2,1.0,sic_linked,0.0,True,4812.0,"Transportation, Communications & Utilities",False
-1290109,"LG Display Co., Ltd.",LPL,2024,,0.6,0.6,1,0.5,sic_linked,,,3679.0,Manufacturing,False
+1290109,"LG Display Co., Ltd.",LPL,2024,56.1,0.6,28.4,2,1.0,sic_linked,835.0,True,3679.0,Manufacturing,False
 1290149,"Sierra Oncology, Inc.",,2024,25.0,64.1,44.6,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
 1290476,Village Bank & Trust Financial Corp.,,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
 1290506,ECOLOCAP SOLUTIONS INC.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3990.0,Manufacturing,False
@@ -4442,7 +4442,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1307969,"024 Pharma, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3089.0,Manufacturing,False
 1308027,Vystar Corp,VYST,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3060.0,Manufacturing,False
 1308106,Seapeak LLC,SEAL-PA,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4400.0,"Transportation, Communications & Utilities",False
-1308161,"TWENTY-FIRST CENTURY FOX, INC.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4841.0,"Transportation, Communications & Utilities",False
+1308161,"TWENTY-FIRST CENTURY FOX, INC.",,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,4841.0,"Transportation, Communications & Utilities",False
 1308208,"UNIVERSAL LOGISTICS HOLDINGS, INC.",ULH,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4213.0,"Transportation, Communications & Utilities",False
 1308547,"Dolby Laboratories, Inc.",DLB,2024,48.4,0.0,24.2,2,1.0,industry_unlinked,249.0,True,6794.0,"Finance, Insurance & Real Estate",False
 1308569,MAJOR LEAGUE FOOTBALL INC,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7900.0,Services,False
@@ -4520,7 +4520,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1317945,"Omega Flex, Inc.",OFLX,2024,52.7,0.0,26.4,2,1.0,industry_unlinked,3.0,True,3430.0,Manufacturing,False
 1318008,Zumiez Inc,ZUMZ,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5600.0,Retail Trade,False
 1318084,"Core-Mark Holding Company, LLC",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5141.0,Wholesale Trade,False
-1318220,"Waste Connections, Inc.",WCN,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4953.0,"Transportation, Communications & Utilities",False
+1318220,"Waste Connections, Inc.",WCN,2024,14.6,0.0,7.3,2,1.0,industry_unlinked,0.0,True,4953.0,"Transportation, Communications & Utilities",False
 1318268,Madison Technologies Inc.,MDEX,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5900.0,Retail Trade,False
 1318482,KIDOZ INC.,KDOZF,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7311.0,Services,False
 1318484,Citi Trends Inc,CTRN,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5600.0,Retail Trade,False
@@ -4720,7 +4720,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1339688,LION COPPER & GOLD CORP.,LCGMF,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1000.0,Mining,False
 1339947,Viacom Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4841.0,"Transportation, Communications & Utilities",False
 1339970,aTYR PHARMA INC,ATYR,2024,3.8,64.1,33.9,2,1.0,sic_linked,1.0,True,2836.0,Manufacturing,False
-1340122,"Calumet Specialty Products Partners, L.P.",,2024,,18.1,18.1,1,0.5,sic_linked,,,2911.0,Manufacturing,False
+1340122,"Calumet Specialty Products Partners, L.P.",,2024,14.6,18.1,16.4,2,1.0,sic_linked,0.0,True,2911.0,Manufacturing,False
 1340127,Carbonite Inc,,2024,15.3,85.9,50.6,2,1.0,sic_linked,0.0,True,7374.0,Services,False
 1340476,DIRTT ENVIRONMENTAL SOLUTIONS LTD,DRTTF,2024,41.8,93.7,67.8,2,1.0,sic_linked,11.0,True,7372.0,Services,False
 1340652,"ChemoCentryx, Inc.",,2024,34.8,64.1,49.4,2,1.0,sic_linked,12.0,True,2834.0,Manufacturing,False
@@ -4903,7 +4903,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1359699,"WHOLEHEALTH PRODUCTS, INC.",,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
 1359841,Hanesbrands Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5600.0,Retail Trade,False
 1359931,"Protara Therapeutics, Inc.",TARA,2024,22.2,64.1,43.2,2,1.0,sic_linked+name,1.0,True,2836.0,Manufacturing,False
-1360214,"HARROW, INC.",HROW,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
+1360214,"HARROW, INC.",HROW,2024,0.0,64.1,32.0,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
 1360442,"Dogecoin Cash, Inc.",DOGP,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7200.0,Services,False
 1360530,"Vitamin Shoppe, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5400.0,Retail Trade,False
 1360565,"Where Food Comes From, Inc.",WFCF,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
@@ -4941,7 +4941,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1364252,InZinc Mining Ltd.,LTHIF,2024,,,,0,0.0,missing_sic,,,,,False
 1364397,RIDGEWOOD ENERGY T FUND LLC,,2024,,18.1,18.1,1,0.5,sic_linked,,,1382.0,Mining,False
 1364479,HERC HOLDINGS INC,HRI,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7350.0,Services,False
-1364742,"BlackRock Finance, Inc.",,2024,,40.3,40.3,1,0.5,sic_linked,,,6211.0,"Finance, Insurance & Real Estate",False
+1364742,"BlackRock Finance, Inc.",,2024,29.8,40.3,35.0,2,1.0,sic_linked,0.0,True,6211.0,"Finance, Insurance & Real Estate",False
 1364856,"Monarch Financial Holdings, Inc.",,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
 1364885,"Spirit AeroSystems Holdings, Inc.",,2024,47.9,10.6,29.2,2,1.0,sic_linked,10.0,True,3728.0,Manufacturing,False
 1364954,"CHEGG, INC",CHGG,2024,40.3,0.0,20.2,2,1.0,industry_unlinked,4.0,True,8200.0,Services,False
@@ -5218,7 +5218,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1389050,"Archrock, Inc.",AROC,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,4922.0,"Transportation, Communications & Utilities",False
 1389067,"ARtelligence Holdings, Inc.",,2024,14.6,93.7,54.2,2,1.0,sic_linked,0.0,True,7372.0,Services,False
 1389072,"HeartWare International, Inc.",,2024,13.0,5.2,9.1,2,1.0,sic_linked,10.0,True,3841.0,Manufacturing,False
-1389170,Targa Resources Corp.,TRGP,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4922.0,"Transportation, Communications & Utilities",False
+1389170,Targa Resources Corp.,TRGP,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,4922.0,"Transportation, Communications & Utilities",False
 1389207,Gafisa S.A.,GFASY,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1520.0,Construction,False
 1389415,INFRASTRUCTURE DEVELOPMENTS CORP.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8711.0,Services,False
 1389518,"Clubhouse Media Group, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7900.0,Services,False
@@ -5565,7 +5565,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1418115,"Healthcare Solutions Management Group, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8011.0,Services,False
 1418121,"Apple Hospitality REIT, Inc.",APLE,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1418133,"Biostar Pharmaceuticals, Inc.",,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
-1418135,Keurig Dr Pepper Inc.,KDP,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2080.0,Manufacturing,False
+1418135,Keurig Dr Pepper Inc.,KDP,2024,52.2,0.0,26.1,2,1.0,industry_unlinked,4.0,True,2080.0,Manufacturing,False
 1418149,Hillcrest Energy Technologies Ltd.,HLRTF,2024,,,,0,0.0,missing_sic,,,,,False
 1418175,DuPont Fabros Technology LP,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1418302,Renewable Energy Acquisition Corp.,,2024,,18.1,18.1,1,0.5,name_only,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -5685,7 +5685,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1426850,"LEAF Equipment Finance Fund 4, L.P.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7350.0,Services,False
 1426945,"Echo Global Logistics, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4731.0,"Transportation, Communications & Utilities",False
 1427437,"ENTERGY TEXAS, INC.",ETI-P,2024,,18.1,18.1,1,0.5,sic_linked,,,4911.0,"Transportation, Communications & Utilities",False
-1427570,"Vyome Holdings, Inc",HIND,2024,0.0,64.1,32.0,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
+1427570,"Vyome Holdings, Inc",HIND,2024,20.0,64.1,42.0,2,1.0,sic_linked,3.0,True,2834.0,Manufacturing,False
 1427644,"Solidus Communications, Inc.",SLDC,2024,,26.0,26.0,1,0.5,sic_linked,,,4813.0,"Transportation, Communications & Utilities",False
 1427728,YNVISIBLE INTERACTIVE INC.,YNVYF,2024,,,,0,0.0,missing_sic,,,,,False
 1427901,Gold Strike Resources Corp.,GDSRF,2024,,,,0,0.0,missing_sic,,,,,False
@@ -6108,12 +6108,12 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1467076,"Colony Capital, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1467093,Scorpio Gold Corp,SGLD,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1040.0,Mining,False
 1467154,"NVN Liquidation, Inc.",,2024,0.0,64.1,32.0,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
-1467373,Accenture plc,ACN,2024,,,,0,0.0,uninformative_sic,,,7389.0,Services,False
+1467373,Accenture plc,ACN,2024,37.9,,37.9,1,0.5,uninformative_sic,151.0,True,7389.0,Services,False
 1467623,"DROPBOX, INC.",DBX,2024,34.5,93.7,64.1,2,1.0,sic_linked,95.0,True,7372.0,Services,False
 1467652,"Neos Therapeutics, Inc.",,2024,14.6,64.1,39.3,2,1.0,sic_linked+name,0.0,True,2834.0,Manufacturing,False
 1467760,"Apollo Commercial Real Estate Finance, Inc.",ARI,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1467761,"FiEE, Inc.",FIEE,2024,25.0,26.0,25.5,2,1.0,sic_linked,0.0,True,3661.0,Manufacturing,False
-1467858,General Motors Co,GM,2024,,76.9,76.9,1,0.5,sic_linked,,,3711.0,Manufacturing,False
+1467858,General Motors Co,GM,2024,50.0,76.9,63.4,2,1.0,sic_linked,722.0,True,3711.0,Manufacturing,False
 1467913,808 RENEWABLE ENERGY CORP,,2024,,18.1,18.1,1,0.5,sic_linked+name,,,4932.0,"Transportation, Communications & Utilities",False
 1468010,"Steadfast Income REIT, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1468091,VEON Ltd.,VEON,2024,,26.0,26.0,1,0.5,sic_linked,,,4812.0,"Transportation, Communications & Utilities",False
@@ -6171,7 +6171,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1472468,"XT Energy Group, Inc.",,2024,,76.9,76.9,1,0.5,sic_linked,,,3621.0,Manufacturing,False
 1472494,"United States Brent Oil Fund, LP",BNO,2024,,40.3,40.3,1,0.5,sic_linked,,,6221.0,"Finance, Insurance & Real Estate",True
 1472595,R1 RCM Holdco Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8741.0,Services,False
-1472787,First American Financial Corp,FAF,2024,,40.3,40.3,1,0.5,sic_linked,,,6361.0,"Finance, Insurance & Real Estate",False
+1472787,First American Financial Corp,FAF,2024,31.6,40.3,36.0,2,1.0,sic_linked,1.0,True,6361.0,"Finance, Insurance & Real Estate",False
 1472847,HARRISON VICKERS & WATERMAN INC,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5810.0,Retail Trade,False
 1472879,WHITECAP RESOURCES INC.,WCPRF,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
 1473078,Chesapeake Lodging Trust,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
@@ -6484,7 +6484,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1498547,"CIM GROUP, INC.",CMRF,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1498576,ChinaCache International Holdings Ltd.,,2024,,85.9,85.9,1,0.5,sic_linked,,,7374.0,Services,False
 1498710,"Spirit Aviation Holdings, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4512.0,"Transportation, Communications & Utilities",False
-1498828,Howard Hughes Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
+1498828,Howard Hughes Corp,,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,True,6798.0,"Finance, Insurance & Real Estate",False
 1498864,"Apple REIT Ten, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1499200,"Sabine Pass Liquefaction, LLC",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4924.0,"Transportation, Communications & Utilities",False
 1499268,Affinity Gaming,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7011.0,Services,False
@@ -6866,7 +6866,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1526160,Fleetmatics Group Ltd,,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1526243,PERPETUA RESOURCES CORP.,PPTA,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1040.0,Mining,False
 1526475,NICOLA MINING INC.,NICM,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1000.0,Mining,False
-1526520,"TripAdvisor, Inc.",TRIP,2024,,93.7,93.7,1,0.5,sic_linked,,,7370.0,Services,False
+1526520,"TripAdvisor, Inc.",TRIP,2024,14.6,93.7,54.2,2,1.0,sic_linked,0.0,True,7370.0,Services,False
 1526689,"Generation NEXT Franchise Brands, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3580.0,Manufacturing,False
 1526726,HORIZON MINERALS CORP.,,2024,,76.9,76.9,1,0.5,sic_linked,,,3714.0,Manufacturing,False
 1526796,"Ignite Restaurant Group, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5812.0,Retail Trade,False
@@ -7459,7 +7459,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1571833,"WideOpenWest Finance, LLC",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4841.0,"Transportation, Communications & Utilities",False
 1571934,TAO Synergies Inc.,TAOX,2024,53.8,40.3,47.0,2,1.0,sic_linked,1.0,True,6199.0,"Finance, Insurance & Real Estate",False
 1571949,"Intercontinental Exchange, Inc.",ICE,2024,53.7,40.3,47.0,2,1.0,sic_linked,33.0,True,6200.0,"Finance, Insurance & Real Estate",False
-1571996,Dell Technologies Inc.,DELL,2024,,82.8,82.8,1,0.5,sic_linked,,,3571.0,Manufacturing,False
+1571996,Dell Technologies Inc.,DELL,2024,82.9,82.8,82.8,2,1.0,sic_linked,1517.0,True,3571.0,Manufacturing,False
 1572317,"UNEEQO, INC.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1000.0,Mining,False
 1572334,Virginia National Bankshares Corp,VABK,2024,,40.3,40.3,1,0.5,sic_linked,,,6021.0,"Finance, Insurance & Real Estate",False
 1572384,Phoenix Rising Companies,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7990.0,Services,False
@@ -7548,7 +7548,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1577437,Ardmore Shipping Corp,ASC,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4412.0,"Transportation, Communications & Utilities",False
 1577445,Odysight.ai Inc.,ODYS,2024,35.4,83.6,59.5,2,1.0,sic_linked+name,0.0,True,7373.0,Services,False
 1577526,"C3.ai, Inc.",AI,2024,61.3,93.7,77.5,2,1.0,sic_linked+name,7.0,True,7372.0,Services,False
-1577552,Alibaba Group Holding Ltd,BABA,2024,,,,0,0.0,uninformative_sic,,,7389.0,Services,False
+1577552,Alibaba Group Holding Ltd,BABA,2024,26.3,,26.3,1,0.5,uninformative_sic,125.0,True,7389.0,Services,False
 1577568,Euronext Athens Holding S.A./ADR,HEXEY,2024,,,,0,0.0,missing_sic,,,,,False
 1577603,"Delanco Bancorp, Inc.",,2024,,40.3,40.3,1,0.5,sic_linked,,,6035.0,"Finance, Insurance & Real Estate",False
 1577670,Ladder Capital Corp,LADR,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
@@ -7778,7 +7778,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1592288,"Dimension Therapeutics, Inc.",,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2836.0,Manufacturing,False
 1592329,Clifton Bancorp Inc.,,2024,,40.3,40.3,1,0.5,sic_linked,,,6035.0,"Finance, Insurance & Real Estate",False
 1592379,"Papa Murphy's Holdings, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5812.0,Retail Trade,False
-1592386,"Virtu Financial, Inc.",VIRT,2024,,40.3,40.3,1,0.5,sic_linked,,,6211.0,"Finance, Insurance & Real Estate",False
+1592386,"Virtu Financial, Inc.",VIRT,2024,25.0,40.3,32.6,2,1.0,sic_linked,0.0,True,6211.0,"Finance, Insurance & Real Estate",False
 1592407,Sugar Creek Financial Corp./MD/,,2024,,40.3,40.3,1,0.5,sic_linked,,,6035.0,"Finance, Insurance & Real Estate",False
 1592411,DKG Capital Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7990.0,Services,False
 1592480,"Continental Building Products, Inc.",,2024,6.6,0.0,3.3,2,1.0,industry_unlinked,0.0,True,3270.0,Manufacturing,False
@@ -7788,7 +7788,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1592745,"Nexpoint Multifamily Capital Trust, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1592782,Nukkleus Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8742.0,Services,False
 1593001,"NightFood Holdings, Inc.",NGTF,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3590.0,Manufacturing,False
-1593034,Endo International plc,,2024,14.6,64.1,39.3,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
+1593034,Endo International plc,,2024,4.8,64.1,34.4,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
 1593184,"BIOREGENX, INC.",BRGX,2024,,93.7,93.7,1,0.5,sic_linked,,,7370.0,Services,False
 1593195,Tribune Publishing Co,,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,2711.0,Manufacturing,False
 1593204,"Huaizhong Health Group, Inc.",,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
@@ -7855,7 +7855,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1597846,Greenpro Capital Corp.,GRNQ,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8742.0,Services,False
 1597892,JRSIS HEALTH CARE Corp,JRSS,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8060.0,Services,False
 1597929,"SocialPlay USA, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5960.0,Retail Trade,False
-1598014,IHS Markit Ltd.,,2024,,93.7,93.7,1,0.5,sic_linked,,,7370.0,Services,False
+1598014,IHS Markit Ltd.,,2024,25.0,93.7,59.4,2,1.0,sic_linked,0.0,True,7370.0,Services,False
 1598110,CyberArk Software Ltd.,,2024,28.5,93.7,61.1,2,1.0,sic_linked+name,16.0,True,7372.0,Services,False
 1598308,Global Wholehealth Partners Corp,,2024,,64.1,64.1,1,0.5,sic_linked,,,2835.0,Manufacturing,False
 1598323,AGRO CAPITAL MANAGEMENT CORP.,,2024,,64.1,64.1,1,0.5,sic_linked,,,2833.0,Manufacturing,False
@@ -8108,7 +8108,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1615055,IsoPlexis Corp,,2024,47.0,5.2,26.1,2,1.0,sic_linked,4.0,True,3826.0,Manufacturing,False
 1615063,"Inspired Entertainment, Inc.",INSE,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1615153,"Fenix Parts, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5010.0,Wholesale Trade,False
-1615165,"Veritone, Inc.",VERI,2024,,85.9,85.9,1,0.5,sic_linked,,,7374.0,Services,False
+1615165,"Veritone, Inc.",VERI,2024,16.6,85.9,51.2,2,1.0,sic_linked,1.0,True,7374.0,Services,False
 1615169,JIN WAN HONG INTERNATIONAL HOLDINGS Ltd,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3585.0,Manufacturing,False
 1615219,Decoy Therapeutics Inc.,DCOY,2024,43.4,64.1,53.8,2,1.0,sic_linked+name,0.0,True,2834.0,Manufacturing,False
 1615222,"Moody National REIT II, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
@@ -8165,7 +8165,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1618697,GUGGENHEIM CREDIT INCOME FUND,,2024,,,,0,0.0,missing_sic,,,,,False
 1618732,"Nutanix, Inc.",NTNX,2024,46.9,93.7,70.3,2,1.0,sic_linked,78.0,True,7372.0,Services,False
 1618755,Restaurant Brands International Limited Partnership,QSP,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5812.0,Retail Trade,False
-1618756,Restaurant Brands International Inc.,QSR,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5812.0,Retail Trade,False
+1618756,Restaurant Brands International Inc.,QSR,2024,14.6,0.0,7.3,2,1.0,industry_unlinked,0.0,True,5812.0,Retail Trade,False
 1618798,"Ben Franklin Financial, Inc.",,2024,,40.3,40.3,1,0.5,sic_linked,,,6035.0,"Finance, Insurance & Real Estate",False
 1618835,"Evofem Biosciences, Inc.",EVFM,2024,39.1,64.1,51.6,2,1.0,sic_linked+name,1.0,True,2834.0,Manufacturing,False
 1618921,"Walgreens Boots Alliance, Inc.",,2024,58.8,0.0,29.4,2,1.0,industry_unlinked,46.0,True,5912.0,Retail Trade,False
@@ -8244,7 +8244,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1623554,"XFIT BRANDS, INC.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3949.0,Manufacturing,False
 1623590,Fintech Scion Ltd,,2024,,40.3,40.3,1,0.5,name_only,,,7389.0,Services,False
 1623595,"Atlas Energy Group, LLC",,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
-1623613,Mylan II B.V.,,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
+1623613,Mylan II B.V.,,2024,0.0,64.1,32.0,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
 1623715,"Imago BioSciences, Inc.",,2024,43.4,64.1,53.8,2,1.0,sic_linked+name,1.0,True,2834.0,Manufacturing,False
 1623919,"EndoChoice Holdings, Inc.",,2024,,5.2,5.2,1,0.5,sic_linked,,,3841.0,Manufacturing,False
 1623925,Antero Midstream Corp,AM,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4922.0,"Transportation, Communications & Utilities",False
@@ -8786,7 +8786,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1665658,"CommerceHub, Inc.",,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1665840,Natural Destiny Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5141.0,Wholesale Trade,False
 1665918,US Foods Holding Corp.,USFD,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5140.0,Wholesale Trade,False
-1665988,Bioventus Inc.,BVS,2024,29.8,5.2,17.5,2,1.0,sic_linked,0.0,True,3841.0,Manufacturing,False
+1665988,Bioventus Inc.,BVS,2024,47.3,5.2,26.2,2,1.0,sic_linked,0.0,True,3841.0,Manufacturing,False
 1666071,"Cardlytics, Inc.",CDLX,2024,34.3,93.7,64.0,2,1.0,sic_linked,1.0,True,7370.0,Services,False
 1666114,Unleashed Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3949.0,Manufacturing,False
 1666134,"BLACKLINE, INC.",BL,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
@@ -8798,7 +8798,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1666291,"Claros Mortgage Trust, Inc.",CMTG,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6500.0,"Finance, Insurance & Real Estate",False
 1666384,"AG Twin Brook BDC, Inc.",,2024,,,,0,0.0,missing_sic,,,,,False
 1666487,"Stemcell Holdings, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1666700,"DuPont de Nemours, Inc.",DD,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2821.0,Manufacturing,False
+1666700,"DuPont de Nemours, Inc.",DD,2024,37.7,0.0,18.8,2,1.0,industry_unlinked,192.0,True,2821.0,Manufacturing,False
 1666782,Irving Resources Inc.,IRVRF,2024,,,,0,0.0,missing_sic,,,,,False
 1667011,"Arteris, Inc.",AIP,2024,58.3,79.5,68.9,2,1.0,sic_linked,11.0,True,3674.0,Manufacturing,False
 1667153,CPG OpCo GP LLC,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4922.0,"Transportation, Communications & Utilities",False
@@ -9040,7 +9040,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1688126,Crypto Co,CRCW,2024,,85.9,85.9,1,0.5,sic_linked+name,,,7374.0,Services,False
 1688476,NEXTIER OILFIELD SOLUTIONS INC.,,2024,25.0,18.1,21.6,2,1.0,sic_linked,0.0,True,1389.0,Mining,False
 1688487,Metaurus Equity Component Trust,,2024,,40.3,40.3,1,0.5,sic_linked,,,6221.0,"Finance, Insurance & Real Estate",True
-1688568,DXC Technology Co,DXC,2024,,85.9,85.9,1,0.5,sic_linked,,,7374.0,Services,False
+1688568,DXC Technology Co,DXC,2024,28.8,85.9,57.4,2,1.0,sic_linked,1.0,True,7374.0,Services,False
 1688667,Frankly Inc,,2024,,93.7,93.7,1,0.5,sic_linked,,,7370.0,Services,False
 1688757,ESTABLISHMENT LABS HOLDINGS INC.,ESTA,2024,46.5,5.2,25.8,2,1.0,sic_linked,5.0,True,3842.0,Manufacturing,False
 1688852,Safehold Inc. /MD,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6519.0,"Finance, Insurance & Real Estate",False
@@ -9054,7 +9054,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1689490,NetPay International Inc,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2844.0,Manufacturing,False
 1689548,"Praxis Precision Medicines, Inc.",PRAX,2024,60.6,64.1,62.4,2,1.0,sic_linked,6.0,True,2834.0,Manufacturing,False
 1689657,"Bruker Cellular Analysis, Inc.",,2024,14.7,5.2,10.0,2,1.0,sic_linked,1.0,True,3826.0,Manufacturing,False
-1689731,"Southern States Bancshares, Inc.",,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
+1689731,"Southern States Bancshares, Inc.",,2024,23.9,40.3,32.1,2,1.0,sic_linked,8.0,False,6022.0,"Finance, Insurance & Real Estate",False
 1689796,JBG SMITH Properties,JBGS,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1689813,Biohaven Pharmaceutical Holding Co Ltd.,,2024,23.2,64.1,43.6,2,1.0,sic_linked,1.0,True,2834.0,Manufacturing,False
 1689923,"Alteryx, Inc.",,2024,44.0,93.7,68.8,2,1.0,sic_linked,3.0,True,7372.0,Services,False
@@ -9163,7 +9163,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1698990,Magnolia Oil & Gas Corp,MGY,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
 1698991,"Accel Entertainment, Inc.",ACEL,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7900.0,Services,False
 1699018,"Eagle Financial Bancorp, Inc.",,2024,,40.3,40.3,1,0.5,sic_linked,,,6035.0,"Finance, Insurance & Real Estate",False
-1699031,"GRAIL, Inc.",GRAL,2024,,5.2,5.2,1,0.5,sic_linked,,,8071.0,Services,False
+1699031,"GRAIL, Inc.",GRAL,2024,27.8,5.2,16.5,2,1.0,sic_linked,12.0,False,8071.0,Services,False
 1699039,"Ranger Energy Services, Inc.",RNGR,2024,43.4,18.1,30.8,2,1.0,sic_linked,0.0,True,1389.0,Mining,False
 1699126,Ciclet Holdings Inc.,,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1699136,"Cactus, Inc.",WHD,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,3533.0,Manufacturing,False
@@ -9205,9 +9205,9 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1702494,"AEP Transmission Company, LLC",,2024,,18.1,18.1,1,0.5,sic_linked,,,4911.0,"Transportation, Communications & Utilities",False
 1702510,"Carlyle Credit Solutions, Inc.",,2024,,,,0,0.0,missing_sic,,,,,False
 1702541,RIVEX TECHNOLOGY CORP.,,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
-1702744,Simply Good Foods Co,SMPL,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2000.0,Manufacturing,False
+1702744,Simply Good Foods Co,SMPL,2024,35.4,0.0,17.7,2,1.0,industry_unlinked,0.0,True,2000.0,Manufacturing,False
 1702750,"BYLINE BANCORP, INC.",BY,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
-1702780,"Optimum Communications, Inc.",OPTU,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4841.0,"Transportation, Communications & Utilities",False
+1702780,"Optimum Communications, Inc.",OPTU,2024,17.0,0.0,8.5,2,1.0,industry_unlinked,0.0,True,4841.0,"Transportation, Communications & Utilities",False
 1702924,"WRAP TECHNOLOGIES, INC.",WRAP,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,3480.0,Manufacturing,False
 1703038,NRC GROUP HOLDINGS CORP.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4955.0,"Transportation, Communications & Utilities",False
 1703056,ADT Inc.,ADT,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7381.0,Services,False
@@ -9270,9 +9270,9 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1707753,Elastic N.V.,ESTC,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1707910,"Reborn Coffee, Inc.",REBN,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5812.0,Retail Trade,False
 1707919,Cenntro Inc.,CENN,2024,,76.9,76.9,1,0.5,sic_linked,,,3711.0,Manufacturing,False
-1707925,LINDE PLC,LIN,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2810.0,Manufacturing,False
+1707925,LINDE PLC,LIN,2024,20.0,0.0,10.0,2,1.0,industry_unlinked,39.0,True,2810.0,Manufacturing,False
 1708035,Ecovyst Inc.,ECVT,2024,35.4,0.0,17.7,2,1.0,industry_unlinked,0.0,True,2800.0,Manufacturing,False
-1708055,Ribbon Communications Inc.,RBBN,2024,,83.6,83.6,1,0.5,sic_linked,,,7373.0,Services,False
+1708055,Ribbon Communications Inc.,RBBN,2024,28.5,83.6,56.0,2,1.0,sic_linked,13.0,True,7373.0,Services,False
 1708176,Hall of Fame Resort & Entertainment Co,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7990.0,Services,False
 1708259,LexinFintech Holdings Ltd.,LX,2024,,40.3,40.3,1,0.5,sic_linked+name,,,6199.0,"Finance, Insurance & Real Estate",False
 1708301,BP Midstream Partners LP,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4610.0,"Transportation, Communications & Utilities",False
@@ -9549,7 +9549,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1729756,Fintech Acquisition Corp. III,,2024,,40.3,40.3,1,0.5,name_only,,,6770.0,"Finance, Insurance & Real Estate",True
 1729944,"IMAC Holdings, Inc.",,2024,20.1,0.0,10.0,2,1.0,industry_unlinked,0.0,True,8093.0,Services,False
 1729997,Grayscale CoinDesk Crypto 5 ETF,GDLC,2024,,40.3,40.3,1,0.5,sic_linked+name,,,6221.0,"Finance, Insurance & Real Estate",True
-1730168,Broadcom Inc.,AVGO,2024,,79.5,79.5,1,0.5,sic_linked,,,3674.0,Manufacturing,False
+1730168,Broadcom Inc.,AVGO,2024,23.9,79.5,51.7,2,1.0,sic_linked,80.0,True,3674.0,Manufacturing,False
 1730346,"Charah Solutions, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4955.0,"Transportation, Communications & Utilities",False
 1730430,"Kiniksa Pharmaceuticals International, plc",KNSA,2024,8.6,64.1,36.3,2,1.0,sic_linked,1.0,True,2834.0,Manufacturing,False
 1730463,Autolus Therapeutics plc,AUTL,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2836.0,Manufacturing,False
@@ -9558,7 +9558,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1730869,"Everything Blockchain, Inc.",EBZT,2024,,100.0,100.0,1,0.5,sic_linked+name,,,7372.0,Services,False
 1730984,BayCom Corp,BCML,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
 1731176,Tottenham Acquisition I Ltd,,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
-1731289,Nikola Corp,,2024,55.9,76.9,66.4,2,1.0,sic_linked,12.0,True,3711.0,Manufacturing,False
+1731289,Nikola Corp,,2024,57.0,76.9,67.0,2,1.0,sic_linked,12.0,True,3711.0,Manufacturing,False
 1731348,"Tilray Brands, Inc.",TLRY,2024,28.8,64.1,46.4,2,1.0,sic_linked,1.0,True,2833.0,Manufacturing,False
 1731362,"CROSSCODE, INC.",,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1731388,EuroDry Ltd.,EDRY,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4400.0,"Transportation, Communications & Utilities",False
@@ -9571,7 +9571,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1732406,Grayscale Litecoin Trust (LTC),LTCN,2024,,40.3,40.3,1,0.5,sic_linked,,,6221.0,"Finance, Insurance & Real Estate",True
 1732409,Grayscale Bitcoin Cash Trust (BCH),BCHG,2024,,40.3,40.3,1,0.5,sic_linked,,,6221.0,"Finance, Insurance & Real Estate",True
 1732677,"Sustinere Holdings, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1732845,WestRock Co,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2650.0,Manufacturing,False
+1732845,WestRock Co,,2024,8.2,0.0,4.1,2,1.0,industry_unlinked,0.0,True,2650.0,Manufacturing,False
 1733186,"Arriver Holdco, Inc.",,2024,6.6,76.9,41.8,2,1.0,sic_linked,0.0,True,3714.0,Manufacturing,False
 1733257,"Finch Therapeutics Group, Inc.",,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2836.0,Manufacturing,False
 1733294,Generation Bio Co.,,2024,25.0,64.1,44.6,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
@@ -9646,7 +9646,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1739566,"Utz Brands, Inc.",UTZ,2024,50.0,0.0,25.0,2,1.0,industry_unlinked,0.0,True,2090.0,Manufacturing,False
 1739614,"Inhibrx, Inc.",,2024,28.1,64.1,46.1,2,1.0,sic_linked,6.0,True,2836.0,Manufacturing,False
 1739936,MOMENTIVE GLOBAL INC.,,2024,,93.7,93.7,1,0.5,sic_linked,,,7370.0,Services,False
-1739940,Cigna Group,CI,2024,,40.3,40.3,1,0.5,sic_linked,,,6324.0,"Finance, Insurance & Real Estate",False
+1739940,Cigna Group,CI,2024,0.0,40.3,20.2,2,1.0,sic_linked,0.0,True,6324.0,"Finance, Insurance & Real Estate",False
 1739942,SolarWinds Corp,,2024,0.0,93.7,46.8,2,1.0,sic_linked,0.0,True,7372.0,Services,False
 1740093,"GD Acquisition Group, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1740279,"IN8BIO, INC.",INAB,2024,,64.1,64.1,1,0.5,sic_linked,,,2836.0,Manufacturing,False
@@ -9690,7 +9690,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1743905,Rail Vision Ltd.,RVSN,2024,40.6,0.0,20.3,2,1.0,industry_unlinked,3.0,True,3743.0,Manufacturing,False
 1743907,"Sun Country Airlines Holdings, LLC",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4512.0,"Transportation, Communications & Utilities",False
 1743971,MOGU Inc.,MOGU,2024,,,,0,0.0,uninformative_sic,,,7389.0,Services,False
-1744489,Walt Disney Co,DIS,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7990.0,Services,False
+1744489,Walt Disney Co,DIS,2024,41.9,0.0,21.0,2,1.0,industry_unlinked,91.0,True,7990.0,Services,False
 1744494,"ADVENT TECHNOLOGIES HOLDINGS, INC.",ADNH,2024,43.4,81.4,62.4,2,1.0,sic_linked,0.0,True,3690.0,Manufacturing,False
 1744659,"Akero Therapeutics, Inc.",,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2834.0,Manufacturing,False
 1744676,Tencent Music Entertainment Group,TME,2024,62.5,0.0,31.2,2,1.0,industry_unlinked,9.0,True,4832.0,"Transportation, Communications & Utilities",False
@@ -9834,7 +9834,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1757499,"Shuttle Pharmaceuticals Holdings, Inc.",SHPH,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
 1757715,"Aterian, Inc.",ATER,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3634.0,Manufacturing,False
 1757840,Indonesia Energy Corp Ltd,INDO,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
-1757898,STERIS plc,STE,2024,,5.2,5.2,1,0.5,sic_linked,,,3842.0,Manufacturing,False
+1757898,STERIS plc,STE,2024,23.9,5.2,14.6,2,1.0,sic_linked,1.0,True,3842.0,Manufacturing,False
 1757932,"Romeo Power, Inc.",,2024,37.5,76.9,57.2,2,1.0,sic_linked,2.0,True,3714.0,Manufacturing,False
 1758009,Quantum Computing Inc.,QUBT,2024,47.2,99.9,73.6,2,1.0,sic_linked+name,1.0,True,7372.0,Services,False
 1758021,Karat Packaging Inc.,KRT,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3089.0,Manufacturing,False
@@ -9936,7 +9936,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1767837,"Richmond Mutual Bancorporation, Inc.",RMBI,2024,,40.3,40.3,1,0.5,sic_linked,,,6022.0,"Finance, Insurance & Real Estate",False
 1768012,"Golden Nugget Online Gaming, Inc.",,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1768206,Oxford Northeast Ltd.,,2024,,85.9,85.9,1,0.5,sic_linked,,,7374.0,Services,False
-1768224,Arcturus Therapeutics Holdings Inc.,ARCT,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2834.0,Manufacturing,False
+1768224,Arcturus Therapeutics Holdings Inc.,ARCT,2024,43.3,64.1,53.7,2,1.0,sic_linked+name,7.0,True,2834.0,Manufacturing,False
 1768259,Gaotu Techedu Inc.,GOTU,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8200.0,Services,False
 1768267,Cerence Inc.,CRNC,2024,25.0,93.7,59.4,2,1.0,sic_linked,0.0,True,7372.0,Services,False
 1768446,"Climb Bio, Inc.",CLYM,2024,25.0,64.1,44.6,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
@@ -9987,7 +9987,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1772695,Sunnova Energy International Inc.,,2024,,18.1,18.1,1,0.5,sic_linked,,,4931.0,"Transportation, Communications & Utilities",False
 1772704,Goldman Sachs Private Middle Market Credit II LLC,,2024,,,,0,0.0,missing_sic,,,,,False
 1772720,SPRUCE POWER HOLDING CORP,SPRU,2024,,18.1,18.1,1,0.5,sic_linked,,,4911.0,"Transportation, Communications & Utilities",False
-1772757,DraftKings Holdings Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7990.0,Services,False
+1772757,DraftKings Holdings Inc.,,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,True,7990.0,Services,False
 1772921,OneWater Marine Inc.,ONEW,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5531.0,Retail Trade,False
 1773086,Yunhong International,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1773087,Tuscan Holdings Corp. II,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -9996,7 +9996,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1773751,"Hims & Hers Health, Inc.",HIMS,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8011.0,Services,False
 1774155,BTRS Holdings Inc.,,2024,31.0,93.7,62.4,2,1.0,sic_linked,2.0,True,7371.0,Services,False
 1774163,Innovent Biologics Inc/ADR,IVBXF,2024,,,,0,0.0,missing_sic,,,,,False
-1774170,"Powerfleet, Inc.",AIOT,2024,,26.0,26.0,1,0.5,sic_linked,,,3669.0,Manufacturing,False
+1774170,"Powerfleet, Inc.",AIOT,2024,26.1,26.0,26.0,2,1.0,sic_linked,2.0,True,3669.0,Manufacturing,False
 1774675,Skillsoft Corp.,SKIL,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1774857,"Aardvark Therapeutics, Inc.",AARD,2024,14.6,64.1,39.3,2,1.0,sic_linked+name,0.0,True,2834.0,Manufacturing,False
 1775085,China Liberal Education Holdings Ltd,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8200.0,Services,False
@@ -10185,7 +10185,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1791929,"DISCOUNT PRINT USA, INC.",DPUI,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2750.0,Manufacturing,False
 1791942,JBS N.V.,JBS,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2011.0,Manufacturing,False
 1792030,IM Cannabis Corp.,IMCC,2024,,64.1,64.1,1,0.5,sic_linked,,,2833.0,Manufacturing,False
-1792044,Viatris Inc,VTRS,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
+1792044,Viatris Inc,VTRS,2024,7.5,64.1,35.8,2,1.0,sic_linked,1.0,False,2834.0,Manufacturing,False
 1792267,Burning Rock Biotech Ltd,BNR,2024,,5.2,5.2,1,0.5,sic_linked+name,,,8071.0,Services,False
 1792509,TriplePoint Private Venture Credit Inc.,,2024,,,,0,0.0,missing_sic,,,,,False
 1792580,Ovintiv Inc.,OVV,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
@@ -10235,12 +10235,12 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1796297,Bymax Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8742.0,Services,False
 1796303,Roth CH Acquisition I Co,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1796514,BTC Digital Ltd.,BTCT,2024,,40.3,40.3,1,0.5,sic_linked,,,6199.0,"Finance, Insurance & Real Estate",False
-1796898,"Maxeon Solar Technologies, Ltd.",MAXNQ,2024,,79.5,79.5,1,0.5,sic_linked+name,,,3674.0,Manufacturing,False
+1796898,"Maxeon Solar Technologies, Ltd.",MAXNQ,2024,42.5,79.5,61.0,2,1.0,sic_linked+name,49.0,False,3674.0,Manufacturing,False
 1796949,"GenFlat Holdings, Inc.",GFLT,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8742.0,Services,False
 1797099,PTK Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1797336,"Old Ayala, Inc",,2024,,64.1,64.1,1,0.5,sic_linked,,,2836.0,Manufacturing,False
 1797762,"Kenongwo Group US, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2870.0,Manufacturing,False
-1797768,Kinnate Biopharma Inc.,,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2834.0,Manufacturing,False
+1797768,Kinnate Biopharma Inc.,,2024,0.0,64.1,32.0,2,1.0,sic_linked+name,0.0,False,2834.0,Manufacturing,False
 1797956,"RCMW Group, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5190.0,Wholesale Trade,False
 1798100,NETSTREIT Corp.,NTST,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1798270,Assure Holdings Corp.,,2024,,5.2,5.2,1,0.5,sic_linked,,,3841.0,Manufacturing,False
@@ -10298,7 +10298,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1803407,"Ostin Technology Group Co., Ltd.",OST,2024,,0.6,0.6,1,0.5,sic_linked,,,3679.0,Manufacturing,False
 1803498,Blackstone Private Credit Fund,,2024,,,,0,0.0,missing_sic,,,,,False
 1803599,Concentrix Corp,CNXC,2024,35.4,,35.4,1,0.5,uninformative_sic,0.0,True,7389.0,Services,False
-1803696,Adeia Inc.,ADEA,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4841.0,"Transportation, Communications & Utilities",False
+1803696,Adeia Inc.,ADEA,2024,23.9,0.0,12.0,2,1.0,industry_unlinked,8.0,False,4841.0,"Transportation, Communications & Utilities",False
 1803737,"Enhabit, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8082.0,Services,False
 1803800,Talisker Resources Ltd.,TSKFF,2024,,,,0,0.0,missing_sic,,,,,False
 1803901,"Talkspace, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8000.0,Services,False
@@ -10329,13 +10329,13 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1806201,Open Lending Corp,,2024,,40.3,40.3,1,0.5,sic_linked,,,6141.0,"Finance, Insurance & Real Estate",False
 1806310,"Taysha Gene Therapies, Inc.",TSHA,2024,,64.1,64.1,1,0.5,sic_linked,,,2836.0,Manufacturing,False
 1806347,Westrock Coffee Co,WEST,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2080.0,Manufacturing,False
-1806524,Lion Group Holding Ltd,LGHL,2024,,40.3,40.3,1,0.5,sic_linked,,,6211.0,"Finance, Insurance & Real Estate",False
+1806524,Lion Group Holding Ltd,LGHL,2024,23.9,40.3,32.1,2,1.0,sic_linked,8.0,False,6211.0,"Finance, Insurance & Real Estate",False
 1806837,"Vertex, Inc.",VERX,2024,28.8,93.7,61.2,2,1.0,sic_linked,1.0,True,7372.0,Services,False
 1806904,EZGO Technologies Ltd.,EZGO,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3751.0,Manufacturing,False
 1806952,"Lyell Immunopharma, Inc.",LYEL,2024,57.5,64.1,60.8,2,1.0,sic_linked,3.0,True,2834.0,Manufacturing,False
 1807046,"Belpointe PREP, LLC",OZ,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6500.0,"Finance, Insurance & Real Estate",False
 1807120,"Design Therapeutics, Inc.",DSGN,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2834.0,Manufacturing,False
-1807166,Amesite Inc.,AMST,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
+1807166,Amesite Inc.,AMST,2024,11.9,93.7,52.8,2,1.0,sic_linked,2.0,False,7372.0,Services,False
 1807192,Chindata Group Holdings Ltd,,2024,,93.7,93.7,1,0.5,sic_linked,,,7370.0,Services,False
 1807389,"Pop Culture Group Co., Ltd",CPOP,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7900.0,Services,False
 1807427,Blue Owl Capital Corp III,,2024,,,,0,0.0,missing_sic,,,,,False
@@ -10360,7 +10360,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1808834,"PROG Holdings, Inc.",PRG,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7359.0,Services,False
 1808865,"iTeos Therapeutics, Inc.",,2024,0.0,64.1,32.0,2,1.0,sic_linked+name,0.0,True,2836.0,Manufacturing,False
 1808898,Benitec Biopharma Inc.,BNTC,2024,25.0,64.1,44.6,2,1.0,sic_linked+name,0.0,True,2834.0,Manufacturing,False
-1808997,"American Outdoor Brands, Inc.",AOUT,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3949.0,Manufacturing,False
+1808997,"American Outdoor Brands, Inc.",AOUT,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,False,3949.0,Manufacturing,False
 1809104,"Alight, Inc. / Delaware",ALIT,2024,,,,0,0.0,uninformative_sic,,,7389.0,Services,False
 1809196,Immatics N.V.,IMTX,2024,,64.1,64.1,1,0.5,sic_linked,,,2836.0,Manufacturing,False
 1809267,Daura Capital Corp.,DGCOF,2024,,,,0,0.0,missing_sic,,,,,False
@@ -10521,7 +10521,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1818874,"SoFi Technologies, Inc.",SOFI,2024,33.0,40.3,36.6,2,1.0,sic_linked,0.0,True,6199.0,"Finance, Insurance & Real Estate",False
 1818876,Social Capital Hedosophia Holdings Corp. IV,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1818880,Glenfarne Merger Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1819035,"Metromile, LLC",,2024,,40.3,40.3,1,0.5,sic_linked,,,6331.0,"Finance, Insurance & Real Estate",False
+1819035,"Metromile, LLC",,2024,14.6,40.3,27.4,2,1.0,sic_linked,0.0,True,6331.0,"Finance, Insurance & Real Estate",False
 1819113,"Science 37 Holdings, Inc.",,2024,,64.1,64.1,1,0.5,sic_linked,,,8731.0,Services,False
 1819133,"Tango Therapeutics, Inc.",TNGX,2024,52.7,64.1,58.4,2,1.0,sic_linked+name,3.0,True,2834.0,Manufacturing,False
 1819142,SES AI Corp,SES,2024,,82.9,82.9,1,0.5,sic_linked+name,,,3690.0,Manufacturing,False
@@ -10543,7 +10543,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1819510,Atlantic Avenue Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1819516,Wheels Up Experience Inc.,UP,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4522.0,"Transportation, Communications & Utilities",False
 1819574,"Bark, Inc.",BARK,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5990.0,Retail Trade,False
-1819576,Liquidia Corp,LQDA,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
+1819576,Liquidia Corp,LQDA,2024,0.0,64.1,32.0,2,1.0,sic_linked,0.0,False,2834.0,Manufacturing,False
 1819580,Yatsen Holding Ltd,YSG,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2844.0,Manufacturing,False
 1819584,Volta Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3790.0,Manufacturing,False
 1819608,Avanti Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -10614,7 +10614,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1822027,Tekkorp Digital Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1822145,Presto Automation Inc.,,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1822219,FirstMark Horizon Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1822250,ContextLogic Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5961.0,Retail Trade,False
+1822250,ContextLogic Inc.,,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,False,5961.0,Retail Trade,False
 1822309,Cascade Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1822312,Jack Creek Investment Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1822359,DocGo Inc.,DCGO,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8000.0,Services,False
@@ -10881,7 +10881,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1830749,Achilles Therapeutics plc,,2024,35.4,64.1,49.8,2,1.0,sic_linked+name,0.0,True,2836.0,Manufacturing,False
 1830795,Quantum FinTech Acquisition Corp,,2024,14.6,40.3,27.4,2,1.0,name_only,0.0,True,6770.0,"Finance, Insurance & Real Estate",True
 1831006,BlueRiver Acquisition Corp.,,2024,,5.2,5.2,1,0.5,sic_linked,,,3841.0,Manufacturing,False
-1831096,"Great Elm Group, Inc.",GEG,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
+1831096,"Great Elm Group, Inc.",GEG,2024,0.0,93.7,46.8,2,1.0,sic_linked,0.0,False,7372.0,Services,False
 1831097,"agilon health, inc.",AGL,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8090.0,Services,False
 1831114,Novusterra Inc,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1090.0,Mining,False
 1831236,Bridgetown 2 Holdings Ltd,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -10982,7 +10982,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1835591,Vizio Holding Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3651.0,Manufacturing,False
 1835597,PepGen Inc.,PEPG,2024,25.0,64.1,44.6,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
 1835615,"Meihua International Medical Technologies Co., Ltd.",MHUAF,2024,,5.2,5.2,1,0.5,sic_linked,,,3841.0,Manufacturing,False
-1835632,"Marvell Technology, Inc.",MRVL,2024,,79.5,79.5,1,0.5,sic_linked,,,3674.0,Manufacturing,False
+1835632,"Marvell Technology, Inc.",MRVL,2024,57.5,79.5,68.5,2,1.0,sic_linked,199.0,False,3674.0,Manufacturing,False
 1835636,"Advanced Merger Partners, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1835654,Innoviz Technologies Ltd.,INVZ,2024,50.2,76.9,63.6,2,1.0,sic_linked,10.0,True,3714.0,Manufacturing,False
 1835681,"POWERSCHOOL HOLDINGS, INC.",,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
@@ -11081,7 +11081,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1838697,Broadscale Acquisition Corp.,,2024,,18.1,18.1,1,0.5,sic_linked,,,4911.0,"Transportation, Communications & Utilities",False
 1838716,Genenta Science S.p.A.,GNTA,2024,,64.1,64.1,1,0.5,sic_linked,,,2836.0,Manufacturing,False
 1838814,Juniper II Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1838821,ARYA Sciences Acquisition Corp IV,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
+1838821,ARYA Sciences Acquisition Corp IV,,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,False,6770.0,"Finance, Insurance & Real Estate",True
 1838831,Disruptive Acquisition Corp I,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1838876,"GeoSolar Technologies, Inc.",,2024,,81.4,81.4,1,0.5,sic_linked,,,3690.0,Manufacturing,False
 1838883,Accelerate Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -11094,7 +11094,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1839133,"IR-Med, Inc.",,2024,6.6,5.2,5.9,2,1.0,sic_linked,0.0,True,3845.0,Manufacturing,False
 1839140,Revium Rx.,RVRC,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
 1839154,Nevada King Gold Corp.,NKGFF,2024,,,,0,0.0,missing_sic,,,,,False
-1839175,M3-Brigade Acquisition II Corp.,,2024,,26.0,26.0,1,0.5,sic_linked,,,4899.0,"Transportation, Communications & Utilities",False
+1839175,M3-Brigade Acquisition II Corp.,,2024,0.0,26.0,13.0,2,1.0,sic_linked,0.0,True,4899.0,"Transportation, Communications & Utilities",False
 1839185,Summit Healthcare Acquisition Corp.,,2024,7.6,0.0,3.8,2,1.0,industry_unlinked,1.0,True,6770.0,"Finance, Insurance & Real Estate",True
 1839191,Austerlitz Acquisition Corp II,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1839285,"Healthcare Triangle, Inc.",HCTI,2024,,83.6,83.6,1,0.5,sic_linked,,,7373.0,Services,False
@@ -11114,7 +11114,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1839611,InterPrivate IV InfraTech Partners Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1839799,GRANDSTAND Ltd,GRSD,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7990.0,Services,False
 1839824,FAST Acquisition Corp. II,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1839839,"Janus International Group, Inc.",JBI,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3442.0,Manufacturing,False
+1839839,"Janus International Group, Inc.",JBI,2024,15.1,0.0,7.6,2,1.0,industry_unlinked,3.0,False,3442.0,Manufacturing,False
 1839886,Meridian Mining UK Societas,MRRDF,2024,,,,0,0.0,missing_sic,,,,,False
 1839970,"BlossomHill Therapeutics, Inc.",BLSM,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2834.0,Manufacturing,False
 1839972,FTAC Parnassus Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -11134,7 +11134,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1840425,"OSR Health, Inc.",OSRH,2024,,5.2,5.2,1,0.5,sic_linked,,,3841.0,Manufacturing,False
 1840439,"Biomea Fusion, Inc.",BMEA,2024,54.9,64.1,59.5,2,1.0,sic_linked,4.0,True,2834.0,Manufacturing,False
 1840463,RXR Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1840502,Taboola.com Ltd.,TBLA,2024,,93.7,93.7,1,0.5,sic_linked,,,7370.0,Services,False
+1840502,Taboola.com Ltd.,TBLA,2024,11.9,93.7,52.8,2,1.0,sic_linked,2.0,False,7370.0,Services,False
 1840563,PMGC Holdings Inc.,ELAB,2024,39.1,64.1,51.6,2,1.0,sic_linked,1.0,True,2834.0,Manufacturing,False
 1840572,Lucky Strike Entertainment Corp,LUCK,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7900.0,Services,False
 1840574,"Verve Therapeutics, Inc.",,2024,52.7,64.1,58.4,2,1.0,sic_linked+name,3.0,True,2834.0,Manufacturing,False
@@ -11179,11 +11179,11 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1841734,Glass Houses Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1841761,"Grove Collaborative Holdings, Inc.",GROV,2024,17.0,0.0,8.5,2,1.0,industry_unlinked,0.0,True,5961.0,Retail Trade,False
 1841800,"Nogin, Inc.",,2024,,,,0,0.0,uninformative_sic,,,7389.0,Services,False
-1841804,"INSTRUCTURE HOLDINGS, INC.",,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
+1841804,"INSTRUCTURE HOLDINGS, INC.",,2024,7.5,93.7,50.6,2,1.0,sic_linked,1.0,False,7372.0,Services,False
 1841845,Peridot Acquisition Corp. II,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1841867,Aries I Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1841873,Khosla Ventures Acquisition Co.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1841925,"indie Semiconductor, Inc.",INDI,2024,,79.5,79.5,1,0.5,sic_linked+name,,,3674.0,Manufacturing,False
+1841925,"indie Semiconductor, Inc.",INDI,2024,7.5,79.5,43.5,2,1.0,sic_linked+name,1.0,False,3674.0,Manufacturing,False
 1841948,Lerer Hippeau Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1841968,"Ridgepost Capital, Inc.",RPC,2024,,40.3,40.3,1,0.5,sic_linked,,,6282.0,"Finance, Insurance & Real Estate",False
 1841993,Model Performance Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -11233,7 +11233,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1843388,"Virgin Orbit Holdings, Inc.",,2024,,10.6,10.6,1,0.5,sic_linked,,,3812.0,Manufacturing,False
 1843477,Spring Valley Acquisition Corp. II,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1090.0,Mining,False
 1843586,Oatly Group AB,OTLY,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2000.0,Manufacturing,False
-1843588,REE Automotive Ltd.,REEAF,2024,,76.9,76.9,1,0.5,sic_linked,,,3711.0,Manufacturing,False
+1843588,REE Automotive Ltd.,REEAF,2024,27.8,76.9,52.4,2,1.0,sic_linked,12.0,False,3711.0,Manufacturing,False
 1843608,Dila Capital Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1843656,Royalty Management Holding Corp,RMCO,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6794.0,"Finance, Insurance & Real Estate",False
 1843714,"Zapata Quantum, Inc.",ZPTA,2024,58.7,93.7,76.2,2,1.0,sic_linked,4.0,True,7372.0,Services,False
@@ -11602,7 +11602,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1857803,DP Cap Acquisition Corp I,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1857816,GigaCloud Technology Inc,GCT,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5961.0,Retail Trade,False
 1857853,"Traeger, Inc.",COOK,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3630.0,Manufacturing,False
-1857855,Finnovate Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
+1857855,Finnovate Acquisition Corp.,,2024,11.9,0.0,6.0,2,1.0,industry_unlinked,2.0,False,6770.0,"Finance, Insurance & Real Estate",True
 1857910,"Japan Food Tech Holdings, Inc.",JFTH,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1857951,Weber Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3630.0,Manufacturing,False
 1858007,Chi Special Acquisition Corp.,GDST,2024,,76.9,76.9,1,0.5,sic_linked,,,3620.0,Manufacturing,False
@@ -11677,7 +11677,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1862490,Tritium DCFC Ltd,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3790.0,Manufacturing,False
 1862935,Currenc Group Inc.,CURR,2024,,,,0,0.0,uninformative_sic,,,7389.0,Services,False
 1862993,AP Acquisition Corp,,2024,25.0,0.0,12.5,2,1.0,industry_unlinked,0.0,True,6770.0,"Finance, Insurance & Real Estate",True
-1863006,Valens Semiconductor Ltd.,VLN,2024,,79.5,79.5,1,0.5,sic_linked+name,,,3674.0,Manufacturing,False
+1863006,Valens Semiconductor Ltd.,VLN,2024,0.0,79.5,39.8,2,1.0,sic_linked+name,0.0,False,3674.0,Manufacturing,False
 1863105,"EngageSmart, Inc.",,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1863127,"Tyra Biosciences, Inc.",TYRA,2024,39.1,64.1,51.6,2,1.0,sic_linked+name,1.0,True,2834.0,Manufacturing,False
 1863181,Home Plate Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -11717,7 +11717,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1865533,Emerging Markets Horizon Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1865537,DTRT Health Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1865602,"Cantor Equity Partners, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1865631,NEXTNAV INC.,NN,2024,,10.6,10.6,1,0.5,sic_linked,,,3812.0,Manufacturing,False
+1865631,NEXTNAV INC.,NN,2024,26.0,10.6,18.3,2,1.0,sic_linked,10.0,False,3812.0,Manufacturing,False
 1865697,NeuroMind AI Corp.,,2024,,52.7,52.7,1,0.5,name_only,,,6770.0,"Finance, Insurance & Real Estate",True
 1865701,Keyarch Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1865782,"BrightSpring Health Services, Inc.",BTSG,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8082.0,Services,False
@@ -11745,8 +11745,8 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1866838,Inception Growth Acquisition Ltd,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1867066,Journey Medical Corp,DERM,2024,53.8,64.1,59.0,2,1.0,sic_linked,1.0,True,2834.0,Manufacturing,False
 1867072,"Kyndryl Holdings, Inc.",KD,2024,75.2,83.6,79.4,2,1.0,sic_linked,102.0,True,7373.0,Services,False
-1867096,"Xeris Biopharma Holdings, Inc.",XERS,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2834.0,Manufacturing,False
-1867102,Vertical Aerospace Ltd.,EVTL,2024,,10.6,10.6,1,0.5,sic_linked,,,3721.0,Manufacturing,False
+1867096,"Xeris Biopharma Holdings, Inc.",XERS,2024,11.9,64.1,38.0,2,1.0,sic_linked+name,2.0,False,2834.0,Manufacturing,False
+1867102,Vertical Aerospace Ltd.,EVTL,2024,0.0,10.6,5.3,2,1.0,sic_linked,0.0,False,3721.0,Manufacturing,False
 1867287,Lakeshore Acquisition II Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1867443,Canna-Global Acquisition Corp,,2024,,83.6,83.6,1,0.5,sic_linked,,,7373.0,Services,False
 1867729,WeRide Inc.,WRD,2024,58.7,83.6,71.2,2,1.0,sic_linked,4.0,True,7373.0,Services,False
@@ -11800,7 +11800,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1870997,Loyalty Ventures Inc.,,2024,,,,0,0.0,uninformative_sic,,,7389.0,Services,False
 1871149,"Real Good Food Company, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2000.0,Manufacturing,False
 1871181,"FAMILY OFFICE OF AMERICA, INC.",FOFA,2024,,5.2,5.2,1,0.5,sic_linked,,,3841.0,Manufacturing,False
-1871321,Alpha Tau Medical Ltd.,DRTS,2024,,5.2,5.2,1,0.5,sic_linked,,,3841.0,Manufacturing,False
+1871321,Alpha Tau Medical Ltd.,DRTS,2024,29.4,5.2,17.3,2,1.0,sic_linked,14.0,False,3841.0,Manufacturing,False
 1871509,Portillo's Inc.,PTLO,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5812.0,Retail Trade,False
 1871638,"Blaize Holdings, Inc.",BZAI,2024,,79.5,79.5,1,0.5,sic_linked,,,3674.0,Manufacturing,False
 1871745,Direct Selling Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -11886,7 +11886,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1879016,Ivanhoe Electric Inc.,IE,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1000.0,Mining,False
 1879103,"CFSB Bancorp, Inc. /MA/",,2024,,40.3,40.3,1,0.5,sic_linked,,,6035.0,"Finance, Insurance & Real Estate",False
 1879221,UTA Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1879248,Ads-Tec Energy Public Ltd Co,ADSE,2024,,81.4,81.4,1,0.5,sic_linked,,,3690.0,Manufacturing,False
+1879248,Ads-Tec Energy Public Ltd Co,ADSE,2024,7.5,81.4,44.4,2,1.0,sic_linked,1.0,False,3690.0,Manufacturing,False
 1879270,Cannaisseur Group Inc.,TCRG,2024,,64.1,64.1,1,0.5,sic_linked,,,2833.0,Manufacturing,False
 1879293,"Mag Mile Capital, Inc.",MMCP,2024,,10.6,10.6,1,0.5,sic_linked,,,3567.0,Manufacturing,False
 1879297,LAMF Global Ventures Corp. I,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -11925,7 +11925,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1883313,"Savers Value Village, Inc.",SVV,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5900.0,Retail Trade,False
 1883389,Da Zhong Trading Group Holding Co,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1883437,Epsium Enterprise Ltd,EPSM,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5180.0,Wholesale Trade,False
-1883685,DraftKings Inc.,DKNG,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7990.0,Services,False
+1883685,DraftKings Inc.,DKNG,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,False,7990.0,Services,False
 1883788,"DIH HOLDING US, INC.",,2024,,5.2,5.2,1,0.5,sic_linked,,,3841.0,Manufacturing,False
 1883799,Jupiter Wellness Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1883814,"Southland Holdings, Inc.",SLND,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1600.0,Construction,False
@@ -11952,7 +11952,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1885849,Tofla Megaline Inc.,,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1885968,T Series BDC LLC,,2024,,,,0,0.0,missing_sic,,,,,False
 1885998,Roth CH Acquisition V Co.,,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
-1886190,Gogoro Inc.,GGR,2024,,76.9,76.9,1,0.5,sic_linked,,,3711.0,Manufacturing,False
+1886190,Gogoro Inc.,GGR,2024,19.5,76.9,48.2,2,1.0,sic_linked,5.0,False,3711.0,Manufacturing,False
 1886268,SHUAA Partners Acquisition Corp I,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1886362,"Mobile Global Esports, Inc.",MGAM,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7900.0,Services,False
 1886428,"Slide Insurance Holdings, Inc.",SLDE,2024,,40.3,40.3,1,0.5,sic_linked,,,6331.0,"Finance, Insurance & Real Estate",False
@@ -12028,7 +12028,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1895144,Golden Star Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1895249,"ConnectM Technology Solutions, Inc.",CNTM,2024,10.4,0.0,5.2,2,1.0,industry_unlinked,0.0,True,1700.0,Construction,False
 1895251,"Sustainable Green Team, Ltd.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,700.0,"Agriculture, Forestry & Fishing",False
-1895262,Noble Corp plc,NE,2024,,18.1,18.1,1,0.5,sic_linked,,,1381.0,Mining,False
+1895262,Noble Corp plc,NE,2024,11.9,18.1,15.0,2,1.0,sic_linked,2.0,False,1381.0,Mining,False
 1895316,Brightwood Capital Corp I,,2024,,,,0,0.0,missing_sic,,,,,False
 1895582,"Pershing Square SPARC Holdings, Ltd./DE",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1895597,Intchains Group Ltd,ICG,2024,,79.5,79.5,1,0.5,sic_linked,,,3674.0,Manufacturing,False
@@ -12045,7 +12045,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1897463,Graf Global Corp.,TONT,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1897525,KB Global Holdings Ltd,,2024,,40.3,40.3,1,0.5,sic_linked,,,6282.0,"Finance, Insurance & Real Estate",False
 1897532,"Ping An Biomedical Co., Ltd.",PASW,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2300.0,Manufacturing,False
-1897762,Ingram Micro Holding Corp,INGM,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5045.0,Wholesale Trade,False
+1897762,Ingram Micro Holding Corp,INGM,2024,7.5,0.0,3.8,2,1.0,industry_unlinked,1.0,False,5045.0,Wholesale Trade,False
 1897971,Global Lights Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1897982,"Aspen Technology, Inc.",,2024,,93.7,93.7,1,0.5,sic_linked,,,7371.0,Services,False
 1898019,AXIOS Sustainable Growth Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -12063,7 +12063,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1899123,Bitdeer Technologies Group,BTDR,2024,,40.3,40.3,1,0.5,sic_linked,,,6199.0,"Finance, Insurance & Real Estate",False
 1899287,"Amprius Technologies, Inc.",AMPX,2024,56.0,81.4,68.7,2,1.0,sic_linked,2.0,True,3690.0,Manufacturing,False
 1899658,"WANG & LEE GROUP, Inc.",WLGSF,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1700.0,Construction,False
-1899830,Perfect Corp.,PERF,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
+1899830,Perfect Corp.,PERF,2024,7.5,93.7,50.6,2,1.0,sic_linked,1.0,False,7372.0,Services,False
 1899883,FTAI Infrastructure Inc.,FIP,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4011.0,"Transportation, Communications & Utilities",False
 1899996,Fidelity Private Credit Co LLC,,2024,,,,0,0.0,missing_sic,,,,,False
 1900304,Haleon plc,HLN,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2844.0,Manufacturing,False
@@ -12115,7 +12115,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1905956,TREASURE GLOBAL INC,TGL,2024,,,,0,0.0,uninformative_sic,,,7389.0,Services,False
 1906133,iCoreConnect Inc.,,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1906195,"Abri SPAC 2, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1906324,QuidelOrtho Corp,QDEL,2024,,64.1,64.1,1,0.5,sic_linked,,,2835.0,Manufacturing,False
+1906324,QuidelOrtho Corp,QDEL,2024,15.1,64.1,39.6,2,1.0,sic_linked,3.0,False,2835.0,Manufacturing,False
 1906364,BOXABL Inc.,BXBL,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1520.0,Construction,False
 1907085,Oddity Tech Ltd,ODD,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2844.0,Manufacturing,False
 1907108,"Lexeo Therapeutics, Inc.",LXEO,2024,,64.1,64.1,1,0.5,sic_linked+name,,,2836.0,Manufacturing,False
@@ -12132,7 +12132,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1909747,Jushi Holdings Inc.,JUSH,2024,,64.1,64.1,1,0.5,sic_linked,,,2833.0,Manufacturing,False
 1909770,KHEOBA CORP.,,2024,,93.7,93.7,1,0.5,sic_linked,,,7371.0,Services,False
 1910139,Mobileye Global Inc.,MBLY,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
-1910851,R1 RCM Inc. /DE,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8741.0,Services,False
+1910851,R1 RCM Inc. /DE,,2024,11.9,0.0,6.0,2,1.0,industry_unlinked,2.0,False,8741.0,Services,False
 1910950,AESI Holdings Inc.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,1400.0,Mining,False
 1910975,Rapid Line Inc.,RPDL,2024,,0.0,0.0,1,0.5,industry_unlinked,,,8200.0,Services,False
 1911066,Nuveen Churchill Private Capital Income Fund,,2024,,,,0,0.0,missing_sic,,,,,False
@@ -12192,7 +12192,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1919847,"Software Effective Solutions, Corp.",SFWJ,2024,,93.7,93.7,1,0.5,sic_linked,,,7371.0,Services,False
 1920092,Gelteq Ltd,GELS,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
 1920145,Goldman Sachs Private Credit Corp.,,2024,,,,0,0.0,missing_sic,,,,,False
-1920294,REZOLVE AI PLC,RZLV,2024,,93.7,93.7,1,0.5,sic_linked+name,,,7370.0,Services,False
+1920294,REZOLVE AI PLC,RZLV,2024,0.0,93.7,46.8,2,1.0,sic_linked+name,0.0,False,7370.0,Services,False
 1920406,"Strive, Inc.",ASST,2024,14.6,40.3,27.4,2,1.0,sic_linked,0.0,True,6199.0,"Finance, Insurance & Real Estate",False
 1920453,Fidelity Private Credit Fund,,2024,,,,0,0.0,missing_sic,,,,,False
 1920576,MiMedia Holdings Inc.,MIMDF,2024,,,,0,0.0,missing_sic,,,,,False
@@ -12279,7 +12279,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1935979,Biohaven Ltd.,BHVN,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
 1936224,SURF AIR MOBILITY INC.,SRFM,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4522.0,"Transportation, Communications & Utilities",False
 1936255,Four Leaf Acquisition Corp,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
-1936258,NewAmsterdam Pharma Co N.V.,NAMS,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
+1936258,NewAmsterdam Pharma Co N.V.,NAMS,2024,7.5,64.1,35.8,2,1.0,sic_linked,1.0,False,2834.0,Manufacturing,False
 1936702,Cetus Capital Acquisition Corp.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 1936737,"EASTERN GAS TRANSMISSION & STORAGE, INC.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4922.0,"Transportation, Communications & Utilities",False
 1936756,"Next Bridge Hydrocarbons, Inc.",,2024,,18.1,18.1,1,0.5,sic_linked,,,1311.0,Mining,False
@@ -12287,8 +12287,8 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1936817,Haoxin Holdings Ltd,HXHX,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4210.0,"Transportation, Communications & Utilities",False
 1937441,Ambipar Emergency Response,AMBIQ,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4955.0,"Transportation, Communications & Utilities",False
 1937453,First American Uranium Inc.,NIOMF,2024,,,,0,0.0,missing_sic,,,,,False
-1937653,Zymeworks Inc.,ZYME,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
-1937737,Moolec Science SA,MLEC,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2000.0,Manufacturing,False
+1937653,Zymeworks Inc.,ZYME,2024,0.0,64.1,32.0,2,1.0,sic_linked,0.0,False,2834.0,Manufacturing,False
+1937737,Moolec Science SA,MLEC,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,False,2000.0,Manufacturing,False
 1937891,AMC Robotics Corp,AMCI,2024,58.5,10.6,34.6,2,1.0,name_only,6.0,True,5700.0,Retail Trade,False
 1937926,Brookfield Asset Management Ltd.,BAM,2024,,40.3,40.3,1,0.5,sic_linked,,,6282.0,"Finance, Insurance & Real Estate",False
 1937987,"Falcon's Beyond Global, Inc.",FBYD,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7990.0,Services,False
@@ -12330,7 +12330,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1943444,Tungray Technologies Inc,TRSG,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3530.0,Manufacturing,False
 1943802,"First Seacoast Bancorp, Inc.",FSEA,2024,,40.3,40.3,1,0.5,sic_linked,,,6035.0,"Finance, Insurance & Real Estate",False
 1943896,"Rubrik, Inc.",RBRK,2024,72.9,93.7,83.3,2,1.0,sic_linked,67.0,True,7372.0,Services,False
-1944013,Crane Co,CR,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3490.0,Manufacturing,False
+1944013,Crane Co,CR,2024,21.1,0.0,10.6,2,1.0,industry_unlinked,6.0,False,3490.0,Manufacturing,False
 1944048,Kenvue Inc.,KVUE,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2844.0,Manufacturing,False
 1944057,Cool Co Ltd.,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4400.0,"Transportation, Communications & Utilities",False
 1944212,DT Cloud Acquisition Corp,,2024,,26.0,26.0,1,0.5,name_only,,,6770.0,"Finance, Insurance & Real Estate",True
@@ -12450,7 +12450,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1961847,INNO HOLDINGS INC.,INHD,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,True,5990.0,Retail Trade,False
 1962011,"Kairos Pharma, LTD.",KAPA,2024,25.0,64.1,44.6,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
 1962481,BranchOut Food Inc.,BOF,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2000.0,Manufacturing,False
-1962738,"CASI Pharmaceuticals, Inc.",CASIF,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
+1962738,"CASI Pharmaceuticals, Inc.",CASIF,2024,7.5,64.1,35.8,2,1.0,sic_linked,1.0,False,2834.0,Manufacturing,False
 1962746,Lotus Technology Inc.,LOT,2024,,76.9,76.9,1,0.5,sic_linked,,,3711.0,Manufacturing,False
 1962918,"ACELYRIN, Inc.",,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
 1963088,"AtlasClear Holdings, Inc.",ATCH,2024,,40.3,40.3,1,0.5,sic_linked,,,6199.0,"Finance, Insurance & Real Estate",False
@@ -12464,7 +12464,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1964789,Hut 8 Corp.,HUT,2024,,40.3,40.3,1,0.5,sic_linked,,,6199.0,"Finance, Insurance & Real Estate",False
 1964946,Youxin Technology Ltd,YAAS,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
 1964954,Okeanis Eco Tankers Corp.,ECO,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4412.0,"Transportation, Communications & Utilities",False
-1964979,"ALLURION TECHNOLOGIES, INC.",ALUR,2024,,5.2,5.2,1,0.5,sic_linked,,,3841.0,Manufacturing,False
+1964979,"ALLURION TECHNOLOGIES, INC.",ALUR,2024,7.5,5.2,6.4,2,1.0,sic_linked,1.0,False,3841.0,Manufacturing,False
 1965040,Fortrea Holdings Inc.,FTRE,2024,,5.2,5.2,1,0.5,sic_linked,,,8071.0,Services,False
 1965052,Marblegate Capital Corp,MGTE,2024,,40.3,40.3,1,0.5,sic_linked,,,6199.0,"Finance, Insurance & Real Estate",False
 1965143,Nvni Group Ltd,NVNI,2024,,93.7,93.7,1,0.5,sic_linked,,,7372.0,Services,False
@@ -12556,7 +12556,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1976927,"Invesco Commercial Real Estate Finance Trust, Inc.",,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6798.0,"Finance, Insurance & Real Estate",False
 1977102,Birkenstock Holding plc,BIRK,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3140.0,Manufacturing,False
 1977251,Skubbs Holdings Ltd,SKUB,2024,,93.7,93.7,1,0.5,sic_linked,,,7371.0,Services,False
-1977303,Arcadium Lithium plc,,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2810.0,Manufacturing,False
+1977303,Arcadium Lithium plc,,2024,11.9,0.0,6.0,2,1.0,industry_unlinked,2.0,False,2810.0,Manufacturing,False
 1977837,MADE IN USA INC.,USDW,2024,,85.9,85.9,1,0.5,sic_linked,,,7374.0,Services,False
 1977971,Altura Energy Corp.,ALTUF,2024,,,,0,0.0,missing_sic,,,,,False
 1978057,Top Wealth Group Holding Ltd,TWG,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2090.0,Manufacturing,False
@@ -12648,7 +12648,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1992500,Lion Rock Resources Inc.,LRRIF,2024,,,,0,0.0,missing_sic,,,,,False
 1992508,21Shares Ethereum Staking ETF,TETH,2024,,40.3,40.3,1,0.5,sic_linked,,,6221.0,"Finance, Insurance & Real Estate",True
 1992604,CanCambria Energy Corp.,CCEYF,2024,,,,0,0.0,missing_sic,,,,,False
-1992818,ZOOZ Strategy Ltd.,ZOOZ,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3590.0,Manufacturing,False
+1992818,ZOOZ Strategy Ltd.,ZOOZ,2024,0.0,0.0,0.0,2,1.0,industry_unlinked,0.0,False,3590.0,Manufacturing,False
 1992870,Franklin Templeton Digital Holdings Trust,EZBC,2024,,40.3,40.3,1,0.5,sic_linked,,,6221.0,"Finance, Insurance & Real Estate",True
 1993004,"NorthWestern Energy Group, Inc.",NWE,2024,,18.1,18.1,1,0.5,sic_linked,,,4931.0,"Transportation, Communications & Utilities",False
 1993097,3 E Network Technology Group Ltd,MASK,2024,,93.7,93.7,1,0.5,sic_linked,,,7371.0,Services,False
@@ -12680,7 +12680,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 1996493,Sucro Ltd,SUGRF,2024,,,,0,0.0,missing_sic,,,,,False
 1996586,Canter Resources Corp.,CNRCF,2024,,,,0,0.0,missing_sic,,,,,False
 1996810,GE Vernova Inc.,GEV,2024,25.0,18.1,21.6,2,1.0,sic_linked,0.0,True,3600.0,Manufacturing,False
-1996862,Bunge Global SA,BG,2024,,0.0,0.0,1,0.5,industry_unlinked,,,2070.0,Manufacturing,False
+1996862,Bunge Global SA,BG,2024,7.5,0.0,3.8,2,1.0,industry_unlinked,1.0,False,2070.0,Manufacturing,False
 1997201,PS International Group Ltd.,PSIG,2024,,0.0,0.0,1,0.5,industry_unlinked,,,4731.0,"Transportation, Communications & Utilities",False
 1997296,Medicus Pharma Ltd.,MDCX,2024,,64.1,64.1,1,0.5,sic_linked,,,2834.0,Manufacturing,False
 1997350,Accelerant Holdings,ARX,2024,,40.3,40.3,1,0.5,sic_linked,,,6411.0,"Finance, Insurance & Real Estate",False
@@ -12754,7 +12754,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 2006815,Voyager Acquisition Corp./Cayman Islands,,2024,,64.1,64.1,1,0.5,sic_linked,,,2836.0,Manufacturing,False
 2006925,LELANTOS HOLDINGS INC.,LNTO,2024,,18.1,18.1,1,0.5,sic_linked,,,4991.0,"Transportation, Communications & Utilities",False
 2006960,Londian Wason New Energy Tech Inc.,FOIL,2024,,0.0,0.0,1,0.5,industry_unlinked,,,3390.0,Manufacturing,False
-2006986,"Adagio Medical Holdings, Inc.",ADGM,2024,,5.2,5.2,1,0.5,sic_linked,,,3841.0,Manufacturing,False
+2006986,"Adagio Medical Holdings, Inc.",ADGM,2024,0.0,5.2,2.6,2,1.0,sic_linked,0.0,False,3841.0,Manufacturing,False
 2007191,Telix Pharmaceuticals Ltd,TLX,2024,25.0,64.1,44.6,2,1.0,sic_linked,0.0,True,2834.0,Manufacturing,False
 2007587,"American Integrity Insurance Group, Inc.",AII,2024,,40.3,40.3,1,0.5,sic_linked,,,6331.0,"Finance, Insurance & Real Estate",False
 2007596,"TWFG, Inc.",TWFG,2024,,40.3,40.3,1,0.5,sic_linked,,,6411.0,"Finance, Insurance & Real Estate",False
@@ -13604,7 +13604,7 @@ company_id,company_name,ticker,year,patent_score,startup_score,technology_disrup
 2119416,OpenPayd Global Holdings Ltd,OP,2024,,,,0,0.0,uninformative_sic,,,7389.0,Services,False
 2120046,CVC Capital Partners plc/ADR,CVCPY,2024,,,,0,0.0,missing_sic,,,,,False
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2024,,,,0,0.0,missing_sic,,,,,False
-2120528,Kainan Holding Group Ltd,KHG,2024,,40.3,40.3,1,0.5,sic_linked,,,6199.0,"Finance, Insurance & Real Estate",False
+2120528,Kainan Holding Group Ltd,KHG,2024,,0.0,0.0,1,0.5,industry_unlinked,,,7363.0,Services,False
 2120882,SK hynix Inc.,SKHY,2024,,79.5,79.5,1,0.5,sic_linked,,,3674.0,Manufacturing,False
 2122392,Pelican Acquisition II Corp,PLCI,2024,,0.0,0.0,1,0.5,industry_unlinked,,,6770.0,"Finance, Insurance & Real Estate",True
 2123232,Cumberland Farms Ltd,CMBY,2024,,0.0,0.0,1,0.5,industry_unlinked,,,5500.0,Retail Trade,False

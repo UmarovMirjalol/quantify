@@ -38,7 +38,10 @@ def load_cache() -> dict:
 
 def extract(cik: int, data: dict) -> dict:
     business = (data.get("addresses") or {}).get("business") or {}
+    mailing = (data.get("addresses") or {}).get("mailing") or {}
     return {
+        "mailing_state_or_country": mailing.get("stateOrCountry") or "",
+        "mailing_country_description": mailing.get("stateOrCountryDescription"),
         "cik": cik,
         "status": "ok",
         "name": data.get("name"),
@@ -56,7 +59,9 @@ def extract(cik: int, data: dict) -> dict:
 
 def fetch_missing(ciks, cache: dict, retry_failed: bool) -> None:
     todo = [c for c in ciks if c not in cache
-            or (retry_failed and cache[c].get("status") != "ok")]
+            or (retry_failed and cache[c].get("status") != "ok")
+            or (cache[c].get("status") == "ok" and not cache[c].get("business_state_or_country")
+                and "mailing_state_or_country" not in cache[c])]
     log.info("Submissions: %d cached, %d to fetch", len(ciks) - len(todo), len(todo))
     if not todo:
         return
@@ -80,12 +85,16 @@ def fetch_missing(ciks, cache: dict, retry_failed: bool) -> None:
 
 
 def country_from(row) -> str:
+    """Business address country; falls back to the mailing address when it is empty."""
+    prefix = "business"
     code = row.get("business_state_or_country")
+    if not isinstance(code, str) or not code:
+        prefix, code = "mailing", row.get("mailing_state_or_country")
     if not isinstance(code, str) or not code:
         return None
     if code.upper() in US_STATES:
         return "United States"
-    desc = row.get("business_country_description")
+    desc = row.get(f"{prefix}_country_description")
     if not isinstance(desc, str) or not desc:
         return code
     return desc.split(",")[-1].strip().title()     # "BRITISH COLUMBIA, CANADA" -> "Canada"

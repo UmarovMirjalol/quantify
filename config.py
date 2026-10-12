@@ -283,6 +283,28 @@ FINANCIAL_CONCEPTS = {
     "public_float": {"period": "public_float", "taxonomy": "dei",
                      "concepts": ["EntityPublicFloat"]},
 }
+# IFRS equivalents used by the companyfacts supplement (foreign 20-F / 40-F filers).
+IFRS_CONCEPTS = {
+    "revenue": ["Revenue", "RevenueFromContractsWithCustomers"],
+    "assets": ["Assets"],
+    "rd": ["ResearchAndDevelopmentExpense"],
+    "capex": ["PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities",
+              "PurchaseOfPropertyPlantAndEquipment"],
+    "cash": ["CashAndCashEquivalents"],
+    "debt": ["NoncurrentPortionOfNoncurrentBorrowings", "LongtermBorrowings"],
+}
+# FRED annual-average exchange rates: currency -> (series, True if quoted as USD per unit).
+FRED_FX_SERIES = {
+    "EUR": ("AEXUSEU", True), "GBP": ("AEXUSUK", True), "AUD": ("AEXUSAL", True),
+    "NZD": ("AEXUSNZ", True), "CAD": ("AEXCAUS", False), "JPY": ("AEXJPUS", False),
+    "CNY": ("AEXCHUS", False), "TWD": ("AEXTAUS", False), "KRW": ("AEXKOUS", False),
+    "INR": ("AEXINUS", False), "MXN": ("AEXMXUS", False), "BRL": ("AEXBZUS", False),
+    "CHF": ("AEXSZUS", False), "SEK": ("AEXSDUS", False), "DKK": ("AEXDNUS", False),
+    "NOK": ("AEXNOUS", False), "SGD": ("AEXSIUS", False), "HKD": ("AEXHKUS", False),
+    "ZAR": ("AEXSFUS", False), "THB": ("AEXTHUS", False), "MYR": ("AEXMAUS", False),
+}
+# Currencies without a FRED annual series: ECB reference rates (frankfurter.app), annual mean.
+ECB_FX_CURRENCIES = ["ILS", "TRY", "IDR", "PHP"]
 # Variables that cannot be negative; negative reported values are set to NaN and flagged.
 NONNEGATIVE_FINANCIALS = ["assets", "rd", "capex", "cash", "debt", "public_float"]
 

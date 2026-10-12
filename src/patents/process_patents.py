@@ -100,14 +100,10 @@ def load_legacy(master: pd.DataFrame) -> pd.DataFrame:
 
 def complete_grid(counts: pd.DataFrame) -> pd.DataFrame:
     """Within each company's observed source span, absent years are genuine zeros.
-    The PatentsView linkage covers every grant year, so linked firms span the full window."""
+    (The PatentsView step already emits explicit zero years over each valid link span.)"""
     rows = []
-    lo, hi = config.PATENT_COUNT_YEARS
     for (cid, source), grp in counts.groupby(["company_id", "source"]):
-        if source == "patentsview_ma2025":
-            years = range(lo, hi + 1)
-        else:
-            years = range(int(grp["year"].min()), int(grp["year"].max()) + 1)
+        years = range(int(grp["year"].min()), int(grp["year"].max()) + 1)
         full = grp.set_index("year").reindex(years)
         full["patent_count"] = full["patent_count"].fillna(0).astype(int)
         full["company_id"], full["source"] = cid, source

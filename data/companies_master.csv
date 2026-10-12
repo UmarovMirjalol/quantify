@@ -945,7 +945,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 832428,E.W. SCRIPPS Co,SSP,SSP,1,832428,Nasdaq,4833,48,Television Broadcasting Stations,"Transportation, Communications & Utilities",United States,OH,operating,1231,False,sec_ticker_list,ok
 832480,UTG INC,UTGN,UTGN,1,832480,OTC,6311,63,Life Insurance,"Finance, Insurance & Real Estate",United States,,operating,1231,False,sec_ticker_list,ok
 832489,"GeoVax Labs, Inc.",GOVX,GOVX,1,832489,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
-832988,SIGNET JEWELERS LTD,SIG,SIG,1,832988,NYSE,5944,59,Retail-Jewelry Stores,Retail Trade,,,operating,0201,False,sec_ticker_list,ok
+832988,SIGNET JEWELERS LTD,SIG,SIG,1,832988,NYSE,5944,59,Retail-Jewelry Stores,Retail Trade,United States,,operating,0201,False,sec_ticker_list,ok
 833040,FRANKLIN UNIVERSAL TRUST,FT,FT,1,833040,NYSE,,,,,United States,FL,other,0831,False,sec_ticker_list,ok
 833079,Meritage Homes CORP,MTH,MTH,1,833079,NYSE,1531,15,Operative Builders,Construction,United States,MD,operating,1231,False,sec_ticker_list,ok
 833444,Johnson Controls International plc,JCI,JCI,1,833444,NYSE,3585,35,Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip,Manufacturing,Ireland,L2,operating,0930,False,sec_ticker_list,ok
@@ -1163,7 +1163,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 887028,RIO TINTO LTD,RTNTF,RTNTF,1,887028,OTC,1000,10,Metal Mining,Mining,Australia,C3,other,1231,False,sec_ticker_list,ok
 887151,Capstone Holding Corp.,CAPS,CAPS,1,887151,Nasdaq,5030,50,Wholesale-Lumber & Other Construction Materials,Wholesale Trade,United States,DE,operating,1231,False,sec_ticker_list,ok
 887153,"GRUPO SIMEC, S.A.B. de C.V.",SIM,SIM,1,887153,NYSE,3312,33,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",Manufacturing,United States,,other,1231,False,sec_ticker_list,ok
-887225,KOREA ELECTRIC POWER CORP,KEP,KEP,1,887225,NYSE,4911,49,Electric Services,"Transportation, Communications & Utilities",,M5,other,1231,False,sec_ticker_list,ok
+887225,KOREA ELECTRIC POWER CORP,KEP,KEP,1,887225,NYSE,4911,49,Electric Services,"Transportation, Communications & Utilities",United States,M5,other,1231,False,sec_ticker_list,ok
 887343,"COLUMBIA BANKING SYSTEM, INC.",COLB,COLB,1,887343,Nasdaq,6022,60,State Commercial Banks,"Finance, Insurance & Real Estate",United States,WA,operating,1231,False,sec_ticker_list,ok
 887359,Vericel Corp,VCEL,VCEL,1,887359,Nasdaq,2836,28,"Biological Products, (No Diagnostic Substances)",Manufacturing,United States,MI,operating,1231,False,sec_ticker_list,ok
 887396,EMPIRE PETROLEUM CORP,EP,EP,1,887396,NYSE,1311,13,Crude Petroleum & Natural Gas,Mining,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -1327,7 +1327,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 916076,MARTIN MARIETTA MATERIALS INC,MLM,MLM,1,916076,NYSE,1400,14,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),Mining,United States,NC,operating,1231,False,sec_ticker_list,ok
 916365,TRACTOR SUPPLY CO /DE/,TSCO,TSCO,1,916365,Nasdaq,5200,52,"Retail-Building Materials, Hardware, Garden Supply",Retail Trade,United States,DE,operating,1228,False,sec_ticker_list,ok
 916540,DARLING INGREDIENTS INC.,DAR,DAR,1,916540,NYSE,2070,20,Fats & Oils,Manufacturing,United States,DE,operating,0102,False,sec_ticker_list,ok
-916789,HELEN OF TROY LTD,HELE,HELE,1,916789,Nasdaq,3634,36,Electric Housewares & Fans,Manufacturing,,D0,operating,0228,False,sec_ticker_list,ok
+916789,HELEN OF TROY LTD,HELE,HELE,1,916789,Nasdaq,3634,36,Electric Housewares & Fans,Manufacturing,United States,D0,operating,0228,False,sec_ticker_list,ok
 916793,SILICOM LTD.,SILC,SILC,1,916793,Nasdaq,3576,35,Computer Communications Equipment,Manufacturing,Israel,,other,1231,False,sec_ticker_list,ok
 916907,"SOUTHERN MISSOURI BANCORP, INC.",SMBC,SMBC,1,916907,Nasdaq,6036,60,"Savings Institutions, Not Federally Chartered","Finance, Insurance & Real Estate",United States,MO,operating,0630,False,sec_ticker_list,ok
 917225,SOLITARIO RESOURCES CORP.,XPL,XPL,1,917225,NYSE,1040,10,Gold and Silver Ores,Mining,United States,CO,operating,1231,False,sec_ticker_list,ok
@@ -1559,7 +1559,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1015650,SK TELECOM CO LTD,SKM,SKM,1,1015650,NYSE,4812,48,Radiotelephone Communications,"Transportation, Communications & Utilities",,,other,1231,False,sec_ticker_list,ok
 1015739,AWARE INC /MA/,AWRE,AWRE,1,1015739,Nasdaq,7372,73,Services-Prepackaged Software,Services,United States,MA,operating,1231,False,sec_ticker_list,ok
 1015820,QIAGEN N.V.,QGEN,QGEN,1,1015820,NYSE,2836,28,"Biological Products, (No Diagnostic Substances)",Manufacturing,,P7,other,1231,False,sec_ticker_list,ok
-1015922,CHECK POINT SOFTWARE TECHNOLOGIES LTD,CHKP,CHKP,1,1015922,Nasdaq,7372,73,Services-Prepackaged Software,Services,,,other,1231,False,sec_ticker_list,ok
+1015922,CHECK POINT SOFTWARE TECHNOLOGIES LTD,CHKP,CHKP,1,1015922,Nasdaq,7372,73,Services-Prepackaged Software,Services,United States,,other,1231,False,sec_ticker_list,ok
 1016178,CARVER BANCORP INC,CARV,CARV,1,1016178,OTC,6035,60,"Savings Institution, Federally Chartered","Finance, Insurance & Real Estate",United States,DE,operating,0331,False,sec_ticker_list,ok
 1016281,CARRIAGE SERVICES INC,CSV,CSV,1,1016281,NYSE,7200,72,Services-Personal Services,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 1016504,INTEGRATED BIOPHARMA INC,INBP,INBP,1,1016504,OTC,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,0630,False,sec_ticker_list,ok
@@ -1661,7 +1661,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1038074,SILICON LABORATORIES INC.,SLAB,SLAB,1,1038074,Nasdaq,3674,36,Semiconductors & Related Devices,Manufacturing,United States,DE,operating,0102,False,sec_ticker_list,ok
 1038143,ORANGE,FNCTF,FNCTF;ORANY,2,1038143,OTC,4813,48,Telephone Communications (No Radiotelephone),"Transportation, Communications & Utilities",France,,other,1231,False,sec_ticker_list,ok
 1038277,RADNOSTIX INC,INIS,INIS,1,1038277,OTC,3823,38,"Industrial Instruments For Measurement, Display, and Control",Manufacturing,United States,TX,operating,1231,False,sec_ticker_list,ok
-1038683,RYANAIR HOLDINGS PLC,RYAAY,RYAAY;RYAOF,2,1038683,Nasdaq,4512,45,"Air Transportation, Scheduled","Transportation, Communications & Utilities",,,other,0331,False,sec_ticker_list,ok
+1038683,RYANAIR HOLDINGS PLC,RYAAY,RYAAY;RYAOF,2,1038683,Nasdaq,4512,45,"Air Transportation, Scheduled","Transportation, Communications & Utilities",United States,,other,0331,False,sec_ticker_list,ok
 1038773,SMARTFINANCIAL INC.,SMBK,SMBK,1,1038773,NYSE,6021,60,National Commercial Banks,"Finance, Insurance & Real Estate",United States,TN,operating,1231,False,sec_ticker_list,ok
 1039065,OSI SYSTEMS INC,OSIS,OSIS,1,1039065,Nasdaq,3674,36,Semiconductors & Related Devices,Manufacturing,United States,DE,operating,0630,False,sec_ticker_list,ok
 1039280,NETSOL TECHNOLOGIES INC,NTWK,NTWK,1,1039280,Nasdaq,7372,73,Services-Prepackaged Software,Services,United States,NV,operating,0630,False,sec_ticker_list,ok
@@ -1682,7 +1682,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1041514,LESAKA TECHNOLOGIES INC,LSAK,LSAK,1,1041514,Nasdaq,6099,60,"Functions Related To Depository Banking, NEC","Finance, Insurance & Real Estate",,FL,operating,0630,False,sec_ticker_list,ok
 1041657,"URBAN ONE, INC.",UONE,UONE;UONEK,2,1041657,Nasdaq,4832,48,Radio Broadcasting Stations,"Transportation, Communications & Utilities",United States,DE,operating,1231,False,sec_ticker_list,ok
 1041668,CHINA SOUTHERN AIRLINES CO LTD,CHKIF,CHKIF,1,1041668,OTC,4512,45,"Air Transportation, Scheduled","Transportation, Communications & Utilities",China,F4,other,1231,False,sec_ticker_list,ok
-1041792,ENERGY CO OF PARANA,ELPC,ELPC,1,1041792,NYSE,4911,49,Electric Services,"Transportation, Communications & Utilities",,,other,1231,False,sec_ticker_list,ok
+1041792,ENERGY CO OF PARANA,ELPC,ELPC,1,1041792,NYSE,4911,49,Electric Services,"Transportation, Communications & Utilities",United States,,other,1231,False,sec_ticker_list,ok
 1041803,PRICESMART INC,PSMT,PSMT,1,1041803,Nasdaq,5331,53,Retail-Variety Stores,Retail Trade,United States,DE,operating,0831,False,sec_ticker_list,ok
 1041859,"Childrens Place, Inc.",PLCE,PLCE,1,1041859,Nasdaq,5651,56,Retail-Family Clothing Stores,Retail Trade,United States,,operating,0131,False,sec_ticker_list,ok
 1041934,EDAP TMS SA,FOCL,FOCL,1,1041934,Nasdaq,3845,38,Electromedical & Electrotherapeutic Apparatus,Manufacturing,France,,operating,1231,False,sec_ticker_list,ok
@@ -2037,7 +2037,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1114927,FIRST NORTHERN COMMUNITY BANCORP,FNRN,FNRN,1,1114927,Nasdaq,6035,60,"Savings Institution, Federally Chartered","Finance, Insurance & Real Estate",United States,CA,operating,1231,False,sec_ticker_list,ok
 1114936,UMeWorld Inc.,UMEW,UMEW,1,1114936,OTC,7372,73,Services-Prepackaged Software,Services,,DE,operating,0930,False,sec_ticker_list,ok
 1114995,IMPINJ INC,PI,PI,1,1114995,Nasdaq,3679,36,"Electronic Components, NEC",Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
-1115864,ECOMINAS CORP.,ILXP,ILXP,1,1115864,,1400,14,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),Mining,,,operating,1231,False,sec_ticker_list,ok
+1115864,ECOMINAS CORP.,ILXP,ILXP,1,1115864,,1400,14,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),Mining,United States,,operating,1231,False,sec_ticker_list,ok
 1116132,"TAPESTRY, INC.",TPR,TPR,1,1116132,NYSE,3100,31,Leather & Leather Products,Manufacturing,United States,MD,operating,0627,False,sec_ticker_list,ok
 1116463,ORASURE TECHNOLOGIES INC,OSUR,OSUR,1,1116463,Nasdaq,3841,38,Surgical & Medical Instruments & Apparatus,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 1116578,PRUDENTIAL PLC,PUK,PUK;PUKPF,2,1116578,NYSE,6311,63,Life Insurance,"Finance, Insurance & Real Estate",,X0,other,1231,False,sec_ticker_list,ok
@@ -2451,7 +2451,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1291855,SuperCom Ltd,SPCB,SPCB,1,1291855,Nasdaq,3674,36,Semiconductors & Related Devices,Manufacturing,,L3,other,1231,False,sec_ticker_list,ok
 1292490,"Synbio International, Inc.",SYIN,SYIN,1,1292490,OTC,7374,73,Services-Computer Processing & Data Preparation,Services,United States,FL,other,1231,False,sec_ticker_list,ok
 1293135,VERMILION ENERGY INC.,VET,VET,1,1293135,NYSE,1311,13,Crude Petroleum & Natural Gas,Mining,Canada,A0,other,1231,False,sec_ticker_list,ok
-1293818,CapForce Inc.,CFOR,CFOR,1,1293818,OTC,8071,80,Services-Medical Laboratories,Services,,DE,operating,1231,False,sec_ticker_list,ok
+1293818,CapForce Inc.,CFOR,CFOR,1,1293818,OTC,8071,80,Services-Medical Laboratories,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 1294133,Inogen Inc,INGN,INGN,1,1294133,Nasdaq,3842,38,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 1294808,PPLUS Trust Series GSC-2,PYT,PYT,1,1294808,NYSE,6189,61,Asset-Backed Securities,"Finance, Insurance & Real Estate",United States,DE,operating,1231,False,sec_ticker_list,ok
 1295401,"Bancorp, Inc.",TBBK,TBBK,1,1295401,Nasdaq,6021,60,National Commercial Banks,"Finance, Insurance & Real Estate",United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -2759,8 +2759,8 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1375365,"Super Micro Computer, Inc.",SMCI,SMCI;SMCIP,2,1375365,Nasdaq,3571,35,Electronic Computers,Manufacturing,United States,CA,operating,0630,False,sec_ticker_list,ok
 1375877,Canadian Solar Inc.,CSIQ,CSIQ,1,1375877,Nasdaq,3674,36,Semiconductors & Related Devices,Manufacturing,Canada,A6,other,1231,False,sec_ticker_list,ok
 1376139,CVR ENERGY INC,CVI,CVI,1,1376139,NYSE,2911,29,Petroleum Refining,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
-1376231,"VPR Brands, LP.",VPRB,VPRB,1,1376231,OTC,7372,73,Services-Prepackaged Software,Services,,,operating,1231,False,sec_ticker_list,ok
-1376321,ZW Data Action Technologies Inc.,CNET,CNET,1,1376321,Nasdaq,7370,73,"Services-Computer Programming, Data Processing, Etc.",Services,,NV,operating,1231,False,sec_ticker_list,ok
+1376231,"VPR Brands, LP.",VPRB,VPRB,1,1376231,OTC,7372,73,Services-Prepackaged Software,Services,United States,,operating,1231,False,sec_ticker_list,ok
+1376321,ZW Data Action Technologies Inc.,CNET,CNET,1,1376321,Nasdaq,7370,73,"Services-Computer Programming, Data Processing, Etc.",Services,United States,NV,operating,1231,False,sec_ticker_list,ok
 1376339,"MIMEDX GROUP, INC.",MDXG,MDXG,1,1376339,Nasdaq,3841,38,Surgical & Medical Instruments & Apparatus,Manufacturing,United States,,operating,1231,False,sec_ticker_list,ok
 1376793,"Cavitation Technologies, Inc.",CVAT,CVAT,1,1376793,OTC,700,7,Agricultural Services,"Agriculture, Forestry & Fishing",United States,,operating,0630,False,sec_ticker_list,ok
 1376804,"VNUE, Inc.",RDCT,RDCT,1,1376804,OTC,7822,78,Services-Motion Picture & Video Tape Distribution,Services,United States,NV,operating,1231,False,sec_ticker_list,ok
@@ -2910,7 +2910,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1408198,MSCI Inc.,MSCI,MSCI,1,1408198,NYSE,7389,73,"Services-Business Services, NEC",Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 1408443,Milestone Pharmaceuticals Inc.,MIST,MIST,1,1408443,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,Canada,A8,operating,1231,False,sec_ticker_list,ok
 1408534,"First Guaranty Bancshares, Inc.",FGBI,FGBI;FGBIP,2,1408534,Nasdaq,6035,60,"Savings Institution, Federally Chartered","Finance, Insurance & Real Estate",United States,LA,operating,1231,False,sec_ticker_list,ok
-1408710,Fabrinet,FN,FN,1,1408710,NYSE,3661,36,Telephone & Telegraph Apparatus,Manufacturing,,E9,operating,0627,False,sec_ticker_list,ok
+1408710,Fabrinet,FN,FN,1,1408710,NYSE,3661,36,Telephone & Telegraph Apparatus,Manufacturing,United States,E9,operating,0627,False,sec_ticker_list,ok
 1409036,Silver North Resources Ltd.,TARSF,TARSF,1,1409036,OTC,1040,10,Gold and Silver Ores,Mining,Canada,A1,other,0930,False,sec_ticker_list,ok
 1409171,Titan Machinery Inc.,TITN,TITN,1,1409171,Nasdaq,5990,59,"Retail-Retail Stores, NEC",Retail Trade,United States,DE,operating,0131,False,sec_ticker_list,ok
 1409197,"Bespoke Extracts, Inc.",BSPK,BSPK,1,1409197,OTC,2834,28,Pharmaceutical Preparations,Manufacturing,United States,NV,operating,1231,False,sec_ticker_list,ok
@@ -2938,7 +2938,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1412558,Evotec SE,EVO,EVO;EVOTF,2,1412558,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,,2M,other,1231,False,sec_ticker_list,ok
 1413119,"Kraig Biocraft Laboratories, Inc.",KBLB,KBLB,1,1413119,OTC,2820,28,"Plastic Material, Synth Resin/Rubber, Cellulos (No Glass)",Manufacturing,United States,WY,operating,1231,False,sec_ticker_list,ok
 1413329,Philip Morris International Inc.,PM,PM,1,1413329,NYSE,2111,21,Cigarettes,Manufacturing,United States,VA,operating,1231,False,sec_ticker_list,ok
-1413447,NXP Semiconductors N.V.,NXPI,NXPI,1,1413447,Nasdaq,3674,36,Semiconductors & Related Devices,Manufacturing,,,operating,1231,False,sec_ticker_list,ok
+1413447,NXP Semiconductors N.V.,NXPI,NXPI,1,1413447,Nasdaq,3674,36,Semiconductors & Related Devices,Manufacturing,Netherlands,,operating,1231,False,sec_ticker_list,ok
 1413745,Yueda Digital Holding,YDKG,YDKG,1,1413745,Nasdaq,6199,61,Finance Services,"Finance, Insurance & Real Estate",United States,E9,other,1231,False,sec_ticker_list,ok
 1413855,AIFU Inc.,AIFU,AIFU,1,1413855,Nasdaq,6411,64,"Insurance Agents, Brokers & Service","Finance, Insurance & Real Estate",,E9,other,1231,False,sec_ticker_list,ok
 1413891,"HIGH WIRE NETWORKS, INC.",HWNI,HWNI,1,1413891,OTC,4813,48,Telephone Communications (No Radiotelephone),"Transportation, Communications & Utilities",United States,NV,operating,1231,False,sec_ticker_list,ok
@@ -3228,7 +3228,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1469395,Pampa Energy Inc.,PAM,PAM;PPENF,2,1469395,NYSE,4911,49,Electric Services,"Transportation, Communications & Utilities",Argentina,C1,other,1231,False,sec_ticker_list,ok
 1469443,"Arcadia Biosciences, Inc.",RKDA,RKDA,1,1469443,Nasdaq,1311,13,Crude Petroleum & Natural Gas,Mining,United States,DE,operating,1231,False,sec_ticker_list,ok
 1470129,VisitIQ Corp.,VIIQ,VIIQ,1,1470129,OTC,7372,73,Services-Prepackaged Software,Services,United States,NV,operating,0831,False,sec_ticker_list,ok
-1470419,easyJet plc,ESYJY,ESYJY;EJTTF,2,1470419,OTC,,,,,,,other,,False,sec_ticker_list,ok
+1470419,easyJet plc,ESYJY,ESYJY;EJTTF,2,1470419,OTC,,,,,United Kingdom,,other,,False,sec_ticker_list,ok
 1470683,Antelope Enterprise Holdings Ltd,AEHL,AEHL,1,1470683,Nasdaq,4899,48,"Communications Services, NEC","Transportation, Communications & Utilities",United States,D8,other,0930,False,sec_ticker_list,ok
 1471055,Banco Santander (Brasil) S.A.,BSBR,BSBR,1,1471055,NYSE,6029,60,"Commercial Banks, NEC","Finance, Insurance & Real Estate",Brazil,D5,other,1231,False,sec_ticker_list,ok
 1471265,"Northwest Bancshares, Inc.",NWBI,NWBI,1,1471265,Nasdaq,6021,60,National Commercial Banks,"Finance, Insurance & Real Estate",United States,MD,operating,1231,False,sec_ticker_list,ok
@@ -3625,7 +3625,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1536787,ALSOK Co Ltd./ADR,SOHGY,SOHGY;SOHGF,2,1536787,OTC,,,,,United States,,other,,False,sec_ticker_list,ok
 1536811,Thunderstruck Resources Ltd.,THURF,THURF,1,1536811,OTC,,,,,Canada,A1,other,1130,False,sec_ticker_list,ok
 1537054,Gogo Inc.,GOGO,GOGO,1,1537054,Nasdaq,4899,48,"Communications Services, NEC","Transportation, Communications & Utilities",United States,DE,operating,1231,False,sec_ticker_list,ok
-1537137,STANDARD LITHIUM LTD.,SLI,SLI,1,1537137,NYSE,2800,28,Chemicals & Allied Products,Manufacturing,,A1,other,1231,False,sec_ticker_list,ok
+1537137,STANDARD LITHIUM LTD.,SLI,SLI,1,1537137,NYSE,2800,28,Chemicals & Allied Products,Manufacturing,United States,A1,other,1231,False,sec_ticker_list,ok
 1537317,Independence Gold Corp.,IEGCF,IEGCF,1,1537317,OTC,,,,,Canada,A1,other,0228,False,sec_ticker_list,ok
 1537435,TECOGEN INC.,TGEN,TGEN,1,1537435,NYSE,3585,35,Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 1537543,MGX Resources Limited/ADR,MTGRF,MTGRF,1,1537543,OTC,,,,,United States,,other,,False,sec_ticker_list,ok
@@ -3779,7 +3779,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1568194,FS Credit Opportunities Corp.,FSCO,FSCO,1,1568194,NYSE,,,,,United States,MD,other,1231,False,sec_ticker_list,ok
 1568385,"Bright Mountain Media, Inc.",BMTM,BMTM,1,1568385,OTC,7371,73,Services-Computer Programming Services,Services,United States,FL,operating,1231,False,sec_ticker_list,ok
 1568651,"Oscar Health, Inc.",OSCR,OSCR,1,1568651,NYSE,6324,63,Hospital & Medical Service Plans,"Finance, Insurance & Real Estate",United States,DE,operating,1231,False,sec_ticker_list,ok
-1568969,Techlott Inc.,LOTT,LOTT,1,1568969,OTC,7371,73,Services-Computer Programming Services,Services,,SD,operating,1231,False,sec_ticker_list,ok
+1568969,Techlott Inc.,LOTT,LOTT,1,1568969,OTC,7371,73,Services-Computer Programming Services,Services,United States,SD,operating,1231,False,sec_ticker_list,ok
 1569187,"AH Realty Trust, Inc.",AHRT,AHRT;AHRT-PA,2,1569187,NYSE,6500,65,Real Estate,"Finance, Insurance & Real Estate",United States,MD,operating,1231,False,sec_ticker_list,ok
 1569340,"Cell Source, Inc.",CLCS,CLCS,1,1569340,OTC,2834,28,Pharmaceutical Preparations,Manufacturing,United States,NV,operating,1231,False,sec_ticker_list,ok
 1569345,"Sprinklr, Inc.",CXM,CXM,1,1569345,NYSE,7372,73,Services-Prepackaged Software,Services,United States,DE,operating,0131,False,sec_ticker_list,ok
@@ -3843,7 +3843,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1578987,ArrowMark Financial Corp.,BANX,BANX,1,1578987,Nasdaq,,,,,United States,DE,other,,False,sec_ticker_list,ok
 1579091,Maplebear Inc.,CART,CART,1,1579091,Nasdaq,7389,73,"Services-Business Services, NEC",Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 1579157,VINCE HOLDING CORP.,VNCE,VNCE,1,1579157,Nasdaq,5600,56,Retail-Apparel & Accessory Stores,Retail Trade,United States,DE,operating,0201,False,sec_ticker_list,ok
-1579241,Allegion plc,ALLE,ALLE,1,1579241,NYSE,7381,73,"Services-Detective, Guard & Armored Car Services",Services,,L2,operating,1231,False,sec_ticker_list,ok
+1579241,Allegion plc,ALLE,ALLE,1,1579241,NYSE,7381,73,"Services-Detective, Guard & Armored Car Services",Services,United States,L2,operating,1231,False,sec_ticker_list,ok
 1579298,"Burlington Stores, Inc.",BURL,BURL,1,1579298,NYSE,5311,53,Retail-Department Stores,Retail Trade,United States,DE,operating,0201,False,sec_ticker_list,ok
 1579428,"Axsome Therapeutics, Inc.",AXSM,AXSM,1,1579428,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 1579684,"USA TODAY Co., Inc.",TDAY,TDAY,1,1579684,NYSE,2711,27,Newspapers: Publishing or  Publishing & Printing,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -4144,7 +4144,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1628935,MORIEN RESOURCES CORP.,APMCF,APMCF,1,1628935,OTC,,,,,Canada,Z4,other,1231,False,sec_ticker_list,ok
 1629019,Merchants Bancorp,MBIN,MBIN;MBINL;MBINM;MBINN,4,1629019,Nasdaq,6022,60,State Commercial Banks,"Finance, Insurance & Real Estate",United States,IN,operating,1231,False,sec_ticker_list,ok
 1629210,Paramount Gold Nevada Corp.,PZG,PZG,1,1629210,NYSE,1000,10,Metal Mining,Mining,United States,NV,operating,0630,False,sec_ticker_list,ok
-1629632,Eguana Technologies Inc.,EGTYF,EGTYF,1,1629632,OTC,,,,,,A0,other,,False,sec_ticker_list,ok
+1629632,Eguana Technologies Inc.,EGTYF,EGTYF,1,1629632,OTC,,,,,Canada,A0,other,,False,sec_ticker_list,ok
 1630113,BIOTRICITY INC.,BTCY,BTCY,1,1630113,OTC,3841,38,Surgical & Medical Instruments & Apparatus,Manufacturing,United States,NV,operating,0331,False,sec_ticker_list,ok
 1630176,HEALTHY EXTRACTS INC.,HYEX,HYEX,1,1630176,OTC,2833,28,Medicinal Chemicals & Botanical Products,Manufacturing,United States,NV,operating,1231,False,sec_ticker_list,ok
 1630212,Change Agents Corporation.,CHGA,CHGA,1,1630212,Nasdaq,7371,73,Services-Computer Programming Services,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -4537,7 +4537,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1699709,VitaNova Life Sciences Corp,VNOV,VNOV,1,1699709,OTC,5130,51,"Wholesale-Apparel, Piece Goods & Notions",Wholesale Trade,United States,NV,operating,0430,False,sec_ticker_list,ok
 1699880,American Lithium Corp.,AMLIF,AMLIF,1,1699880,OTC,1000,10,Metal Mining,Mining,Canada,A1,other,0229,False,sec_ticker_list,ok
 1699963,"Neutron Holdings, Inc.",LIME,LIME,1,1699963,Nasdaq,7372,73,Services-Prepackaged Software,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
-1699967,Meitu Inc./ADR,MEIUF,MEIUF,1,1699967,OTC,,,,,,,other,,False,sec_ticker_list,ok
+1699967,Meitu Inc./ADR,MEIUF,MEIUF,1,1699967,OTC,,,,,United States,,other,,False,sec_ticker_list,ok
 1700171,Aena S.A./ADR,ANNSF,ANNSF,1,1700171,OTC,,,,,Spain,U3,other,1231,False,sec_ticker_list,ok
 1700173,"Fuyao Glass Industry Group Co., Ltd./ADR",FIGIF,FIGIF,1,1700173,OTC,,,,,China,F4,other,1231,False,sec_ticker_list,ok
 1700844,EvoAir Holdings Inc.,EVOH,EVOH,1,1700844,OTC,3585,35,Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip,Manufacturing,Malaysia,NV,operating,0831,False,sec_ticker_list,ok
@@ -4684,7 +4684,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1720553,Phenom Resources Corp.,PHNMF,PHNMF,1,1720553,OTC,,,,,Canada,A1,other,1130,False,sec_ticker_list,ok
 1720580,"Adicet Bio, Inc.",ACET,ACET,1,1720580,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1226,False,sec_ticker_list,ok
 1720592,Repay Holdings Corp,RPAY,RPAY,1,1720592,Nasdaq,7389,73,"Services-Business Services, NEC",Services,United States,DE,operating,1231,False,sec_ticker_list,ok
-1720635,nVent Electric plc,NVT,NVT,1,1720635,NYSE,3550,35,Special Industry Machinery (No Metalworking Machinery),Manufacturing,,L2,operating,1231,False,sec_ticker_list,ok
+1720635,nVent Electric plc,NVT,NVT,1,1720635,NYSE,3550,35,Special Industry Machinery (No Metalworking Machinery),Manufacturing,United States,L2,operating,1231,False,sec_ticker_list,ok
 1720893,"BioXcel Therapeutics, Inc.",BTAI,BTAI,1,1720893,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 1721056,HOOPS SCOUTING USA,HSCT,HSCT,1,1721056,OTC,7374,73,Services-Computer Processing & Data Preparation,Services,United States,WY,operating,0630,False,sec_ticker_list,ok
 1721484,Longeveron Inc.,LGVN,LGVN,1,1721484,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -4699,7 +4699,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1723047,Viva Gold Corp.,VAUCF,VAUCF,1,1723047,OTC,,,,,Canada,A1,other,1031,False,sec_ticker_list,ok
 1723059,Bio Essence Corp,BIOE,BIOE,1,1723059,OTC,2834,28,Pharmaceutical Preparations,Manufacturing,United States,CA,operating,1231,False,sec_ticker_list,ok
 1723069,Tiziana Life Sciences Ltd,TLSA,TLSA,1,1723069,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United Kingdom,D0,other,1231,False,sec_ticker_list,ok
-1723128,"Amneal Pharmaceuticals, Inc.",AMRX,AMRX,1,1723128,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,,,operating,1231,False,sec_ticker_list,ok
+1723128,"Amneal Pharmaceuticals, Inc.",AMRX,AMRX,1,1723128,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,,operating,1231,False,sec_ticker_list,ok
 1723455,SKY GOLD CORP.,SRKZF,SRKZF,1,1723455,OTC,,,,,,A1,other,0630,False,sec_ticker_list,ok
 1723464,BIOHARVEST SCIENCES INC.,BHST,BHST,1,1723464,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,Canada,A1,other,1231,False,sec_ticker_list,ok
 1723517,UC Asset LP,UCASU,UCASU,1,1723517,OTC,6799,67,"Investors, NEC","Finance, Insurance & Real Estate",United States,DE,operating,,False,sec_ticker_list,ok
@@ -4790,7 +4790,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1737339,Aurora Mobile Ltd,JG,JG,1,1737339,Nasdaq,7370,73,"Services-Computer Programming, Data Processing, Etc.",Services,,E9,other,1231,False,sec_ticker_list,ok
 1737450,Opera Ltd,OPRA,OPRA,1,1737450,Nasdaq,7372,73,Services-Prepackaged Software,Services,Norway,E9,other,1231,False,sec_ticker_list,ok
 1737523,BioNexus Gene Lab Corp,BGLC,BGLC,1,1737523,Nasdaq,8071,80,Services-Medical Laboratories,Services,,WY,operating,1231,False,sec_ticker_list,ok
-1737706,SEADRILL Ltd,SDRL,SDRL,1,1737706,NYSE,1381,13,Drilling Oil & Gas Wells,Mining,,,operating,1231,False,sec_ticker_list,ok
+1737706,SEADRILL Ltd,SDRL,SDRL,1,1737706,NYSE,1381,13,Drilling Oil & Gas Wells,Mining,United States,,operating,1231,False,sec_ticker_list,ok
 1737806,PDD Holdings Inc.,PDD,PDD,1,1737806,Nasdaq,7389,73,"Services-Business Services, NEC",Services,,E9,other,1231,False,sec_ticker_list,ok
 1737924,Nuveen Churchill Direct Lending Corp.,NCDL,NCDL,1,1737924,NYSE,,,,,United States,MD,operating,1231,False,sec_ticker_list,ok
 1737927,Canopy Growth Corp,CGC,CGC,1,1737927,Nasdaq,2833,28,Medicinal Chemicals & Botanical Products,Manufacturing,Canada,Z4,operating,0331,False,sec_ticker_list,ok
@@ -4842,7 +4842,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1745114,MOLECULAR PARTNERS AG,MOLN,MOLN,1,1745114,Nasdaq,2836,28,"Biological Products, (No Diagnostic Substances)",Manufacturing,Switzerland,V8,other,1231,False,sec_ticker_list,ok
 1745201,Viking Holdings Ltd,VIK,VIK,1,1745201,NYSE,4400,44,Water Transportation,"Transportation, Communications & Utilities",United States,D0,other,1231,False,sec_ticker_list,ok
 1745431,StoneCo Ltd.,STNE,STNE,1,1745431,Nasdaq,7374,73,Services-Computer Processing & Data Preparation,Services,Cayman Islands,E9,other,1231,False,sec_ticker_list,ok
-1745621,Genneia S.A.,GENN,GENN,1,1745621,,4911,49,Electric Services,"Transportation, Communications & Utilities",,,other,,False,sec_ticker_list,ok
+1745621,Genneia S.A.,GENN,GENN,1,1745621,,4911,49,Electric Services,"Transportation, Communications & Utilities",Argentina,,other,,False,sec_ticker_list,ok
 1745648,"Apnimed, Inc.",APMD,APMD,1,1745648,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 1745916,"PennyMac Financial Services, Inc.",PFSI,PFSI,1,1745916,NYSE,6162,61,Mortgage Bankers & Loan Correspondents,"Finance, Insurance & Real Estate",United States,DE,operating,1231,False,sec_ticker_list,ok
 1745999,Beam Therapeutics Inc.,BEAM,BEAM,1,1745999,Nasdaq,2836,28,"Biological Products, (No Diagnostic Substances)",Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -5071,7 +5071,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1782303,"Boundless Bio, Inc.",BOLD,BOLD,1,1782303,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 1782309,Skillful Craftsman Education Technology Ltd,EDTK,EDTK,1,1782309,Nasdaq,8200,82,Services-Educational Services,Services,China,E9,other,0331,False,sec_ticker_list,ok
 1782430,"Strawberry Fields REIT, Inc.",STRW,STRW,1,1782430,NYSE,6798,67,Real Estate Investment Trusts,"Finance, Insurance & Real Estate",United States,MD,operating,1231,False,sec_ticker_list,ok
-1782941,TIAN RUIXIANG HOLDINGS LTD,TIRXF,TIRXF,1,1782941,OTC,6411,64,"Insurance Agents, Brokers & Service","Finance, Insurance & Real Estate",,E9,other,1031,False,sec_ticker_list,ok
+1782941,TIAN RUIXIANG HOLDINGS LTD,TIRXF,TIRXF,1,1782941,,6411,64,"Insurance Agents, Brokers & Service","Finance, Insurance & Real Estate",,E9,other,1031,False,sec_ticker_list,ok
 1782999,PureTech Health plc,PTCHF,PTCHF;PRTCY,2,1782999,OTC,2834,28,Pharmaceutical Preparations,Manufacturing,United States,X0,other,1231,False,sec_ticker_list,ok
 1783036,NewcelX Ltd.,NCEL,NCEL,1,1783036,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,,V8,other,1231,False,sec_ticker_list,ok
 1783180,CARRIER GLOBAL Corp,CARR,CARR,1,1783180,NYSE,3585,35,Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -5447,7 +5447,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1826457,"Monte Rosa Therapeutics, Inc.",GLUE,GLUE,1,1826457,Nasdaq,2836,28,"Biological Products, (No Diagnostic Substances)",Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 1826470,"Petco Health & Wellness Company, Inc.",WOOF,WOOF,1,1826470,Nasdaq,5990,59,"Retail-Retail Stores, NEC",Retail Trade,United States,DE,operating,0130,False,sec_ticker_list,ok
 1826600,"Montauk Renewables, Inc.",MNTK,MNTK,1,1826600,Nasdaq,4932,49,Gas & Other Services Combined,"Transportation, Communications & Utilities",United States,DE,operating,1231,False,sec_ticker_list,ok
-1826660,Wetouch Technology Inc.,WETH,WETH,1,1826660,Nasdaq,3577,35,"Computer Peripheral Equipment, NEC",Manufacturing,,NV,operating,1231,False,sec_ticker_list,ok
+1826660,Wetouch Technology Inc.,WETH,WETH,1,1826660,Nasdaq,3577,35,"Computer Peripheral Equipment, NEC",Manufacturing,United States,NV,operating,1231,False,sec_ticker_list,ok
 1826667,"TriSalus Life Sciences, Inc.",TLSI,TLSI;TLSIW,2,1826667,Nasdaq,3841,38,Surgical & Medical Instruments & Apparatus,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 1826681,Palladyne AI Corp.,PDYN,PDYN;PDYNW,2,1826681,Nasdaq,7372,73,Services-Prepackaged Software,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 1826779,Tomy Co Ltd/ADR,TOMYF,TOMYF,1,1826779,OTC,,,,,United States,,other,,False,sec_ticker_list,ok
@@ -5720,7 +5720,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1852353,Dakota Gold Corp.,DC,DC,1,1852353,NYSE,1000,10,Metal Mining,Mining,United States,DE,operating,1231,False,sec_ticker_list,ok
 1852354,ARGO GRAPHENE SOLUTIONS CORP.,ARLSF,ARLSF,1,1852354,OTC,,,,,,A1,other,1130,False,sec_ticker_list,ok
 1852440,Jianzhi Education Technology Group Co Ltd,JZ,JZ,1,1852440,Nasdaq,8200,82,Services-Educational Services,Services,China,E9,other,1231,False,sec_ticker_list,ok
-1852551,Nova Minerals Corp,NVA,NVA;NVA-WT,2,1852551,NYSE,1040,10,Gold and Silver Ores,Mining,,NV,other,0630,False,sec_ticker_list,ok
+1852551,Nova Minerals Corp,NVA,NVA;NVA-WT,2,1852551,NYSE,1040,10,Gold and Silver Ores,Mining,,NV,operating,0630,False,sec_ticker_list,ok
 1852575,"Strategic Storage Trust VI, Inc.",SGST,SGST,1,1852575,OTC,6798,67,Real Estate Investment Trusts,"Finance, Insurance & Real Estate",United States,MD,operating,1231,False,sec_ticker_list,ok
 1852753,TIER ONE SILVER INC.,TSLVF,TSLVF,1,1852753,OTC,,,,,,A1,other,1231,False,sec_ticker_list,ok
 1852767,"Marti Technologies, Inc.",MRT,MRT,1,1852767,NYSE,7510,75,Services-Auto Rental & Leasing (No Drivers),Services,,E9,operating,1231,False,sec_ticker_list,ok
@@ -6397,7 +6397,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1973239,ARM HOLDINGS PLC /UK,ARM,ARM,1,1973239,Nasdaq,3674,36,Semiconductors & Related Devices,Manufacturing,United Kingdom,X0,other,0331,False,sec_ticker_list,ok
 1973266,"TKO Group Holdings, Inc.",TKO,TKO,1,1973266,NYSE,7900,79,Services-Amusement & Recreation Services,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 1973368,SRIVARU Holding Ltd,SVUHF,SVUHF;SVUWF,2,1973368,OTC,3711,37,Motor Vehicles & Passenger Car Bodies,Manufacturing,Cayman Islands,E9,other,0331,False,sec_ticker_list,ok
-1973832,AngloGold Ashanti PLC,AU,AU,1,1973832,NYSE,1040,10,Gold and Silver Ores,Mining,,X0,other,1231,False,sec_ticker_list,ok
+1973832,AngloGold Ashanti PLC,AU,AU,1,1973832,NYSE,1040,10,Gold and Silver Ores,Mining,United States,X0,other,1231,False,sec_ticker_list,ok
 1974044,MoneyHero Ltd,MNY,MNY;MNYWW,2,1974044,Nasdaq,7389,73,"Services-Business Services, NEC",Services,Singapore,E9,other,1231,False,sec_ticker_list,ok
 1974138,NCR Atleos Corp,NATL,NATL,1,1974138,NYSE,3578,35,Calculating & Accounting Machines (No Electronic Computers),Manufacturing,United States,MD,operating,1231,False,sec_ticker_list,ok
 1974640,"Apogee Therapeutics, Inc.",APGE,APGE,1,1974640,Nasdaq,2836,28,"Biological Products, (No Diagnostic Substances)",Manufacturing,United States,,operating,1231,False,sec_ticker_list,ok
@@ -6750,7 +6750,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2034723,One & one Green Technologies. INC,YDDL,YDDL,1,2034723,Nasdaq,5090,50,Wholesale-Misc Durable Goods,Wholesale Trade,,,other,,False,sec_ticker_list,ok
 2035057,Inficon Holding AG/ADR,IFHLY,IFHLY;IFCNF,2,2035057,OTC,,,,,Switzerland,V8,other,1231,False,sec_ticker_list,ok
 2035149,Flowco Holdings Inc.,FLOC,FLOC,1,2035149,NYSE,3533,35,Oil & Gas Field Machinery & Equipment,Manufacturing,United States,,operating,1231,False,sec_ticker_list,ok
-2035304,Titan America SA,TTAM,TTAM,1,2035304,NYSE,1400,14,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),Mining,,C9,other,1231,False,sec_ticker_list,ok
+2035304,Titan America SA,TTAM,TTAM,1,2035304,NYSE,1400,14,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),Mining,United States,C9,other,1231,False,sec_ticker_list,ok
 2035697,Polibeli Group Ltd,PLBL,PLBL,1,2035697,Nasdaq,5064,50,"Wholesale-Electrical Appliances, Tv & Radio Sets",Wholesale Trade,Indonesia,,other,,False,sec_ticker_list,ok
 2035709,Phoenix Asia Holdings Ltd,PHOE,PHOE,1,2035709,Nasdaq,1700,17,Construction - Special Trade Contractors,Construction,Hong Kong,E9,other,0331,False,sec_ticker_list,ok
 2035832,"Aktis Oncology, Inc.",AKTS,AKTS,1,2035832,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -6758,7 +6758,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2035992,Charming Medical Ltd,MCTA,MCTA,1,2035992,Nasdaq,8090,80,"Services-Misc Health & Allied Services, NEC",Services,Hong Kong,,other,,False,sec_ticker_list,ok
 2036042,"Sionna Therapeutics, Inc.",SION,SION,1,2036042,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2036060,"Security Midwest Bancorp, Inc.",SBMW,SBMW,1,2036060,OTC,6036,60,"Savings Institutions, Not Federally Chartered","Finance, Insurance & Real Estate",United States,MD,operating,1231,False,sec_ticker_list,ok
-2036307,OFA Group,OFAL,OFAL,1,2036307,Nasdaq,8711,87,Services-Engineering Services,Services,,E9,operating,0331,False,sec_ticker_list,ok
+2036307,OFA Group,OFAL,OFAL,1,2036307,Nasdaq,8711,87,Services-Engineering Services,Services,United States,E9,operating,0331,False,sec_ticker_list,ok
 2037400,"China Automotive Systems, Inc.",CAAS,CAAS,1,2037400,Nasdaq,3714,37,Motor Vehicle Parts & Accessories,Manufacturing,,E9,other,1231,False,sec_ticker_list,ok
 2038166,"Nok Therapeutics, Inc.",NKTP,NKTP,1,2038166,OTC,2834,28,Pharmaceutical Preparations,Manufacturing,United States,FL,other,,False,sec_ticker_list,ok
 2038378,Acco Group Holdings Ltd,ACCL,ACCL,1,2038378,Nasdaq,8742,87,Services-Management Consulting Services,Services,Hong Kong,,other,,False,sec_ticker_list,ok
@@ -6861,7 +6861,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2056450,Boxer Retail Limited/ADR,BXRLY,BXRLY,1,2056450,OTC,,,,,South Africa,T3,other,1231,False,sec_ticker_list,ok
 2056611,"Latigo Biotherapeutics, Inc.",LTGO,LTGO,1,2056611,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2056751,Recharge Resources Ltd.,UUUFF,UUUFF,1,2056751,OTC,,,,,Canada,A1,other,1231,False,sec_ticker_list,ok
-2057381,Readvantage Corp.,RADC,RADC,1,2057381,OTC,7374,73,Services-Computer Processing & Data Preparation,Services,,NV,operating,0630,False,sec_ticker_list,ok
+2057381,Readvantage Corp.,RADC,RADC,1,2057381,OTC,7374,73,Services-Computer Processing & Data Preparation,Services,United States,NV,operating,0630,False,sec_ticker_list,ok
 2057388,Franklin Solana Trust,SOEZ,SOEZ,1,2057388,NYSE,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,DE,operating,0331,True,sec_ticker_list,ok
 2057463,Liberty Capital Corp/NV,GLIBA,GLIBA;GLIBB;GLIBK,3,2057463,Nasdaq,4841,48,Cable & Other Pay Television Services,"Transportation, Communications & Utilities",United States,NV,operating,1231,False,sec_ticker_list,ok
 2058349,"ETOILES CAPITAL GROUP CO., LTD",EFTY,EFTY,1,2058349,Nasdaq,8742,87,Services-Management Consulting Services,Services,,,other,,False,sec_ticker_list,ok
@@ -6889,17 +6889,17 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2062925,Smart Pointer Group Holdings Ltd,SPGH,SPGH,1,2062925,,4731,47,Arrangement of  Transportation of  Freight & Cargo,"Transportation, Communications & Utilities",Hong Kong,E9,other,0331,False,sec_ticker_list,ok
 2063196,Netskope Inc,NTSK,NTSK,1,2063196,Nasdaq,7372,73,Services-Prepackaged Software,Services,United States,DE,operating,0131,False,sec_ticker_list,ok
 2063231,Central Retail Corp Public Co Limited/ADR,CLRLY,CLRLY,1,2063231,OTC,,,,,Thailand,W1,other,1231,False,sec_ticker_list,ok
-2063413,SM Prime Holdings Inc./ADR,SMPHY,SMPHY;SPHXF,2,2063413,OTC,,,,,,,other,1231,False,sec_ticker_list,ok
-2063417,Meridian Energy Ltd/ADR,MREGY,MREGY;MDDNF,2,2063417,OTC,,,,,,,other,1231,False,sec_ticker_list,ok
+2063413,SM Prime Holdings Inc./ADR,SMPHY,SMPHY;SPHXF,2,2063413,OTC,,,,,United States,,other,1231,False,sec_ticker_list,ok
+2063417,Meridian Energy Ltd/ADR,MREGY,MREGY;MDDNF,2,2063417,OTC,,,,,United States,,other,1231,False,sec_ticker_list,ok
 2063671,Canal Plus SA/ADR,GRCPY,GRCPY,1,2063671,OTC,,,,,United States,,other,1225,False,sec_ticker_list,ok
 2063675,Louis Hachette Group/ADR,LSHGY,LSHGY;LSHGF,2,2063675,OTC,,,,,United States,,other,1225,False,sec_ticker_list,ok
-2063685,PT Sumber Alfaria Trijaya Tbk/ADR,PSBTY,PSBTY;PSBAF,2,2063685,OTC,,,,,,,other,1231,False,sec_ticker_list,ok
+2063685,PT Sumber Alfaria Trijaya Tbk/ADR,PSBTY,PSBTY;PSBAF,2,2063685,OTC,,,,,United States,,other,1231,False,sec_ticker_list,ok
 2063863,"Elauwit Connection, Inc.",ELWT,ELWT,1,2063863,Nasdaq,4899,48,"Communications Services, NEC","Transportation, Communications & Utilities",United States,,operating,1231,False,sec_ticker_list,ok
 2064124,"Figure Technology Solutions, Inc.",FIGR,FIGR;FGRS,2,2064124,Nasdaq,6163,61,Loan Brokers,"Finance, Insurance & Real Estate",United States,DE,operating,1231,False,sec_ticker_list,ok
 2064177,Blueport Acquisition Ltd,BPAC,BPAC;BPACR;BPACU,3,2064177,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,,operating,1231,True,sec_ticker_list,ok
 2064307,ContextLogic Holdings Inc.,LOGC,LOGC,1,2064307,OTC,1400,14,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),Mining,United States,DE,operating,1231,False,sec_ticker_list,ok
-2064355,Bain Capital GSS Investment Corp.,BCSS,BCSS;BCSS-UN;BCSS-WT,3,2064355,NYSE,6770,67,Blank Checks,"Finance, Insurance & Real Estate",,,operating,1231,True,sec_ticker_list,ok
-2064381,"Toho Co., Ltd./ADR",THCLY,THCLY,1,2064381,OTC,,,,,,,other,1231,False,sec_ticker_list,ok
+2064355,Bain Capital GSS Investment Corp.,BCSS,BCSS;BCSS-UN;BCSS-WT,3,2064355,NYSE,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,,operating,1231,True,sec_ticker_list,ok
+2064381,"Toho Co., Ltd./ADR",THCLY,THCLY,1,2064381,OTC,,,,,United States,,other,1231,False,sec_ticker_list,ok
 2064764,Pulsenmore Ltd.,PLSM,PLSM,1,2064764,Nasdaq,3841,38,Surgical & Medical Instruments & Apparatus,Manufacturing,,L3,other,1231,False,sec_ticker_list,ok
 2064947,WaterBridge Infrastructure LLC,WBI,WBI,1,2064947,NYSE,1389,13,"Oil & Gas Field Services, NEC",Mining,United States,DE,operating,1231,False,sec_ticker_list,ok
 2064953,Solstice Advanced Materials Inc.,SOLS,SOLS,1,2064953,Nasdaq,2800,28,Chemicals & Allied Products,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -6913,8 +6913,8 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2065741,Neutrans Inc.,NEUT,NEUT,1,2065741,,4899,48,"Communications Services, NEC","Transportation, Communications & Utilities",,,other,0331,False,sec_ticker_list,ok
 2065779,D. Boral ARC Acquisition I Corp.,BCARU,BCARU;BCARW,2,2065779,Nasdaq,7372,73,Services-Prepackaged Software,Services,United States,,operating,1231,False,sec_ticker_list,ok
 2065932,Freelancer Ltd,FRLCY,FRLCY;FLNCF,2,2065932,OTC,,,,,,,other,1231,False,sec_ticker_list,ok
-2066600,SCB X Public Co Ltd,SCBXY,SCBXY;SCXBF,2,2066600,OTC,,,,,,W1,other,1231,False,sec_ticker_list,ok
-2066601,"Tokyo Ohka Kogyo Co., Ltd./ADR",TKCYY,TKCYY;TOKCF,2,2066601,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
+2066600,SCB X Public Co Ltd,SCBXY,SCBXY;SCXBF,2,2066600,OTC,,,,,United States,W1,other,1231,False,sec_ticker_list,ok
+2066601,"Tokyo Ohka Kogyo Co., Ltd./ADR",TKCYY,TKCYY;TOKCF,2,2066601,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
 2066836,Conexeu Sciences Inc.,CNXU,CNXU,1,2066836,Nasdaq,3842,38,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",Manufacturing,United States,NV,operating,1031,False,sec_ticker_list,ok
 2066925,"CAPSTONE 72, INC.",CAPI,CAPI,1,2066925,,6500,65,Real Estate,"Finance, Insurance & Real Estate",United States,OH,other,1231,False,sec_ticker_list,ok
 2067129,Neptune Insurance Holdings Inc.,NP,NP,1,2067129,NYSE,6411,64,"Insurance Agents, Brokers & Service","Finance, Insurance & Real Estate",United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -6924,8 +6924,8 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2067767,NextBoat Inc.,NXB,NXB,1,2067767,NYSE,3730,37,Ship & Boat Building & Repairing,Manufacturing,United States,NV,operating,1231,False,sec_ticker_list,ok
 2067876,"Versant Media Group, Inc.",VSNT,VSNT,1,2067876,Nasdaq,4833,48,Television Broadcasting Stations,"Transportation, Communications & Utilities",United States,PA,operating,1231,False,sec_ticker_list,ok
 2068385,SharonAI Holdings Inc.,SHAZ,SHAZ;SHAZW,2,2068385,Nasdaq,7374,73,Services-Computer Processing & Data Preparation,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
-2068427,Zealand Pharma A/S/ADR,ZLDPF,ZLDPF,1,2068427,OTC,,,,,,G7,other,1231,False,sec_ticker_list,ok
-2068440,Laopu Gold Co. Ltd./ADR,LPGCY,LPGCY;LPUGF,2,2068440,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2068427,Zealand Pharma A/S/ADR,ZLDPF,ZLDPF,1,2068427,OTC,,,,,United States,G7,other,1231,False,sec_ticker_list,ok
+2068440,Laopu Gold Co. Ltd./ADR,LPGCY,LPGCY;LPUGF,2,2068440,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2068441,Strathcona Resources Ltd.,STHRF,STHRF,1,2068441,OTC,1311,13,Crude Petroleum & Natural Gas,Mining,,A0,other,1231,False,sec_ticker_list,ok
 2068577,"Black Rock Coffee Bar, Inc.",BRCB,BRCB,1,2068577,Nasdaq,5810,58,Retail-Eating & Drinking Places,Retail Trade,United States,DE,operating,1231,False,sec_ticker_list,ok
 2069604,"Park Dental Partners, Inc.",PARK,PARK,1,2069604,Nasdaq,8090,80,"Services-Misc Health & Allied Services, NEC",Services,United States,MN,operating,1231,False,sec_ticker_list,ok
@@ -6935,16 +6935,16 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2070457,"Twenty One Capital, Inc.",XXI,XXI,1,2070457,NYSE,6199,61,Finance Services,"Finance, Insurance & Real Estate",United States,TX,operating,1231,False,sec_ticker_list,ok
 2070534,SL Science Holding Ltd,SLBT,SLBT,1,2070534,Nasdaq,2836,28,"Biological Products, (No Diagnostic Substances)",Manufacturing,,E9,other,1231,False,sec_ticker_list,ok
 2070542,AIB Data Centers Inc.,AIB,AIB,1,2070542,NYSE,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,DE,operating,1231,True,sec_ticker_list,ok
-2070570,Reece Limited/ADR,RECCY,RECCY;REECF,2,2070570,OTC,,,,,,C3,other,1231,False,sec_ticker_list,ok
+2070570,Reece Limited/ADR,RECCY,RECCY;REECF,2,2070570,OTC,,,,,United States,C3,other,1231,False,sec_ticker_list,ok
 2070602,Highview Merger Corp.,HVMC,HVMC;HVMCU;HVMCW,3,2070602,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
-2070829,"Contemporary Amperex Technology Co., Limited/ADR",CYATY,CYATY;CTATF,2,2070829,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2070829,"Contemporary Amperex Technology Co., Limited/ADR",CYATY,CYATY;CTATF,2,2070829,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2070849,"BillionToOne, Inc.",BLLN,BLLN,1,2070849,Nasdaq,8071,80,Services-Medical Laboratories,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 2070954,SMJ International Holdings Inc.,SMJF,SMJF,1,2070954,NYSE,5030,50,Wholesale-Lumber & Other Construction Materials,Wholesale Trade,,E9,other,0331,False,sec_ticker_list,ok
 2071288,"Lumexa Imaging Holdings, Inc.",LMRI,LMRI,1,2071288,Nasdaq,8071,80,Services-Medical Laboratories,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 2071489,Yellowstone Group Ltd.,YSGL,YSGL,1,2071489,OTC,8742,87,Services-Management Consulting Services,Services,,NV,operating,0331,False,sec_ticker_list,ok
 2071668,Magnum Ice Cream Co N.V.,MICC,MICC,1,2071668,NYSE,2024,20,Ice Cream & Frozen Desserts,Manufacturing,,P7,other,1231,False,sec_ticker_list,ok
 2071778,Fermi Inc.,FRMI,FRMI,1,2071778,Nasdaq,6798,67,Real Estate Investment Trusts,"Finance, Insurance & Real Estate",United States,TX,operating,1231,False,sec_ticker_list,ok
-2071868,"Jiangsu Hengrui Pharmaceuticals Co., Ltd./ADR",JHPCY,JHPCY;JNGHF,2,2071868,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2071868,"Jiangsu Hengrui Pharmaceuticals Co., Ltd./ADR",JHPCY,JHPCY;JNGHF,2,2071868,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2071881,Tourmaline Oil Corp/ADR,TRMOY,TRMOY;TRMLF,2,2071881,OTC,,,,,United States,A0,other,1225,False,sec_ticker_list,ok
 2071911,Capital Power Corp/ADR,CPXXY,CPXXY;CPRHF;CPWPF;CPXWF,4,2071911,OTC,,,,,United States,Z4,other,1225,False,sec_ticker_list,ok
 2071912,PrairieSky Royalty Ltd/ADR,PRSKY,PRSKY;PREKF,2,2071912,OTC,,,,,United States,A0,other,1225,False,sec_ticker_list,ok
@@ -6963,8 +6963,8 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2073638,Finning International Inc./ADR,FNIGY,FNIGY;FINGF,2,2073638,OTC,,,,,United States,Z4,other,1225,False,sec_ticker_list,ok
 2073643,METRO INC./ADR,METRY,METRY,1,2073643,OTC,,,,,United States,A8,other,1225,False,sec_ticker_list,ok
 2073655,Topaz Energy Corp./ADR,TPZEY,TPZEY;TPZEF,2,2073655,OTC,,,,,United States,A0,other,1225,False,sec_ticker_list,ok
-2073669,Hansoh Pharmaceutical Group Co Limited/ADR,HNPHY,HNPHY;HNSPF,2,2073669,OTC,,,,,,E9,other,1231,False,sec_ticker_list,ok
-2073804,TCL Electronics Holdings Limited/ADR,TCLXY,TCLXY;TCLHF,2,2073804,OTC,,,,,,E9,other,1231,False,sec_ticker_list,ok
+2073669,Hansoh Pharmaceutical Group Co Limited/ADR,HNPHY,HNPHY;HNSPF,2,2073669,OTC,,,,,United States,E9,other,1231,False,sec_ticker_list,ok
+2073804,TCL Electronics Holdings Limited/ADR,TCLXY,TCLXY;TCLHF,2,2073804,OTC,,,,,United States,E9,other,1231,False,sec_ticker_list,ok
 2073893,Dollarama Inc./ADR,DLMAY,DLMAY;DLMAF,2,2073893,OTC,,,,,United States,Z4,other,1225,False,sec_ticker_list,ok
 2073901,Tamarack Valley Energy Ltd./ADR,TMKVY,TMKVY;TNEYF,2,2073901,OTC,,,,,United States,A0,other,1225,False,sec_ticker_list,ok
 2073913,North West Co Inc./ADR,NWCYY,NWCYY;NNWWF,2,2073913,OTC,,,,,United States,Z4,other,1225,False,sec_ticker_list,ok
@@ -6982,21 +6982,21 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2074973,Churchill Capital Corp XI,CCXI,CCXI;CCXIU;CCXIW,3,2074973,Nasdaq,3569,35,"General Industrial Machinery & Equipment, NEC",Manufacturing,United States,E9,operating,1231,False,sec_ticker_list,ok
 2075036,EvoNexus Group LTD,EVON,EVON,1,2075036,,7370,73,"Services-Computer Programming, Data Processing, Etc.",Services,,E9,other,0228,False,sec_ticker_list,ok
 2075038,I Bella Perfect Inc.,IBL,IBL,1,2075038,,8011,80,Services-Offices & Clinics of  Doctors of  Medicine,Services,,D8,other,0331,False,sec_ticker_list,ok
-2075141,VusionGroup,VSGRY,VSGRY;SRBEF,2,2075141,OTC,,,,,,I0,other,1231,False,sec_ticker_list,ok
+2075141,VusionGroup,VSGRY,VSGRY;SRBEF,2,2075141,OTC,,,,,United States,I0,other,1231,False,sec_ticker_list,ok
 2075320,"Polaryx Therapeutics, Inc.",PLYX,PLYX,1,2075320,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,WY,operating,1231,False,sec_ticker_list,ok
-2075335,ROZE AI INC.,ROZE,ROZE,1,2075335,,7373,73,Services-Computer Integrated Systems Design,Services,,A1,other,1231,False,sec_ticker_list,ok
+2075335,ROZE AI INC.,ROZE,ROZE,1,2075335,Nasdaq,7373,73,Services-Computer Integrated Systems Design,Services,,A1,other,1231,False,sec_ticker_list,ok
 2075349,Top End Energy Ltd/ADR,TNDEF,TNDEF,1,2075349,OTC,,,,,United States,C3,other,1225,False,sec_ticker_list,ok
-2075474,GPT Group/ADR,GGRPY,GGRPY;GPTGF,2,2075474,OTC,,,,,,C3,other,1231,False,sec_ticker_list,ok
+2075474,GPT Group/ADR,GGRPY,GGRPY;GPTGF,2,2075474,OTC,,,,,United States,C3,other,1231,False,sec_ticker_list,ok
 2075589,Law's Business Group Holding Ltd,LSBA,LSBA,1,2075589,,8742,87,Services-Management Consulting Services,Services,,K3,other,1231,False,sec_ticker_list,ok
 2075786,"Seahawk Recycling Holdings, Inc.",SEAH,SEAH,1,2075786,,5090,50,Wholesale-Misc Durable Goods,Wholesale Trade,,D8,other,0331,False,sec_ticker_list,ok
-2075877,Bank Pekao S.A./ADR,BKPOY,BKPOY;BKPKF,2,2075877,OTC,,,,,,R9,other,1231,False,sec_ticker_list,ok
+2075877,Bank Pekao S.A./ADR,BKPOY,BKPOY;BKPKF,2,2075877,OTC,,,,,United States,R9,other,1231,False,sec_ticker_list,ok
 2075918,Capstone Copper Corp./ADR,CSCCY,CSCCY;CSCCF,2,2075918,OTC,,,,,United States,A1,other,1225,False,sec_ticker_list,ok
 2076148,"FullPAC, Inc.",GOTV,GOTV,1,2076148,,7389,73,"Services-Business Services, NEC",Services,United States,NV,other,1231,False,sec_ticker_list,ok
 2076163,"ProCap Financial, Inc.",BRR,BRR;BRRWW,2,2076163,Nasdaq,6199,61,Finance Services,"Finance, Insurance & Real Estate",United States,DE,operating,1231,False,sec_ticker_list,ok
-2076398,"Zhejiang Sanhua Intelligent Controls Co., Ltd./ADR",ZSICY,ZSICY;ZSINF,2,2076398,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2076398,"Zhejiang Sanhua Intelligent Controls Co., Ltd./ADR",ZSICY,ZSICY;ZSINF,2,2076398,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2076631,AMAROQ LTD.,AMRQF,AMRQF,1,2076631,OTC,,,,,,A6,other,1231,False,sec_ticker_list,ok
 2076975,Braiin Ltd,BRAI,BRAI,1,2076975,Nasdaq,7374,73,Services-Computer Processing & Data Preparation,Services,,C3,other,0630,False,sec_ticker_list,ok
-2077135,"Cycclone, Inc.",CYCL,CYCL,1,2077135,OTC,,,,,,NV,other,0630,False,sec_ticker_list,ok
+2077135,"Cycclone, Inc.",CYCL,CYCL,1,2077135,OTC,,,,,United States,NV,other,0630,False,sec_ticker_list,ok
 2077146,"OBIC Co., Ltd./ADR",OBICY,OBICY;OBIIF,2,2077146,OTC,,,,,United States,M0,other,0331,False,sec_ticker_list,ok
 2077242,Stella-Jones Inc./ADR,STJNY,STJNY;STLJF,2,2077242,OTC,,,,,United States,Z4,other,1225,False,sec_ticker_list,ok
 2077638,Satsuma Technology PLC,STSUF,STSUF,1,2077638,OTC,,,,,,X0,other,0228,False,sec_ticker_list,ok
@@ -7007,11 +7007,11 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2078416,"Liberty Live Holdings, Inc.",LLYVA,LLYVA;LLYVB;LLYVK,3,2078416,Nasdaq,7900,79,Services-Amusement & Recreation Services,Services,United States,NV,operating,1231,False,sec_ticker_list,ok
 2078570,"AMATUHI HOLDINGS, INC.",AMTU,AMTU,1,2078570,,1520,15,General Bldg Contractors - Residential Bldgs,Construction,,DE,other,0331,False,sec_ticker_list,ok
 2078856,Hyperliquid Strategies Inc,PURR,PURR,1,2078856,Nasdaq,6199,61,Finance Services,"Finance, Insurance & Real Estate",United States,DE,operating,0630,False,sec_ticker_list,ok
-2078895,Asker Healthcare Group AB/ADR,ASKRY,ASKRY,1,2078895,OTC,,,,,,V7,other,1231,False,sec_ticker_list,ok
+2078895,Asker Healthcare Group AB/ADR,ASKRY,ASKRY,1,2078895,OTC,,,,,United States,V7,other,1231,False,sec_ticker_list,ok
 2079253,Apex Treasury Corp,APXT,APXT;APXTU;APXTW,3,2079253,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2079272,Lakewood-Amedex Biotherapeutics Inc.,LABT,LABT,1,2079272,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,NV,operating,1231,False,sec_ticker_list,ok
 2079292,Insight Digital Partners II,DYOR,DYOR;DYORU;DYORW,3,2079292,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
-2079706,"Mitsubishi Gas Chemical Company, Inc./ADR",MBSHY,MBSHY;MBGCF,2,2079706,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
+2079706,"Mitsubishi Gas Chemical Company, Inc./ADR",MBSHY,MBSHY;MBGCF,2,2079706,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
 2079720,"BUDA JUICE, INC.",BUDA,BUDA,1,2079720,NYSE,2080,20,Beverages,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2079933,TGE Value Creative Solutions Corp,BEBE,BEBE;BEBE-UN;BEBE-WT,3,2079933,NYSE,6770,67,Blank Checks,"Finance, Insurance & Real Estate",,E9,operating,1231,True,sec_ticker_list,ok
 2079999,Cardinal Infrastructure Group Inc.,CDNL,CDNL,1,2079999,Nasdaq,1600,16,Heavy Construction Other Than Bldg Const - Contractors,Construction,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -7038,8 +7038,8 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2082876,Foshan Haitian Flavouring & Food Co Ltd./ADR,FHFFY,FHFFY;FHFLF,2,2082876,OTC,,,,,United States,F4,other,1225,False,sec_ticker_list,ok
 2083002,American Drive Acquisition Co,ADAC,ADAC;ADACU;ADACW,3,2083002,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2083125,PRESIDIO PRODUCTION Co,FTW,FTW;FTW-WT,2,2083125,NYSE,1311,13,Crude Petroleum & Natural Gas,Mining,United States,DE,operating,1231,False,sec_ticker_list,ok
-2083143,Social Commerce Partners Corp,SCPQ,SCPQ;SCPQU;SCPQW,3,2083143,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",,E9,operating,1231,True,sec_ticker_list,ok
-2083221,SPIE SA/ADR,SPIIY,SPIIY;SPIWF,2,2083221,OTC,,,,,,I0,other,1231,False,sec_ticker_list,ok
+2083143,Social Commerce Partners Corp,SCPQ,SCPQ;SCPQU;SCPQW,3,2083143,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
+2083221,SPIE SA/ADR,SPIIY,SPIIY;SPIWF,2,2083221,OTC,,,,,United States,I0,other,1231,False,sec_ticker_list,ok
 2083452,Shreya Acquisition Group,SAGU,SAGU;SAGU-RI;SAGU-UN;SAGU-WT,4,2083452,NYSE,6770,67,Blank Checks,"Finance, Insurance & Real Estate",,E9,operating,0630,True,sec_ticker_list,ok
 2083526,"Micware Co., Ltd.",MWC,MWC,1,2083526,Nasdaq,7371,73,Services-Computer Programming Services,Services,,M0,other,0228,False,sec_ticker_list,ok
 2083583,"BSTR Holdings, Inc.",BSTR,BSTR,1,2083583,,6199,61,Finance Services,"Finance, Insurance & Real Estate",United States,DE,other,1231,False,sec_ticker_list,ok
@@ -7052,48 +7052,48 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2084227,"Advasa Holdings, Inc.",ADBT,ADBT,1,2084227,Nasdaq,7372,73,Services-Prepackaged Software,Services,,DE,operating,0331,False,sec_ticker_list,ok
 2084261,"URSB Bancorp, Inc.",URSB,URSB,1,2084261,OTC,6036,60,"Savings Institutions, Not Federally Chartered","Finance, Insurance & Real Estate",United States,MD,operating,1231,False,sec_ticker_list,ok
 2084296,Nintech Mould Factory Inc.,NTMJ,NTMJ,1,2084296,,3089,30,"Plastics Products, NEC",Manufacturing,,E9,other,1231,False,sec_ticker_list,ok
-2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,UATCY,1,2084585,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,UATCY,1,2084585,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2084698,KHEOBA Ltd,KHOBF,KHOBF,1,2084698,OTC,7371,73,Services-Computer Programming Services,Services,,D8,other,1031,False,sec_ticker_list,ok
 2085187,"Bob's Discount Furniture, Inc.",BOBS,BOBS,1,2085187,NYSE,5712,57,Retail-Furniture Stores,Retail Trade,United States,DE,operating,0103,False,sec_ticker_list,ok
-2085208,Duality Biotherapeutics Inc/ADR,DYBTY,DYBTY;DUTBF,2,2085208,OTC,,,,,,E9,other,1231,False,sec_ticker_list,ok
+2085208,Duality Biotherapeutics Inc/ADR,DYBTY,DYBTY;DUTBF,2,2085208,OTC,,,,,United States,E9,other,1231,False,sec_ticker_list,ok
 2085236,AUMOVIO SE,AMVOY,AMVOY;AMVIF,2,2085236,OTC,,,,,,2M,other,1231,False,sec_ticker_list,ok
 2085485,APEX Tech Acquisition Inc.,TRAD,TRAD;TRAD-RI;TRAD-UN,3,2085485,NYSE,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,0831,True,sec_ticker_list,ok
 2085795,APEIRON ACQUISITION VEHICLE I,APNA,APNA,1,2085795,,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,other,1231,True,sec_ticker_list,ok
 2085836,"POCHE TECHNOLOGY CO., Ltd",POCH,POCH,1,2085836,,7311,73,Services-Advertising Agencies,Services,,E9,other,0331,False,sec_ticker_list,ok
 2085932,Energy Transition Special Opportunities,ETSS,ETSS;ETSS-UN;ETSS-WT,3,2085932,NYSE,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2086264,Vine Hill Capital Investment Corp. II,VHCP,VHCP;VHCPU;VHCPW,3,2086264,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
-2086438,"Gores Holdings XI, Inc.",GHXI,GHXI;GHXIU;GHXIW,3,2086438,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",,E9,operating,1231,True,sec_ticker_list,ok
+2086438,"Gores Holdings XI, Inc.",GHXI,GHXI;GHXIU;GHXIW,3,2086438,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2086587,York Space Systems Inc.,YSS,YSS,1,2086587,NYSE,3760,37,Guided Missiles & Space Vehicles & Parts,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2086716,"Standard Nuclear, Inc.",STDN,STDN,1,2086716,NYSE,2810,28,Industrial Inorganic Chemicals,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2086771,Elemental Royalty Corp,ELE,ELE,1,2086771,Nasdaq,1040,10,Gold and Silver Ores,Mining,United States,A1,other,1231,False,sec_ticker_list,ok
 2086775,BTECH Corp,BTECH,BTECH,1,2086775,,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,other,1231,True,sec_ticker_list,ok
 2086841,CBAK Energy Technology Ltd,CBAT,CBAT,1,2086841,Nasdaq,3690,36,"Miscellaneous Electrical Machinery, Equipment & Supplies",Manufacturing,,E9,other,1231,False,sec_ticker_list,ok
 2086869,RESOLUTION MINERALS LTD/ADR,RLMLF,RLMLF;RSMIY,2,2086869,OTC,,,,,United States,C3,other,1225,False,sec_ticker_list,ok
-2087035,AfterNext Acquisition I Corp.,AFNX,AFNX,1,2087035,,6770,67,Blank Checks,"Finance, Insurance & Real Estate",,E9,other,1231,True,sec_ticker_list,ok
+2087035,AfterNext Acquisition I Corp.,AFNX,AFNX,1,2087035,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",,E9,other,1231,True,sec_ticker_list,ok
 2087064,Starrygazey Inc.,MARH,MARH,1,2087064,,8742,87,Services-Management Consulting Services,Services,,D8,other,0630,False,sec_ticker_list,ok
 2087087,Black Spade Acquisition III Co,BIII,BIII;BIII-UN;BIII-WT,3,2087087,NYSE,6770,67,Blank Checks,"Finance, Insurance & Real Estate",,K3,operating,1231,True,sec_ticker_list,ok
 2087398,Metals Royalty Co Inc.,TMCR,TMCR,1,2087398,Nasdaq,1040,10,Gold and Silver Ores,Mining,,A1,other,1231,False,sec_ticker_list,ok
 2087419,"PSB Financial, Inc.",PNSB,PNSB,1,2087419,OTC,6036,60,"Savings Institutions, Not Federally Chartered","Finance, Insurance & Real Estate",United States,MD,operating,1231,False,sec_ticker_list,ok
 2087450,Legato Merger Corp. IV,LEGO,LEGO;LEGO-UN;LEGO-WT,3,2087450,NYSE,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,0831,True,sec_ticker_list,ok
-2087500,NHK Spring Co. Ltd/ADR,NHKSY,NHKSY;NHKGF,2,2087500,OTC,,,,,,M0,other,0331,False,sec_ticker_list,ok
+2087500,NHK Spring Co. Ltd/ADR,NHKSY,NHKSY;NHKGF,2,2087500,OTC,,,,,United States,M0,other,0331,False,sec_ticker_list,ok
 2087587,CoinShares PLC,CSHR,CSHR;CSHRW,2,2087587,Nasdaq,6211,62,"Security Brokers, Dealers & Flotation Companies","Finance, Insurance & Real Estate",,Y9,other,1231,False,sec_ticker_list,ok
 2087716,"ROKIT America, Inc.",RKAM,RKAM,1,2087716,,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,other,1231,False,sec_ticker_list,ok
 2087840,"Zhejiang Leapmotor Technology Co., Ltd./ADR",ZGJLY,ZGJLY;ZJLMF,2,2087840,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
-2087843,Greatland Resources Limited/ADR,GTLRY,GTLRY;GGPSF,2,2087843,OTC,,,,,,C3,other,0630,False,sec_ticker_list,ok
-2087844,Mitsui-Soko Holdings Co Limited/ADR,MSSHY,MSSHY;MSOKF,2,2087844,OTC,,,,,,M0,other,0331,False,sec_ticker_list,ok
-2087852,Sumitomo Bakelite Co Limited/ADR,SBCLY,SBCLY;SBKLF,2,2087852,OTC,,,,,,M0,other,0331,False,sec_ticker_list,ok
-2087856,Aica Kogyo Co Limited/ADR,AKCLY,AKCLY;AIKCF,2,2087856,OTC,,,,,,M0,other,0331,False,sec_ticker_list,ok
+2087843,Greatland Resources Limited/ADR,GTLRY,GTLRY;GGPSF,2,2087843,OTC,,,,,United States,C3,other,0630,False,sec_ticker_list,ok
+2087844,Mitsui-Soko Holdings Co Limited/ADR,MSSHY,MSSHY;MSOKF,2,2087844,OTC,,,,,United States,M0,other,0331,False,sec_ticker_list,ok
+2087852,Sumitomo Bakelite Co Limited/ADR,SBCLY,SBCLY;SBKLF,2,2087852,OTC,,,,,United States,M0,other,0331,False,sec_ticker_list,ok
+2087856,Aica Kogyo Co Limited/ADR,AKCLY,AKCLY;AIKCF,2,2087856,OTC,,,,,United States,M0,other,0331,False,sec_ticker_list,ok
 2087965,"Cantor Equity Partners VII, Inc.",CAES,CAES,1,2087965,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2087989,Texas Precious Metals Trust,YSAG,YSAG;YSAU,2,2087989,Nasdaq,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,DE,other,1231,True,sec_ticker_list,ok
 2088082,"Electra Therapeutics, Inc.",ETRA,ETRA,1,2088082,Nasdaq,2836,28,"Biological Products, (No Diagnostic Substances)",Manufacturing,United States,DE,other,1231,False,sec_ticker_list,ok
 2088103,XFLH Capital Corp,XFLH,XFLH;XFLH-RI;XFLH-UN,3,2088103,NYSE,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,0831,True,sec_ticker_list,ok
 2088256,Horizon Quantum Holdings Ltd.,HQ,HQ;HQWWW,2,2088256,Nasdaq,7371,73,Services-Computer Programming Services,Services,,U0,other,1231,False,sec_ticker_list,ok
 2088281,"Midera Food Processing, Inc.",MFP,MFP,1,2088281,Nasdaq,3580,35,Refrigeration & Service Industry Machinery,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
-2088339,"OBIC Business Consultants Co., Ltd./ADR",OBBCY,OBBCY;OBIBF,2,2088339,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
+2088339,"OBIC Business Consultants Co., Ltd./ADR",OBBCY,OBBCY;OBIBF,2,2088339,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
 2088375,Turbogen Ltd.,TRBG,TRBG,1,2088375,Nasdaq,4931,49,Electric & Other Services Combined,"Transportation, Communications & Utilities",,L3,other,1231,False,sec_ticker_list,ok
 2088688,Excalibur Metals Corp.,EXCBF,EXCBF,1,2088688,OTC,,,,,,A1,other,1231,False,sec_ticker_list,ok
 2088749,Karbon Capital Partners Corp.,KBON,KBON;KBONU;KBONW,3,2088749,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",,E9,operating,1231,True,sec_ticker_list,ok
-2088776,"Zensho Holdings Co., Ltd./ADR",ZSHLY,ZSHLY;ZSHOF,2,2088776,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
+2088776,"Zensho Holdings Co., Ltd./ADR",ZSHLY,ZSHLY;ZSHOF,2,2088776,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
 2088827,"Horiba, Ltd./ADR",HRBAY,HRBAY;HRIBF,2,2088827,OTC,,,,,United States,M0,other,1225,False,sec_ticker_list,ok
 2088896,"X-Energy, Inc.",XE,XE,1,2088896,Nasdaq,3443,34,Fabricated Plate Work (Boiler Shops),Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2089174,Paltac Corporation/ADR,PTAXY,PTAXY,1,2089174,OTC,,,,,United States,M0,other,1225,False,sec_ticker_list,ok
@@ -7106,7 +7106,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2089536,"Cantor Equity Partners VI, Inc.",CEPS,CEPS,1,2089536,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2089661,SunocoCorp LLC,SUNC,SUNC,1,2089661,NYSE,2911,29,Petroleum Refining,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2089778,Pacipic Nexus IntelliTech Group,PNIG,PNIG,1,2089778,,3569,35,"General Industrial Machinery & Equipment, NEC",Manufacturing,,E9,other,0831,False,sec_ticker_list,ok
-2090231,Metlen Energy & Metals PLC/ADR,MTMTY,MTMTY;MTLPF,2,2090231,OTC,,,,,,X0,other,1231,False,sec_ticker_list,ok
+2090231,Metlen Energy & Metals PLC/ADR,MTMTY,MTMTY;MTLPF,2,2090231,OTC,,,,,United States,X0,other,1231,False,sec_ticker_list,ok
 2090312,Mobility Global Inc.,MBGL,MBGL,1,2090312,NYSE,7389,73,"Services-Business Services, NEC",Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 2090441,Iron Dome Acquisition I Corp.,IDAC,IDAC;IDACU;IDACW,3,2090441,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2090646,Boost Run Inc.,BRUN,BRUN;BRUNW,2,2090646,Nasdaq,7374,73,Services-Computer Processing & Data Preparation,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -7121,9 +7121,9 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2091663,CONDUIT HOLDINGS LTD/ADR,CDTHY,CDTHY;CNDHF,2,2091663,OTC,,,,,United States,D0,other,1225,False,sec_ticker_list,ok
 2091680,Bitari Inc,BIAI,BIAI,1,2091680,,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,TX,other,1231,True,sec_ticker_list,ok
 2092243,Blue Jay Gold Corp.,JAYGF,JAYGF,1,2092243,OTC,,,,,,A1,other,0930,False,sec_ticker_list,ok
-2092248,"Nagase & Co., Ltd./ADR",NGCOY,NGCOY;NGSCF,2,2092248,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
-2092252,"Rengo Co., Ltd./ADR",RENGY,RENGY;RNGOF,2,2092252,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
-2092258,Air Water Inc./ADR,AWATY,AWATY;AWTRF,2,2092258,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
+2092248,"Nagase & Co., Ltd./ADR",NGCOY,NGCOY;NGSCF,2,2092248,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
+2092252,"Rengo Co., Ltd./ADR",RENGY,RENGY;RNGOF,2,2092252,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
+2092258,Air Water Inc./ADR,AWATY,AWATY;AWTRF,2,2092258,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
 2092287,3KNIGHTS DYNAMICS GROUP Ltd,TKDG,TKDG,1,2092287,,7371,73,Services-Computer Programming Services,Services,,E9,other,0831,False,sec_ticker_list,ok
 2092291,Timwood Holdings Ltd,TIWD,TIWD,1,2092291,,4581,45,"Airports, Flying Fields & Airport Terminal Services","Transportation, Communications & Utilities",,E9,other,0630,False,sec_ticker_list,ok
 2092314,Air Water Ventures Ltd,WATR,WATR,1,2092314,Nasdaq,2080,20,Beverages,Manufacturing,,E9,other,1231,False,sec_ticker_list,ok
@@ -7131,20 +7131,20 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2092574,"Swarmer, Inc",SWMR,SWMR,1,2092574,Nasdaq,7372,73,Services-Prepackaged Software,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 2092967,Fort Technology Inc,FRTT,FRTT,1,2092967,Nasdaq,2870,28,Agricultural Chemicals,Manufacturing,,A1,other,1231,False,sec_ticker_list,ok
 2093101,"Atrium Therapeutics, Inc.",RNA,RNA,1,2093101,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
-2093227,SMG Swiss Marketplace Group AG/ADR,SMGSY,SMGSY,1,2093227,OTC,,,,,,V8,other,1231,False,sec_ticker_list,ok
+2093227,SMG Swiss Marketplace Group AG/ADR,SMGSY,SMGSY,1,2093227,OTC,,,,,United States,V8,other,1231,False,sec_ticker_list,ok
 2093314,OranjeBTC S.A. Educacao E Investmentimento/ADR,ORNJY,ORNJY,1,2093314,OTC,8880,88,American Depositary Receipts,Services,United States,D5,other,1225,False,sec_ticker_list,ok
 2093507,Greenland Energy Co,GLND,GLND;GLNDW,2,2093507,Nasdaq,1381,13,Drilling Oil & Gas Wells,Mining,United States,TX,operating,1231,False,sec_ticker_list,ok
 2093524,Aperture AC,APUR,APUR;APURR,2,2093524,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2093536,"Arxis, Inc.",ARXS,ARXS,1,2093536,Nasdaq,3728,37,"Aircraft Parts & Auxiliary Equipment, NEC",Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2093618,Noba Bank Group AG/ADR,NBKBY,NBKBY,1,2093618,OTC,,,,,United States,V7,other,1225,False,sec_ticker_list,ok
 2093654,Zijin Gold International Co Limited/ADR,ZJGIY,ZJGIY;ZJNGF,2,2093654,OTC,,,,,United States,K3,other,1225,False,sec_ticker_list,ok
-2093667,"Maruwa Co., Ltd./ADR",MRUWY,MRUWY;MAWAF,2,2093667,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
+2093667,"Maruwa Co., Ltd./ADR",MRUWY,MRUWY;MAWAF,2,2093667,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
 2093856,APEX CRITICAL METALS CORP.,APXCF,APXCF,1,2093856,OTC,1000,10,Metal Mining,Mining,,A1,other,0731,False,sec_ticker_list,ok
-2093907,RENK Group AG/ADR,RKGRY,RKGRY;RNKGF,2,2093907,OTC,,,,,,2M,other,1231,False,sec_ticker_list,ok
+2093907,RENK Group AG/ADR,RKGRY,RKGRY;RNKGF,2,2093907,OTC,,,,,United States,2M,other,1231,False,sec_ticker_list,ok
 2093976,Neucleus Group Ltd,NEUC,NEUC,1,2093976,,8200,82,Services-Educational Services,Services,,E9,other,0630,False,sec_ticker_list,ok
 2094100,PT Medco Energi Internasional Tbk/ADR,MDCOY,MDCOY,1,2094100,OTC,,,,,United States,K8,other,1231,False,sec_ticker_list,ok
 2094107,"Ballston Spa Bancorp, Inc.",BSPA,BSPA,1,2094107,OTC,6022,60,State Commercial Banks,"Finance, Insurance & Real Estate",United States,NY,operating,1231,False,sec_ticker_list,ok
-2094201,DPC DASH LTD/ADR,DPDSY,DPDSY;DPCDF,2,2094201,OTC,,,,,,D8,other,1231,False,sec_ticker_list,ok
+2094201,DPC DASH LTD/ADR,DPDSY,DPDSY;DPCDF,2,2094201,OTC,,,,,United States,D8,other,1231,False,sec_ticker_list,ok
 2094256,"BEACON TOPCO, INC.",CLYD,CLYD,1,2094256,,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2094433,"Suncrete, Inc.",RMIX,RMIX,1,2094433,Nasdaq,3272,32,"Concrete Products, Except Block & Brick",Manufacturing,United States,,operating,1231,False,sec_ticker_list,ok
 2094496,Securitize Corp.,SECZ,SECZ,1,2094496,NYSE,6199,61,Finance Services,"Finance, Insurance & Real Estate",United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -7164,26 +7164,26 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2096362,AIAI Holdings Corp,AIAI,AIAI,1,2096362,Nasdaq,7374,73,Services-Computer Processing & Data Preparation,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 2096533,Nation Gold Corp.,NATNF,NATNF,1,2096533,OTC,,,,,,A1,other,0430,False,sec_ticker_list,ok
 2096755,Texas Ventures Acquisition IV Corp,TVIV,TVIV;TVIVU;TVIVW,3,2096755,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
-2096861,Sinda Ltd.,SIND,SIND,1,2096861,NYSE,1040,10,Gold and Silver Ores,Mining,,E9,operating,1231,False,sec_ticker_list,ok
+2096861,Sinda Ltd.,SIND,SIND,1,2096861,NYSE,1040,10,Gold and Silver Ores,Mining,United States,E9,operating,1231,False,sec_ticker_list,ok
 2096997,"Kailera Therapeutics, Inc.",KLRA,KLRA,1,2096997,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2097163,Xanadu Quantum Technologies Ltd,XNDU,XNDU,1,2097163,Nasdaq,3571,35,Electronic Computers,Manufacturing,,A6,other,1231,False,sec_ticker_list,ok
 2097388,Sin Lian Seng Construction,ININ,ININ,1,2097388,,5072,50,Wholesale-Hardware,Wholesale Trade,,E9,other,0630,False,sec_ticker_list,ok
 2097461,"Bora Pharmaceuticals Co., Ltd./ADR",BORAY,BORAY,1,2097461,OTC,,,,,United States,F5,other,1231,False,sec_ticker_list,ok
 2097508,"Blockfusion Digital Infrastructure, Inc.",BLDC,BLDC,1,2097508,,7374,73,Services-Computer Processing & Data Preparation,Services,United States,DE,other,1231,False,sec_ticker_list,ok
-2097702,GOWell Energy Technology,GOW,GOW,1,2097702,,3533,35,Oil & Gas Field Machinery & Equipment,Manufacturing,,E9,other,1231,False,sec_ticker_list,ok
+2097702,GOWell Energy Technology,GOW,GOW,1,2097702,Nasdaq,3533,35,Oil & Gas Field Machinery & Equipment,Manufacturing,United States,E9,other,1231,False,sec_ticker_list,ok
 2097725,AIR Global PLC,AIIR,AIIR,1,2097725,Nasdaq,2100,21,Tobacco Products,Manufacturing,,Y9,other,1231,False,sec_ticker_list,ok
 2098324,Shawbrook Group plc/ADR,SWBKY,SWBKY;SWBGF,2,2098324,OTC,,,,,United States,X0,other,1225,False,sec_ticker_list,ok
 2098326,"Sany Heavy Industries Co., Ltd./ADR",SNHIY,SNHIY,1,2098326,OTC,,,,,United States,F4,other,1225,False,sec_ticker_list,ok
-2098332,Merdeka Gold Resources Tbk PT/ADR,MDKGY,MDKGY,1,2098332,OTC,,,,,,K8,other,1231,False,sec_ticker_list,ok
-2098381,"Lens Technology Co., Ltd./ADR",LNTCY,LNTCY,1,2098381,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2098332,Merdeka Gold Resources Tbk PT/ADR,MDKGY,MDKGY,1,2098332,OTC,,,,,United States,K8,other,1231,False,sec_ticker_list,ok
+2098381,"Lens Technology Co., Ltd./ADR",LNTCY,LNTCY,1,2098381,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2098395,IMC Rare Earths Ltd,IMC,IMC,1,2098395,NYSE,1000,10,Metal Mining,Mining,,E9,other,0331,False,sec_ticker_list,ok
-2098397,"Anjoy Foods Group Co., Ltd./ADR",ANJFY,ANJFY,1,2098397,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
-2098425,"Beijing Geekplus Technology Co., Ltd./ADR",BJGPY,BJGPY;BGTCF,2,2098425,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2098397,"Anjoy Foods Group Co., Ltd./ADR",ANJFY,ANJFY,1,2098397,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
+2098425,"Beijing Geekplus Technology Co., Ltd./ADR",BJGPY,BJGPY;BGTCF,2,2098425,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2098430,Madison Air Solutions Corp,MAIR,MAIR,1,2098430,NYSE,3564,35,Industrial & Commercial Fans & Blowers & Air Purifing Equip,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
-2098710,"Fortior Technology (Shenzhen) Co., Ltd./ADR",FRTRY,FRTRY,1,2098710,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2098710,"Fortior Technology (Shenzhen) Co., Ltd./ADR",FRTRY,FRTRY,1,2098710,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2098712,GigCapital9 Corp.,GIX,GIX;GIXXR;GIXXU,3,2098712,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2098780,TRG Latin America Acquisitions Corp.,TRGS,TRGS;TRGSR;TRGSU,3,2098780,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
-2098860,"SICC Co., Ltd./ADR",SICCY,SICCY,1,2098860,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2098860,"SICC Co., Ltd./ADR",SICCY,SICCY,1,2098860,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2099039,Wise Group plc,WSE,WSE,1,2099039,Nasdaq,7389,73,"Services-Business Services, NEC",Services,,Y9,other,0331,False,sec_ticker_list,ok
 2099093,Hennessy Capital Investment Corp. VIII,HCIC,HCIC;HCICR;HCICU,3,2099093,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,NV,operating,1231,True,sec_ticker_list,ok
 2099326,"Seres Group Co., Ltd./ADR",SGPIY,SGPIY,1,2099326,OTC,,,,,United States,F4,other,1225,False,sec_ticker_list,ok
@@ -7200,7 +7200,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2100835,NYB Holdings Ltd,NYB,NYB,1,2100835,,2833,28,Medicinal Chemicals & Botanical Products,Manufacturing,,E9,other,0930,False,sec_ticker_list,ok
 2101240,SunScout Holding Ltd,SNSC,SNSC,1,2101240,NYSE,3674,36,Semiconductors & Related Devices,Manufacturing,,E9,other,0630,False,sec_ticker_list,ok
 2101393,AmperCap Acquisition Co,APMC,APMC;APMCR;APMCU,3,2101393,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1130,True,sec_ticker_list,ok
-2101411,WISeSat.Space Holdings Corp.,SAIQ,SAIQ,1,2101411,,4899,48,"Communications Services, NEC","Transportation, Communications & Utilities",,D8,other,1231,False,sec_ticker_list,ok
+2101411,WISeSat.Space Holdings Corp.,SAIQ,SAIQ,1,2101411,Nasdaq,4899,48,"Communications Services, NEC","Transportation, Communications & Utilities",,D8,other,1231,False,sec_ticker_list,ok
 2101470,Wilco 63 Corp,WLCO,WLCO;WLCOU;WLCOW,3,2101470,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2101698,Elmet Group Co.,ELMT,ELMT,1,2101698,Nasdaq,3490,34,Miscellaneous Fabricated Metal Products,Manufacturing,United States,DE,operating,0101,False,sec_ticker_list,ok
 2101833,ATII Holdings Inc.,NANO,NANO,1,2101833,,3559,35,"Special Industry Machinery, NEC",Manufacturing,United States,DE,other,1231,False,sec_ticker_list,ok
@@ -7231,28 +7231,28 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2105274,"InterPrivate Investment Partners V, Inc.",IPVV,IPVV;IPVVU;IPVVW,3,2105274,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2105398,"Csquare, Inc.",CSQR,CSQR,1,2105398,NYSE,7370,73,"Services-Computer Programming, Data Processing, Etc.",Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 2105965,West Coast Community Bancorp,WCCB,WCCB,1,2105965,Nasdaq,6022,60,State Commercial Banks,"Finance, Insurance & Real Estate",United States,CA,other,1231,False,sec_ticker_list,ok
-2106126,Eurobank SA/ADR,EURBF,EURBF,1,2106126,OTC,,,,,,J3,other,1231,False,sec_ticker_list,ok
+2106126,Eurobank SA/ADR,EURBF,EURBF,1,2106126,OTC,,,,,United States,J3,other,1231,False,sec_ticker_list,ok
 2106613,Quantum eMotion Corp,QNC,QNC,1,2106613,NYSE,7372,73,Services-Prepackaged Software,Services,,A8,other,1231,False,sec_ticker_list,ok
 2107018,DPC Holdings PLC,DPC,DPC,1,2107018,NYSE,3360,33,Nonferrous Foundries (Castings),Manufacturing,,Y9,operating,1231,False,sec_ticker_list,ok
-2107375,"SBI Shinsei Bank, Limited/ADR",SSHBY,SSHBY,1,2107375,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
-2107946,Yamato Kogyo Co. Ltd/ADR,YKCLY,YKCLY;YMTKF,2,2107946,OTC,,,,,,M0,other,0331,False,sec_ticker_list,ok
-2107960,SWCC Corp/ADR,SWCPF,SWCPF,1,2107960,OTC,,,,,,M0,other,0331,False,sec_ticker_list,ok
+2107375,"SBI Shinsei Bank, Limited/ADR",SSHBY,SSHBY,1,2107375,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
+2107946,Yamato Kogyo Co. Ltd/ADR,YKCLY,YKCLY;YMTKF,2,2107946,OTC,,,,,United States,M0,other,0331,False,sec_ticker_list,ok
+2107960,SWCC Corp/ADR,SWCPF,SWCPF,1,2107960,OTC,,,,,United States,M0,other,0331,False,sec_ticker_list,ok
 2107968,WISeKey International Corp.,WQEY,WQEY,1,2107968,,7374,73,Services-Computer Processing & Data Preparation,Services,,D8,other,1231,False,sec_ticker_list,ok
-2107989,Keisei Electric Railway Co. Ltd/ADR,KERCY,KERCY;KELRF,2,2107989,OTC,,,,,,M0,other,0331,False,sec_ticker_list,ok
-2108124,"Odakyu Electric Railway Co., Ltd./ADR",ODKUY,ODKUY;ODERF,2,2108124,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
+2107989,Keisei Electric Railway Co. Ltd/ADR,KERCY,KERCY;KELRF,2,2107989,OTC,,,,,United States,M0,other,0331,False,sec_ticker_list,ok
+2108124,"Odakyu Electric Railway Co., Ltd./ADR",ODKUY,ODKUY;ODERF,2,2108124,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
 2108164,"Pono Capital Four, Inc.",PONO,PONO;PONOR;PONOU,3,2108164,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
-2108180,NOF Corporation/ADR,NOFCF,NOFCF,1,2108180,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
-2108185,Azbil Corporation/ADR,AZBLY,AZBLY;YMATF,2,2108185,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
+2108180,NOF Corporation/ADR,NOFCF,NOFCF,1,2108180,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
+2108185,Azbil Corporation/ADR,AZBLY,AZBLY;YMATF,2,2108185,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
 2108383,Sprott Physical Copper Trust,SCOP,SCOP,1,2108383,NYSE,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",,A6,other,1231,True,sec_ticker_list,ok
 2108962,General Catalyst Global Resilience Merger Corp.,GCGR,GCGR;GCGRU;GCGRW,3,2108962,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2109150,INNIO N.V.,INIO,INIO,1,2109150,Nasdaq,3621,36,Motors & Generators,Manufacturing,,2M,operating,1231,False,sec_ticker_list,ok
-2109234,BELIMO Holding AG/ADR,BLMOY,BLMOY;BLHWF,2,2109234,OTC,,,,,,V8,other,1231,False,sec_ticker_list,ok
+2109234,BELIMO Holding AG/ADR,BLMOY,BLMOY;BLHWF,2,2109234,OTC,,,,,United States,V8,other,1231,False,sec_ticker_list,ok
 2109545,Knowledge Atlas Technology Joint Stock Co Limited/ADR,KNWAY,KNWAY;KATJF,2,2109545,OTC,,,,,United States,F4,other,1225,False,sec_ticker_list,ok
 2109547,GigaDevice Semiconductor Inc./ADR,GIDHF,GIDHF,1,2109547,OTC,,,,,United States,F4,other,1225,False,sec_ticker_list,ok
 2109556,Minimax Group Inc./ADR,MMXGY,MMXGY;MNMXF,2,2109556,OTC,,,,,United States,E9,other,1225,False,sec_ticker_list,ok
 2109559,"Jingdong Industrials, Inc./ADR",JNGDY,JNGDY,1,2109559,OTC,,,,,United States,E9,other,1225,False,sec_ticker_list,ok
 2109616,Fast Finance Pay Corp.,FFPP,FFPP,1,2109616,OTC,7389,73,"Services-Business Services, NEC",Services,United States,NV,other,1231,False,sec_ticker_list,ok
-2109666,Exosens SAS/ADR,EXOSF,EXOSF,1,2109666,OTC,,,,,,I0,other,1231,False,sec_ticker_list,ok
+2109666,Exosens SAS/ADR,EXOSF,EXOSF,1,2109666,OTC,,,,,United States,I0,other,1231,False,sec_ticker_list,ok
 2109801,"VARSAL TECH, INC.",VAT,VAT,1,2109801,,2800,28,Chemicals & Allied Products,Manufacturing,United States,DE,other,1231,False,sec_ticker_list,ok
 2109869,Exascale Labs Holdings Inc.,XLAB,XLAB;XLABW,2,2109869,Nasdaq,7372,73,Services-Prepackaged Software,Services,United States,DE,other,0630,False,sec_ticker_list,ok
 2109876,Mountain Crest Acquisition 6 Corp.,MCAH,MCAH;MCAHR;MCAHU,3,2109876,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,D8,operating,1231,True,sec_ticker_list,ok
@@ -7263,12 +7263,12 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2110423,Datasea Intelligent Technology Ltd.,DTSS,DTSS,1,2110423,Nasdaq,7372,73,Services-Prepackaged Software,Services,,D8,other,0630,False,sec_ticker_list,ok
 2110583,ASELSAN Elektronik Sanayi ve Ticaret Anonim Sirketi/ADR,AELKY,AELKY,1,2110583,OTC,,,,,United States,W8,other,1225,False,sec_ticker_list,ok
 2111453,Verdera Energy Corp.,VUECF,VUECF,1,2111453,OTC,1090,10,Miscellaneous Metal Ores,Mining,,A6,other,0930,False,sec_ticker_list,ok
-2111790,Shanghai Iluvatar CoreX Semiconductor Co Ltd/ADR,SHILY,SHILY,1,2111790,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2111790,Shanghai Iluvatar CoreX Semiconductor Co Ltd/ADR,SHILY,SHILY,1,2111790,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2111846,Game Your Game Inc.,GYGY,GYGY,1,2111846,Nasdaq,7372,73,Services-Prepackaged Software,Services,United States,DE,operating,1231,False,sec_ticker_list,ok
 2111860,"Xtend AI Robotics, Inc.",XTND,XTND,1,2111860,NYSE,3760,37,Guided Missiles & Space Vehicles & Parts,Manufacturing,United States,DE,other,1231,False,sec_ticker_list,ok
 2112466,Silentium Ltd.,SIAI,SIAI,1,2112466,,7372,73,Services-Prepackaged Software,Services,,L3,other,1231,False,sec_ticker_list,ok
 2113060,IQM Quantum Computers Oyj,IQMX,IQMX;IQMXW,2,2113060,Nasdaq,7372,73,Services-Prepackaged Software,Services,,H9,other,1231,False,sec_ticker_list,ok
-2113605,Chilwa Minerals Ltd,CHWM,CHWM,1,2113605,,1400,14,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),Mining,,C3,other,0630,False,sec_ticker_list,ok
+2113605,Chilwa Minerals Ltd,CHWM,CHWM,1,2113605,Nasdaq,1400,14,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),Mining,,C3,other,0630,False,sec_ticker_list,ok
 2113733,Bogd FT Ltd,BOGD,BOGD,1,2113733,,6029,60,"Commercial Banks, NEC","Finance, Insurance & Real Estate",,E9,other,1231,False,sec_ticker_list,ok
 2113853,TELYRX HOLDINGS INC.,TELYF,TELYF,1,2113853,OTC,,,,,,A6,other,1231,False,sec_ticker_list,ok
 2114044,"Hemab Therapeutics Holdings, Inc.",COAG,COAG,1,2114044,Nasdaq,2836,28,"Biological Products, (No Diagnostic Substances)",Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -7280,8 +7280,8 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2115436,ExxonMobil Holdings Corp,XOM,XOM,1,2115436,NYSE,2911,29,Petroleum Refining,Manufacturing,United States,TX,operating,1231,False,sec_ticker_list,ok
 2115899,Lithium Africa Corp.,LTAFF,LTAFF,1,2115899,OTC,,,,,,E9,other,1231,False,sec_ticker_list,ok
 2116230,Southern Cross Acquisition I Corp.,NCO,NCO;NCOOR;NCOOU;NCOOW,4,2116230,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
-2116276,Beijer Ref AB/ADR,BEJEF,BEJEF,1,2116276,OTC,,,,,,V7,other,1231,False,sec_ticker_list,ok
-2117197,Com7 PCL/ADR,CMPLY,CMPLY,1,2117197,OTC,,,,,,W1,other,1231,False,sec_ticker_list,ok
+2116276,Beijer Ref AB/ADR,BEJEF,BEJEF,1,2116276,OTC,,,,,United States,V7,other,1231,False,sec_ticker_list,ok
+2117197,Com7 PCL/ADR,CMPLY,CMPLY,1,2117197,OTC,,,,,United States,W1,other,1231,False,sec_ticker_list,ok
 2117702,Silverco Mining Ltd.,SICOF,SICOF,1,2117702,OTC,,,,,,A1,other,1231,False,sec_ticker_list,ok
 2118032,Research Alliance Corp III,RACC,RACC,1,2118032,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,E9,operating,1231,False,sec_ticker_list,ok
 2118195,"Applied Aerospace & Defense, Inc.",AADX,AADX,1,2118195,NYSE,3728,37,"Aircraft Parts & Auxiliary Equipment, NEC",Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
@@ -7291,24 +7291,24 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2119416,OpenPayd Global Holdings Ltd,OP,OP,1,2119416,,7389,73,"Services-Business Services, NEC",Services,,E9,other,0430,False,sec_ticker_list,ok
 2120046,CVC Capital Partners plc/ADR,CVCPY,CVCPY;CVCCF,2,2120046,OTC,,,,,United States,Y9,other,1225,False,sec_ticker_list,ok
 2120422,Pfisterer Holdings SE/ADR,PFSTY,PFSTY;PFSEF,2,2120422,OTC,,,,,United States,2M,other,1225,False,sec_ticker_list,ok
-2120528,Kainan Holding Group Ltd,KHG,KHG,1,2120528,,6199,61,Finance Services,"Finance, Insurance & Real Estate",,D8,other,0630,False,sec_ticker_list,ok
+2120528,Kainan Holding Group Ltd,KHG,KHG,1,2120528,,7363,73,Services-Help Supply Services,Services,,D8,other,0630,False,sec_ticker_list,ok
 2120882,SK hynix Inc.,SKHY,SKHY;HXSCL,2,2120882,Nasdaq,3674,36,Semiconductors & Related Devices,Manufacturing,,M5,other,1231,False,sec_ticker_list,ok
 2122392,Pelican Acquisition II Corp,PLCI,PLCI;PLCIR;PLCIU,3,2122392,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,other,0228,True,sec_ticker_list,ok
 2123232,Cumberland Farms Ltd,CMBY,CMBY,1,2123232,,5500,55,Retail-Auto Dealers & Gasoline Stations,Retail Trade,,E9,other,1231,False,sec_ticker_list,ok
-2123346,"Montage Technology Co., Ltd./ADR",MNTGY,MNTGY;MNTCF,2,2123346,OTC,8880,88,American Depositary Receipts,Services,,F4,other,1231,False,sec_ticker_list,ok
-2123372,"Wuxi Lead Intelligent Equipment Co., Ltd./ADR",WXILY,WXILY,1,2123372,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2123346,"Montage Technology Co., Ltd./ADR",MNTGY,MNTGY;MNTCF,2,2123346,OTC,8880,88,American Depositary Receipts,Services,United States,F4,other,1231,False,sec_ticker_list,ok
+2123372,"Wuxi Lead Intelligent Equipment Co., Ltd./ADR",WXILY,WXILY,1,2123372,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2123471,Columbus Circle Capital Corp III,CCCT,CCCT;CCCTU;CCCTW,3,2123471,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
-2123524,Muyuan Foods Co. Ltd/ADR,MUYNY,MUYNY,1,2123524,OTC,8880,88,American Depositary Receipts,Services,,F4,other,1231,False,sec_ticker_list,ok
-2123531,Eastroc Beverage Group Co. Ltd/ADR,EBGCY,EBGCY;ERBGF,2,2123531,OTC,8880,88,American Depositary Receipts,Services,,F4,other,1231,False,sec_ticker_list,ok
+2123524,Muyuan Foods Co. Ltd/ADR,MUYNY,MUYNY,1,2123524,OTC,8880,88,American Depositary Receipts,Services,United States,F4,other,1231,False,sec_ticker_list,ok
+2123531,Eastroc Beverage Group Co. Ltd/ADR,EBGCY,EBGCY;ERBGF,2,2123531,OTC,8880,88,American Depositary Receipts,Services,United States,F4,other,1231,False,sec_ticker_list,ok
 2123553,ICG Silver & Gold Ltd.,ICGSF,ICGSF,1,2123553,OTC,,,,,,A1,other,1231,False,sec_ticker_list,ok
 2123613,"Kardigan, Inc.",KARD,KARD,1,2123613,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
-2124215,TKMS AG & CO. KGAA/ADR,TKMSF,TKMSF,1,2124215,OTC,,,,,,2M,other,0630,False,sec_ticker_list,ok
+2124215,TKMS AG & CO. KGAA/ADR,TKMSF,TKMSF,1,2124215,OTC,,,,,United States,2M,other,0630,False,sec_ticker_list,ok
 2124403,Vicore Pharma Holding AB,VCRE,VCRE,1,2124403,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,,V7,other,1231,False,sec_ticker_list,ok
 2125056,Wella Co,WELA,WELA,1,2125056,,2844,28,"Perfumes, Cosmetics & Other Toilet Preparations",Manufacturing,United States,DE,other,0630,False,sec_ticker_list,ok
 2125355,"Bamboo Insurance Services, Inc.",BMB,BMB,1,2125355,NYSE,6411,64,"Insurance Agents, Brokers & Service","Finance, Insurance & Real Estate",United States,DE,other,1231,False,sec_ticker_list,ok
 2125750,Clinch Resources Ltd.,CLCHF,CLCHF,1,2125750,OTC,,,,,United States,A1,other,1231,False,sec_ticker_list,ok
-2125904,"Sichuan Kelun-Biotech Biopharmaceutical Co., Ltd./ADR",SKBBY,SKBBY,1,2125904,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
-2125951,"Beijing Haizhi Technology Group Co., Ltd./ADR",BHTGY,BHTGY,1,2125951,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2125904,"Sichuan Kelun-Biotech Biopharmaceutical Co., Ltd./ADR",SKBBY,SKBBY,1,2125904,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
+2125951,"Beijing Haizhi Technology Group Co., Ltd./ADR",BHTGY,BHTGY,1,2125951,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2126043,Cartesian Growth Corp IV,CGCF,CGCF;CGCFU;CGCFW,3,2126043,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2126198,Expro Ltd,XPRO,XPRO,1,2126198,NYSE,1389,13,"Oil & Gas Field Services, NEC",Mining,,E9,operating,1231,False,sec_ticker_list,ok
 2126221,"Recreatives Industries, Inc.",RECX,RECX,1,2126221,OTC,3711,37,Motor Vehicles & Passenger Car Bodies,Manufacturing,United States,NV,other,1231,False,sec_ticker_list,ok
@@ -7316,16 +7316,16 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2127043,Jersey Mike's Subs Inc.,JMKE,JMKE,1,2127043,NYSE,5812,58,Retail-Eating  Places,Retail Trade,United States,DE,operating,1228,False,sec_ticker_list,ok
 2127653,American Tungsten & Antimony Ltd,ATAYY,ATAYY;ATALF,2,2127653,OTC,,,,,,C3,other,0630,False,sec_ticker_list,ok
 2127839,Bellevue Gold Ltd./ADR,BVGLY,BVGLY;BELGF,2,2127839,OTC,,,,,United States,C3,other,1225,False,sec_ticker_list,ok
-2127852,CSG N.V./ADR,CSGNF,CSGNF,1,2127852,OTC,,,,,,P7,other,1231,False,sec_ticker_list,ok
-2127859,EUROPEAN LITHIUM LTD/ADR,EULLY,EULLY;EULIF,2,2127859,OTC,,,,,,C3,other,0630,False,sec_ticker_list,ok
-2127860,DATELINE RESOURCES LTD/ADR,DTRSY,DTRSY;DTREF,2,2127860,OTC,,,,,,C3,other,0630,False,sec_ticker_list,ok
-2127861,ELIS S.A./ADR,ELSSF,ELSSF,1,2127861,OTC,,,,,,I0,other,1231,False,sec_ticker_list,ok
-2127862,BALTIC CLASSIFIEDS GROUP PLC/ADR,BCLGY,BCLGY,1,2127862,OTC,,,,,,X0,other,0430,False,sec_ticker_list,ok
-2128448,Mininglamp Technology Group Limited/ADR,MTGLY,MTGLY;MNLTF,2,2128448,OTC,,,,,,E9,other,1231,False,sec_ticker_list,ok
-2128458,Jiaxin International Resources Investment Limited/ADR,JXIRY,JXIRY,1,2128458,OTC,,,,,,K3,other,1231,False,sec_ticker_list,ok
-2128597,"Shenzhen Xunce Technology Co., Ltd./ADR",SXTEY,SXTEY,1,2128597,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
-2128619,Toyo Engineering Corporation/ADR,TYOEY,TYOEY,1,2128619,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
-2128813,"Hangzhou Diagens Biotechnology Co., Ltd./ADR",HGZDY,HGZDY,1,2128813,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2127852,CSG N.V./ADR,CSGNF,CSGNF,1,2127852,OTC,,,,,United States,P7,other,1231,False,sec_ticker_list,ok
+2127859,EUROPEAN LITHIUM LTD/ADR,EULLY,EULLY;EULIF,2,2127859,OTC,,,,,United States,C3,other,0630,False,sec_ticker_list,ok
+2127860,DATELINE RESOURCES LTD/ADR,DTRSY,DTRSY;DTREF,2,2127860,OTC,,,,,United States,C3,other,0630,False,sec_ticker_list,ok
+2127861,ELIS S.A./ADR,ELSSF,ELSSF,1,2127861,OTC,,,,,United States,I0,other,1231,False,sec_ticker_list,ok
+2127862,BALTIC CLASSIFIEDS GROUP PLC/ADR,BCLGY,BCLGY,1,2127862,OTC,,,,,United States,X0,other,0430,False,sec_ticker_list,ok
+2128448,Mininglamp Technology Group Limited/ADR,MTGLY,MTGLY;MNLTF,2,2128448,OTC,,,,,United States,E9,other,1231,False,sec_ticker_list,ok
+2128458,Jiaxin International Resources Investment Limited/ADR,JXIRY,JXIRY,1,2128458,OTC,,,,,United States,K3,other,1231,False,sec_ticker_list,ok
+2128597,"Shenzhen Xunce Technology Co., Ltd./ADR",SXTEY,SXTEY,1,2128597,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
+2128619,Toyo Engineering Corporation/ADR,TYOEY,TYOEY,1,2128619,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
+2128813,"Hangzhou Diagens Biotechnology Co., Ltd./ADR",HGZDY,HGZDY,1,2128813,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2129056,Jones Ventures INTL Acquisition1 Corp,JONE,JONE;JONER;JONEU,3,2129056,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2129284,American Eagle Gold Corp.,AMEGF,AMEGF,1,2129284,OTC,1040,10,Gold and Silver Ores,Mining,,A6,other,1231,False,sec_ticker_list,ok
 2129466,"Guangdong Huayan Robotics Co, Ltd./ADR",GDHRY,GDHRY,1,2129466,OTC,,,,,United States,F4,other,1225,False,sec_ticker_list,ok
@@ -7336,12 +7336,12 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2131350,B&R Technology Merger Corp.,BRTM,BRTM;BRTMU,2,2131350,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2131524,"Braveheart Bio, Inc.",BRVE,BRVE,1,2131524,Nasdaq,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,sec_ticker_list,ok
 2131613,"CoVolt Power, Inc.",KVLT,KVLT,1,2131613,,4931,49,Electric & Other Services Combined,"Transportation, Communications & Utilities",United States,TX,other,1231,False,sec_ticker_list,ok
-2131812,Open House Group Co. Ltd/ADR,OPNHY,OPNHY;OPPPF,2,2131812,OTC,,,,,,M0,other,0930,False,sec_ticker_list,ok
+2131812,Open House Group Co. Ltd/ADR,OPNHY,OPNHY;OPPPF,2,2131812,OTC,,,,,United States,M0,other,0930,False,sec_ticker_list,ok
 2131813,newcleo Ltd.,NWCL,NWCL,1,2131813,Nasdaq,3443,34,Fabricated Plate Work (Boiler Shops),Manufacturing,,X0,other,1231,False,sec_ticker_list,ok
 2131853,FutureCorp Space Acquisition 1,FTRA,FTRA;FTRA-UN;FTRA-WT,3,2131853,NYSE,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2131882,"McCarthy Finney, Inc.",MCFN,MCFN,1,2131882,,7374,73,Services-Computer Processing & Data Preparation,Services,United States,DE,other,1231,False,sec_ticker_list,ok
 2131961,Manycore Tech Inc./ADR,MNYCY,MNYCY,1,2131961,OTC,,,,,United States,E9,other,1225,False,sec_ticker_list,ok
-2132082,"Sigenergy Technology Co., Ltd./ADR",SIGEY,SIGEY,1,2132082,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2132082,"Sigenergy Technology Co., Ltd./ADR",SIGEY,SIGEY,1,2132082,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2132582,Lyntris Inc.,LYNX,LYNX,1,2132582,NYSE,3812,38,"Search, Detection, Navigation, Guidance, Aeronautical Sys",Manufacturing,United States,DE,other,1231,False,sec_ticker_list,ok
 2133020,Ruihe Data Technology Holdings Limited/ADR,RHDTY,RHDTY,1,2133020,OTC,,,,,United States,E9,other,1225,False,sec_ticker_list,ok
 2133037,"SB Energy, Inc.",SBE,SBE,1,2133037,,4911,49,Electric Services,"Transportation, Communications & Utilities",United States,DE,other,1231,False,sec_ticker_list,ok
@@ -7353,34 +7353,34 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 2134090,Aggreko Inc.,AGKO,AGKO,1,2134090,,4991,49,Cogeneration Services & Small Power Producers,"Transportation, Communications & Utilities",,E9,other,0103,False,sec_ticker_list,ok
 2134539,Ithaca Energy PLC/ADR,ITHEY,ITHEY;ITHLF,2,2134539,OTC,,,,,United States,X0,other,1231,False,sec_ticker_list,ok
 2134552,US Elemental Inc.,ULIT,ULIT,1,2134552,,1400,14,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),Mining,United States,DE,other,1231,False,sec_ticker_list,ok
-2135894,"Shanghai Xizhi Technology Co., Ltd./ADR",SXZTY,SXZTY,1,2135894,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2135894,"Shanghai Xizhi Technology Co., Ltd./ADR",SXZTY,SXZTY,1,2135894,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2135939,Norient Acquisition,NORT,NORT,1,2135939,,,,,,United States,AZ,other,1231,False,sec_ticker_list,ok
 2136116,Huaqin Co. LTD/ADR,HUAQY,HUAQY,1,2136116,OTC,8880,88,American Depositary Receipts,Services,United States,F4,other,1225,False,sec_ticker_list,ok
 2136387,Real REMAX Group Inc.,REAX,REAX,1,2136387,Nasdaq,6531,65,Real Estate Agents & Managers (For Others),"Finance, Insurance & Real Estate",United States,DE,other,1231,False,sec_ticker_list,ok
-2137137,Bangkok Expressway & Metro Public Co Limited/ADR,BEMPY,BEMPY,1,2137137,OTC,,,,,,W1,other,1231,False,sec_ticker_list,ok
-2137358,Osotspa Public Co Limited/ADR,OSOPF,OSOPF,1,2137358,OTC,,,,,,W1,other,1231,False,sec_ticker_list,ok
+2137137,Bangkok Expressway & Metro Public Co Limited/ADR,BEMPY,BEMPY,1,2137137,OTC,,,,,United States,W1,other,1231,False,sec_ticker_list,ok
+2137358,Osotspa Public Co Limited/ADR,OSOPF,OSOPF,1,2137358,OTC,,,,,United States,W1,other,1231,False,sec_ticker_list,ok
 2137754,Prologium Holding Inc.,PRLG,PRLG,1,2137754,,3690,36,"Miscellaneous Electrical Machinery, Equipment & Supplies",Manufacturing,,E9,other,1231,False,sec_ticker_list,ok
 2137777,Research Alliance Corp IV,RACD,RACD,1,2137777,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2138186,"Narragansett Bancorp, Inc.",NARA,NARA,1,2138186,,6036,60,"Savings Institutions, Not Federally Chartered","Finance, Insurance & Real Estate",United States,MD,operating,1231,False,sec_ticker_list,ok
-2138369,Siam Global House Public Co Limited/ADR,SIAMY,SIAMY,1,2138369,OTC,,,,,,W1,other,1231,False,sec_ticker_list,ok
-2138373,Carabao Group Public Co Limited/ADR,CBAGY,CBAGY;CGPCF,2,2138373,OTC,,,,,,W1,other,1231,False,sec_ticker_list,ok
-2138474,Zabka Group S.A./ADR,ZABKY,ZABKY,1,2138474,OTC,,,,,,N4,other,1231,False,sec_ticker_list,ok
-2138554,"Shanghai Top Numerical Control Technology Co., Ltd./ADR",SHNTY,SHNTY,1,2138554,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2138369,Siam Global House Public Co Limited/ADR,SIAMY,SIAMY,1,2138369,OTC,,,,,United States,W1,other,1231,False,sec_ticker_list,ok
+2138373,Carabao Group Public Co Limited/ADR,CBAGY,CBAGY;CGPCF,2,2138373,OTC,,,,,United States,W1,other,1231,False,sec_ticker_list,ok
+2138474,Zabka Group S.A./ADR,ZABKY,ZABKY,1,2138474,OTC,,,,,United States,N4,other,1231,False,sec_ticker_list,ok
+2138554,"Shanghai Top Numerical Control Technology Co., Ltd./ADR",SHNTY,SHNTY,1,2138554,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2140030,"Thunder Bridge Capital Partners V, Ltd.",TBCV,TBCV;TBCVU,2,2140030,Nasdaq,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,E9,operating,1231,True,sec_ticker_list,ok
 2140948,Lion Finance Group PLC/ADR,LNFGY,LNFGY,1,2140948,OTC,,,,,United States,NY,other,1231,False,sec_ticker_list,ok
 2141099,Rigaku Holdings Corporation/ADR,RGKUY,RGKUY;RGAKF,2,2141099,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
 2141406,Accelevation Holdings Corp.,ACCV,ACCV,1,2141406,,3620,36,Electrical Industrial Apparatus,Manufacturing,United States,DE,other,1231,False,sec_ticker_list,ok
 2141512,Spinnova Plc,SPNV,SPNV,1,2141512,,2390,23,Miscellaneous Fabricated Textile Products,Manufacturing,,H9,other,1231,False,sec_ticker_list,ok
-2142762,Organo Corporation/ADR,ORCRY,ORCRY;ORGJF,2,2142762,OTC,,,,,,M0,other,1231,False,sec_ticker_list,ok
+2142762,Organo Corporation/ADR,ORCRY,ORCRY;ORGJF,2,2142762,OTC,,,,,United States,M0,other,1231,False,sec_ticker_list,ok
 2143673,Uranium Royalty Corp.,UROY,UROY,1,2143673,Nasdaq,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,DE,operating,0430,True,sec_ticker_list,ok
 2144732,"Luxshare Precision Industry Co., Ltd./ADR",LXSPY,LXSPY,1,2144732,OTC,,,,,United States,F4,other,1225,False,sec_ticker_list,ok
 2144745,Bradsaude S.A./ADR,BSUDY,BSUDY,1,2144745,OTC,,,,,United States,D5,other,1225,False,sec_ticker_list,ok
-2144751,Capital Tankers Corp./ADR,CTNKY,CTNKY;CPTKF,2,2144751,OTC,,,,,,1T,other,1231,False,sec_ticker_list,ok
+2144751,Capital Tankers Corp./ADR,CTNKY,CTNKY;CPTKF,2,2144751,OTC,,,,,United States,1T,other,1231,False,sec_ticker_list,ok
 2144761,Metis TechBio Co Ltd/ADR,MTBOY,MTBOY,1,2144761,OTC,,,,,United States,F4,other,1225,False,sec_ticker_list,ok
 2145378,"Guangdong Dtech Technology Co., Ltd./ADR",GDTTY,GDTTY,1,2145378,OTC,,,,,United States,F4,other,1225,False,sec_ticker_list,ok
 2147557,HUALINK TECH INC,HLNK,HLNK,1,2147557,,,,,,United States,CO,other,0630,False,sec_ticker_list,ok
 2147869,AGILYX ASA / ADR,AGYXY,AGYXY;AGXXF,2,2147869,OTC,,,,,,Q8,other,1231,False,sec_ticker_list,ok
-2148075,MOMENTA GLOBAL LTD/ADR,MGLBY,MGLBY,1,2148075,OTC,,,,,,F4,other,1231,False,sec_ticker_list,ok
+2148075,MOMENTA GLOBAL LTD/ADR,MGLBY,MGLBY,1,2148075,OTC,,,,,United States,F4,other,1231,False,sec_ticker_list,ok
 2149111,Poste Italiane S.p.A./ADR,PSTEY,PSTEY;PITAF,2,2149111,OTC,,,,,United States,L6,other,1231,False,sec_ticker_list,ok
 2150886,Fresnillo Plc/ADR,FNLPF,FNLPF,1,2150886,OTC,,,,,United States,X0,other,1226,False,sec_ticker_list,ok
 2151905,La Beaute Inc.,LABI,LABI,1,2151905,,7200,72,Services-Personal Services,Services,United States,CA,other,0731,False,sec_ticker_list,ok
@@ -7808,7 +7808,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 757011,USG CORP,,,0,757011,,3270,32,"Concrete, Gypsum & Plaster Products",Manufacturing,United States,DE,operating,1231,False,xbrl_filer,ok
 758743,VIDEO DISPLAY CORP,,,0,758743,,3670,36,Electronic Components & Accessories,Manufacturing,United States,GA,operating,0228,False,xbrl_filer,ok
 758938,QUALSTAR CORP,,,0,758938,,3695,36,Magnetic & Optical Recording Media,Manufacturing,United States,CA,operating,1231,False,xbrl_filer,ok
-759999,CENTENARY INTERNATIONAL CORP,,,0,759999,,5150,51,Wholesale-Farm Product Raw Materials,Wholesale Trade,,NV,operating,1231,False,xbrl_filer,ok
+759999,CENTENARY INTERNATIONAL CORP,,,0,759999,,5150,51,Wholesale-Farm Product Raw Materials,Wholesale Trade,United States,NV,operating,1231,False,xbrl_filer,ok
 761238,RADA ELECTRONIC INDUSTRIES LTD,,,0,761238,,5065,50,"Wholesale-Electronic Parts & Equipment, NEC",Wholesale Trade,Israel,L3,other,1231,False,xbrl_filer,ok
 764195,VBI Vaccines Inc/BC,,,0,764195,,2834,28,Pharmaceutical Preparations,Manufacturing,United States,A1,operating,1231,False,xbrl_filer,ok
 764579,CAS MEDICAL SYSTEMS INC,,,0,764579,,3841,38,Surgical & Medical Instruments & Apparatus,Manufacturing,United States,DE,operating,1231,False,xbrl_filer,ok
@@ -8413,7 +8413,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1011664,ELBIT VISION SYSTEMS LTD,,,0,1011664,,3823,38,"Industrial Instruments For Measurement, Display, and Control",Manufacturing,Israel,L3,other,1231,False,xbrl_filer,ok
 1011835,"MEDIVATION, INC.",,,0,1011835,,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,xbrl_filer,ok
 1012100,SEALED AIR CORP/DE,,,0,1012100,,2820,28,"Plastic Material, Synth Resin/Rubber, Cellulos (No Glass)",Manufacturing,United States,DE,operating,1231,False,xbrl_filer,ok
-1012477,AVADEL PHARMACEUTICALS PLC,,,0,1012477,,2834,28,Pharmaceutical Preparations,Manufacturing,,,operating,1231,False,xbrl_filer,ok
+1012477,AVADEL PHARMACEUTICALS PLC,,,0,1012477,,2834,28,Pharmaceutical Preparations,Manufacturing,United States,,operating,1231,False,xbrl_filer,ok
 1012569,"Energy Transfer, LP",,,0,1012569,,4922,49,Natural Gas Transmission,"Transportation, Communications & Utilities",United States,DE,operating,1231,False,xbrl_filer,ok
 1012620,GENESEE & WYOMING INC,,,0,1012620,,4011,40,"Railroads, Line-Haul Operating","Transportation, Communications & Utilities",United States,DE,operating,1231,False,xbrl_filer,ok
 1012771,FBL FINANCIAL GROUP INC,,,0,1012771,,6311,63,Life Insurance,"Finance, Insurance & Real Estate",United States,IA,operating,1231,False,xbrl_filer,ok
@@ -9267,7 +9267,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1290476,Village Bank & Trust Financial Corp.,,,0,1290476,,6022,60,State Commercial Banks,"Finance, Insurance & Real Estate",United States,VA,operating,1231,False,xbrl_filer,ok
 1290506,ECOLOCAP SOLUTIONS INC.,,,0,1290506,,3990,39,Miscellaneous Manufacturing Industries,Manufacturing,United States,NV,operating,1231,False,xbrl_filer,ok
 1290903,"eLong, Inc.",,,0,1290903,,4700,47,Transportation Services,"Transportation, Communications & Utilities",China,E9,other,1231,False,xbrl_filer,ok
-1291361,Syneron Medical Ltd.,,,0,1291361,,3845,38,Electromedical & Electrotherapeutic Apparatus,Manufacturing,,,other,,False,xbrl_filer,ok
+1291361,Syneron Medical Ltd.,,,0,1291361,,3845,38,Electromedical & Electrotherapeutic Apparatus,Manufacturing,Israel,,other,,False,xbrl_filer,ok
 1292519,INVIVO THERAPEUTICS HOLDINGS CORP.,,,0,1292519,,3841,38,Surgical & Medical Instruments & Apparatus,Manufacturing,United States,NV,operating,1231,False,xbrl_filer,ok
 1292653,"Inteliquent, Inc.",,,0,1292653,,4813,48,Telephone Communications (No Radiotelephone),"Transportation, Communications & Utilities",United States,,operating,1231,False,xbrl_filer,ok
 1293282,TechTarget Holdings Inc.,,,0,1293282,,4822,48,Telegraph & Other Message Communications,"Transportation, Communications & Utilities",United States,,operating,1231,False,xbrl_filer,ok
@@ -9556,7 +9556,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1353523,Congaree Bancshares Inc,,,0,1353523,,6022,60,State Commercial Banks,"Finance, Insurance & Real Estate",United States,SC,operating,1231,False,xbrl_filer,ok
 1353538,"Appgate, Inc.",,,0,1353538,,7372,73,Services-Prepackaged Software,Services,United States,DE,operating,1231,False,xbrl_filer,ok
 1353616,Invesco CurrencyShares Swedish Krona Trust,,,0,1353616,,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,NY,operating,1231,True,xbrl_filer,ok
-1353633,Unifunds Ltd,,,0,1353633,,3531,35,Construction Machinery & Equip,Manufacturing,,,operating,0131,False,xbrl_filer,ok
+1353633,Unifunds Ltd,,,0,1353633,,3531,35,Construction Machinery & Equip,Manufacturing,Thailand,,operating,0131,False,xbrl_filer,ok
 1353722,"Mewbourne Energy Partners 06-A, L.P.",,,0,1353722,,1311,13,Crude Petroleum & Natural Gas,Mining,United States,DE,operating,1231,False,xbrl_filer,ok
 1353748,"Mewbourne Energy Partners 07-A, L.P.",,,0,1353748,,1311,13,Crude Petroleum & Natural Gas,Mining,United States,DE,operating,1231,False,xbrl_filer,ok
 1353970,China XD Plastics Co Ltd,,,0,1353970,,3086,30,Plastics Foam Products,Manufacturing,United States,NV,operating,1231,False,xbrl_filer,ok
@@ -9779,7 +9779,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1388195,PharMerica CORP,,,0,1388195,,5912,59,Retail-Drug Stores and Proprietary Stores,Retail Trade,United States,DE,operating,1231,False,xbrl_filer,ok
 1388319,"U.S. Stem Cell, Inc.",,,0,1388319,,8731,87,Services-Commercial Physical & Biological Research,Services,United States,FL,operating,1231,False,xbrl_filer,ok
 1388410,"PARALLAX HEALTH SCIENCES, INC.",,,0,1388410,,8000,80,Services-Health Services,Services,United States,NV,operating,1231,False,xbrl_filer,ok
-1388430,"CAI International, Inc.",,,0,1388430,,7359,73,"Services-Equipment Rental & Leasing, NEC",Services,,,operating,1231,False,xbrl_filer,ok
+1388430,"CAI International, Inc.",,,0,1388430,,7359,73,"Services-Equipment Rental & Leasing, NEC",Services,United States,,operating,1231,False,xbrl_filer,ok
 1388486,Spotlight Innovation Inc.,,,0,1388486,,2834,28,Pharmaceutical Preparations,Manufacturing,United States,NV,operating,1231,False,xbrl_filer,ok
 1388978,"CHINA SHIANYUN GROUP CORP., LTD.",,,0,1388978,,2844,28,"Perfumes, Cosmetics & Other Toilet Preparations",Manufacturing,China,,operating,1231,False,xbrl_filer,ok
 1389002,MARIN SOFTWARE INC,,,0,1389002,,7374,73,Services-Computer Processing & Data Preparation,Services,United States,DE,operating,1231,False,xbrl_filer,ok
@@ -10059,7 +10059,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1428040,Polaris Futures Fund L.P.,,,0,1428040,,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,DE,operating,1231,True,xbrl_filer,ok
 1428042,Meritage Futures Fund L.P.,,,0,1428042,,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,DE,operating,1231,True,xbrl_filer,ok
 1428043,LV Futures Fund L.P.,,,0,1428043,,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,DE,operating,1231,True,xbrl_filer,ok
-1428389,"Blox, Inc.",,,0,1428389,,4911,49,Electric Services,"Transportation, Communications & Utilities",,,operating,0331,False,xbrl_filer,ok
+1428389,"Blox, Inc.",,,0,1428389,,4911,49,Electric Services,"Transportation, Communications & Utilities",United States,,operating,0331,False,xbrl_filer,ok
 1428397,"Adaptive Medias, Inc.",,,0,1428397,,7310,73,Services-Advertising,Services,United States,NV,operating,1231,False,xbrl_filer,ok
 1428522,"Radius Health, Inc.",,,0,1428522,,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,xbrl_filer,ok
 1428765,GREEN ENVIROTECH HOLDINGS CORP.,,,0,1428765,,3089,30,"Plastics Products, NEC",Manufacturing,United States,DE,operating,1231,False,xbrl_filer,ok
@@ -10256,7 +10256,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1461119,CRH Medical Corp,,,0,1461119,,8000,80,Services-Health Services,Services,Canada,A1,operating,1231,False,xbrl_filer,ok
 1461219,GRAHAM ALTERNATIVE INVESTMENT FUND I LLC,,,0,1461219,,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,DE,operating,1231,True,xbrl_filer,ok
 1461237,GRAHAM ALTERNATIVE INVESTMENT FUND II LLC,,,0,1461237,,6221,62,Commodity Contracts Brokers & Dealers,"Finance, Insurance & Real Estate",United States,DE,operating,1231,True,xbrl_filer,ok
-1461640,HomeTown Bankshares Corp,,,0,1461640,,6022,60,State Commercial Banks,"Finance, Insurance & Real Estate",,VA,operating,1231,False,xbrl_filer,ok
+1461640,HomeTown Bankshares Corp,,,0,1461640,,6022,60,State Commercial Banks,"Finance, Insurance & Real Estate",United States,VA,operating,1231,False,xbrl_filer,ok
 1461755,"Atlantic Capital Bancshares, Inc.",,,0,1461755,,6022,60,State Commercial Banks,"Finance, Insurance & Real Estate",United States,GA,operating,1231,False,xbrl_filer,ok
 1461993,"MELINTA THERAPEUTICS, INC. /NEW/",,,0,1461993,,2834,28,Pharmaceutical Preparations,Manufacturing,United States,DE,operating,1231,False,xbrl_filer,ok
 1462047,PRIME GLOBAL CAPITAL GROUP Inc,,,0,1462047,,6500,65,Real Estate,"Finance, Insurance & Real Estate",Malaysia,NV,operating,1031,False,xbrl_filer,ok
@@ -11158,7 +11158,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1582962,CANNA Corp,,,0,1582962,,2100,21,Tobacco Products,Manufacturing,United States,CO,operating,1231,False,xbrl_filer,ok
 1582966,"Cheniere Energy Partners LP Holdings, LLC",,,0,1582966,,4924,49,Natural Gas Distribution,"Transportation, Communications & Utilities",United States,DE,operating,1231,False,xbrl_filer,ok
 1583077,"Hospitality Investors Trust, Inc.",,,0,1583077,,6798,67,Real Estate Investment Trusts,"Finance, Insurance & Real Estate",United States,MD,operating,1231,False,xbrl_filer,ok
-1583103,VALERO ENERGY PARTNERS LP,,,0,1583103,,4610,46,Pipe Lines (No Natural Gas),"Transportation, Communications & Utilities",,,operating,1231,False,xbrl_filer,ok
+1583103,VALERO ENERGY PARTNERS LP,,,0,1583103,,4610,46,Pipe Lines (No Natural Gas),"Transportation, Communications & Utilities",United States,,operating,1231,False,xbrl_filer,ok
 1583513,"STG Group, Inc.",,,0,1583513,,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,DE,operating,1231,True,xbrl_filer,ok
 1583671,"Science to Consumers, Inc.",,,0,1583671,,5122,51,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",Wholesale Trade,United States,NV,operating,0531,False,xbrl_filer,ok
 1583744,Zenith Energy Logistics Partners LP,,,0,1583744,,5171,51,Wholesale-Petroleum Bulk Stations & Terminals,Wholesale Trade,United States,DE,operating,1231,False,xbrl_filer,ok
@@ -11610,7 +11610,7 @@ company_id,company_name,ticker,tickers,n_tickers,cik,exchange,sic,sic2,sic_descr
 1635341,Signature Holdings Corp,,,0,1635341,,6770,67,Blank Checks,"Finance, Insurance & Real Estate",United States,DE,operating,1231,True,xbrl_filer,ok
 1635484,Cincinnati Bancorp,,,0,1635484,,6035,60,"Savings Institution, Federally Chartered","Finance, Insurance & Real Estate",United States,X1,operating,1231,False,xbrl_filer,ok
 1635538,IHO-AGRO INTERNATIONAL INC.,,,0,1635538,,5190,51,Wholesale-Miscellaneous Nondurable Goods,Wholesale Trade,United States,NV,operating,0930,False,xbrl_filer,ok
-1635581,8point3 Energy Partners LP,,,0,1635581,,4911,49,Electric Services,"Transportation, Communications & Utilities",,,operating,1130,False,xbrl_filer,ok
+1635581,8point3 Energy Partners LP,,,0,1635581,,4911,49,Electric Services,"Transportation, Communications & Utilities",United States,,operating,1130,False,xbrl_filer,ok
 1635626,Equitable Financial Corp.,,,0,1635626,,6035,60,"Savings Institution, Federally Chartered","Finance, Insurance & Real Estate",United States,MD,operating,0630,False,xbrl_filer,ok
 1635650,Green Plains Partners LP,,,0,1635650,,2860,28,Industrial Organic Chemicals,Manufacturing,United States,DE,operating,1231,False,xbrl_filer,ok
 1635718,Gannett Media Corp.,,,0,1635718,,2711,27,Newspapers: Publishing or  Publishing & Printing,Manufacturing,United States,DE,operating,1231,False,xbrl_filer,ok

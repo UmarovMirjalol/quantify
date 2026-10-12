@@ -10,13 +10,13 @@ Do financial markets price technological disruption before it shows up in tradit
 
 - Company universe: **13702** SEC registrants (unique CIK).
 - Startup-ecosystem component available: 12445 (90.83%).
-- Patent component available: 3786 (27.63%).
-- Index available (>=1 component): 12530 (91.45%); both components: 3701.
-- Regression sample (operating firms, 2015-2024): 125950 company-years; index non-missing in 114230.
+- Patent component available: 3970 (28.97%).
+- Index available (>=1 component): 12533 (91.47%); both components: 3882.
+- Regression sample (operating firms, 2015-2024): 125950 company-years; index non-missing in 114259.
 
 ## 3. Index distribution (regression sample)
 
-- mean 28.0, sd 28.6, median 18.1, share exactly 0 (industry not linked to tracked technologies): 30.8%
+- mean 27.9, sd 28.5, median 18.6, share exactly 0 (industry not linked to tracked technologies): 30.6%
 
 ## 4. Main results (t -> t+1)
 
@@ -24,34 +24,34 @@ Coefficients are per 10 index points; SEs clustered by company; * p<0.10, ** p<0
 
 | Model | Spec | h | Coef (per 10 pts) | SE | p | 95% CI | N obs | N firms | R2 | Note |
 |---|---|---|---|---|---|---|---|---|---|---|
-| M1 | main_year | 1 | 0.0550*** | 0.0065 | 0.000 | [0.042, 0.068] | 47590 | 7928 | 0.641 |  |
-| M1 | main_year_sic2 | 1 | 0.0797*** | 0.0098 | 0.000 | [0.061, 0.099] | 47590 | 7928 | 0.673 |  |
-| M1 | main_sic2xyear | 1 | 0.0796*** | 0.0099 | 0.000 | [0.060, 0.099] | 47590 | 7928 | 0.679 |  |
-| M1 | main_firm_year | 1 | 0.0000 | 0.0151 | 1.000 | [-0.030, 0.030] | 47590 | 7928 | 0.035 |  |
-| M1b | main_year | 1 | 0.0154*** | 0.0027 | 0.000 | [0.010, 0.021] | 44088 | 7426 | 0.818 |  |
-| M1b | main_year_sic2 | 1 | 0.0221*** | 0.0044 | 0.000 | [0.013, 0.031] | 44088 | 7426 | 0.822 |  |
-| M1b | main_sic2xyear | 1 | 0.0219*** | 0.0045 | 0.000 | [0.013, 0.031] | 44088 | 7426 | 0.826 |  |
-| M1b | main_firm_year | 1 | -0.0016 | 0.0129 | 0.901 | [-0.027, 0.024] | 44088 | 7426 | 0.098 |  |
-| M2 | main_year | 1 | 0.0061*** | 0.0012 | 0.000 | [0.004, 0.008] | 44251 | 7622 | 0.015 |  |
-| M2 | main_year_sic2 | 1 | 0.0081*** | 0.0017 | 0.000 | [0.005, 0.011] | 44251 | 7622 | 0.017 |  |
-| M2 | main_sic2xyear | 1 | 0.0082*** | 0.0017 | 0.000 | [0.005, 0.012] | 44251 | 7622 | 0.041 |  |
-| M2 | main_firm_year | 1 | -0.0128** | 0.0061 | 0.037 | [-0.025, -0.001] | 44251 | 7622 | 0.011 |  |
-| M3 | main_year | 1 | 0.0245*** | 0.0031 | 0.000 | [0.018, 0.031] | 23605 | 4040 | 0.163 |  |
-| M3 | main_year_sic2 | 1 | 0.0232*** | 0.0041 | 0.000 | [0.015, 0.031] | 23605 | 4040 | 0.179 |  |
-| M3 | main_sic2xyear | 1 | 0.0233*** | 0.0042 | 0.000 | [0.015, 0.032] | 23605 | 4040 | 0.199 |  |
-| M3 | main_firm_year | 1 | 0.0101 | 0.0066 | 0.124 | [-0.003, 0.023] | 23605 | 4040 | 0.003 |  |
-| M4 | main_year | 1 | -0.0029*** | 0.0001 | 0.000 | [-0.003, -0.003] | 42646 | 7300 | 0.040 |  |
-| M4 | main_year_sic2 | 1 | -0.0005** | 0.0002 | 0.011 | [-0.001, -0.000] | 42646 | 7300 | 0.168 |  |
-| M4 | main_sic2xyear | 1 | -0.0005** | 0.0002 | 0.013 | [-0.001, -0.000] | 42646 | 7300 | 0.188 |  |
-| M4 | main_firm_year | 1 | -0.0002 | 0.0003 | 0.521 | [-0.001, 0.000] | 42646 | 7300 | 0.003 |  |
+| M1 | main_year | 1 | 0.0567*** | 0.0066 | 0.000 | [0.044, 0.070] | 47627 | 7934 | 0.641 |  |
+| M1 | main_year_sic2 | 1 | 0.0833*** | 0.0098 | 0.000 | [0.064, 0.103] | 47627 | 7934 | 0.674 |  |
+| M1 | main_sic2xyear | 1 | 0.0831*** | 0.0099 | 0.000 | [0.064, 0.103] | 47627 | 7934 | 0.679 |  |
+| M1 | main_firm_year | 1 | -0.0008 | 0.0148 | 0.958 | [-0.030, 0.028] | 47627 | 7934 | 0.035 |  |
+| M1b | main_year | 1 | 0.0161*** | 0.0028 | 0.000 | [0.011, 0.022] | 44121 | 7431 | 0.818 |  |
+| M1b | main_year_sic2 | 1 | 0.0239*** | 0.0045 | 0.000 | [0.015, 0.033] | 44121 | 7431 | 0.822 |  |
+| M1b | main_sic2xyear | 1 | 0.0236*** | 0.0045 | 0.000 | [0.015, 0.032] | 44121 | 7431 | 0.826 |  |
+| M1b | main_firm_year | 1 | -0.0013 | 0.0127 | 0.916 | [-0.026, 0.024] | 44121 | 7431 | 0.098 |  |
+| M2 | main_year | 1 | 0.0060*** | 0.0011 | 0.000 | [0.004, 0.008] | 46990 | 8093 | 0.016 |  |
+| M2 | main_year_sic2 | 1 | 0.0080*** | 0.0017 | 0.000 | [0.005, 0.011] | 46990 | 8093 | 0.018 |  |
+| M2 | main_sic2xyear | 1 | 0.0081*** | 0.0017 | 0.000 | [0.005, 0.011] | 46990 | 8093 | 0.042 |  |
+| M2 | main_firm_year | 1 | -0.0131** | 0.0058 | 0.023 | [-0.024, -0.002] | 46990 | 8093 | 0.011 |  |
+| M3 | main_year | 1 | 0.0238*** | 0.0029 | 0.000 | [0.018, 0.030] | 25017 | 4290 | 0.166 |  |
+| M3 | main_year_sic2 | 1 | 0.0242*** | 0.0039 | 0.000 | [0.017, 0.032] | 25017 | 4290 | 0.184 |  |
+| M3 | main_sic2xyear | 1 | 0.0244*** | 0.0040 | 0.000 | [0.017, 0.032] | 25017 | 4290 | 0.202 |  |
+| M3 | main_firm_year | 1 | 0.0102* | 0.0059 | 0.081 | [-0.001, 0.022] | 25017 | 4290 | 0.003 |  |
+| M4 | main_year | 1 | -0.0029*** | 0.0001 | 0.000 | [-0.003, -0.003] | 45230 | 7767 | 0.037 |  |
+| M4 | main_year_sic2 | 1 | -0.0004* | 0.0002 | 0.059 | [-0.001, 0.000] | 45230 | 7767 | 0.166 |  |
+| M4 | main_sic2xyear | 1 | -0.0004* | 0.0002 | 0.072 | [-0.001, 0.000] | 45230 | 7767 | 0.186 |  |
+| M4 | main_firm_year | 1 | -0.0002 | 0.0003 | 0.607 | [-0.001, 0.000] | 45230 | 7767 | 0.003 |  |
 
 ### Reading the main results
 
-- **M1 (Market valuation (ln public float))**: with year FE, a 10-point higher index at t is associated with a positive difference of 0.0550 in the t+1 outcome (p = 0.000, N = 47590); statistically distinguishable from zero at 5%. Adding SIC2 industry FE: 0.0797 (p = 0.000). With SIC2 x year FE (sector cycles absorbed): 0.0796 (p = 0.000). With company + year FE: 0.0000 (p = 1.000). Across the other 14 specifications with >= 30 firms, 14 have the same sign and 13 of those have p < 0.05.
-- **M1b (Valuation change (ln public float, controlling ln public float_t))**: with year FE, a 10-point higher index at t is associated with a positive difference of 0.0154 in the t+1 outcome (p = 0.000, N = 44088); statistically distinguishable from zero at 5%. Adding SIC2 industry FE: 0.0221 (p = 0.000). With SIC2 x year FE (sector cycles absorbed): 0.0219 (p = 0.000). With company + year FE: -0.0016 (p = 0.901). Across the other 14 specifications with >= 30 firms, 13 have the same sign and 13 of those have p < 0.05.
-- **M2 (Revenue growth (dln revenue))**: with year FE, a 10-point higher index at t is associated with a positive difference of 0.0061 in the t+1 outcome (p = 0.000, N = 44251); statistically distinguishable from zero at 5%. Adding SIC2 industry FE: 0.0081 (p = 0.000). With SIC2 x year FE (sector cycles absorbed): 0.0082 (p = 0.000). With company + year FE: -0.0128 (p = 0.037). Across the other 15 specifications with >= 30 firms, 13 have the same sign and 13 of those have p < 0.05.
-- **M3 (R&D / assets)**: with year FE, a 10-point higher index at t is associated with a positive difference of 0.0245 in the t+1 outcome (p = 0.000, N = 23605); statistically distinguishable from zero at 5%. Adding SIC2 industry FE: 0.0232 (p = 0.000). With SIC2 x year FE (sector cycles absorbed): 0.0233 (p = 0.000). With company + year FE: 0.0101 (p = 0.124). Across the other 15 specifications with >= 30 firms, 14 have the same sign and 13 of those have p < 0.05.
-- **M4 (CAPEX / assets)**: with year FE, a 10-point higher index at t is associated with a negative difference of -0.0029 in the t+1 outcome (p = 0.000, N = 42646); statistically distinguishable from zero at 5%. Adding SIC2 industry FE: -0.0005 (p = 0.011). With SIC2 x year FE (sector cycles absorbed): -0.0005 (p = 0.013). With company + year FE: -0.0002 (p = 0.521). Across the other 15 specifications with >= 30 firms, 15 have the same sign and 11 of those have p < 0.05.
+- **M1 (Market valuation (ln public float))**: with year FE, a 10-point higher index at t is associated with a positive difference of 0.0567 in the t+1 outcome (p = 0.000, N = 47627); statistically distinguishable from zero at 5%. Adding SIC2 industry FE: 0.0833 (p = 0.000). With SIC2 x year FE (sector cycles absorbed): 0.0831 (p = 0.000). With company + year FE: -0.0008 (p = 0.958). Across the other 14 specifications with >= 30 firms, 13 have the same sign and 13 of those have p < 0.05.
+- **M1b (Valuation change (ln public float, controlling ln public float_t))**: with year FE, a 10-point higher index at t is associated with a positive difference of 0.0161 in the t+1 outcome (p = 0.000, N = 44121); statistically distinguishable from zero at 5%. Adding SIC2 industry FE: 0.0239 (p = 0.000). With SIC2 x year FE (sector cycles absorbed): 0.0236 (p = 0.000). With company + year FE: -0.0013 (p = 0.916). Across the other 14 specifications with >= 30 firms, 13 have the same sign and 13 of those have p < 0.05.
+- **M2 (Revenue growth (dln revenue))**: with year FE, a 10-point higher index at t is associated with a positive difference of 0.0060 in the t+1 outcome (p = 0.000, N = 46990); statistically distinguishable from zero at 5%. Adding SIC2 industry FE: 0.0080 (p = 0.000). With SIC2 x year FE (sector cycles absorbed): 0.0081 (p = 0.000). With company + year FE: -0.0131 (p = 0.023). Across the other 15 specifications with >= 30 firms, 13 have the same sign and 13 of those have p < 0.05.
+- **M3 (R&D / assets)**: with year FE, a 10-point higher index at t is associated with a positive difference of 0.0238 in the t+1 outcome (p = 0.000, N = 25017); statistically distinguishable from zero at 5%. Adding SIC2 industry FE: 0.0242 (p = 0.000). With SIC2 x year FE (sector cycles absorbed): 0.0244 (p = 0.000). With company + year FE: 0.0102 (p = 0.081). Across the other 15 specifications with >= 30 firms, 14 have the same sign and 13 of those have p < 0.05.
+- **M4 (CAPEX / assets)**: with year FE, a 10-point higher index at t is associated with a negative difference of -0.0029 in the t+1 outcome (p = 0.000, N = 45230); statistically distinguishable from zero at 5%. Adding SIC2 industry FE: -0.0004 (p = 0.059). With SIC2 x year FE (sector cycles absorbed): -0.0004 (p = 0.072). With company + year FE: -0.0002 (p = 0.607). Across the other 15 specifications with >= 30 firms, 15 have the same sign and 9 of those have p < 0.05.
 
 How to read the fixed-effect columns: the year-FE estimate mixes differences *between* industries with differences within them. SIC2 FE keep only variation across 4-digit SIC codes and name evidence inside a 2-digit industry. SIC2 x year FE additionally remove industry-wide valuation/fundamental cycles (e.g. the 2020-21 technology boom). Company + year FE use only within-firm changes in the index, which for the startup component come from shifts in accelerator category composition over time - i.e. industry-level variation, not firm-specific news.
 
@@ -61,11 +61,11 @@ Year-FE coefficients per 10 index points by horizon (index at t, outcome at t+h)
 
 | Model | h = 1 | h = 2 | h = 3 |
 |---|---|---|---|
-| M1 | 0.0550*** (N=47590) | 0.0579*** (N=40775) | 0.0566*** (N=33993) |
-| M1b | 0.0154*** (N=44088) | 0.0217*** (N=36952) | 0.0238*** (N=30574) |
-| M2 | 0.0061*** (N=44251) | 0.0052*** (N=37997) | 0.0054*** (N=31915) |
-| M3 | 0.0245*** (N=23605) | 0.0243*** (N=19908) | 0.0236*** (N=16470) |
-| M4 | -0.0029*** (N=42646) | -0.0029*** (N=35996) | -0.0029*** (N=29885) |
+| M1 | 0.0567*** (N=47627) | 0.0600*** (N=40809) | 0.0588*** (N=34024) |
+| M1b | 0.0161*** (N=44121) | 0.0229*** (N=36980) | 0.0251*** (N=30598) |
+| M2 | 0.0060*** (N=46990) | 0.0051*** (N=40307) | 0.0053*** (N=33825) |
+| M3 | 0.0238*** (N=25017) | 0.0234*** (N=21084) | 0.0227*** (N=17426) |
+| M4 | -0.0029*** (N=45230) | -0.0029*** (N=38136) | -0.0029*** (N=31629) |
 
 These are separate regressions on different samples; they describe predictive patterns and are not a formal test of lead-lag ordering.
 
@@ -73,70 +73,70 @@ These are separate regressions on different samples; they describe predictive pa
 
 | Model | Spec | h | Coef (per 10 pts) | SE | p | 95% CI | N obs | N firms | R2 | Note |
 |---|---|---|---|---|---|---|---|---|---|---|
-| M1 | weights_w25_75 | 1 | 0.0437*** | 0.0060 | 0.000 | [0.032, 0.055] | 47590 | 7928 | 0.641 |  |
-| M1 | weights_w50_50 | 1 | 0.0550*** | 0.0065 | 0.000 | [0.042, 0.068] | 47590 | 7928 | 0.641 |  |
-| M1 | weights_w75_25 | 1 | 0.0628*** | 0.0066 | 0.000 | [0.050, 0.076] | 47590 | 7928 | 0.642 |  |
-| M1 | exclude_largest_10pct | 1 | 0.0541*** | 0.0066 | 0.000 | [0.041, 0.067] | 42148 | 7412 | 0.571 |  |
-| M1 | horizon_t+2 | 2 | 0.0579*** | 0.0071 | 0.000 | [0.044, 0.072] | 40775 | 7226 | 0.614 |  |
-| M1 | horizon_t+3 | 3 | 0.0566*** | 0.0079 | 0.000 | [0.041, 0.072] | 33993 | 6453 | 0.603 |  |
-| M1 | startup_component_only | 1 | 0.0314*** | 0.0054 | 0.000 | [0.021, 0.042] | 47137 | 7863 | 0.639 |  |
-| M1 | patent_component_only | 1 | 0.1145*** | 0.0096 | 0.000 | [0.096, 0.133] | 21829 | 3163 | 0.680 |  |
-| M1 | log_patent_count | 1 | 2.4624*** | 0.1440 | 0.000 | [2.180, 2.745] | 21829 | 3163 | 0.689 |  |
-| M1 | tech_linked_industries_only | 1 | 0.0953*** | 0.0107 | 0.000 | [0.074, 0.116] | 27758 | 4693 | 0.615 |  |
-| M1 | both_components_only | 1 | 0.1074*** | 0.0109 | 0.000 | [0.086, 0.129] | 21376 | 3098 | 0.678 |  |
-| M1b | weights_w25_75 | 1 | 0.0120*** | 0.0025 | 0.000 | [0.007, 0.017] | 44088 | 7426 | 0.818 |  |
-| M1b | weights_w50_50 | 1 | 0.0154*** | 0.0027 | 0.000 | [0.010, 0.021] | 44088 | 7426 | 0.818 |  |
-| M1b | weights_w75_25 | 1 | 0.0178*** | 0.0028 | 0.000 | [0.012, 0.023] | 44088 | 7426 | 0.818 |  |
-| M1b | exclude_largest_10pct | 1 | 0.0155*** | 0.0030 | 0.000 | [0.010, 0.021] | 38785 | 6915 | 0.771 |  |
-| M1b | horizon_t+2 | 2 | 0.0217*** | 0.0042 | 0.000 | [0.013, 0.030] | 36952 | 6628 | 0.752 |  |
-| M1b | horizon_t+3 | 3 | 0.0238*** | 0.0055 | 0.000 | [0.013, 0.035] | 30574 | 5912 | 0.719 |  |
-| M1b | startup_component_only | 1 | 0.0084*** | 0.0022 | 0.000 | [0.004, 0.013] | 43656 | 7363 | 0.817 |  |
-| M1b | patent_component_only | 1 | 0.0332*** | 0.0051 | 0.000 | [0.023, 0.043] | 20646 | 3085 | 0.818 |  |
-| M1b | log_patent_count | 1 | 0.8683*** | 0.0763 | 0.000 | [0.719, 1.018] | 20646 | 3085 | 0.819 |  |
-| M1b | tech_linked_industries_only | 1 | 0.0278*** | 0.0047 | 0.000 | [0.019, 0.037] | 25571 | 4411 | 0.798 |  |
-| M1b | both_components_only | 1 | 0.0348*** | 0.0052 | 0.000 | [0.025, 0.045] | 20214 | 3022 | 0.817 |  |
-| M2 | unwinsorized | 1 | 0.0060*** | 0.0014 | 0.000 | [0.003, 0.009] | 44251 | 7622 | 0.010 |  |
-| M2 | weights_w25_75 | 1 | 0.0056*** | 0.0011 | 0.000 | [0.004, 0.008] | 44251 | 7622 | 0.015 |  |
-| M2 | weights_w50_50 | 1 | 0.0061*** | 0.0012 | 0.000 | [0.004, 0.008] | 44251 | 7622 | 0.015 |  |
-| M2 | weights_w75_25 | 1 | 0.0060*** | 0.0012 | 0.000 | [0.004, 0.008] | 44251 | 7622 | 0.015 |  |
-| M2 | exclude_largest_10pct | 1 | 0.0064*** | 0.0013 | 0.000 | [0.004, 0.009] | 38851 | 7086 | 0.014 |  |
-| M2 | horizon_t+2 | 2 | 0.0052*** | 0.0012 | 0.000 | [0.003, 0.008] | 37997 | 6901 | 0.017 |  |
-| M2 | horizon_t+3 | 3 | 0.0054*** | 0.0013 | 0.000 | [0.003, 0.008] | 31915 | 6188 | 0.018 |  |
-| M2 | startup_component_only | 1 | 0.0049*** | 0.0009 | 0.000 | [0.003, 0.007] | 43788 | 7556 | 0.015 |  |
-| M2 | patent_component_only | 1 | 0.0058*** | 0.0021 | 0.006 | [0.002, 0.010] | 20099 | 3036 | 0.014 |  |
-| M2 | log_patent_count | 1 | -0.0003 | 0.0184 | 0.987 | [-0.036, 0.036] | 20099 | 3036 | 0.013 |  |
-| M2 | tech_linked_industries_only | 1 | 0.0072*** | 0.0018 | 0.000 | [0.004, 0.011] | 23401 | 4160 | 0.013 |  |
-| M2 | both_components_only | 1 | 0.0087*** | 0.0018 | 0.000 | [0.005, 0.012] | 19636 | 2970 | 0.014 |  |
-| M3 | unwinsorized | 1 | -0.0268 | 0.1667 | 0.872 | [-0.353, 0.300] | 23605 | 4040 | 0.007 |  |
-| M3 | weights_w25_75 | 1 | 0.0215*** | 0.0025 | 0.000 | [0.017, 0.026] | 23605 | 4040 | 0.163 |  |
-| M3 | weights_w50_50 | 1 | 0.0245*** | 0.0031 | 0.000 | [0.018, 0.031] | 23605 | 4040 | 0.163 |  |
-| M3 | weights_w75_25 | 1 | 0.0238*** | 0.0035 | 0.000 | [0.017, 0.031] | 23605 | 4040 | 0.162 |  |
-| M3 | exclude_largest_10pct | 1 | 0.0258*** | 0.0032 | 0.000 | [0.019, 0.032] | 22015 | 3890 | 0.170 |  |
-| M3 | horizon_t+2 | 2 | 0.0243*** | 0.0032 | 0.000 | [0.018, 0.030] | 19908 | 3680 | 0.148 |  |
-| M3 | horizon_t+3 | 3 | 0.0236*** | 0.0030 | 0.000 | [0.018, 0.030] | 16470 | 3273 | 0.146 |  |
-| M3 | startup_component_only | 1 | 0.0175*** | 0.0020 | 0.000 | [0.014, 0.021] | 23395 | 4009 | 0.162 |  |
-| M3 | patent_component_only | 1 | 0.0189*** | 0.0024 | 0.000 | [0.014, 0.024] | 16820 | 2527 | 0.137 |  |
-| M3 | log_patent_count | 1 | 0.3845*** | 0.0430 | 0.000 | [0.300, 0.469] | 16820 | 2527 | 0.141 |  |
-| M3 | tech_linked_industries_only | 1 | 0.0187*** | 0.0044 | 0.000 | [0.010, 0.027] | 18138 | 3096 | 0.168 |  |
-| M3 | both_components_only | 1 | 0.0381*** | 0.0027 | 0.000 | [0.033, 0.043] | 16610 | 2496 | 0.152 |  |
-| M4 | unwinsorized | 1 | -0.0244 | 0.0244 | 0.318 | [-0.072, 0.023] | 42646 | 7300 | 0.000 |  |
-| M4 | weights_w25_75 | 1 | -0.0027*** | 0.0001 | 0.000 | [-0.003, -0.002] | 42646 | 7300 | 0.043 |  |
-| M4 | weights_w50_50 | 1 | -0.0029*** | 0.0001 | 0.000 | [-0.003, -0.003] | 42646 | 7300 | 0.040 |  |
-| M4 | weights_w75_25 | 1 | -0.0027*** | 0.0002 | 0.000 | [-0.003, -0.002] | 42646 | 7300 | 0.034 |  |
-| M4 | exclude_largest_10pct | 1 | -0.0029*** | 0.0001 | 0.000 | [-0.003, -0.003] | 37788 | 6817 | 0.042 |  |
-| M4 | horizon_t+2 | 2 | -0.0029*** | 0.0002 | 0.000 | [-0.003, -0.003] | 35996 | 6609 | 0.042 |  |
-| M4 | horizon_t+3 | 3 | -0.0029*** | 0.0002 | 0.000 | [-0.003, -0.003] | 29885 | 5885 | 0.041 |  |
-| M4 | startup_component_only | 1 | -0.0024*** | 0.0001 | 0.000 | [-0.003, -0.002] | 42197 | 7235 | 0.042 |  |
-| M4 | patent_component_only | 1 | -0.0001 | 0.0002 | 0.573 | [-0.001, 0.000] | 20926 | 3128 | 0.013 |  |
-| M4 | log_patent_count | 1 | -0.0050 | 0.0040 | 0.217 | [-0.013, 0.003] | 20926 | 3128 | 0.014 |  |
-| M4 | tech_linked_industries_only | 1 | -0.0018*** | 0.0002 | 0.000 | [-0.002, -0.001] | 25294 | 4353 | 0.017 |  |
-| M4 | both_components_only | 1 | -0.0023*** | 0.0002 | 0.000 | [-0.003, -0.002] | 20477 | 3063 | 0.032 |  |
+| M1 | weights_w25_75 | 1 | 0.0444*** | 0.0060 | 0.000 | [0.033, 0.056] | 47627 | 7934 | 0.641 |  |
+| M1 | weights_w50_50 | 1 | 0.0567*** | 0.0066 | 0.000 | [0.044, 0.070] | 47627 | 7934 | 0.641 |  |
+| M1 | weights_w75_25 | 1 | 0.0653*** | 0.0067 | 0.000 | [0.052, 0.078] | 47627 | 7934 | 0.642 |  |
+| M1 | exclude_largest_10pct | 1 | 0.0532*** | 0.0066 | 0.000 | [0.040, 0.066] | 42819 | 7474 | 0.577 |  |
+| M1 | horizon_t+2 | 2 | 0.0600*** | 0.0072 | 0.000 | [0.046, 0.074] | 40809 | 7232 | 0.614 |  |
+| M1 | horizon_t+3 | 3 | 0.0588*** | 0.0080 | 0.000 | [0.043, 0.074] | 34024 | 6459 | 0.603 |  |
+| M1 | startup_component_only | 1 | 0.0313*** | 0.0054 | 0.000 | [0.021, 0.042] | 47158 | 7867 | 0.639 |  |
+| M1 | patent_component_only | 1 | 0.1138*** | 0.0093 | 0.000 | [0.096, 0.132] | 22522 | 3301 | 0.679 |  |
+| M1 | log_patent_count | 1 | 2.3850*** | 0.1415 | 0.000 | [2.108, 2.662] | 22522 | 3301 | 0.687 |  |
+| M1 | tech_linked_industries_only | 1 | 0.0955*** | 0.0108 | 0.000 | [0.074, 0.117] | 27775 | 4695 | 0.615 |  |
+| M1 | both_components_only | 1 | 0.1067*** | 0.0107 | 0.000 | [0.086, 0.128] | 22053 | 3234 | 0.677 |  |
+| M1b | weights_w25_75 | 1 | 0.0123*** | 0.0025 | 0.000 | [0.007, 0.017] | 44121 | 7431 | 0.818 |  |
+| M1b | weights_w50_50 | 1 | 0.0161*** | 0.0028 | 0.000 | [0.011, 0.022] | 44121 | 7431 | 0.818 |  |
+| M1b | weights_w75_25 | 1 | 0.0189*** | 0.0029 | 0.000 | [0.013, 0.025] | 44121 | 7431 | 0.819 |  |
+| M1b | exclude_largest_10pct | 1 | 0.0154*** | 0.0029 | 0.000 | [0.010, 0.021] | 39433 | 6977 | 0.775 |  |
+| M1b | horizon_t+2 | 2 | 0.0229*** | 0.0042 | 0.000 | [0.015, 0.031] | 36980 | 6633 | 0.752 |  |
+| M1b | horizon_t+3 | 3 | 0.0251*** | 0.0056 | 0.000 | [0.014, 0.036] | 30598 | 5916 | 0.719 |  |
+| M1b | startup_component_only | 1 | 0.0084*** | 0.0022 | 0.000 | [0.004, 0.013] | 43674 | 7366 | 0.817 |  |
+| M1b | patent_component_only | 1 | 0.0338*** | 0.0048 | 0.000 | [0.024, 0.043] | 21306 | 3217 | 0.818 |  |
+| M1b | log_patent_count | 1 | 0.8411*** | 0.0730 | 0.000 | [0.698, 0.984] | 21306 | 3217 | 0.819 |  |
+| M1b | tech_linked_industries_only | 1 | 0.0284*** | 0.0047 | 0.000 | [0.019, 0.038] | 25587 | 4413 | 0.798 |  |
+| M1b | both_components_only | 1 | 0.0344*** | 0.0051 | 0.000 | [0.024, 0.044] | 20859 | 3152 | 0.816 |  |
+| M2 | unwinsorized | 1 | 0.0060*** | 0.0014 | 0.000 | [0.003, 0.009] | 46990 | 8093 | 0.010 |  |
+| M2 | weights_w25_75 | 1 | 0.0056*** | 0.0010 | 0.000 | [0.004, 0.008] | 46990 | 8093 | 0.016 |  |
+| M2 | weights_w50_50 | 1 | 0.0060*** | 0.0011 | 0.000 | [0.004, 0.008] | 46990 | 8093 | 0.016 |  |
+| M2 | weights_w75_25 | 1 | 0.0057*** | 0.0012 | 0.000 | [0.003, 0.008] | 46990 | 8093 | 0.016 |  |
+| M2 | exclude_largest_10pct | 1 | 0.0063*** | 0.0012 | 0.000 | [0.004, 0.009] | 41245 | 7510 | 0.015 |  |
+| M2 | horizon_t+2 | 2 | 0.0051*** | 0.0012 | 0.000 | [0.003, 0.007] | 40307 | 7326 | 0.018 |  |
+| M2 | horizon_t+3 | 3 | 0.0053*** | 0.0013 | 0.000 | [0.003, 0.008] | 33825 | 6579 | 0.019 |  |
+| M2 | startup_component_only | 1 | 0.0049*** | 0.0009 | 0.000 | [0.003, 0.007] | 46501 | 8024 | 0.016 |  |
+| M2 | patent_component_only | 1 | 0.0045** | 0.0020 | 0.022 | [0.001, 0.008] | 21993 | 3355 | 0.014 |  |
+| M2 | log_patent_count | 1 | -0.0073 | 0.0163 | 0.654 | [-0.039, 0.025] | 21993 | 3355 | 0.014 |  |
+| M2 | tech_linked_industries_only | 1 | 0.0074*** | 0.0018 | 0.000 | [0.004, 0.011] | 24963 | 4425 | 0.015 |  |
+| M2 | both_components_only | 1 | 0.0085*** | 0.0017 | 0.000 | [0.005, 0.012] | 21504 | 3286 | 0.015 |  |
+| M3 | unwinsorized | 1 | -0.0311 | 0.1623 | 0.848 | [-0.349, 0.287] | 25017 | 4290 | 0.007 |  |
+| M3 | weights_w25_75 | 1 | 0.0207*** | 0.0023 | 0.000 | [0.016, 0.025] | 25017 | 4290 | 0.166 |  |
+| M3 | weights_w50_50 | 1 | 0.0238*** | 0.0029 | 0.000 | [0.018, 0.030] | 25017 | 4290 | 0.166 |  |
+| M3 | weights_w75_25 | 1 | 0.0232*** | 0.0033 | 0.000 | [0.017, 0.030] | 25017 | 4290 | 0.165 |  |
+| M3 | exclude_largest_10pct | 1 | 0.0249*** | 0.0030 | 0.000 | [0.019, 0.031] | 23132 | 4101 | 0.174 |  |
+| M3 | horizon_t+2 | 2 | 0.0234*** | 0.0030 | 0.000 | [0.018, 0.029] | 21084 | 3908 | 0.150 |  |
+| M3 | horizon_t+3 | 3 | 0.0227*** | 0.0029 | 0.000 | [0.017, 0.028] | 17426 | 3479 | 0.147 |  |
+| M3 | startup_component_only | 1 | 0.0166*** | 0.0018 | 0.000 | [0.013, 0.020] | 24797 | 4258 | 0.165 |  |
+| M3 | patent_component_only | 1 | 0.0182*** | 0.0022 | 0.000 | [0.014, 0.022] | 18182 | 2763 | 0.141 |  |
+| M3 | log_patent_count | 1 | 0.3582*** | 0.0376 | 0.000 | [0.284, 0.432] | 18182 | 2763 | 0.145 |  |
+| M3 | tech_linked_industries_only | 1 | 0.0166*** | 0.0041 | 0.000 | [0.009, 0.025] | 19224 | 3284 | 0.169 |  |
+| M3 | both_components_only | 1 | 0.0364*** | 0.0025 | 0.000 | [0.032, 0.041] | 17962 | 2731 | 0.156 |  |
+| M4 | unwinsorized | 1 | -0.0231 | 0.0232 | 0.318 | [-0.069, 0.022] | 45230 | 7767 | 0.000 |  |
+| M4 | weights_w25_75 | 1 | -0.0028*** | 0.0001 | 0.000 | [-0.003, -0.002] | 45230 | 7767 | 0.040 |  |
+| M4 | weights_w50_50 | 1 | -0.0029*** | 0.0001 | 0.000 | [-0.003, -0.003] | 45230 | 7767 | 0.037 |  |
+| M4 | weights_w75_25 | 1 | -0.0027*** | 0.0002 | 0.000 | [-0.003, -0.002] | 45230 | 7767 | 0.031 |  |
+| M4 | exclude_largest_10pct | 1 | -0.0029*** | 0.0002 | 0.000 | [-0.003, -0.003] | 40218 | 7259 | 0.039 |  |
+| M4 | horizon_t+2 | 2 | -0.0029*** | 0.0002 | 0.000 | [-0.003, -0.003] | 38136 | 7027 | 0.039 |  |
+| M4 | horizon_t+3 | 3 | -0.0029*** | 0.0002 | 0.000 | [-0.003, -0.003] | 31629 | 6262 | 0.039 |  |
+| M4 | startup_component_only | 1 | -0.0024*** | 0.0001 | 0.000 | [-0.003, -0.002] | 44755 | 7699 | 0.040 |  |
+| M4 | patent_component_only | 1 | -0.0001 | 0.0002 | 0.700 | [-0.001, 0.000] | 22642 | 3433 | 0.015 |  |
+| M4 | log_patent_count | 1 | -0.0042 | 0.0040 | 0.291 | [-0.012, 0.004] | 22642 | 3433 | 0.015 |  |
+| M4 | tech_linked_industries_only | 1 | -0.0019*** | 0.0002 | 0.000 | [-0.002, -0.001] | 26756 | 4610 | 0.015 |  |
+| M4 | both_components_only | 1 | -0.0024*** | 0.0002 | 0.000 | [-0.003, -0.002] | 22167 | 3365 | 0.034 |  |
 
 Note: alternative index weights (25/75, 50/50, 75/25) change the index only for firms that have both components; with the current patent coverage those rows are nearly identical by construction and are not informative about weighting.
 
 Rows marked 'few clusters' (patent-based regressors) rely on fewer than 30 firms; their p-values are not reliable and should not be interpreted.
 
-In total 78 coefficients were estimated and 69 have p < 0.05. With this many tests, some nominally significant coefficients are expected by chance alone; conclusions should rest on patterns that are consistent across specifications, not on individual p-values.
+In total 78 coefficients were estimated and 67 have p < 0.05. With this many tests, some nominally significant coefficients are expected by chance alone; conclusions should rest on patterns that are consistent across specifications, not on individual p-values.
 
 ## 7. Interpretation limits
 

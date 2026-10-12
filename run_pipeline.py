@@ -35,6 +35,7 @@ STEPS = [
     ("patents_score", "src.patents.calculate_patent_scores", "5. patent scores", False, False, []),
     ("index", "src.technology_index.build_index", "6. technology disruption index", False, False, []),
     ("financials", "src.financials.fetch_sec_financials", "7. SEC financials", False, True, []),
+    ("financials_facts", "src.financials.fetch_companyfacts", "7. SEC companyfacts (IFRS / non-frame filers)", False, True, ["--offline"]),
     ("panel", "src.research.build_panel", "8. research panel", False, False, []),
     ("validate", "src.validate_data", "9. validation", True, False, []),
     ("research", "src.research.run_regressions", "10. research analysis", False, False, []),

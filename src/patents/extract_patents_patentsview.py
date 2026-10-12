@@ -11,7 +11,8 @@ Sources (downloaded once into data/raw/patents/ma_patentsview/, never overwritte
   * gvkey_ciks.rda - gvkey <-> CIK links from the `farr` R package (Ian Gow).
 
 Counting: patents by GRANT year (consistent with the BigQuery route). A gvkey linked
-to more than one CIK in our universe is ambiguous and skipped; patents of several
+to more than one CIK in our universe is assigned year by year to the CIK whose filing
+date range covers the grant year (skipped when none or several do); patents of several
 gvkeys linked to the same CIK are summed. Companies without a link are absent
 (missing downstream), never zero.
 
@@ -46,17 +47,30 @@ def download(url: str, path, offline: bool) -> bool:
     return True
 
 
-def gvkey_to_cik(master_ids: set) -> pd.Series:
+def gvkey_links(master_ids: set) -> pd.DataFrame:
     import pyreadr
     cw = next(iter(pyreadr.read_r(str(RAW / "gvkey_ciks.rda")).values()))
     cw["gvkey"] = pd.to_numeric(cw["gvkey"], errors="coerce")
-    cw = cw.dropna(subset=["gvkey"])[["gvkey", "cik"]].astype(int).drop_duplicates()
+    cw = cw.dropna(subset=["gvkey"])
     cw = cw[cw["cik"].isin(master_ids)]
-    n_cik = cw.groupby("gvkey")["cik"].nunique()
-    ambiguous = n_cik[n_cik > 1].index
-    log.info("gvkey->CIK links in universe: %d gvkeys (%d ambiguous, skipped)",
-             len(n_cik), len(ambiguous))
-    return cw[~cw["gvkey"].isin(ambiguous)].set_index("gvkey")["cik"]
+    cw["fy"] = pd.to_datetime(cw["first_date"], errors="coerce").dt.year.fillna(1900)
+    cw["ly"] = pd.to_datetime(cw["last_date"], errors="coerce").dt.year.fillna(2100)
+    return (cw.groupby(["gvkey", "cik"], as_index=False).agg(fy=("fy", "min"), ly=("ly", "max"))
+            .astype(int))
+
+
+def map_to_cik(by_gvkey: pd.DataFrame, links: pd.DataFrame) -> pd.DataFrame:
+    """A gvkey linked to one CIK maps in every year. A gvkey linked to several CIKs maps a
+    year only when exactly one link's SEC filing date range covers it; otherwise skipped."""
+    n_cik = links.groupby("gvkey")["cik"].transform("nunique")
+    single, multi = links[n_cik == 1], links[n_cik > 1]
+    a = by_gvkey.merge(single[["gvkey", "cik"]], on="gvkey")
+    b = by_gvkey.merge(multi, on="gvkey")
+    b = b[(b["grant_year"] >= b["fy"]) & (b["grant_year"] <= b["ly"])]
+    b = b[b.groupby(["gvkey", "grant_year"])["cik"].transform("size") == 1]
+    log.info("gvkey->CIK: %d single-CIK gvkeys, %d multi-CIK gvkeys (%d resolved by date)",
+             single["gvkey"].nunique(), multi["gvkey"].nunique(), b["gvkey"].nunique())
+    return pd.concat([a, b[a.columns]], ignore_index=True).rename(columns={"cik": "company_id"})
 
 
 def main(offline: bool = False) -> None:
@@ -64,7 +78,7 @@ def main(offline: bool = False) -> None:
     if not (download(PATENTS_URL, pat, offline) and download(CROSSWALK_URL, xw, offline)):
         return
     master = pd.read_csv(config.COMPANIES_MASTER, usecols=["company_id"])
-    links = gvkey_to_cik(set(master["company_id"]))
+    links = gvkey_links(set(master["company_id"]))
 
     lo, hi = config.PATENT_COUNT_YEARS
     parts = []
@@ -74,10 +88,19 @@ def main(offline: bool = False) -> None:
         parts.append(chunk.groupby(["gvkey", "grant_year"]).size())
     by_gvkey = pd.concat(parts).groupby(level=[0, 1]).sum().rename("patent_count").reset_index()
     by_gvkey["gvkey"] = pd.to_numeric(by_gvkey["gvkey"], errors="coerce")
-    by_gvkey["company_id"] = by_gvkey["gvkey"].map(links)
-    hit = by_gvkey.dropna(subset=["company_id"])
+    hit = map_to_cik(by_gvkey.dropna(subset=["gvkey"]).astype({"gvkey": int}), links)
     counts = (hit.groupby(["company_id", "grant_year"], as_index=False)["patent_count"].sum()
               .rename(columns={"grant_year": "year"}).astype(int))
+    # explicit zero years only where the company's link is valid (single-CIK gvkey: whole
+    # window; multi-CIK gvkey: the link's filing date range)
+    n_cik = links.groupby("gvkey")["cik"].transform("nunique")
+    span = links.assign(fy=links["fy"].where(n_cik > 1, lo).clip(lower=lo),
+                        ly=links["ly"].where(n_cik > 1, hi).clip(upper=hi))
+    span = span[span["cik"].isin(counts["company_id"])]
+    grid = {(c, y) for c, f, l in zip(span["cik"], span["fy"], span["ly"])
+            for y in range(f, l + 1)}
+    grid = pd.DataFrame(sorted(grid), columns=["company_id", "year"])
+    counts = grid.merge(counts, on=["company_id", "year"], how="outer").fillna(0).astype(int)
     log.info("Linked patents %d-%d: %d of %d gvkey-matched (%.1f%%) -> %d companies",
              lo, hi + 1, hit["patent_count"].sum(), by_gvkey["patent_count"].sum(),
              100 * hit["patent_count"].sum() / by_gvkey["patent_count"].sum(),

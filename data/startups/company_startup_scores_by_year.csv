@@ -7291,7 +7291,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2119416,OpenPayd Global Holdings Ltd,OP,2015,,,uninformative_sic
 2120046,CVC Capital Partners plc/ADR,CVCPY,2015,,,missing_sic
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2015,,,missing_sic
-2120528,Kainan Holding Group Ltd,KHG,2015,0.3693583532991682,38.9,sic_linked
+2120528,Kainan Holding Group Ltd,KHG,2015,0.0,0.0,industry_unlinked
 2120882,SK hynix Inc.,SKHY,2015,0.2421032653446928,15.1,sic_linked
 2122392,Pelican Acquisition II Corp,PLCI,2015,0.0,0.0,industry_unlinked
 2123232,Cumberland Farms Ltd,CMBY,2015,0.0,0.0,industry_unlinked
@@ -20202,7 +20202,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1994214,Nomadar Corp.,NOMA,2016,0.0,0.0,industry_unlinked
 1994373,Huineng Technology Corp,HNIT,2016,1.5044976783781565,85.9,sic_linked
 1994582,Oyocar Group Inc.,OYCG,2016,0.0,0.0,industry_unlinked
-1994624,ScanTech AI Systems Inc.,STAI,2016,0.42258270248040214,56.8,sic_linked+name
+1994624,ScanTech AI Systems Inc.,STAI,2016,0.42258270248040214,56.7,sic_linked+name
 1994702,"Kyverna Therapeutics, Inc.",KYTX,2016,0.4568639228333336,67.5,sic_linked+name
 1995075,Megan Holdings Ltd.,MGN,2016,0.0,0.0,industry_unlinked
 1995116,Rectitude Holdings Ltd.,RECT,2016,0.0,0.0,industry_unlinked
@@ -20993,7 +20993,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2119416,OpenPayd Global Holdings Ltd,OP,2016,,,uninformative_sic
 2120046,CVC Capital Partners plc/ADR,CVCPY,2016,,,missing_sic
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2016,,,missing_sic
-2120528,Kainan Holding Group Ltd,KHG,2016,0.3764739197222905,43.6,sic_linked
+2120528,Kainan Holding Group Ltd,KHG,2016,0.0,0.0,industry_unlinked
 2120882,SK hynix Inc.,SKHY,2016,0.34544022687435116,25.8,sic_linked
 2122392,Pelican Acquisition II Corp,PLCI,2016,0.0,0.0,industry_unlinked
 2123232,Cumberland Farms Ltd,CMBY,2016,0.0,0.0,industry_unlinked
@@ -27930,7 +27930,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 320017,"LISATA THERAPEUTICS, INC.",LSTA,2017,0.4765016477605722,67.5,sic_linked+name
 320121,TELOS CORP,TLS,2017,1.3929034016652575,83.6,sic_linked
 320187,"NIKE, Inc.",NKE,2017,0.0,0.0,industry_unlinked
-320193,Apple Inc.,AAPL,2017,0.8354362121749821,82.8,sic_linked
+320193,Apple Inc.,AAPL,2017,0.8354362121749821,82.7,sic_linked
 320335,GLOBE LIFE INC.,GL,2017,0.38278846390358956,40.8,sic_linked
 350698,"AUTONATION, INC.",AN,2017,0.0,0.0,industry_unlinked
 350852,COMMUNITY TRUST BANCORP INC /KY/,CTBI,2017,0.38278846390358956,40.8,sic_linked
@@ -28786,7 +28786,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 925528,HUDSON TECHNOLOGIES INC /NY,HDSN,2017,0.0,0.0,industry_unlinked
 925741,"BioCardia, Inc.",BCDA,2017,0.4765016477605722,67.5,sic_linked
 926282,"ADTRAN Holdings, Inc.",ADTN,2017,0.37071448743825824,26.5,sic_linked
-926326,"OMNICELL, INC.",OMCL,2017,0.8354362121749821,82.8,sic_linked
+926326,"OMNICELL, INC.",OMCL,2017,0.8354362121749821,82.7,sic_linked
 926423,"MIND TECHNOLOGY, INC",MIND,2017,0.28891702237078976,22.4,sic_linked
 926617,Aspira Women's Health Inc.,AWHL,2017,0.4765016477605722,67.5,sic_linked
 927003,ADVANCED ENERGY INDUSTRIES INC,AEIS,2017,0.07144557897004505,0.6,sic_linked
@@ -28848,7 +28848,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 943452,WESTINGHOUSE AIR BRAKE TECHNOLOGIES CORP,WAB,2017,0.0,0.0,industry_unlinked
 943535,"WORLD HEALTH ENERGY HOLDINGS, INC.",WHEN,2017,1.7861795474319364,93.7,sic_linked
 943819,RESMED INC,RMD,2017,0.2382508238802861,5.1,sic_linked
-944075,"SOCKET MOBILE, INC.",SCKT,2017,0.8354362121749821,82.8,sic_linked
+944075,"SOCKET MOBILE, INC.",SCKT,2017,0.8354362121749821,82.7,sic_linked
 944148,"CBIZ, Inc.",CBZ,2017,,,uninformative_sic
 944695,"HANOVER INSURANCE GROUP, INC.",THG,2017,0.38278846390358956,40.8,sic_linked
 944745,"CIVISTA BANCSHARES, INC.",CIVB,2017,0.38278846390358956,40.8,sic_linked
@@ -29504,7 +29504,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1130464,BLACK HILLS CORP /SD/,BKH,2017,0.26734068636239,14.9,sic_linked
 1130598,"Traws Pharma, Inc.",TRAW,2017,0.4765016477605722,67.5,sic_linked
 1130713,"NEIGHBORHOOD INTELLIGENCE, INC.",NXH,2017,0.0,0.0,industry_unlinked
-1130781,"BMP AI Technologies, Inc.",BMPA,2017,0.3932761457666789,53.2,name_only
+1130781,"BMP AI Technologies, Inc.",BMPA,2017,0.3932761457666789,53.1,name_only
 1131312,ZION OIL & GAS INC,ZNOG,2017,0.26734068636239,14.9,sic_linked
 1131343,ALTERITY THERAPEUTICS LTD,ATHE,2017,0.4765016477605722,67.5,sic_linked+name
 1131383,STANTEC INC,STN,2017,0.0,0.0,industry_unlinked
@@ -30160,7 +30160,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1374690,"Larimar Therapeutics, Inc.",LRMR,2017,0.4765016477605722,67.5,sic_linked+name
 1375205,UR-ENERGY INC,URG,2017,0.0,0.0,industry_unlinked
 1375348,Golden Star Resource Corp.,GLNS,2017,0.0,0.0,industry_unlinked
-1375365,"Super Micro Computer, Inc.",SMCI,2017,0.8354362121749821,82.8,sic_linked
+1375365,"Super Micro Computer, Inc.",SMCI,2017,0.8354362121749821,82.7,sic_linked
 1375877,Canadian Solar Inc.,CSIQ,2017,0.4102318443024801,54.7,sic_linked+name
 1376139,CVR ENERGY INC,CVI,2017,0.26734068636239,14.9,sic_linked
 1376231,"VPR Brands, LP.",VPRB,2017,1.7861795474319364,93.7,sic_linked
@@ -30246,7 +30246,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1393818,Blackstone Inc.,BX,2017,0.38278846390358956,40.8,sic_linked
 1393883,"DHI GROUP, INC.",DHX,2017,,,uninformative_sic
 1394039,Century Lithium Corp.,CYDVF,2017,,,missing_sic
-1394056,"ONE STOP SYSTEMS, INC.",OSS,2017,0.8354362121749821,82.8,sic_linked
+1394056,"ONE STOP SYSTEMS, INC.",OSS,2017,0.8354362121749821,82.7,sic_linked
 1394108,SUIC Worldwide Holdings Ltd.,SUIC,2017,0.26734068636239,14.9,sic_linked
 1394189,Chesapeake Gold Corp,CHPGF,2017,,,missing_sic
 1394638,"Driveitaway Holdings, Inc.",DWAY,2017,0.0,0.0,industry_unlinked
@@ -30357,7 +30357,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1415744,NORTHERN MINERALS & EXPLORATION LTD.,NMEX,2017,0.0,0.0,industry_unlinked
 1415758,Nevada Sunrise Metals Corp.,NVSGF,2017,,,missing_sic
 1415921,Navios Maritime Partners L.P.,NMM,2017,0.0,0.0,industry_unlinked
-1416090,BLUSKY AI INC.,BSAI,2017,0.3932761457666789,53.2,name_only
+1416090,BLUSKY AI INC.,BSAI,2017,0.3932761457666789,53.1,name_only
 1416697,"Blue Line Protection Group, Inc.",BLPG,2017,0.0,0.0,industry_unlinked
 1416876,"First Choice Healthcare Solutions, Inc.",FCHS,2017,0.2382508238802861,5.1,sic_linked
 1417663,"SANUWAVE Health, Inc.",SNWV,2017,0.2382508238802861,5.1,sic_linked
@@ -30648,7 +30648,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1472787,First American Financial Corp,FAF,2017,0.38278846390358956,40.8,sic_linked
 1472879,WHITECAP RESOURCES INC.,WCPRF,2017,0.26734068636239,14.9,sic_linked
 1473334,XMax Inc.,XMAX,2017,0.0,0.0,industry_unlinked
-1473490,"Global AI, Inc.",GLAI,2017,0.3932761457666789,53.2,name_only
+1473490,"Global AI, Inc.",GLAI,2017,0.3932761457666789,53.1,name_only
 1474098,Pebblebrook Hotel Trust,PEB,2017,0.0,0.0,industry_unlinked
 1474167,Cosmos Health Inc.,COSM,2017,0.0,0.0,industry_unlinked
 1474432,"Everpure, Inc.",P,2017,0.4421600664083033,56.4,sic_linked
@@ -31204,7 +31204,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1571776,Cherry Hill Mortgage Investment Corp,CHMI,2017,0.0,0.0,industry_unlinked
 1571934,TAO Synergies Inc.,TAOX,2017,0.38278846390358956,40.8,sic_linked
 1571949,"Intercontinental Exchange, Inc.",ICE,2017,0.38278846390358956,40.8,sic_linked
-1571996,Dell Technologies Inc.,DELL,2017,0.8354362121749821,82.8,sic_linked
+1571996,Dell Technologies Inc.,DELL,2017,0.8354362121749821,82.7,sic_linked
 1572334,Virginia National Bankshares Corp,VABK,2017,0.38278846390358956,40.8,sic_linked
 1572386,"GREENWAY TECHNOLOGIES, INC. & SUBSIDIARIES",GWTI,2017,0.26734068636239,14.9,sic_linked
 1572616,"FRACTYL HEALTH, INC.",GUTS,2017,0.2382508238802861,5.1,sic_linked
@@ -31335,7 +31335,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1591956,Sphere 3D Corp.,ANY,2017,0.38278846390358956,40.8,sic_linked
 1592049,Ryohin Keikaku Co/ADR,RYKKF,2017,,,missing_sic
 1592386,"Virtu Financial, Inc.",VIRT,2017,0.38278846390358956,40.8,sic_linked
-1592560,VisionSys AI Inc,VSA,2017,0.3932761457666789,53.2,name_only
+1592560,VisionSys AI Inc,VSA,2017,0.3932761457666789,53.1,name_only
 1593001,"NightFood Holdings, Inc.",NGTF,2017,0.0,0.0,industry_unlinked
 1593184,"BIOREGENX, INC.",BRGX,2017,1.7861795474319364,93.7,sic_linked
 1593275,"Hamilton Insurance Group, Ltd.",HG,2017,0.38278846390358956,40.8,sic_linked
@@ -31346,7 +31346,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1594204,ZHEN DING RESOURCES INC.,RBTK,2017,0.0,0.0,industry_unlinked
 1594805,SHOPIFY INC.,SHOP,2017,1.7861795474319364,93.7,sic_linked
 1594856,VALHALLA METALS INC.,VMXXF,2017,,,missing_sic
-1594968,Loan Artificial Intelligence Corp.,VEST,2017,0.3932761457666789,53.2,name_only
+1594968,Loan Artificial Intelligence Corp.,VEST,2017,0.3932761457666789,53.1,name_only
 1595097,"Corbus Pharmaceuticals Holdings, Inc.",CRBP,2017,0.4765016477605722,67.5,sic_linked
 1595248,"Genprex, Inc.",GNPX,2017,0.4765016477605722,67.5,sic_linked
 1595353,Galmed Pharmaceuticals Ltd.,GLMD,2017,0.4765016477605722,67.5,sic_linked
@@ -31410,7 +31410,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1604982,Sino Biopharmaceutical Limited/ADR,SBMFF,2017,0.2382508238802861,5.1,name_only
 1605057,"Vemanti Group, Inc.",VMNT,2017,0.38278846390358956,40.8,sic_linked
 1605301,"CB Financial Services, Inc.",CBFV,2017,0.38278846390358956,40.8,sic_linked
-1605331,AI Era Corp.,AERA,2017,0.3932761457666789,53.2,name_only
+1605331,AI Era Corp.,AERA,2017,0.3932761457666789,53.1,name_only
 1605481,Nevada Canyon Gold Corp.,NGLD,2017,0.0,0.0,industry_unlinked
 1605484,Stellantis N.V.,STLA,2017,0.5562577087331797,80.7,sic_linked
 1605755,Moncler S.p.A./ADR,MONRF,2017,,,missing_sic
@@ -31648,7 +31648,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1648416,Ferrari N.V.,RACE,2017,0.5562577087331797,80.7,sic_linked
 1648512,Shimadzu Corporation/ADR,SHMXY,2017,,,missing_sic
 1648636,Dune Oil Corp.,TRLEF,2017,0.26734068636239,14.9,sic_linked
-1648960,"Myseum.AI, Inc.",MYSE,2017,0.3932761457666789,53.2,name_only
+1648960,"Myseum.AI, Inc.",MYSE,2017,0.3932761457666789,53.1,name_only
 1649009,"Core AI Holdings, Inc.",CHAI,2017,0.7639906332049371,82.5,sic_linked+name
 1649094,"Vaxcyte, Inc.",PCVX,2017,0.4765016477605722,67.5,sic_linked
 1649096,Clipper Realty Inc.,CLPR,2017,0.0,0.0,industry_unlinked
@@ -31847,7 +31847,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1681622,Varex Imaging Corp,VREX,2017,0.07144557897004505,0.6,sic_linked
 1681682,ENDRA Life Sciences Inc.,NDRA,2017,0.2382508238802861,5.1,sic_linked
 1682056,Silver Storm Mining Ltd.,SVRSF,2017,,,missing_sic
-1682149,Datavault AI Inc.,DVLT,2017,0.3932761457666789,53.2,name_only
+1682149,Datavault AI Inc.,DVLT,2017,0.3932761457666789,53.1,name_only
 1682220,Sachem Capital Corp.,SACH,2017,0.0,0.0,industry_unlinked
 1682241,Metalpha Technology Holding Ltd,MATH,2017,0.38278846390358956,40.8,sic_linked
 1682265,Onar Holding Corp,ONAR,2017,0.0,0.0,industry_unlinked
@@ -31999,7 +31999,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1708055,Ribbon Communications Inc.,RBBN,2017,1.3929034016652575,83.6,sic_linked
 1708259,LexinFintech Holdings Ltd.,LX,2017,0.38278846390358956,40.8,sic_linked+name
 1708341,"All In FutureTech Alliance, Inc.",AIFA,2017,0.0,0.0,industry_unlinked
-1708441,"Mynd.ai, Inc.",MYND,2017,0.8354362121749821,82.8,sic_linked+name
+1708441,"Mynd.ai, Inc.",MYND,2017,0.8354362121749821,82.7,sic_linked+name
 1708527,ELUTIA INC.,ELUT,2017,0.4765016477605722,67.5,sic_linked
 1708599,"Serina Therapeutics, Inc.",SER,2017,0.4765016477605722,67.5,sic_linked+name
 1708688,InflaRx N.V.,IFRX,2017,0.4765016477605722,67.5,sic_linked
@@ -32084,7 +32084,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1720250,"Kandi Technologies Group, Inc.",KNDI,2017,0.5562577087331797,80.7,sic_linked
 1720420,IBEX Ltd,IBEX,2017,1.5174935845467847,85.9,sic_linked
 1720424,HIVE Digital Technologies Ltd.,HIVE,2017,0.38278846390358956,40.8,sic_linked
-1720446,Zepp Health Corp,ZEPP,2017,0.8354362121749821,82.8,sic_linked
+1720446,Zepp Health Corp,ZEPP,2017,0.8354362121749821,82.7,sic_linked
 1720553,Phenom Resources Corp.,PHNMF,2017,,,missing_sic
 1720580,"Adicet Bio, Inc.",ACET,2017,0.4765016477605722,67.5,sic_linked
 1720592,Repay Holdings Corp,RPAY,2017,,,uninformative_sic
@@ -32178,7 +32178,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1734750,"Corvex, Inc.",MOVE,2017,1.5174935845467847,85.9,sic_linked
 1735041,Greenland Technologies Holding Corp.,GTEC,2017,0.28891702237078976,22.4,sic_linked
 1735438,MeiraGTx Holdings plc,MGTX,2017,0.4765016477605722,67.5,sic_linked
-1735514,Light AI Inc.,OHCFF,2017,0.3932761457666789,53.2,name_only
+1735514,Light AI Inc.,OHCFF,2017,0.3932761457666789,53.1,name_only
 1735556,SANGRIX INC.,BTOG,2017,0.38278846390358956,40.8,sic_linked
 1735707,Garrett Motion Inc.,GTX,2017,0.5562577087331797,80.7,sic_linked
 1736243,"Acurx Pharmaceuticals, Inc.",ACXP,2017,0.4765016477605722,67.5,sic_linked
@@ -32631,7 +32631,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1803914,"Playboy, Inc.",PLBY,2017,0.0,0.0,industry_unlinked
 1803977,Limitless X Holdings Inc.,LIMX,2017,0.0,0.0,industry_unlinked
 1804176,"Butterfly Network, Inc.",BFLY,2017,0.2382508238802861,5.1,sic_linked
-1804469,"Guardforce AI Co., Ltd.",GFAI,2017,0.3932761457666789,53.2,name_only
+1804469,"Guardforce AI Co., Ltd.",GFAI,2017,0.3932761457666789,53.1,name_only
 1804583,Cloopen Group Holding Ltd,RAASY,2017,1.7861795474319364,93.7,sic_linked
 1804745,Driven Brands Holdings Inc.,DRVN,2017,0.0,0.0,industry_unlinked
 1804792,ARES STRATEGIC MINING INC.,USAM,2017,0.0,0.0,industry_unlinked
@@ -32748,7 +32748,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1817760,"SmartKem, Inc.",SMTK,2017,0.4102318443024801,54.7,sic_linked
 1818093,SkinHealth Systems Inc.,SKIN,2017,0.2382508238802861,5.1,sic_linked
 1818201,CCC Intelligent Solutions Holdings Inc.,CCC,2017,1.7861795474319364,93.7,sic_linked
-1818274,Arrive AI Inc.,ARAI,2017,0.3932761457666789,53.2,name_only
+1818274,Arrive AI Inc.,ARAI,2017,0.3932761457666789,53.1,name_only
 1818331,GeneDx Holdings Corp.,WGS,2017,0.0,0.0,industry_unlinked
 1818382,"Humacyte, Inc.",HUMA,2017,0.4765016477605722,67.5,sic_linked
 1818383,"MediaAlpha, Inc.",MAX,2017,,,uninformative_sic
@@ -33220,7 +33220,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1861233,illumin Holdings Inc.,ILLMF,2017,1.5174935845467847,85.9,sic_linked
 1861448,"IntriEnergy, Inc.",ITRE,2017,,,missing_sic
 1861479,Terra Rossa Gold Ltd.,TRGXF,2017,,,missing_sic
-1861622,Jet.AI Inc.,JTAI,2017,0.3932761457666789,53.2,name_only
+1861622,Jet.AI Inc.,JTAI,2017,0.3932761457666789,53.1,name_only
 1861657,"Canton Strategic Holdings, Inc.",CNTN,2017,0.38278846390358956,40.8,sic_linked
 1861737,Hesai Group,HSAI,2017,0.28891702237078976,22.4,sic_linked
 1861795,Definitive Healthcare Corp.,DH,2017,1.7861795474319364,93.7,sic_linked
@@ -33234,7 +33234,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1863127,"Tyra Biosciences, Inc.",TYRA,2017,0.4765016477605722,67.5,sic_linked+name
 1863218,SHENGFENG DEVELOPMENT Ltd,SFWL,2017,0.0,0.0,industry_unlinked
 1863934,ADURO CLEAN TECHNOLOGIES INC.,ADUR,2017,0.0,0.0,industry_unlinked
-1863990,"MultiSensor AI Holdings, Inc.",MSAI,2017,0.3932761457666789,53.2,name_only
+1863990,"MultiSensor AI Holdings, Inc.",MSAI,2017,0.3932761457666789,53.1,name_only
 1864055,Abits Group Inc,ABTS,2017,0.38278846390358956,40.8,sic_linked
 1864163,"Inter & Co, Inc.",INTR,2017,0.38278846390358956,40.8,sic_linked
 1864531,"VSEE HEALTH, INC.",VSEE,2017,0.0,0.0,industry_unlinked
@@ -33435,7 +33435,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1896425,Li Bang International Corp Inc.,LBGJ,2017,0.0,0.0,industry_unlinked
 1896511,ZKGC New Energy Ltd,DAZSF,2017,0.53468137272478,78.9,sic_linked
 1896752,Sabio Holdings Inc.,SABOF,2017,,,missing_sic
-1897087,SuperX AI Technology Ltd,SUPX,2017,0.3932761457666789,53.2,name_only
+1897087,SuperX AI Technology Ltd,SUPX,2017,0.3932761457666789,53.1,name_only
 1897245,HWH International Inc.,HWH,2017,0.0,0.0,industry_unlinked
 1897463,Graf Global Corp.,TONT,2017,0.0,0.0,industry_unlinked
 1897532,"Ping An Biomedical Co., Ltd.",PASW,2017,0.0,0.0,industry_unlinked
@@ -33715,7 +33715,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1958140,"Atlanta Braves Holdings, Inc.",BATRA,2017,0.0,0.0,industry_unlinked
 1958217,Lifezone Metals Ltd,LZM,2017,0.0,0.0,industry_unlinked
 1958389,Hydreight Technologies Inc.,HYDTF,2017,,,missing_sic
-1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2017,0.3932761457666789,53.2,name_only
+1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2017,0.3932761457666789,53.1,name_only
 1958489,"Cortigent, Inc.",CRGT,2017,0.2382508238802861,5.1,sic_linked
 1958713,NFT Ltd,MI,2017,0.38278846390358956,40.8,sic_linked
 1958777,"FibroBiologics, Inc.",FBLG,2017,0.4765016477605722,67.5,sic_linked
@@ -33904,7 +33904,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1994214,Nomadar Corp.,NOMA,2017,0.0,0.0,industry_unlinked
 1994373,Huineng Technology Corp,HNIT,2017,1.5174935845467847,85.9,sic_linked
 1994582,Oyocar Group Inc.,OYCG,2017,0.0,0.0,industry_unlinked
-1994624,ScanTech AI Systems Inc.,STAI,2017,0.46472172473672396,56.8,sic_linked+name
+1994624,ScanTech AI Systems Inc.,STAI,2017,0.46472172473672396,56.7,sic_linked+name
 1994702,"Kyverna Therapeutics, Inc.",KYTX,2017,0.4765016477605722,67.5,sic_linked+name
 1995075,Megan Holdings Ltd.,MGN,2017,0.0,0.0,industry_unlinked
 1995116,Rectitude Holdings Ltd.,RECT,2017,0.0,0.0,industry_unlinked
@@ -33938,7 +33938,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1999001,Six Flags Entertainment Corporation/NEW,FUN,2017,0.0,0.0,industry_unlinked
 1999111,Meta Critical Minerals Inc.,MTTAF,2017,,,missing_sic
 1999119,"Libera Gaming Operations, Inc",LBRJ,2017,0.0,0.0,industry_unlinked
-1999124,Healwell AI Inc.,HWAIF,2017,0.3932761457666789,53.2,name_only
+1999124,Healwell AI Inc.,HWAIF,2017,0.3932761457666789,53.1,name_only
 1999261,StageWise Strategies Corp.,STWI,2017,1.5174935845467847,85.9,sic_linked
 1999297,Big Tree Cloud Holdings Ltd,DSY,2017,0.37071448743825824,26.5,name_only
 1999480,"Alto Neuroscience, Inc.",ANRO,2017,0.4765016477605722,67.5,sic_linked
@@ -34059,7 +34059,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2021938,Sunrise Communications AG,SNNRF,2017,0.0,0.0,industry_unlinked
 2021989,Super Copper Corp.,CUPPF,2017,,,missing_sic
 2022059,"Silver Mountain Resources, Inc.",AGMRF,2017,,,missing_sic
-2022308,KIDZ AI Inc.,KIDZ,2017,0.3932761457666789,53.2,name_only
+2022308,KIDZ AI Inc.,KIDZ,2017,0.3932761457666789,53.1,name_only
 2022416,Silexion Therapeutics Corp,SLXN,2017,0.4765016477605722,67.5,sic_linked+name
 2022626,"Upstream Bio, Inc.",UPB,2017,0.4765016477605722,67.5,sic_linked
 2023016,Turn Therapeutics Inc.,TTRX,2017,0.4765016477605722,67.5,sic_linked+name
@@ -34119,7 +34119,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2030277,"LEIFRAS Co., Ltd.",LFS,2017,0.0,0.0,industry_unlinked
 2030522,"Marwynn Holdings, Inc.",MWYN,2017,0.0,0.0,industry_unlinked
 2030617,"Picard Medical, Inc.",PMI,2017,0.2382508238802861,5.1,sic_linked
-2030763,"DataMeds AI, Inc.",MEDS,2017,0.3932761457666789,53.2,name_only
+2030763,"DataMeds AI, Inc.",MEDS,2017,0.3932761457666789,53.1,name_only
 2030781,"SailPoint, Inc.",SAIL,2017,1.7861795474319364,93.7,sic_linked
 2030834,OneConstruction Group Ltd,ONEG,2017,0.0,0.0,industry_unlinked
 2030954,"TEN Holdings, Inc.",XHLD,2017,,,uninformative_sic
@@ -34456,7 +34456,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2084227,"Advasa Holdings, Inc.",ADBT,2017,1.7861795474319364,93.7,sic_linked
 2084261,"URSB Bancorp, Inc.",URSB,2017,0.38278846390358956,40.8,sic_linked
 2084296,Nintech Mould Factory Inc.,NTMJ,2017,0.0,0.0,industry_unlinked
-2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2017,0.3932761457666789,53.2,name_only
+2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2017,0.3932761457666789,53.1,name_only
 2084698,KHEOBA Ltd,KHOBF,2017,1.7861795474319364,93.7,sic_linked
 2085187,"Bob's Discount Furniture, Inc.",BOBS,2017,0.0,0.0,industry_unlinked
 2085208,Duality Biotherapeutics Inc/ADR,DYBTY,2017,0.2382508238802861,5.1,name_only
@@ -34570,7 +34570,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096755,Texas Ventures Acquisition IV Corp,TVIV,2017,0.0,0.0,industry_unlinked
 2096861,Sinda Ltd.,SIND,2017,0.0,0.0,industry_unlinked
 2096997,"Kailera Therapeutics, Inc.",KLRA,2017,0.4765016477605722,67.5,sic_linked+name
-2097163,Xanadu Quantum Technologies Ltd,XNDU,2017,0.8354362121749821,82.8,sic_linked
+2097163,Xanadu Quantum Technologies Ltd,XNDU,2017,0.8354362121749821,82.7,sic_linked
 2097388,Sin Lian Seng Construction,ININ,2017,0.0,0.0,industry_unlinked
 2097461,"Bora Pharmaceuticals Co., Ltd./ADR",BORAY,2017,,,missing_sic
 2097508,"Blockfusion Digital Infrastructure, Inc.",BLDC,2017,1.5174935845467847,85.9,sic_linked
@@ -34695,7 +34695,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2119416,OpenPayd Global Holdings Ltd,OP,2017,,,uninformative_sic
 2120046,CVC Capital Partners plc/ADR,CVCPY,2017,,,missing_sic
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2017,,,missing_sic
-2120528,Kainan Holding Group Ltd,KHG,2017,0.38278846390358956,40.8,sic_linked
+2120528,Kainan Holding Group Ltd,KHG,2017,0.0,0.0,industry_unlinked
 2120882,SK hynix Inc.,SKHY,2017,0.4102318443024801,54.7,sic_linked
 2122392,Pelican Acquisition II Corp,PLCI,2017,0.0,0.0,industry_unlinked
 2123232,Cumberland Farms Ltd,CMBY,2017,0.0,0.0,industry_unlinked
@@ -34735,7 +34735,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2129466,"Guangdong Huayan Robotics Co, Ltd./ADR",GDHRY,2017,0.28891702237078976,22.4,name_only
 2130386,Yorkville International Capital Corp.,YICC,2017,0.0,0.0,industry_unlinked
 2130606,"Obsidian Therapeutics, Inc.",OBX,2017,0.4765016477605722,67.5,sic_linked+name
-2131101,Powercheck AI Holdings Ltd,PCAI,2017,0.3932761457666789,53.2,name_only
+2131101,Powercheck AI Holdings Ltd,PCAI,2017,0.3932761457666789,53.1,name_only
 2131322,"Victory Giant Technology (HuiZhou) Co., Ltd./ADR",VGTHY,2017,,,missing_sic
 2131350,B&R Technology Merger Corp.,BRTM,2017,0.0,0.0,industry_unlinked
 2131524,"Braveheart Bio, Inc.",BRVE,2017,0.4765016477605722,67.5,sic_linked
@@ -35751,7 +35751,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 948072,BIRNER DENTAL MANAGEMENT SERVICES INC,,2017,0.0,0.0,industry_unlinked
 948426,COATES INTERNATIONAL LTD,,2017,0.26734068636239,14.9,sic_linked
 949039,"DIAMOND OFFSHORE DRILLING, INC.",,2017,0.26734068636239,14.9,sic_linked
-949158,CRAY INC,,2017,0.8354362121749821,82.8,sic_linked
+949158,CRAY INC,,2017,0.8354362121749821,82.7,sic_linked
 949428,"CDTI ADVANCED MATERIALS, INC.",,2017,0.28891702237078976,22.4,sic_linked
 949721,Attis Industries Inc.,,2017,0.26734068636239,14.9,sic_linked
 949852,THANKSGIVING COFFEE CO INC,,2017,0.0,0.0,industry_unlinked
@@ -36068,7 +36068,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1071760,ECOSPHERE TECHNOLOGIES INC,,2017,0.0,0.0,industry_unlinked
 1071993,CONTANGO OIL & GAS CO,,2017,0.26734068636239,14.9,sic_linked
 1072772,TOMBSTONE EXPLORATION CORP,,2017,0.0,0.0,industry_unlinked
-1072842,FIRST CAPITAL INTERNATIONAL INC,,2017,0.8354362121749821,82.8,sic_linked
+1072842,FIRST CAPITAL INTERNATIONAL INC,,2017,0.8354362121749821,82.7,sic_linked
 1073349,BOTTOMLINE TECHNOLOGIES INC,,2017,1.7861795474319364,93.7,sic_linked
 1073362,"Occidental Development Group, Inc.",,2017,0.0,0.0,industry_unlinked
 1073429,"U.S. CONCRETE, INC.",,2017,0.0,0.0,industry_unlinked
@@ -36779,7 +36779,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1316317,China Techfaith Wireless Communication Technology LTD,,2017,,,uninformative_sic
 1316360,IHS Inc.,,2017,1.7861795474319364,93.7,sic_linked
 1316517,"Kandi Technologies Group, Inc.",,2017,0.5562577087331797,80.7,sic_linked
-1316625,Silicon Graphics International Corp,,2017,0.8354362121749821,82.8,sic_linked
+1316625,Silicon Graphics International Corp,,2017,0.8354362121749821,82.7,sic_linked
 1316644,"AeroGrow International, Inc.",,2017,0.0,0.0,industry_unlinked
 1316645,"American CareSource Holdings, Inc.",,2017,0.0,0.0,industry_unlinked
 1316898,"JAMBA, INC.",,2017,0.0,0.0,industry_unlinked
@@ -37590,7 +37590,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1446806,"ICON Equipment & Corporate Infrastructure Fund Fourteen, L.P.",,2017,0.0,0.0,industry_unlinked
 1447051,Territorial Bancorp Inc.,,2017,0.38278846390358956,40.8,sic_linked
 1447382,Ocean Rig UDW Inc.,,2017,0.26734068636239,14.9,sic_linked
-1447599,"FITBIT, INC.",,2017,0.8354362121749821,82.8,sic_linked
+1447599,"FITBIT, INC.",,2017,0.8354362121749821,82.7,sic_linked
 1448056,"NEW RELIC, INC.",,2017,1.7861795474319364,93.7,sic_linked
 1448301,Anchor Bancorp,,2017,0.38278846390358956,40.8,sic_linked
 1448558,"GROW CAPITAL, INC.",,2017,1.7861795474319364,93.7,sic_linked
@@ -38272,7 +38272,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1550518,Cantabio Pharmaceuticals Inc.,,2017,0.4765016477605722,67.5,sic_linked
 1550603,"MALVERN BANCORP, INC.",,2017,0.38278846390358956,40.8,sic_linked
 1550695,Performant Healthcare Inc,,2017,0.0,0.0,industry_unlinked
-1550737,"Sector 5, Inc.",,2017,0.8354362121749821,82.8,sic_linked
+1550737,"Sector 5, Inc.",,2017,0.8354362121749821,82.7,sic_linked
 1551060,Qunar Cayman Islands Ltd.,,2017,1.7861795474319364,93.7,sic_linked
 1551206,Patagonia Gold Corp.,,2017,0.0,0.0,industry_unlinked
 1551390,MDS ENERGY PUBLIC 2013-A LP,,2017,0.26734068636239,14.9,sic_linked
@@ -40470,7 +40470,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1848756,Pyrophyte Acquisition Corp.,,2017,0.0,0.0,industry_unlinked
 1848795,"GigInternational1, Inc.",,2017,0.0,0.0,industry_unlinked
 1848821,Global Technology Acquisition Corp. I,,2017,,,uninformative_sic
-1848861,Healthcare AI Acquisition Corp.,,2017,0.3932761457666789,53.2,name_only
+1848861,Healthcare AI Acquisition Corp.,,2017,0.3932761457666789,53.1,name_only
 1848898,African Agriculture Holdings Inc.,,2017,0.0,0.0,industry_unlinked
 1848948,10X Capital Venture Acquisition Corp. III,,2017,0.4765016477605722,67.5,sic_linked
 1848959,Decarbonization Plus Acquisition Corp IV,,2017,0.0,0.0,industry_unlinked
@@ -40663,7 +40663,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1865533,Emerging Markets Horizon Corp.,,2017,0.0,0.0,industry_unlinked
 1865537,DTRT Health Acquisition Corp.,,2017,0.0,0.0,industry_unlinked
 1865602,"Cantor Equity Partners, Inc.",,2017,0.0,0.0,industry_unlinked
-1865697,NeuroMind AI Corp.,,2017,0.3932761457666789,53.2,name_only
+1865697,NeuroMind AI Corp.,,2017,0.3932761457666789,53.1,name_only
 1865701,Keyarch Acquisition Corp,,2017,0.0,0.0,industry_unlinked
 1865861,Cactus Acquisition Corp. 1 Ltd,CCTSF,2017,0.0,0.0,industry_unlinked
 1865975,AfterNext HealthTech Acquisition Corp.,,2017,0.0,0.0,industry_unlinked
@@ -40914,7 +40914,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1965934,Overland Advantage,,2017,,,missing_sic
 1966394,Fortress Net Lease REIT,,2017,0.0,0.0,industry_unlinked
 1966494,"CARGO Therapeutics, Inc.",,2017,0.4765016477605722,67.5,sic_linked+name
-1966734,AI Transportation Acquisition Corp,,2017,0.3932761457666789,53.2,name_only
+1966734,AI Transportation Acquisition Corp,,2017,0.3932761457666789,53.1,name_only
 1969475,Bayview Acquisition Corp,,2017,0.0,0.0,industry_unlinked
 1970129,"LEGEND SPICES, INC.",LGSP,2017,0.0,0.0,industry_unlinked
 1970509,Haymaker Acquisition Corp. 4,,2017,0.0,0.0,industry_unlinked
@@ -41101,7 +41101,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096204,ONE Nuclear Energy LLC,,2017,,,missing_sic
 2107979,Everli Global Inc.,,2017,,,uninformative_sic
 2108121,Ionetix Corp / DE /,,2017,0.4765016477605722,67.5,sic_linked
-2129752,Goodvision AI Inc.,,2017,0.3932761457666789,53.2,name_only
+2129752,Goodvision AI Inc.,,2017,0.3932761457666789,53.1,name_only
 2136853,MN8 Energy Holdings LLC,,2017,0.26734068636239,14.9,sic_linked
 2142801,"NuCube Energy, Inc.",,2017,0.26734068636239,14.9,sic_linked
 2155514,InoBat AS,,2017,0.53468137272478,78.9,sic_linked
@@ -41632,7 +41632,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 320017,"LISATA THERAPEUTICS, INC.",LSTA,2018,0.5329177560095396,67.5,sic_linked+name
 320121,TELOS CORP,TLS,2018,1.390566294736169,83.6,sic_linked
 320187,"NIKE, Inc.",NKE,2018,0.0,0.0,industry_unlinked
-320193,Apple Inc.,AAPL,2018,0.8594228126583037,82.8,sic_linked
+320193,Apple Inc.,AAPL,2018,0.8594228126583037,82.7,sic_linked
 320335,GLOBE LIFE INC.,GL,2018,0.38953207632901193,40.3,sic_linked
 350698,"AUTONATION, INC.",AN,2018,0.0,0.0,industry_unlinked
 350852,COMMUNITY TRUST BANCORP INC /KY/,CTBI,2018,0.38953207632901193,40.3,sic_linked
@@ -42488,7 +42488,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 925528,HUDSON TECHNOLOGIES INC /NY,HDSN,2018,0.0,0.0,industry_unlinked
 925741,"BioCardia, Inc.",BCDA,2018,0.5329177560095396,67.5,sic_linked
 926282,"ADTRAN Holdings, Inc.",ADTN,2018,0.3637557867271734,26.0,sic_linked
-926326,"OMNICELL, INC.",OMCL,2018,0.8594228126583037,82.8,sic_linked
+926326,"OMNICELL, INC.",OMCL,2018,0.8594228126583037,82.7,sic_linked
 926423,"MIND TECHNOLOGY, INC",MIND,2018,0.3051624855640707,22.4,sic_linked
 926617,Aspira Women's Health Inc.,AWHL,2018,0.5329177560095396,67.5,sic_linked
 927003,ADVANCED ENERGY INDUSTRIES INC,AEIS,2018,0.0891572358715127,0.6,sic_linked
@@ -42550,7 +42550,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 943452,WESTINGHOUSE AIR BRAKE TECHNOLOGIES CORP,WAB,2018,0.0,0.0,industry_unlinked
 943535,"WORLD HEALTH ENERGY HOLDINGS, INC.",WHEN,2018,1.7970760847957865,93.7,sic_linked
 943819,RESMED INC,RMD,2018,0.2664588780047698,5.2,sic_linked
-944075,"SOCKET MOBILE, INC.",SCKT,2018,0.8594228126583037,82.8,sic_linked
+944075,"SOCKET MOBILE, INC.",SCKT,2018,0.8594228126583037,82.7,sic_linked
 944148,"CBIZ, Inc.",CBZ,2018,,,uninformative_sic
 944695,"HANOVER INSURANCE GROUP, INC.",THG,2018,0.38953207632901193,40.3,sic_linked
 944745,"CIVISTA BANCSHARES, INC.",CIVB,2018,0.38953207632901193,40.3,sic_linked
@@ -43206,7 +43206,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1130464,BLACK HILLS CORP /SD/,BKH,2018,0.29287508305687154,14.9,sic_linked
 1130598,"Traws Pharma, Inc.",TRAW,2018,0.5329177560095396,67.5,sic_linked
 1130713,"NEIGHBORHOOD INTELLIGENCE, INC.",NXH,2018,0.0,0.0,industry_unlinked
-1130781,"BMP AI Technologies, Inc.",BMPA,2018,0.40650979005961757,53.2,name_only
+1130781,"BMP AI Technologies, Inc.",BMPA,2018,0.40650979005961757,53.1,name_only
 1131312,ZION OIL & GAS INC,ZNOG,2018,0.29287508305687154,14.9,sic_linked
 1131343,ALTERITY THERAPEUTICS LTD,ATHE,2018,0.5329177560095396,67.5,sic_linked+name
 1131383,STANTEC INC,STN,2018,0.0,0.0,industry_unlinked
@@ -43862,7 +43862,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1374690,"Larimar Therapeutics, Inc.",LRMR,2018,0.5329177560095396,67.5,sic_linked+name
 1375205,UR-ENERGY INC,URG,2018,0.0,0.0,industry_unlinked
 1375348,Golden Star Resource Corp.,GLNS,2018,0.0,0.0,industry_unlinked
-1375365,"Super Micro Computer, Inc.",SMCI,2018,0.8594228126583037,82.8,sic_linked
+1375365,"Super Micro Computer, Inc.",SMCI,2018,0.8594228126583037,82.7,sic_linked
 1375877,Canadian Solar Inc.,CSIQ,2018,0.47118955479989694,55.4,sic_linked+name
 1376139,CVR ENERGY INC,CVI,2018,0.29287508305687154,14.9,sic_linked
 1376231,"VPR Brands, LP.",VPRB,2018,1.7970760847957865,93.7,sic_linked
@@ -43948,7 +43948,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1393818,Blackstone Inc.,BX,2018,0.38953207632901193,40.3,sic_linked
 1393883,"DHI GROUP, INC.",DHX,2018,,,uninformative_sic
 1394039,Century Lithium Corp.,CYDVF,2018,,,missing_sic
-1394056,"ONE STOP SYSTEMS, INC.",OSS,2018,0.8594228126583037,82.8,sic_linked
+1394056,"ONE STOP SYSTEMS, INC.",OSS,2018,0.8594228126583037,82.7,sic_linked
 1394108,SUIC Worldwide Holdings Ltd.,SUIC,2018,0.29287508305687154,14.9,sic_linked
 1394189,Chesapeake Gold Corp,CHPGF,2018,,,missing_sic
 1394638,"Driveitaway Holdings, Inc.",DWAY,2018,0.0,0.0,industry_unlinked
@@ -44059,7 +44059,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1415744,NORTHERN MINERALS & EXPLORATION LTD.,NMEX,2018,0.0,0.0,industry_unlinked
 1415758,Nevada Sunrise Metals Corp.,NVSGF,2018,,,missing_sic
 1415921,Navios Maritime Partners L.P.,NMM,2018,0.0,0.0,industry_unlinked
-1416090,BLUSKY AI INC.,BSAI,2018,0.40650979005961757,53.2,name_only
+1416090,BLUSKY AI INC.,BSAI,2018,0.40650979005961757,53.1,name_only
 1416697,"Blue Line Protection Group, Inc.",BLPG,2018,0.0,0.0,industry_unlinked
 1416876,"First Choice Healthcare Solutions, Inc.",FCHS,2018,0.2664588780047698,5.2,sic_linked
 1417663,"SANUWAVE Health, Inc.",SNWV,2018,0.2664588780047698,5.2,sic_linked
@@ -44350,7 +44350,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1472787,First American Financial Corp,FAF,2018,0.38953207632901193,40.3,sic_linked
 1472879,WHITECAP RESOURCES INC.,WCPRF,2018,0.29287508305687154,14.9,sic_linked
 1473334,XMax Inc.,XMAX,2018,0.0,0.0,industry_unlinked
-1473490,"Global AI, Inc.",GLAI,2018,0.40650979005961757,53.2,name_only
+1473490,"Global AI, Inc.",GLAI,2018,0.40650979005961757,53.1,name_only
 1474098,Pebblebrook Hotel Trust,PEB,2018,0.0,0.0,industry_unlinked
 1474167,Cosmos Health Inc.,COSM,2018,0.0,0.0,industry_unlinked
 1474432,"Everpure, Inc.",P,2018,0.4529130225986861,53.7,sic_linked
@@ -44906,7 +44906,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1571776,Cherry Hill Mortgage Investment Corp,CHMI,2018,0.0,0.0,industry_unlinked
 1571934,TAO Synergies Inc.,TAOX,2018,0.38953207632901193,40.3,sic_linked
 1571949,"Intercontinental Exchange, Inc.",ICE,2018,0.38953207632901193,40.3,sic_linked
-1571996,Dell Technologies Inc.,DELL,2018,0.8594228126583037,82.8,sic_linked
+1571996,Dell Technologies Inc.,DELL,2018,0.8594228126583037,82.7,sic_linked
 1572334,Virginia National Bankshares Corp,VABK,2018,0.38953207632901193,40.3,sic_linked
 1572386,"GREENWAY TECHNOLOGIES, INC. & SUBSIDIARIES",GWTI,2018,0.29287508305687154,14.9,sic_linked
 1572616,"FRACTYL HEALTH, INC.",GUTS,2018,0.2664588780047698,5.2,sic_linked
@@ -45037,7 +45037,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1591956,Sphere 3D Corp.,ANY,2018,0.38953207632901193,40.3,sic_linked
 1592049,Ryohin Keikaku Co/ADR,RYKKF,2018,,,missing_sic
 1592386,"Virtu Financial, Inc.",VIRT,2018,0.38953207632901193,40.3,sic_linked
-1592560,VisionSys AI Inc,VSA,2018,0.40650979005961757,53.2,name_only
+1592560,VisionSys AI Inc,VSA,2018,0.40650979005961757,53.1,name_only
 1593001,"NightFood Holdings, Inc.",NGTF,2018,0.0,0.0,industry_unlinked
 1593184,"BIOREGENX, INC.",BRGX,2018,1.7970760847957865,93.7,sic_linked
 1593275,"Hamilton Insurance Group, Ltd.",HG,2018,0.38953207632901193,40.3,sic_linked
@@ -45048,7 +45048,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1594204,ZHEN DING RESOURCES INC.,RBTK,2018,0.0,0.0,industry_unlinked
 1594805,SHOPIFY INC.,SHOP,2018,1.7970760847957865,93.7,sic_linked
 1594856,VALHALLA METALS INC.,VMXXF,2018,,,missing_sic
-1594968,Loan Artificial Intelligence Corp.,VEST,2018,0.40650979005961757,53.2,name_only
+1594968,Loan Artificial Intelligence Corp.,VEST,2018,0.40650979005961757,53.1,name_only
 1595097,"Corbus Pharmaceuticals Holdings, Inc.",CRBP,2018,0.5329177560095396,67.5,sic_linked
 1595248,"Genprex, Inc.",GNPX,2018,0.5329177560095396,67.5,sic_linked
 1595353,Galmed Pharmaceuticals Ltd.,GLMD,2018,0.5329177560095396,67.5,sic_linked
@@ -45112,7 +45112,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1604982,Sino Biopharmaceutical Limited/ADR,SBMFF,2018,0.2664588780047698,5.2,name_only
 1605057,"Vemanti Group, Inc.",VMNT,2018,0.38953207632901193,40.3,sic_linked
 1605301,"CB Financial Services, Inc.",CBFV,2018,0.38953207632901193,40.3,sic_linked
-1605331,AI Era Corp.,AERA,2018,0.40650979005961757,53.2,name_only
+1605331,AI Era Corp.,AERA,2018,0.40650979005961757,53.1,name_only
 1605481,Nevada Canyon Gold Corp.,NGLD,2018,0.0,0.0,industry_unlinked
 1605484,Stellantis N.V.,STLA,2018,0.5980375686209423,80.7,sic_linked
 1605755,Moncler S.p.A./ADR,MONRF,2018,,,missing_sic
@@ -45350,7 +45350,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1648416,Ferrari N.V.,RACE,2018,0.5980375686209423,80.7,sic_linked
 1648512,Shimadzu Corporation/ADR,SHMXY,2018,,,missing_sic
 1648636,Dune Oil Corp.,TRLEF,2018,0.29287508305687154,14.9,sic_linked
-1648960,"Myseum.AI, Inc.",MYSE,2018,0.40650979005961757,53.2,name_only
+1648960,"Myseum.AI, Inc.",MYSE,2018,0.40650979005961757,53.1,name_only
 1649009,"Core AI Holdings, Inc.",CHAI,2018,0.770265576786791,82.5,sic_linked+name
 1649094,"Vaxcyte, Inc.",PCVX,2018,0.5329177560095396,67.5,sic_linked
 1649096,Clipper Realty Inc.,CLPR,2018,0.0,0.0,industry_unlinked
@@ -45549,7 +45549,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1681622,Varex Imaging Corp,VREX,2018,0.0891572358715127,0.6,sic_linked
 1681682,ENDRA Life Sciences Inc.,NDRA,2018,0.2664588780047698,5.2,sic_linked
 1682056,Silver Storm Mining Ltd.,SVRSF,2018,,,missing_sic
-1682149,Datavault AI Inc.,DVLT,2018,0.40650979005961757,53.2,name_only
+1682149,Datavault AI Inc.,DVLT,2018,0.40650979005961757,53.1,name_only
 1682220,Sachem Capital Corp.,SACH,2018,0.0,0.0,industry_unlinked
 1682241,Metalpha Technology Holding Ltd,MATH,2018,0.38953207632901193,40.3,sic_linked
 1682265,Onar Holding Corp,ONAR,2018,0.0,0.0,industry_unlinked
@@ -45701,7 +45701,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1708055,Ribbon Communications Inc.,RBBN,2018,1.390566294736169,83.6,sic_linked
 1708259,LexinFintech Holdings Ltd.,LX,2018,0.38953207632901193,40.3,sic_linked+name
 1708341,"All In FutureTech Alliance, Inc.",AIFA,2018,0.0,0.0,industry_unlinked
-1708441,"Mynd.ai, Inc.",MYND,2018,0.8594228126583037,82.8,sic_linked+name
+1708441,"Mynd.ai, Inc.",MYND,2018,0.8594228126583037,82.7,sic_linked+name
 1708527,ELUTIA INC.,ELUT,2018,0.5329177560095396,67.5,sic_linked
 1708599,"Serina Therapeutics, Inc.",SER,2018,0.5329177560095396,67.5,sic_linked+name
 1708688,InflaRx N.V.,IFRX,2018,0.5329177560095396,67.5,sic_linked
@@ -45786,7 +45786,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1720250,"Kandi Technologies Group, Inc.",KNDI,2018,0.5980375686209423,80.7,sic_linked
 1720420,IBEX Ltd,IBEX,2018,1.5235534398429764,85.9,sic_linked
 1720424,HIVE Digital Technologies Ltd.,HIVE,2018,0.38953207632901193,40.3,sic_linked
-1720446,Zepp Health Corp,ZEPP,2018,0.8594228126583037,82.8,sic_linked
+1720446,Zepp Health Corp,ZEPP,2018,0.8594228126583037,82.7,sic_linked
 1720553,Phenom Resources Corp.,PHNMF,2018,,,missing_sic
 1720580,"Adicet Bio, Inc.",ACET,2018,0.5329177560095396,67.5,sic_linked
 1720592,Repay Holdings Corp,RPAY,2018,,,uninformative_sic
@@ -45880,7 +45880,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1734750,"Corvex, Inc.",MOVE,2018,1.5235534398429764,85.9,sic_linked
 1735041,Greenland Technologies Holding Corp.,GTEC,2018,0.3051624855640707,22.4,sic_linked
 1735438,MeiraGTx Holdings plc,MGTX,2018,0.5329177560095396,67.5,sic_linked
-1735514,Light AI Inc.,OHCFF,2018,0.40650979005961757,53.2,name_only
+1735514,Light AI Inc.,OHCFF,2018,0.40650979005961757,53.1,name_only
 1735556,SANGRIX INC.,BTOG,2018,0.38953207632901193,40.3,sic_linked
 1735707,Garrett Motion Inc.,GTX,2018,0.5980375686209423,80.7,sic_linked
 1736243,"Acurx Pharmaceuticals, Inc.",ACXP,2018,0.5329177560095396,67.5,sic_linked
@@ -46333,7 +46333,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1803914,"Playboy, Inc.",PLBY,2018,0.0,0.0,industry_unlinked
 1803977,Limitless X Holdings Inc.,LIMX,2018,0.0,0.0,industry_unlinked
 1804176,"Butterfly Network, Inc.",BFLY,2018,0.2664588780047698,5.2,sic_linked
-1804469,"Guardforce AI Co., Ltd.",GFAI,2018,0.40650979005961757,53.2,name_only
+1804469,"Guardforce AI Co., Ltd.",GFAI,2018,0.40650979005961757,53.1,name_only
 1804583,Cloopen Group Holding Ltd,RAASY,2018,1.7970760847957865,93.7,sic_linked
 1804745,Driven Brands Holdings Inc.,DRVN,2018,0.0,0.0,industry_unlinked
 1804792,ARES STRATEGIC MINING INC.,USAM,2018,0.0,0.0,industry_unlinked
@@ -46450,7 +46450,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1817760,"SmartKem, Inc.",SMTK,2018,0.47118955479989694,55.4,sic_linked
 1818093,SkinHealth Systems Inc.,SKIN,2018,0.2664588780047698,5.2,sic_linked
 1818201,CCC Intelligent Solutions Holdings Inc.,CCC,2018,1.7970760847957865,93.7,sic_linked
-1818274,Arrive AI Inc.,ARAI,2018,0.40650979005961757,53.2,name_only
+1818274,Arrive AI Inc.,ARAI,2018,0.40650979005961757,53.1,name_only
 1818331,GeneDx Holdings Corp.,WGS,2018,0.0,0.0,industry_unlinked
 1818382,"Humacyte, Inc.",HUMA,2018,0.5329177560095396,67.5,sic_linked
 1818383,"MediaAlpha, Inc.",MAX,2018,,,uninformative_sic
@@ -46922,7 +46922,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1861233,illumin Holdings Inc.,ILLMF,2018,1.5235534398429764,85.9,sic_linked
 1861448,"IntriEnergy, Inc.",ITRE,2018,,,missing_sic
 1861479,Terra Rossa Gold Ltd.,TRGXF,2018,,,missing_sic
-1861622,Jet.AI Inc.,JTAI,2018,0.40650979005961757,53.2,name_only
+1861622,Jet.AI Inc.,JTAI,2018,0.40650979005961757,53.1,name_only
 1861657,"Canton Strategic Holdings, Inc.",CNTN,2018,0.38953207632901193,40.3,sic_linked
 1861737,Hesai Group,HSAI,2018,0.3051624855640707,22.4,sic_linked
 1861795,Definitive Healthcare Corp.,DH,2018,1.7970760847957865,93.7,sic_linked
@@ -46936,7 +46936,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1863127,"Tyra Biosciences, Inc.",TYRA,2018,0.5329177560095396,67.5,sic_linked+name
 1863218,SHENGFENG DEVELOPMENT Ltd,SFWL,2018,0.0,0.0,industry_unlinked
 1863934,ADURO CLEAN TECHNOLOGIES INC.,ADUR,2018,0.0,0.0,industry_unlinked
-1863990,"MultiSensor AI Holdings, Inc.",MSAI,2018,0.40650979005961757,53.2,name_only
+1863990,"MultiSensor AI Holdings, Inc.",MSAI,2018,0.40650979005961757,53.1,name_only
 1864055,Abits Group Inc,ABTS,2018,0.38953207632901193,40.3,sic_linked
 1864163,"Inter & Co, Inc.",INTR,2018,0.38953207632901193,40.3,sic_linked
 1864531,"VSEE HEALTH, INC.",VSEE,2018,0.0,0.0,industry_unlinked
@@ -47137,7 +47137,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1896425,Li Bang International Corp Inc.,LBGJ,2018,0.0,0.0,industry_unlinked
 1896511,ZKGC New Energy Ltd,DAZSF,2018,0.5857501661137431,78.9,sic_linked
 1896752,Sabio Holdings Inc.,SABOF,2018,,,missing_sic
-1897087,SuperX AI Technology Ltd,SUPX,2018,0.40650979005961757,53.2,name_only
+1897087,SuperX AI Technology Ltd,SUPX,2018,0.40650979005961757,53.1,name_only
 1897245,HWH International Inc.,HWH,2018,0.0,0.0,industry_unlinked
 1897463,Graf Global Corp.,TONT,2018,0.0,0.0,industry_unlinked
 1897532,"Ping An Biomedical Co., Ltd.",PASW,2018,0.0,0.0,industry_unlinked
@@ -47417,7 +47417,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1958140,"Atlanta Braves Holdings, Inc.",BATRA,2018,0.0,0.0,industry_unlinked
 1958217,Lifezone Metals Ltd,LZM,2018,0.0,0.0,industry_unlinked
 1958389,Hydreight Technologies Inc.,HYDTF,2018,,,missing_sic
-1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2018,0.40650979005961757,53.2,name_only
+1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2018,0.40650979005961757,53.1,name_only
 1958489,"Cortigent, Inc.",CRGT,2018,0.2664588780047698,5.2,sic_linked
 1958713,NFT Ltd,MI,2018,0.38953207632901193,40.3,sic_linked
 1958777,"FibroBiologics, Inc.",FBLG,2018,0.5329177560095396,67.5,sic_linked
@@ -47606,7 +47606,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1994214,Nomadar Corp.,NOMA,2018,0.0,0.0,industry_unlinked
 1994373,Huineng Technology Corp,HNIT,2018,1.5235534398429764,85.9,sic_linked
 1994582,Oyocar Group Inc.,OYCG,2018,0.0,0.0,industry_unlinked
-1994624,ScanTech AI Systems Inc.,STAI,2018,0.49566702593113027,56.8,sic_linked+name
+1994624,ScanTech AI Systems Inc.,STAI,2018,0.49566702593113027,56.7,sic_linked+name
 1994702,"Kyverna Therapeutics, Inc.",KYTX,2018,0.5329177560095396,67.5,sic_linked+name
 1995075,Megan Holdings Ltd.,MGN,2018,0.0,0.0,industry_unlinked
 1995116,Rectitude Holdings Ltd.,RECT,2018,0.0,0.0,industry_unlinked
@@ -47640,7 +47640,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1999001,Six Flags Entertainment Corporation/NEW,FUN,2018,0.0,0.0,industry_unlinked
 1999111,Meta Critical Minerals Inc.,MTTAF,2018,,,missing_sic
 1999119,"Libera Gaming Operations, Inc",LBRJ,2018,0.0,0.0,industry_unlinked
-1999124,Healwell AI Inc.,HWAIF,2018,0.40650979005961757,53.2,name_only
+1999124,Healwell AI Inc.,HWAIF,2018,0.40650979005961757,53.1,name_only
 1999261,StageWise Strategies Corp.,STWI,2018,1.5235534398429764,85.9,sic_linked
 1999297,Big Tree Cloud Holdings Ltd,DSY,2018,0.3637557867271734,26.0,name_only
 1999480,"Alto Neuroscience, Inc.",ANRO,2018,0.5329177560095396,67.5,sic_linked
@@ -47761,7 +47761,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2021938,Sunrise Communications AG,SNNRF,2018,0.0,0.0,industry_unlinked
 2021989,Super Copper Corp.,CUPPF,2018,,,missing_sic
 2022059,"Silver Mountain Resources, Inc.",AGMRF,2018,,,missing_sic
-2022308,KIDZ AI Inc.,KIDZ,2018,0.40650979005961757,53.2,name_only
+2022308,KIDZ AI Inc.,KIDZ,2018,0.40650979005961757,53.1,name_only
 2022416,Silexion Therapeutics Corp,SLXN,2018,0.5329177560095396,67.5,sic_linked+name
 2022626,"Upstream Bio, Inc.",UPB,2018,0.5329177560095396,67.5,sic_linked
 2023016,Turn Therapeutics Inc.,TTRX,2018,0.5329177560095396,67.5,sic_linked+name
@@ -47821,7 +47821,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2030277,"LEIFRAS Co., Ltd.",LFS,2018,0.0,0.0,industry_unlinked
 2030522,"Marwynn Holdings, Inc.",MWYN,2018,0.0,0.0,industry_unlinked
 2030617,"Picard Medical, Inc.",PMI,2018,0.2664588780047698,5.2,sic_linked
-2030763,"DataMeds AI, Inc.",MEDS,2018,0.40650979005961757,53.2,name_only
+2030763,"DataMeds AI, Inc.",MEDS,2018,0.40650979005961757,53.1,name_only
 2030781,"SailPoint, Inc.",SAIL,2018,1.7970760847957865,93.7,sic_linked
 2030834,OneConstruction Group Ltd,ONEG,2018,0.0,0.0,industry_unlinked
 2030954,"TEN Holdings, Inc.",XHLD,2018,,,uninformative_sic
@@ -48158,7 +48158,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2084227,"Advasa Holdings, Inc.",ADBT,2018,1.7970760847957865,93.7,sic_linked
 2084261,"URSB Bancorp, Inc.",URSB,2018,0.38953207632901193,40.3,sic_linked
 2084296,Nintech Mould Factory Inc.,NTMJ,2018,0.0,0.0,industry_unlinked
-2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2018,0.40650979005961757,53.2,name_only
+2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2018,0.40650979005961757,53.1,name_only
 2084698,KHEOBA Ltd,KHOBF,2018,1.7970760847957865,93.7,sic_linked
 2085187,"Bob's Discount Furniture, Inc.",BOBS,2018,0.0,0.0,industry_unlinked
 2085208,Duality Biotherapeutics Inc/ADR,DYBTY,2018,0.2664588780047698,5.2,name_only
@@ -48272,7 +48272,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096755,Texas Ventures Acquisition IV Corp,TVIV,2018,0.0,0.0,industry_unlinked
 2096861,Sinda Ltd.,SIND,2018,0.0,0.0,industry_unlinked
 2096997,"Kailera Therapeutics, Inc.",KLRA,2018,0.5329177560095396,67.5,sic_linked+name
-2097163,Xanadu Quantum Technologies Ltd,XNDU,2018,0.8594228126583037,82.8,sic_linked
+2097163,Xanadu Quantum Technologies Ltd,XNDU,2018,0.8594228126583037,82.7,sic_linked
 2097388,Sin Lian Seng Construction,ININ,2018,0.0,0.0,industry_unlinked
 2097461,"Bora Pharmaceuticals Co., Ltd./ADR",BORAY,2018,,,missing_sic
 2097508,"Blockfusion Digital Infrastructure, Inc.",BLDC,2018,1.5235534398429764,85.9,sic_linked
@@ -48397,7 +48397,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2119416,OpenPayd Global Holdings Ltd,OP,2018,,,uninformative_sic
 2120046,CVC Capital Partners plc/ADR,CVCPY,2018,,,missing_sic
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2018,,,missing_sic
-2120528,Kainan Holding Group Ltd,KHG,2018,0.38953207632901193,40.3,sic_linked
+2120528,Kainan Holding Group Ltd,KHG,2018,0.0,0.0,industry_unlinked
 2120882,SK hynix Inc.,SKHY,2018,0.47118955479989694,55.4,sic_linked
 2122392,Pelican Acquisition II Corp,PLCI,2018,0.0,0.0,industry_unlinked
 2123232,Cumberland Farms Ltd,CMBY,2018,0.0,0.0,industry_unlinked
@@ -48437,7 +48437,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2129466,"Guangdong Huayan Robotics Co, Ltd./ADR",GDHRY,2018,0.3051624855640707,22.4,name_only
 2130386,Yorkville International Capital Corp.,YICC,2018,0.0,0.0,industry_unlinked
 2130606,"Obsidian Therapeutics, Inc.",OBX,2018,0.5329177560095396,67.5,sic_linked+name
-2131101,Powercheck AI Holdings Ltd,PCAI,2018,0.40650979005961757,53.2,name_only
+2131101,Powercheck AI Holdings Ltd,PCAI,2018,0.40650979005961757,53.1,name_only
 2131322,"Victory Giant Technology (HuiZhou) Co., Ltd./ADR",VGTHY,2018,,,missing_sic
 2131350,B&R Technology Merger Corp.,BRTM,2018,0.0,0.0,industry_unlinked
 2131524,"Braveheart Bio, Inc.",BRVE,2018,0.5329177560095396,67.5,sic_linked
@@ -49453,7 +49453,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 948072,BIRNER DENTAL MANAGEMENT SERVICES INC,,2018,0.0,0.0,industry_unlinked
 948426,COATES INTERNATIONAL LTD,,2018,0.29287508305687154,14.9,sic_linked
 949039,"DIAMOND OFFSHORE DRILLING, INC.",,2018,0.29287508305687154,14.9,sic_linked
-949158,CRAY INC,,2018,0.8594228126583037,82.8,sic_linked
+949158,CRAY INC,,2018,0.8594228126583037,82.7,sic_linked
 949428,"CDTI ADVANCED MATERIALS, INC.",,2018,0.3051624855640707,22.4,sic_linked
 949721,Attis Industries Inc.,,2018,0.29287508305687154,14.9,sic_linked
 949852,THANKSGIVING COFFEE CO INC,,2018,0.0,0.0,industry_unlinked
@@ -49770,7 +49770,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1071760,ECOSPHERE TECHNOLOGIES INC,,2018,0.0,0.0,industry_unlinked
 1071993,CONTANGO OIL & GAS CO,,2018,0.29287508305687154,14.9,sic_linked
 1072772,TOMBSTONE EXPLORATION CORP,,2018,0.0,0.0,industry_unlinked
-1072842,FIRST CAPITAL INTERNATIONAL INC,,2018,0.8594228126583037,82.8,sic_linked
+1072842,FIRST CAPITAL INTERNATIONAL INC,,2018,0.8594228126583037,82.7,sic_linked
 1073349,BOTTOMLINE TECHNOLOGIES INC,,2018,1.7970760847957865,93.7,sic_linked
 1073362,"Occidental Development Group, Inc.",,2018,0.0,0.0,industry_unlinked
 1073429,"U.S. CONCRETE, INC.",,2018,0.0,0.0,industry_unlinked
@@ -50481,7 +50481,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1316317,China Techfaith Wireless Communication Technology LTD,,2018,,,uninformative_sic
 1316360,IHS Inc.,,2018,1.7970760847957865,93.7,sic_linked
 1316517,"Kandi Technologies Group, Inc.",,2018,0.5980375686209423,80.7,sic_linked
-1316625,Silicon Graphics International Corp,,2018,0.8594228126583037,82.8,sic_linked
+1316625,Silicon Graphics International Corp,,2018,0.8594228126583037,82.7,sic_linked
 1316644,"AeroGrow International, Inc.",,2018,0.0,0.0,industry_unlinked
 1316645,"American CareSource Holdings, Inc.",,2018,0.0,0.0,industry_unlinked
 1316898,"JAMBA, INC.",,2018,0.0,0.0,industry_unlinked
@@ -51292,7 +51292,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1446806,"ICON Equipment & Corporate Infrastructure Fund Fourteen, L.P.",,2018,0.0,0.0,industry_unlinked
 1447051,Territorial Bancorp Inc.,,2018,0.38953207632901193,40.3,sic_linked
 1447382,Ocean Rig UDW Inc.,,2018,0.29287508305687154,14.9,sic_linked
-1447599,"FITBIT, INC.",,2018,0.8594228126583037,82.8,sic_linked
+1447599,"FITBIT, INC.",,2018,0.8594228126583037,82.7,sic_linked
 1448056,"NEW RELIC, INC.",,2018,1.7970760847957865,93.7,sic_linked
 1448301,Anchor Bancorp,,2018,0.38953207632901193,40.3,sic_linked
 1448558,"GROW CAPITAL, INC.",,2018,1.7970760847957865,93.7,sic_linked
@@ -51974,7 +51974,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1550518,Cantabio Pharmaceuticals Inc.,,2018,0.5329177560095396,67.5,sic_linked
 1550603,"MALVERN BANCORP, INC.",,2018,0.38953207632901193,40.3,sic_linked
 1550695,Performant Healthcare Inc,,2018,0.0,0.0,industry_unlinked
-1550737,"Sector 5, Inc.",,2018,0.8594228126583037,82.8,sic_linked
+1550737,"Sector 5, Inc.",,2018,0.8594228126583037,82.7,sic_linked
 1551060,Qunar Cayman Islands Ltd.,,2018,1.7970760847957865,93.7,sic_linked
 1551206,Patagonia Gold Corp.,,2018,0.0,0.0,industry_unlinked
 1551390,MDS ENERGY PUBLIC 2013-A LP,,2018,0.29287508305687154,14.9,sic_linked
@@ -54172,7 +54172,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1848756,Pyrophyte Acquisition Corp.,,2018,0.0,0.0,industry_unlinked
 1848795,"GigInternational1, Inc.",,2018,0.0,0.0,industry_unlinked
 1848821,Global Technology Acquisition Corp. I,,2018,,,uninformative_sic
-1848861,Healthcare AI Acquisition Corp.,,2018,0.40650979005961757,53.2,name_only
+1848861,Healthcare AI Acquisition Corp.,,2018,0.40650979005961757,53.1,name_only
 1848898,African Agriculture Holdings Inc.,,2018,0.0,0.0,industry_unlinked
 1848948,10X Capital Venture Acquisition Corp. III,,2018,0.5329177560095396,67.5,sic_linked
 1848959,Decarbonization Plus Acquisition Corp IV,,2018,0.0,0.0,industry_unlinked
@@ -54365,7 +54365,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1865533,Emerging Markets Horizon Corp.,,2018,0.0,0.0,industry_unlinked
 1865537,DTRT Health Acquisition Corp.,,2018,0.0,0.0,industry_unlinked
 1865602,"Cantor Equity Partners, Inc.",,2018,0.0,0.0,industry_unlinked
-1865697,NeuroMind AI Corp.,,2018,0.40650979005961757,53.2,name_only
+1865697,NeuroMind AI Corp.,,2018,0.40650979005961757,53.1,name_only
 1865701,Keyarch Acquisition Corp,,2018,0.0,0.0,industry_unlinked
 1865861,Cactus Acquisition Corp. 1 Ltd,CCTSF,2018,0.0,0.0,industry_unlinked
 1865975,AfterNext HealthTech Acquisition Corp.,,2018,0.0,0.0,industry_unlinked
@@ -54616,7 +54616,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1965934,Overland Advantage,,2018,,,missing_sic
 1966394,Fortress Net Lease REIT,,2018,0.0,0.0,industry_unlinked
 1966494,"CARGO Therapeutics, Inc.",,2018,0.5329177560095396,67.5,sic_linked+name
-1966734,AI Transportation Acquisition Corp,,2018,0.40650979005961757,53.2,name_only
+1966734,AI Transportation Acquisition Corp,,2018,0.40650979005961757,53.1,name_only
 1969475,Bayview Acquisition Corp,,2018,0.0,0.0,industry_unlinked
 1970129,"LEGEND SPICES, INC.",LGSP,2018,0.0,0.0,industry_unlinked
 1970509,Haymaker Acquisition Corp. 4,,2018,0.0,0.0,industry_unlinked
@@ -54803,7 +54803,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096204,ONE Nuclear Energy LLC,,2018,,,missing_sic
 2107979,Everli Global Inc.,,2018,,,uninformative_sic
 2108121,Ionetix Corp / DE /,,2018,0.5329177560095396,67.5,sic_linked
-2129752,Goodvision AI Inc.,,2018,0.40650979005961757,53.2,name_only
+2129752,Goodvision AI Inc.,,2018,0.40650979005961757,53.1,name_only
 2136853,MN8 Energy Holdings LLC,,2018,0.29287508305687154,14.9,sic_linked
 2142801,"NuCube Energy, Inc.",,2018,0.29287508305687154,14.9,sic_linked
 2155514,InoBat AS,,2018,0.5857501661137431,78.9,sic_linked
@@ -56908,7 +56908,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1130464,BLACK HILLS CORP /SD/,BKH,2019,0.3198411798467693,18.1,sic_linked
 1130598,"Traws Pharma, Inc.",TRAW,2019,0.5417397784622444,67.5,sic_linked
 1130713,"NEIGHBORHOOD INTELLIGENCE, INC.",NXH,2019,0.0,0.0,industry_unlinked
-1130781,"BMP AI Technologies, Inc.",BMPA,2019,0.4114842433283165,53.2,name_only
+1130781,"BMP AI Technologies, Inc.",BMPA,2019,0.4114842433283165,53.1,name_only
 1131312,ZION OIL & GAS INC,ZNOG,2019,0.3198411798467693,18.1,sic_linked
 1131343,ALTERITY THERAPEUTICS LTD,ATHE,2019,0.5417397784622444,67.5,sic_linked+name
 1131383,STANTEC INC,STN,2019,0.0,0.0,industry_unlinked
@@ -57761,7 +57761,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1415744,NORTHERN MINERALS & EXPLORATION LTD.,NMEX,2019,0.0,0.0,industry_unlinked
 1415758,Nevada Sunrise Metals Corp.,NVSGF,2019,,,missing_sic
 1415921,Navios Maritime Partners L.P.,NMM,2019,0.0,0.0,industry_unlinked
-1416090,BLUSKY AI INC.,BSAI,2019,0.4114842433283165,53.2,name_only
+1416090,BLUSKY AI INC.,BSAI,2019,0.4114842433283165,53.1,name_only
 1416697,"Blue Line Protection Group, Inc.",BLPG,2019,0.0,0.0,industry_unlinked
 1416876,"First Choice Healthcare Solutions, Inc.",FCHS,2019,0.2708698892311222,5.2,sic_linked
 1417663,"SANUWAVE Health, Inc.",SNWV,2019,0.2708698892311222,5.2,sic_linked
@@ -58052,7 +58052,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1472787,First American Financial Corp,FAF,2019,0.39658217680641583,40.3,sic_linked
 1472879,WHITECAP RESOURCES INC.,WCPRF,2019,0.3198411798467693,18.1,sic_linked
 1473334,XMax Inc.,XMAX,2019,0.0,0.0,industry_unlinked
-1473490,"Global AI, Inc.",GLAI,2019,0.4114842433283165,53.2,name_only
+1473490,"Global AI, Inc.",GLAI,2019,0.4114842433283165,53.1,name_only
 1474098,Pebblebrook Hotel Trust,PEB,2019,0.0,0.0,industry_unlinked
 1474167,Cosmos Health Inc.,COSM,2019,0.0,0.0,industry_unlinked
 1474432,"Everpure, Inc.",P,2019,0.4579140794482369,53.7,sic_linked
@@ -58739,7 +58739,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1591956,Sphere 3D Corp.,ANY,2019,0.39658217680641583,40.3,sic_linked
 1592049,Ryohin Keikaku Co/ADR,RYKKF,2019,,,missing_sic
 1592386,"Virtu Financial, Inc.",VIRT,2019,0.39658217680641583,40.3,sic_linked
-1592560,VisionSys AI Inc,VSA,2019,0.4114842433283165,53.2,name_only
+1592560,VisionSys AI Inc,VSA,2019,0.4114842433283165,53.1,name_only
 1593001,"NightFood Holdings, Inc.",NGTF,2019,0.0,0.0,industry_unlinked
 1593184,"BIOREGENX, INC.",BRGX,2019,1.8192635418271421,93.7,sic_linked
 1593275,"Hamilton Insurance Group, Ltd.",HG,2019,0.39658217680641583,40.3,sic_linked
@@ -58750,7 +58750,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1594204,ZHEN DING RESOURCES INC.,RBTK,2019,0.0,0.0,industry_unlinked
 1594805,SHOPIFY INC.,SHOP,2019,1.8192635418271421,93.7,sic_linked
 1594856,VALHALLA METALS INC.,VMXXF,2019,,,missing_sic
-1594968,Loan Artificial Intelligence Corp.,VEST,2019,0.4114842433283165,53.2,name_only
+1594968,Loan Artificial Intelligence Corp.,VEST,2019,0.4114842433283165,53.1,name_only
 1595097,"Corbus Pharmaceuticals Holdings, Inc.",CRBP,2019,0.5417397784622444,67.5,sic_linked
 1595248,"Genprex, Inc.",GNPX,2019,0.5417397784622444,67.5,sic_linked
 1595353,Galmed Pharmaceuticals Ltd.,GLMD,2019,0.5417397784622444,67.5,sic_linked
@@ -58814,7 +58814,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1604982,Sino Biopharmaceutical Limited/ADR,SBMFF,2019,0.2708698892311222,5.2,name_only
 1605057,"Vemanti Group, Inc.",VMNT,2019,0.39658217680641583,40.3,sic_linked
 1605301,"CB Financial Services, Inc.",CBFV,2019,0.39658217680641583,40.3,sic_linked
-1605331,AI Era Corp.,AERA,2019,0.4114842433283165,53.2,name_only
+1605331,AI Era Corp.,AERA,2019,0.4114842433283165,53.1,name_only
 1605481,Nevada Canyon Gold Corp.,NGLD,2019,0.0,0.0,industry_unlinked
 1605484,Stellantis N.V.,STLA,2019,0.6332792659713322,79.6,sic_linked
 1605755,Moncler S.p.A./ADR,MONRF,2019,,,missing_sic
@@ -59052,7 +59052,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1648416,Ferrari N.V.,RACE,2019,0.6332792659713322,79.6,sic_linked
 1648512,Shimadzu Corporation/ADR,SHMXY,2019,,,missing_sic
 1648636,Dune Oil Corp.,TRLEF,2019,0.3198411798467693,18.1,sic_linked
-1648960,"Myseum.AI, Inc.",MYSE,2019,0.4114842433283165,53.2,name_only
+1648960,"Myseum.AI, Inc.",MYSE,2019,0.4114842433283165,53.1,name_only
 1649009,"Core AI Holdings, Inc.",CHAI,2019,0.7815950223578929,82.5,sic_linked+name
 1649094,"Vaxcyte, Inc.",PCVX,2019,0.5417397784622444,67.5,sic_linked
 1649096,Clipper Realty Inc.,CLPR,2019,0.0,0.0,industry_unlinked
@@ -59251,7 +59251,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1681622,Varex Imaging Corp,VREX,2019,0.0878033004186606,0.6,sic_linked
 1681682,ENDRA Life Sciences Inc.,NDRA,2019,0.2708698892311222,5.2,sic_linked
 1682056,Silver Storm Mining Ltd.,SVRSF,2019,,,missing_sic
-1682149,Datavault AI Inc.,DVLT,2019,0.4114842433283165,53.2,name_only
+1682149,Datavault AI Inc.,DVLT,2019,0.4114842433283165,53.1,name_only
 1682220,Sachem Capital Corp.,SACH,2019,0.0,0.0,industry_unlinked
 1682241,Metalpha Technology Holding Ltd,MATH,2019,0.39658217680641583,40.3,sic_linked
 1682265,Onar Holding Corp,ONAR,2019,0.0,0.0,industry_unlinked
@@ -59582,7 +59582,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1734750,"Corvex, Inc.",MOVE,2019,1.5482879781938852,85.9,sic_linked
 1735041,Greenland Technologies Holding Corp.,GTEC,2019,0.313438086124563,10.6,sic_linked
 1735438,MeiraGTx Holdings plc,MGTX,2019,0.5417397784622444,67.5,sic_linked
-1735514,Light AI Inc.,OHCFF,2019,0.4114842433283165,53.2,name_only
+1735514,Light AI Inc.,OHCFF,2019,0.4114842433283165,53.1,name_only
 1735556,SANGRIX INC.,BTOG,2019,0.39658217680641583,40.3,sic_linked
 1735707,Garrett Motion Inc.,GTX,2019,0.6332792659713322,79.6,sic_linked
 1736243,"Acurx Pharmaceuticals, Inc.",ACXP,2019,0.5417397784622444,67.5,sic_linked
@@ -60035,7 +60035,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1803914,"Playboy, Inc.",PLBY,2019,0.0,0.0,industry_unlinked
 1803977,Limitless X Holdings Inc.,LIMX,2019,0.0,0.0,industry_unlinked
 1804176,"Butterfly Network, Inc.",BFLY,2019,0.2708698892311222,5.2,sic_linked
-1804469,"Guardforce AI Co., Ltd.",GFAI,2019,0.4114842433283165,53.2,name_only
+1804469,"Guardforce AI Co., Ltd.",GFAI,2019,0.4114842433283165,53.1,name_only
 1804583,Cloopen Group Holding Ltd,RAASY,2019,1.8192635418271421,93.7,sic_linked
 1804745,Driven Brands Holdings Inc.,DRVN,2019,0.0,0.0,industry_unlinked
 1804792,ARES STRATEGIC MINING INC.,USAM,2019,0.0,0.0,industry_unlinked
@@ -60152,7 +60152,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1817760,"SmartKem, Inc.",SMTK,2019,0.49544778068409046,55.4,sic_linked
 1818093,SkinHealth Systems Inc.,SKIN,2019,0.2708698892311222,5.2,sic_linked
 1818201,CCC Intelligent Solutions Holdings Inc.,CCC,2019,1.8192635418271421,93.7,sic_linked
-1818274,Arrive AI Inc.,ARAI,2019,0.4114842433283165,53.2,name_only
+1818274,Arrive AI Inc.,ARAI,2019,0.4114842433283165,53.1,name_only
 1818331,GeneDx Holdings Corp.,WGS,2019,0.0,0.0,industry_unlinked
 1818382,"Humacyte, Inc.",HUMA,2019,0.5417397784622444,67.5,sic_linked
 1818383,"MediaAlpha, Inc.",MAX,2019,,,uninformative_sic
@@ -60624,7 +60624,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1861233,illumin Holdings Inc.,ILLMF,2019,1.5482879781938852,85.9,sic_linked
 1861448,"IntriEnergy, Inc.",ITRE,2019,,,missing_sic
 1861479,Terra Rossa Gold Ltd.,TRGXF,2019,,,missing_sic
-1861622,Jet.AI Inc.,JTAI,2019,0.4114842433283165,53.2,name_only
+1861622,Jet.AI Inc.,JTAI,2019,0.4114842433283165,53.1,name_only
 1861657,"Canton Strategic Holdings, Inc.",CNTN,2019,0.39658217680641583,40.3,sic_linked
 1861737,Hesai Group,HSAI,2019,0.313438086124563,10.6,sic_linked
 1861795,Definitive Healthcare Corp.,DH,2019,1.8192635418271421,93.7,sic_linked
@@ -60638,7 +60638,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1863127,"Tyra Biosciences, Inc.",TYRA,2019,0.5417397784622444,67.5,sic_linked+name
 1863218,SHENGFENG DEVELOPMENT Ltd,SFWL,2019,0.0,0.0,industry_unlinked
 1863934,ADURO CLEAN TECHNOLOGIES INC.,ADUR,2019,0.0,0.0,industry_unlinked
-1863990,"MultiSensor AI Holdings, Inc.",MSAI,2019,0.4114842433283165,53.2,name_only
+1863990,"MultiSensor AI Holdings, Inc.",MSAI,2019,0.4114842433283165,53.1,name_only
 1864055,Abits Group Inc,ABTS,2019,0.39658217680641583,40.3,sic_linked
 1864163,"Inter & Co, Inc.",INTR,2019,0.39658217680641583,40.3,sic_linked
 1864531,"VSEE HEALTH, INC.",VSEE,2019,0.0,0.0,industry_unlinked
@@ -60839,7 +60839,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1896425,Li Bang International Corp Inc.,LBGJ,2019,0.0,0.0,industry_unlinked
 1896511,ZKGC New Energy Ltd,DAZSF,2019,0.6396823596935386,81.4,sic_linked
 1896752,Sabio Holdings Inc.,SABOF,2019,,,missing_sic
-1897087,SuperX AI Technology Ltd,SUPX,2019,0.4114842433283165,53.2,name_only
+1897087,SuperX AI Technology Ltd,SUPX,2019,0.4114842433283165,53.1,name_only
 1897245,HWH International Inc.,HWH,2019,0.0,0.0,industry_unlinked
 1897463,Graf Global Corp.,TONT,2019,0.0,0.0,industry_unlinked
 1897532,"Ping An Biomedical Co., Ltd.",PASW,2019,0.0,0.0,industry_unlinked
@@ -61119,7 +61119,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1958140,"Atlanta Braves Holdings, Inc.",BATRA,2019,0.0,0.0,industry_unlinked
 1958217,Lifezone Metals Ltd,LZM,2019,0.0,0.0,industry_unlinked
 1958389,Hydreight Technologies Inc.,HYDTF,2019,,,missing_sic
-1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2019,0.4114842433283165,53.2,name_only
+1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2019,0.4114842433283165,53.1,name_only
 1958489,"Cortigent, Inc.",CRGT,2019,0.2708698892311222,5.2,sic_linked
 1958713,NFT Ltd,MI,2019,0.39658217680641583,40.3,sic_linked
 1958777,"FibroBiologics, Inc.",FBLG,2019,0.5417397784622444,67.5,sic_linked
@@ -61308,7 +61308,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1994214,Nomadar Corp.,NOMA,2019,0.0,0.0,industry_unlinked
 1994373,Huineng Technology Corp,HNIT,2019,1.5482879781938852,85.9,sic_linked
 1994582,Oyocar Group Inc.,OYCG,2019,0.0,0.0,industry_unlinked
-1994624,ScanTech AI Systems Inc.,STAI,2019,0.4992875437469771,56.8,sic_linked+name
+1994624,ScanTech AI Systems Inc.,STAI,2019,0.4992875437469771,56.7,sic_linked+name
 1994702,"Kyverna Therapeutics, Inc.",KYTX,2019,0.5417397784622444,67.5,sic_linked+name
 1995075,Megan Holdings Ltd.,MGN,2019,0.0,0.0,industry_unlinked
 1995116,Rectitude Holdings Ltd.,RECT,2019,0.0,0.0,industry_unlinked
@@ -61342,7 +61342,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1999001,Six Flags Entertainment Corporation/NEW,FUN,2019,0.0,0.0,industry_unlinked
 1999111,Meta Critical Minerals Inc.,MTTAF,2019,,,missing_sic
 1999119,"Libera Gaming Operations, Inc",LBRJ,2019,0.0,0.0,industry_unlinked
-1999124,Healwell AI Inc.,HWAIF,2019,0.4114842433283165,53.2,name_only
+1999124,Healwell AI Inc.,HWAIF,2019,0.4114842433283165,53.1,name_only
 1999261,StageWise Strategies Corp.,STWI,2019,1.5482879781938852,85.9,sic_linked
 1999297,Big Tree Cloud Holdings Ltd,DSY,2019,0.37011077902957634,26.0,name_only
 1999480,"Alto Neuroscience, Inc.",ANRO,2019,0.5417397784622444,67.5,sic_linked
@@ -61463,7 +61463,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2021938,Sunrise Communications AG,SNNRF,2019,0.0,0.0,industry_unlinked
 2021989,Super Copper Corp.,CUPPF,2019,,,missing_sic
 2022059,"Silver Mountain Resources, Inc.",AGMRF,2019,,,missing_sic
-2022308,KIDZ AI Inc.,KIDZ,2019,0.4114842433283165,53.2,name_only
+2022308,KIDZ AI Inc.,KIDZ,2019,0.4114842433283165,53.1,name_only
 2022416,Silexion Therapeutics Corp,SLXN,2019,0.5417397784622444,67.5,sic_linked+name
 2022626,"Upstream Bio, Inc.",UPB,2019,0.5417397784622444,67.5,sic_linked
 2023016,Turn Therapeutics Inc.,TTRX,2019,0.5417397784622444,67.5,sic_linked+name
@@ -61523,7 +61523,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2030277,"LEIFRAS Co., Ltd.",LFS,2019,0.0,0.0,industry_unlinked
 2030522,"Marwynn Holdings, Inc.",MWYN,2019,0.0,0.0,industry_unlinked
 2030617,"Picard Medical, Inc.",PMI,2019,0.2708698892311222,5.2,sic_linked
-2030763,"DataMeds AI, Inc.",MEDS,2019,0.4114842433283165,53.2,name_only
+2030763,"DataMeds AI, Inc.",MEDS,2019,0.4114842433283165,53.1,name_only
 2030781,"SailPoint, Inc.",SAIL,2019,1.8192635418271421,93.7,sic_linked
 2030834,OneConstruction Group Ltd,ONEG,2019,0.0,0.0,industry_unlinked
 2030954,"TEN Holdings, Inc.",XHLD,2019,,,uninformative_sic
@@ -61860,7 +61860,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2084227,"Advasa Holdings, Inc.",ADBT,2019,1.8192635418271421,93.7,sic_linked
 2084261,"URSB Bancorp, Inc.",URSB,2019,0.39658217680641583,40.3,sic_linked
 2084296,Nintech Mould Factory Inc.,NTMJ,2019,0.0,0.0,industry_unlinked
-2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2019,0.4114842433283165,53.2,name_only
+2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2019,0.4114842433283165,53.1,name_only
 2084698,KHEOBA Ltd,KHOBF,2019,1.8192635418271421,93.7,sic_linked
 2085187,"Bob's Discount Furniture, Inc.",BOBS,2019,0.0,0.0,industry_unlinked
 2085208,Duality Biotherapeutics Inc/ADR,DYBTY,2019,0.2708698892311222,5.2,name_only
@@ -62099,7 +62099,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2119416,OpenPayd Global Holdings Ltd,OP,2019,,,uninformative_sic
 2120046,CVC Capital Partners plc/ADR,CVCPY,2019,,,missing_sic
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2019,,,missing_sic
-2120528,Kainan Holding Group Ltd,KHG,2019,0.39658217680641583,40.3,sic_linked
+2120528,Kainan Holding Group Ltd,KHG,2019,0.0,0.0,industry_unlinked
 2120882,SK hynix Inc.,SKHY,2019,0.49544778068409046,55.4,sic_linked
 2122392,Pelican Acquisition II Corp,PLCI,2019,0.0,0.0,industry_unlinked
 2123232,Cumberland Farms Ltd,CMBY,2019,0.0,0.0,industry_unlinked
@@ -62139,7 +62139,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2129466,"Guangdong Huayan Robotics Co, Ltd./ADR",GDHRY,2019,0.313438086124563,10.6,name_only
 2130386,Yorkville International Capital Corp.,YICC,2019,0.0,0.0,industry_unlinked
 2130606,"Obsidian Therapeutics, Inc.",OBX,2019,0.5417397784622444,67.5,sic_linked+name
-2131101,Powercheck AI Holdings Ltd,PCAI,2019,0.4114842433283165,53.2,name_only
+2131101,Powercheck AI Holdings Ltd,PCAI,2019,0.4114842433283165,53.1,name_only
 2131322,"Victory Giant Technology (HuiZhou) Co., Ltd./ADR",VGTHY,2019,,,missing_sic
 2131350,B&R Technology Merger Corp.,BRTM,2019,0.0,0.0,industry_unlinked
 2131524,"Braveheart Bio, Inc.",BRVE,2019,0.5417397784622444,67.5,sic_linked
@@ -67874,7 +67874,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1848756,Pyrophyte Acquisition Corp.,,2019,0.0,0.0,industry_unlinked
 1848795,"GigInternational1, Inc.",,2019,0.0,0.0,industry_unlinked
 1848821,Global Technology Acquisition Corp. I,,2019,,,uninformative_sic
-1848861,Healthcare AI Acquisition Corp.,,2019,0.4114842433283165,53.2,name_only
+1848861,Healthcare AI Acquisition Corp.,,2019,0.4114842433283165,53.1,name_only
 1848898,African Agriculture Holdings Inc.,,2019,0.0,0.0,industry_unlinked
 1848948,10X Capital Venture Acquisition Corp. III,,2019,0.5417397784622444,67.5,sic_linked
 1848959,Decarbonization Plus Acquisition Corp IV,,2019,0.0,0.0,industry_unlinked
@@ -68067,7 +68067,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1865533,Emerging Markets Horizon Corp.,,2019,0.0,0.0,industry_unlinked
 1865537,DTRT Health Acquisition Corp.,,2019,0.0,0.0,industry_unlinked
 1865602,"Cantor Equity Partners, Inc.",,2019,0.0,0.0,industry_unlinked
-1865697,NeuroMind AI Corp.,,2019,0.4114842433283165,53.2,name_only
+1865697,NeuroMind AI Corp.,,2019,0.4114842433283165,53.1,name_only
 1865701,Keyarch Acquisition Corp,,2019,0.0,0.0,industry_unlinked
 1865861,Cactus Acquisition Corp. 1 Ltd,CCTSF,2019,0.0,0.0,industry_unlinked
 1865975,AfterNext HealthTech Acquisition Corp.,,2019,0.0,0.0,industry_unlinked
@@ -68318,7 +68318,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1965934,Overland Advantage,,2019,,,missing_sic
 1966394,Fortress Net Lease REIT,,2019,0.0,0.0,industry_unlinked
 1966494,"CARGO Therapeutics, Inc.",,2019,0.5417397784622444,67.5,sic_linked+name
-1966734,AI Transportation Acquisition Corp,,2019,0.4114842433283165,53.2,name_only
+1966734,AI Transportation Acquisition Corp,,2019,0.4114842433283165,53.1,name_only
 1969475,Bayview Acquisition Corp,,2019,0.0,0.0,industry_unlinked
 1970129,"LEGEND SPICES, INC.",LGSP,2019,0.0,0.0,industry_unlinked
 1970509,Haymaker Acquisition Corp. 4,,2019,0.0,0.0,industry_unlinked
@@ -68505,7 +68505,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096204,ONE Nuclear Energy LLC,,2019,,,missing_sic
 2107979,Everli Global Inc.,,2019,,,uninformative_sic
 2108121,Ionetix Corp / DE /,,2019,0.5417397784622444,67.5,sic_linked
-2129752,Goodvision AI Inc.,,2019,0.4114842433283165,53.2,name_only
+2129752,Goodvision AI Inc.,,2019,0.4114842433283165,53.1,name_only
 2136853,MN8 Energy Holdings LLC,,2019,0.3198411798467693,18.1,sic_linked
 2142801,"NuCube Energy, Inc.",,2019,0.3198411798467693,18.1,sic_linked
 2155514,InoBat AS,,2019,0.6396823596935386,81.4,sic_linked
@@ -69036,7 +69036,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 320017,"LISATA THERAPEUTICS, INC.",LSTA,2020,0.5639084444367217,67.5,sic_linked+name
 320121,TELOS CORP,TLS,2020,1.4387131876321266,83.6,sic_linked
 320187,"NIKE, Inc.",NKE,2020,0.0,0.0,industry_unlinked
-320193,Apple Inc.,AAPL,2020,0.9128345659202729,82.8,sic_linked
+320193,Apple Inc.,AAPL,2020,0.9128345659202729,82.7,sic_linked
 320335,GLOBE LIFE INC.,GL,2020,0.39761214266350503,40.3,sic_linked
 350698,"AUTONATION, INC.",AN,2020,0.0,0.0,industry_unlinked
 350852,COMMUNITY TRUST BANCORP INC /KY/,CTBI,2020,0.39761214266350503,40.3,sic_linked
@@ -69892,7 +69892,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 925528,HUDSON TECHNOLOGIES INC /NY,HDSN,2020,0.0,0.0,industry_unlinked
 925741,"BioCardia, Inc.",BCDA,2020,0.5639084444367217,67.5,sic_linked
 926282,"ADTRAN Holdings, Inc.",ADTN,2020,0.38592364501129645,26.0,sic_linked
-926326,"OMNICELL, INC.",OMCL,2020,0.9128345659202729,82.8,sic_linked
+926326,"OMNICELL, INC.",OMCL,2020,0.9128345659202729,82.7,sic_linked
 926423,"MIND TECHNOLOGY, INC",MIND,2020,0.31226852507362063,10.6,sic_linked
 926617,Aspira Women's Health Inc.,AWHL,2020,0.5639084444367217,67.5,sic_linked
 927003,ADVANCED ENERGY INDUSTRIES INC,AEIS,2020,0.11227011464053775,0.6,sic_linked
@@ -69954,7 +69954,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 943452,WESTINGHOUSE AIR BRAKE TECHNOLOGIES CORP,WAB,2020,0.0,0.0,industry_unlinked
 943535,"WORLD HEALTH ENERGY HOLDINGS, INC.",WHEN,2020,1.8533539939005652,93.7,sic_linked
 943819,RESMED INC,RMD,2020,0.28195422221836086,5.2,sic_linked
-944075,"SOCKET MOBILE, INC.",SCKT,2020,0.9128345659202729,82.8,sic_linked
+944075,"SOCKET MOBILE, INC.",SCKT,2020,0.9128345659202729,82.7,sic_linked
 944148,"CBIZ, Inc.",CBZ,2020,,,uninformative_sic
 944695,"HANOVER INSURANCE GROUP, INC.",THG,2020,0.39761214266350503,40.3,sic_linked
 944745,"CIVISTA BANCSHARES, INC.",CIVB,2020,0.39761214266350503,40.3,sic_linked
@@ -71266,7 +71266,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1374690,"Larimar Therapeutics, Inc.",LRMR,2020,0.5639084444367217,67.5,sic_linked+name
 1375205,UR-ENERGY INC,URG,2020,0.0,0.0,industry_unlinked
 1375348,Golden Star Resource Corp.,GLNS,2020,0.0,0.0,industry_unlinked
-1375365,"Super Micro Computer, Inc.",SMCI,2020,0.9128345659202729,82.8,sic_linked
+1375365,"Super Micro Computer, Inc.",SMCI,2020,0.9128345659202729,82.7,sic_linked
 1375877,Canadian Solar Inc.,CSIQ,2020,0.5499264605166723,55.4,sic_linked+name
 1376139,CVR ENERGY INC,CVI,2020,0.32538623123559673,18.1,sic_linked
 1376231,"VPR Brands, LP.",VPRB,2020,1.8533539939005652,93.7,sic_linked
@@ -71352,7 +71352,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1393818,Blackstone Inc.,BX,2020,0.39761214266350503,40.3,sic_linked
 1393883,"DHI GROUP, INC.",DHX,2020,,,uninformative_sic
 1394039,Century Lithium Corp.,CYDVF,2020,,,missing_sic
-1394056,"ONE STOP SYSTEMS, INC.",OSS,2020,0.9128345659202729,82.8,sic_linked
+1394056,"ONE STOP SYSTEMS, INC.",OSS,2020,0.9128345659202729,82.7,sic_linked
 1394108,SUIC Worldwide Holdings Ltd.,SUIC,2020,0.32538623123559673,18.1,sic_linked
 1394189,Chesapeake Gold Corp,CHPGF,2020,,,missing_sic
 1394638,"Driveitaway Holdings, Inc.",DWAY,2020,0.0,0.0,industry_unlinked
@@ -72310,7 +72310,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1571776,Cherry Hill Mortgage Investment Corp,CHMI,2020,0.0,0.0,industry_unlinked
 1571934,TAO Synergies Inc.,TAOX,2020,0.39761214266350503,40.3,sic_linked
 1571949,"Intercontinental Exchange, Inc.",ICE,2020,0.39761214266350503,40.3,sic_linked
-1571996,Dell Technologies Inc.,DELL,2020,0.9128345659202729,82.8,sic_linked
+1571996,Dell Technologies Inc.,DELL,2020,0.9128345659202729,82.7,sic_linked
 1572334,Virginia National Bankshares Corp,VABK,2020,0.39761214266350503,40.3,sic_linked
 1572386,"GREENWAY TECHNOLOGIES, INC. & SUBSIDIARIES",GWTI,2020,0.32538623123559673,18.1,sic_linked
 1572616,"FRACTYL HEALTH, INC.",GUTS,2020,0.28195422221836086,5.2,sic_linked
@@ -73105,7 +73105,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1708055,Ribbon Communications Inc.,RBBN,2020,1.4387131876321266,83.6,sic_linked
 1708259,LexinFintech Holdings Ltd.,LX,2020,0.39761214266350503,40.3,sic_linked+name
 1708341,"All In FutureTech Alliance, Inc.",AIFA,2020,0.0,0.0,industry_unlinked
-1708441,"Mynd.ai, Inc.",MYND,2020,0.9128345659202729,82.8,sic_linked+name
+1708441,"Mynd.ai, Inc.",MYND,2020,0.9128345659202729,82.7,sic_linked+name
 1708527,ELUTIA INC.,ELUT,2020,0.5639084444367217,67.5,sic_linked
 1708599,"Serina Therapeutics, Inc.",SER,2020,0.5639084444367217,67.5,sic_linked+name
 1708688,InflaRx N.V.,IFRX,2020,0.5639084444367217,67.5,sic_linked
@@ -73190,7 +73190,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1720250,"Kandi Technologies Group, Inc.",KNDI,2020,0.6376547563092174,79.6,sic_linked
 1720420,IBEX Ltd,IBEX,2020,1.5841002389545369,85.9,sic_linked
 1720424,HIVE Digital Technologies Ltd.,HIVE,2020,0.39761214266350503,40.3,sic_linked
-1720446,Zepp Health Corp,ZEPP,2020,0.9128345659202729,82.8,sic_linked
+1720446,Zepp Health Corp,ZEPP,2020,0.9128345659202729,82.7,sic_linked
 1720553,Phenom Resources Corp.,PHNMF,2020,,,missing_sic
 1720580,"Adicet Bio, Inc.",ACET,2020,0.5639084444367217,67.5,sic_linked
 1720592,Repay Holdings Corp,RPAY,2020,,,uninformative_sic
@@ -75676,7 +75676,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096755,Texas Ventures Acquisition IV Corp,TVIV,2020,0.0,0.0,industry_unlinked
 2096861,Sinda Ltd.,SIND,2020,0.0,0.0,industry_unlinked
 2096997,"Kailera Therapeutics, Inc.",KLRA,2020,0.5639084444367217,67.5,sic_linked+name
-2097163,Xanadu Quantum Technologies Ltd,XNDU,2020,0.9128345659202729,82.8,sic_linked
+2097163,Xanadu Quantum Technologies Ltd,XNDU,2020,0.9128345659202729,82.7,sic_linked
 2097388,Sin Lian Seng Construction,ININ,2020,0.0,0.0,industry_unlinked
 2097461,"Bora Pharmaceuticals Co., Ltd./ADR",BORAY,2020,,,missing_sic
 2097508,"Blockfusion Digital Infrastructure, Inc.",BLDC,2020,1.5841002389545369,85.9,sic_linked
@@ -75801,7 +75801,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2119416,OpenPayd Global Holdings Ltd,OP,2020,,,uninformative_sic
 2120046,CVC Capital Partners plc/ADR,CVCPY,2020,,,missing_sic
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2020,,,missing_sic
-2120528,Kainan Holding Group Ltd,KHG,2020,0.39761214266350503,40.3,sic_linked
+2120528,Kainan Holding Group Ltd,KHG,2020,0.0,0.0,industry_unlinked
 2120882,SK hynix Inc.,SKHY,2020,0.5499264605166723,55.4,sic_linked
 2122392,Pelican Acquisition II Corp,PLCI,2020,0.0,0.0,industry_unlinked
 2123232,Cumberland Farms Ltd,CMBY,2020,0.0,0.0,industry_unlinked
@@ -76857,7 +76857,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 948072,BIRNER DENTAL MANAGEMENT SERVICES INC,,2020,0.0,0.0,industry_unlinked
 948426,COATES INTERNATIONAL LTD,,2020,0.32538623123559673,18.1,sic_linked
 949039,"DIAMOND OFFSHORE DRILLING, INC.",,2020,0.32538623123559673,18.1,sic_linked
-949158,CRAY INC,,2020,0.9128345659202729,82.8,sic_linked
+949158,CRAY INC,,2020,0.9128345659202729,82.7,sic_linked
 949428,"CDTI ADVANCED MATERIALS, INC.",,2020,0.31226852507362063,10.6,sic_linked
 949721,Attis Industries Inc.,,2020,0.32538623123559673,18.1,sic_linked
 949852,THANKSGIVING COFFEE CO INC,,2020,0.0,0.0,industry_unlinked
@@ -77174,7 +77174,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1071760,ECOSPHERE TECHNOLOGIES INC,,2020,0.0,0.0,industry_unlinked
 1071993,CONTANGO OIL & GAS CO,,2020,0.32538623123559673,18.1,sic_linked
 1072772,TOMBSTONE EXPLORATION CORP,,2020,0.0,0.0,industry_unlinked
-1072842,FIRST CAPITAL INTERNATIONAL INC,,2020,0.9128345659202729,82.8,sic_linked
+1072842,FIRST CAPITAL INTERNATIONAL INC,,2020,0.9128345659202729,82.7,sic_linked
 1073349,BOTTOMLINE TECHNOLOGIES INC,,2020,1.8533539939005652,93.7,sic_linked
 1073362,"Occidental Development Group, Inc.",,2020,0.0,0.0,industry_unlinked
 1073429,"U.S. CONCRETE, INC.",,2020,0.0,0.0,industry_unlinked
@@ -77885,7 +77885,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1316317,China Techfaith Wireless Communication Technology LTD,,2020,,,uninformative_sic
 1316360,IHS Inc.,,2020,1.8533539939005652,93.7,sic_linked
 1316517,"Kandi Technologies Group, Inc.",,2020,0.6376547563092174,79.6,sic_linked
-1316625,Silicon Graphics International Corp,,2020,0.9128345659202729,82.8,sic_linked
+1316625,Silicon Graphics International Corp,,2020,0.9128345659202729,82.7,sic_linked
 1316644,"AeroGrow International, Inc.",,2020,0.0,0.0,industry_unlinked
 1316645,"American CareSource Holdings, Inc.",,2020,0.0,0.0,industry_unlinked
 1316898,"JAMBA, INC.",,2020,0.0,0.0,industry_unlinked
@@ -78696,7 +78696,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1446806,"ICON Equipment & Corporate Infrastructure Fund Fourteen, L.P.",,2020,0.0,0.0,industry_unlinked
 1447051,Territorial Bancorp Inc.,,2020,0.39761214266350503,40.3,sic_linked
 1447382,Ocean Rig UDW Inc.,,2020,0.32538623123559673,18.1,sic_linked
-1447599,"FITBIT, INC.",,2020,0.9128345659202729,82.8,sic_linked
+1447599,"FITBIT, INC.",,2020,0.9128345659202729,82.7,sic_linked
 1448056,"NEW RELIC, INC.",,2020,1.8533539939005652,93.7,sic_linked
 1448301,Anchor Bancorp,,2020,0.39761214266350503,40.3,sic_linked
 1448558,"GROW CAPITAL, INC.",,2020,1.8533539939005652,93.7,sic_linked
@@ -79378,7 +79378,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1550518,Cantabio Pharmaceuticals Inc.,,2020,0.5639084444367217,67.5,sic_linked
 1550603,"MALVERN BANCORP, INC.",,2020,0.39761214266350503,40.3,sic_linked
 1550695,Performant Healthcare Inc,,2020,0.0,0.0,industry_unlinked
-1550737,"Sector 5, Inc.",,2020,0.9128345659202729,82.8,sic_linked
+1550737,"Sector 5, Inc.",,2020,0.9128345659202729,82.7,sic_linked
 1551060,Qunar Cayman Islands Ltd.,,2020,1.8533539939005652,93.7,sic_linked
 1551206,Patagonia Gold Corp.,,2020,0.0,0.0,industry_unlinked
 1551390,MDS ENERGY PUBLIC 2013-A LP,,2020,0.32538623123559673,18.1,sic_linked
@@ -82738,7 +82738,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 320017,"LISATA THERAPEUTICS, INC.",LSTA,2021,0.5555006475970978,67.5,sic_linked+name
 320121,TELOS CORP,TLS,2021,1.4633203902863605,83.6,sic_linked
 320187,"NIKE, Inc.",NKE,2021,0.0,0.0,industry_unlinked
-320193,Apple Inc.,AAPL,2021,0.93088804538545,82.8,sic_linked
+320193,Apple Inc.,AAPL,2021,0.93088804538545,82.7,sic_linked
 320335,GLOBE LIFE INC.,GL,2021,0.4052288875569315,40.3,sic_linked
 350698,"AUTONATION, INC.",AN,2021,0.0,0.0,industry_unlinked
 350852,COMMUNITY TRUST BANCORP INC /KY/,CTBI,2021,0.4052288875569315,40.3,sic_linked
@@ -83594,7 +83594,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 925528,HUDSON TECHNOLOGIES INC /NY,HDSN,2021,0.0,0.0,industry_unlinked
 925741,"BioCardia, Inc.",BCDA,2021,0.5555006475970978,67.5,sic_linked
 926282,"ADTRAN Holdings, Inc.",ADTN,2021,0.4009790361641007,26.0,sic_linked
-926326,"OMNICELL, INC.",OMCL,2021,0.93088804538545,82.8,sic_linked
+926326,"OMNICELL, INC.",OMCL,2021,0.93088804538545,82.7,sic_linked
 926423,"MIND TECHNOLOGY, INC",MIND,2021,0.3039769857729243,10.6,sic_linked
 926617,Aspira Women's Health Inc.,AWHL,2021,0.5555006475970978,67.5,sic_linked
 927003,ADVANCED ENERGY INDUSTRIES INC,AEIS,2021,0.110058611601869,0.6,sic_linked
@@ -83656,7 +83656,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 943452,WESTINGHOUSE AIR BRAKE TECHNOLOGIES CORP,WAB,2021,0.0,0.0,industry_unlinked
 943535,"WORLD HEALTH ENERGY HOLDINGS, INC.",WHEN,2021,1.8831707879058408,93.7,sic_linked
 943819,RESMED INC,RMD,2021,0.2777503237985489,5.2,sic_linked
-944075,"SOCKET MOBILE, INC.",SCKT,2021,0.93088804538545,82.8,sic_linked
+944075,"SOCKET MOBILE, INC.",SCKT,2021,0.93088804538545,82.7,sic_linked
 944148,"CBIZ, Inc.",CBZ,2021,,,uninformative_sic
 944695,"HANOVER INSURANCE GROUP, INC.",THG,2021,0.4052288875569315,40.3,sic_linked
 944745,"CIVISTA BANCSHARES, INC.",CIVB,2021,0.4052288875569315,40.3,sic_linked
@@ -84312,7 +84312,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1130464,BLACK HILLS CORP /SD/,BKH,2021,0.32666488605571714,18.1,sic_linked
 1130598,"Traws Pharma, Inc.",TRAW,2021,0.5555006475970978,67.5,sic_linked
 1130713,"NEIGHBORHOOD INTELLIGENCE, INC.",NXH,2021,0.0,0.0,industry_unlinked
-1130781,"BMP AI Technologies, Inc.",BMPA,2021,0.4198503976194803,53.2,name_only
+1130781,"BMP AI Technologies, Inc.",BMPA,2021,0.4198503976194803,53.1,name_only
 1131312,ZION OIL & GAS INC,ZNOG,2021,0.32666488605571714,18.1,sic_linked
 1131343,ALTERITY THERAPEUTICS LTD,ATHE,2021,0.5555006475970978,67.5,sic_linked+name
 1131383,STANTEC INC,STN,2021,0.0,0.0,industry_unlinked
@@ -84968,7 +84968,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1374690,"Larimar Therapeutics, Inc.",LRMR,2021,0.5555006475970978,67.5,sic_linked+name
 1375205,UR-ENERGY INC,URG,2021,0.0,0.0,industry_unlinked
 1375348,Golden Star Resource Corp.,GLNS,2021,0.0,0.0,industry_unlinked
-1375365,"Super Micro Computer, Inc.",SMCI,2021,0.93088804538545,82.8,sic_linked
+1375365,"Super Micro Computer, Inc.",SMCI,2021,0.93088804538545,82.7,sic_linked
 1375877,Canadian Solar Inc.,CSIQ,2021,0.5467821092594551,55.4,sic_linked+name
 1376139,CVR ENERGY INC,CVI,2021,0.32666488605571714,18.1,sic_linked
 1376231,"VPR Brands, LP.",VPRB,2021,1.8831707879058408,93.7,sic_linked
@@ -85054,7 +85054,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1393818,Blackstone Inc.,BX,2021,0.4052288875569315,40.3,sic_linked
 1393883,"DHI GROUP, INC.",DHX,2021,,,uninformative_sic
 1394039,Century Lithium Corp.,CYDVF,2021,,,missing_sic
-1394056,"ONE STOP SYSTEMS, INC.",OSS,2021,0.93088804538545,82.8,sic_linked
+1394056,"ONE STOP SYSTEMS, INC.",OSS,2021,0.93088804538545,82.7,sic_linked
 1394108,SUIC Worldwide Holdings Ltd.,SUIC,2021,0.32666488605571714,18.1,sic_linked
 1394189,Chesapeake Gold Corp,CHPGF,2021,,,missing_sic
 1394638,"Driveitaway Holdings, Inc.",DWAY,2021,0.0,0.0,industry_unlinked
@@ -85165,7 +85165,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1415744,NORTHERN MINERALS & EXPLORATION LTD.,NMEX,2021,0.0,0.0,industry_unlinked
 1415758,Nevada Sunrise Metals Corp.,NVSGF,2021,,,missing_sic
 1415921,Navios Maritime Partners L.P.,NMM,2021,0.0,0.0,industry_unlinked
-1416090,BLUSKY AI INC.,BSAI,2021,0.4198503976194803,53.2,name_only
+1416090,BLUSKY AI INC.,BSAI,2021,0.4198503976194803,53.1,name_only
 1416697,"Blue Line Protection Group, Inc.",BLPG,2021,0.0,0.0,industry_unlinked
 1416876,"First Choice Healthcare Solutions, Inc.",FCHS,2021,0.2777503237985489,5.2,sic_linked
 1417663,"SANUWAVE Health, Inc.",SNWV,2021,0.2777503237985489,5.2,sic_linked
@@ -85456,7 +85456,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1472787,First American Financial Corp,FAF,2021,0.4052288875569315,40.3,sic_linked
 1472879,WHITECAP RESOURCES INC.,WCPRF,2021,0.32666488605571714,18.1,sic_linked
 1473334,XMax Inc.,XMAX,2021,0.0,0.0,industry_unlinked
-1473490,"Global AI, Inc.",GLAI,2021,0.4198503976194803,53.2,name_only
+1473490,"Global AI, Inc.",GLAI,2021,0.4198503976194803,53.1,name_only
 1474098,Pebblebrook Hotel Trust,PEB,2021,0.0,0.0,industry_unlinked
 1474167,Cosmos Health Inc.,COSM,2021,0.0,0.0,industry_unlinked
 1474432,"Everpure, Inc.",P,2021,0.5110376477659697,53.7,sic_linked
@@ -86012,7 +86012,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1571776,Cherry Hill Mortgage Investment Corp,CHMI,2021,0.0,0.0,industry_unlinked
 1571934,TAO Synergies Inc.,TAOX,2021,0.4052288875569315,40.3,sic_linked
 1571949,"Intercontinental Exchange, Inc.",ICE,2021,0.4052288875569315,40.3,sic_linked
-1571996,Dell Technologies Inc.,DELL,2021,0.93088804538545,82.8,sic_linked
+1571996,Dell Technologies Inc.,DELL,2021,0.93088804538545,82.7,sic_linked
 1572334,Virginia National Bankshares Corp,VABK,2021,0.4052288875569315,40.3,sic_linked
 1572386,"GREENWAY TECHNOLOGIES, INC. & SUBSIDIARIES",GWTI,2021,0.32666488605571714,18.1,sic_linked
 1572616,"FRACTYL HEALTH, INC.",GUTS,2021,0.2777503237985489,5.2,sic_linked
@@ -86143,7 +86143,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1591956,Sphere 3D Corp.,ANY,2021,0.4052288875569315,40.3,sic_linked
 1592049,Ryohin Keikaku Co/ADR,RYKKF,2021,,,missing_sic
 1592386,"Virtu Financial, Inc.",VIRT,2021,0.4052288875569315,40.3,sic_linked
-1592560,VisionSys AI Inc,VSA,2021,0.4198503976194803,53.2,name_only
+1592560,VisionSys AI Inc,VSA,2021,0.4198503976194803,53.1,name_only
 1593001,"NightFood Holdings, Inc.",NGTF,2021,0.0,0.0,industry_unlinked
 1593184,"BIOREGENX, INC.",BRGX,2021,1.8831707879058408,93.7,sic_linked
 1593275,"Hamilton Insurance Group, Ltd.",HG,2021,0.4052288875569315,40.3,sic_linked
@@ -86154,7 +86154,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1594204,ZHEN DING RESOURCES INC.,RBTK,2021,0.0,0.0,industry_unlinked
 1594805,SHOPIFY INC.,SHOP,2021,1.8831707879058408,93.7,sic_linked
 1594856,VALHALLA METALS INC.,VMXXF,2021,,,missing_sic
-1594968,Loan Artificial Intelligence Corp.,VEST,2021,0.4198503976194803,53.2,name_only
+1594968,Loan Artificial Intelligence Corp.,VEST,2021,0.4198503976194803,53.1,name_only
 1595097,"Corbus Pharmaceuticals Holdings, Inc.",CRBP,2021,0.5555006475970978,67.5,sic_linked
 1595248,"Genprex, Inc.",GNPX,2021,0.5555006475970978,67.5,sic_linked
 1595353,Galmed Pharmaceuticals Ltd.,GLMD,2021,0.5555006475970978,67.5,sic_linked
@@ -86218,7 +86218,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1604982,Sino Biopharmaceutical Limited/ADR,SBMFF,2021,0.2777503237985489,5.2,name_only
 1605057,"Vemanti Group, Inc.",VMNT,2021,0.4052288875569315,40.3,sic_linked
 1605301,"CB Financial Services, Inc.",CBFV,2021,0.4052288875569315,40.3,sic_linked
-1605331,AI Era Corp.,AERA,2021,0.4198503976194803,53.2,name_only
+1605331,AI Era Corp.,AERA,2021,0.4198503976194803,53.1,name_only
 1605481,Nevada Canyon Gold Corp.,NGLD,2021,0.0,0.0,industry_unlinked
 1605484,Stellantis N.V.,STLA,2021,0.6306418718286415,79.6,sic_linked
 1605755,Moncler S.p.A./ADR,MONRF,2021,,,missing_sic
@@ -86456,7 +86456,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1648416,Ferrari N.V.,RACE,2021,0.6306418718286415,79.6,sic_linked
 1648512,Shimadzu Corporation/ADR,SHMXY,2021,,,missing_sic
 1648636,Dune Oil Corp.,TRLEF,2021,0.32666488605571714,18.1,sic_linked
-1648960,"Myseum.AI, Inc.",MYSE,2021,0.4198503976194803,53.2,name_only
+1648960,"Myseum.AI, Inc.",MYSE,2021,0.4198503976194803,53.1,name_only
 1649009,"Core AI Holdings, Inc.",CHAI,2021,0.820829433783581,82.5,sic_linked+name
 1649094,"Vaxcyte, Inc.",PCVX,2021,0.5555006475970978,67.5,sic_linked
 1649096,Clipper Realty Inc.,CLPR,2021,0.0,0.0,industry_unlinked
@@ -86655,7 +86655,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1681622,Varex Imaging Corp,VREX,2021,0.110058611601869,0.6,sic_linked
 1681682,ENDRA Life Sciences Inc.,NDRA,2021,0.2777503237985489,5.2,sic_linked
 1682056,Silver Storm Mining Ltd.,SVRSF,2021,,,missing_sic
-1682149,Datavault AI Inc.,DVLT,2021,0.4198503976194803,53.2,name_only
+1682149,Datavault AI Inc.,DVLT,2021,0.4198503976194803,53.1,name_only
 1682220,Sachem Capital Corp.,SACH,2021,0.0,0.0,industry_unlinked
 1682241,Metalpha Technology Holding Ltd,MATH,2021,0.4052288875569315,40.3,sic_linked
 1682265,Onar Holding Corp,ONAR,2021,0.0,0.0,industry_unlinked
@@ -86807,7 +86807,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1708055,Ribbon Communications Inc.,RBBN,2021,1.4633203902863605,83.6,sic_linked
 1708259,LexinFintech Holdings Ltd.,LX,2021,0.4052288875569315,40.3,sic_linked+name
 1708341,"All In FutureTech Alliance, Inc.",AIFA,2021,0.0,0.0,industry_unlinked
-1708441,"Mynd.ai, Inc.",MYND,2021,0.93088804538545,82.8,sic_linked+name
+1708441,"Mynd.ai, Inc.",MYND,2021,0.93088804538545,82.7,sic_linked+name
 1708527,ELUTIA INC.,ELUT,2021,0.5555006475970978,67.5,sic_linked
 1708599,"Serina Therapeutics, Inc.",SER,2021,0.5555006475970978,67.5,sic_linked+name
 1708688,InflaRx N.V.,IFRX,2021,0.5555006475970978,67.5,sic_linked
@@ -86892,7 +86892,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1720250,"Kandi Technologies Group, Inc.",KNDI,2021,0.6306418718286415,79.6,sic_linked
 1720420,IBEX Ltd,IBEX,2021,1.627037357504613,85.9,sic_linked
 1720424,HIVE Digital Technologies Ltd.,HIVE,2021,0.4052288875569315,40.3,sic_linked
-1720446,Zepp Health Corp,ZEPP,2021,0.93088804538545,82.8,sic_linked
+1720446,Zepp Health Corp,ZEPP,2021,0.93088804538545,82.7,sic_linked
 1720553,Phenom Resources Corp.,PHNMF,2021,,,missing_sic
 1720580,"Adicet Bio, Inc.",ACET,2021,0.5555006475970978,67.5,sic_linked
 1720592,Repay Holdings Corp,RPAY,2021,,,uninformative_sic
@@ -86986,7 +86986,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1734750,"Corvex, Inc.",MOVE,2021,1.627037357504613,85.9,sic_linked
 1735041,Greenland Technologies Holding Corp.,GTEC,2021,0.3039769857729243,10.6,sic_linked
 1735438,MeiraGTx Holdings plc,MGTX,2021,0.5555006475970978,67.5,sic_linked
-1735514,Light AI Inc.,OHCFF,2021,0.4198503976194803,53.2,name_only
+1735514,Light AI Inc.,OHCFF,2021,0.4198503976194803,53.1,name_only
 1735556,SANGRIX INC.,BTOG,2021,0.4052288875569315,40.3,sic_linked
 1735707,Garrett Motion Inc.,GTX,2021,0.6306418718286415,79.6,sic_linked
 1736243,"Acurx Pharmaceuticals, Inc.",ACXP,2021,0.5555006475970978,67.5,sic_linked
@@ -87439,7 +87439,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1803914,"Playboy, Inc.",PLBY,2021,0.0,0.0,industry_unlinked
 1803977,Limitless X Holdings Inc.,LIMX,2021,0.0,0.0,industry_unlinked
 1804176,"Butterfly Network, Inc.",BFLY,2021,0.2777503237985489,5.2,sic_linked
-1804469,"Guardforce AI Co., Ltd.",GFAI,2021,0.4198503976194803,53.2,name_only
+1804469,"Guardforce AI Co., Ltd.",GFAI,2021,0.4198503976194803,53.1,name_only
 1804583,Cloopen Group Holding Ltd,RAASY,2021,1.8831707879058408,93.7,sic_linked
 1804745,Driven Brands Holdings Inc.,DRVN,2021,0.0,0.0,industry_unlinked
 1804792,ARES STRATEGIC MINING INC.,USAM,2021,0.0,0.0,industry_unlinked
@@ -87556,7 +87556,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1817760,"SmartKem, Inc.",SMTK,2021,0.5467821092594551,55.4,sic_linked
 1818093,SkinHealth Systems Inc.,SKIN,2021,0.2777503237985489,5.2,sic_linked
 1818201,CCC Intelligent Solutions Holdings Inc.,CCC,2021,1.8831707879058408,93.7,sic_linked
-1818274,Arrive AI Inc.,ARAI,2021,0.4198503976194803,53.2,name_only
+1818274,Arrive AI Inc.,ARAI,2021,0.4198503976194803,53.1,name_only
 1818331,GeneDx Holdings Corp.,WGS,2021,0.0,0.0,industry_unlinked
 1818382,"Humacyte, Inc.",HUMA,2021,0.5555006475970978,67.5,sic_linked
 1818383,"MediaAlpha, Inc.",MAX,2021,,,uninformative_sic
@@ -88028,7 +88028,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1861233,illumin Holdings Inc.,ILLMF,2021,1.627037357504613,85.9,sic_linked
 1861448,"IntriEnergy, Inc.",ITRE,2021,,,missing_sic
 1861479,Terra Rossa Gold Ltd.,TRGXF,2021,,,missing_sic
-1861622,Jet.AI Inc.,JTAI,2021,0.4198503976194803,53.2,name_only
+1861622,Jet.AI Inc.,JTAI,2021,0.4198503976194803,53.1,name_only
 1861657,"Canton Strategic Holdings, Inc.",CNTN,2021,0.4052288875569315,40.3,sic_linked
 1861737,Hesai Group,HSAI,2021,0.3039769857729243,10.6,sic_linked
 1861795,Definitive Healthcare Corp.,DH,2021,1.8831707879058408,93.7,sic_linked
@@ -88042,7 +88042,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1863127,"Tyra Biosciences, Inc.",TYRA,2021,0.5555006475970978,67.5,sic_linked+name
 1863218,SHENGFENG DEVELOPMENT Ltd,SFWL,2021,0.0,0.0,industry_unlinked
 1863934,ADURO CLEAN TECHNOLOGIES INC.,ADUR,2021,0.0,0.0,industry_unlinked
-1863990,"MultiSensor AI Holdings, Inc.",MSAI,2021,0.4198503976194803,53.2,name_only
+1863990,"MultiSensor AI Holdings, Inc.",MSAI,2021,0.4198503976194803,53.1,name_only
 1864055,Abits Group Inc,ABTS,2021,0.4052288875569315,40.3,sic_linked
 1864163,"Inter & Co, Inc.",INTR,2021,0.4052288875569315,40.3,sic_linked
 1864531,"VSEE HEALTH, INC.",VSEE,2021,0.0,0.0,industry_unlinked
@@ -88243,7 +88243,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1896425,Li Bang International Corp Inc.,LBGJ,2021,0.0,0.0,industry_unlinked
 1896511,ZKGC New Energy Ltd,DAZSF,2021,0.6533297721114343,81.4,sic_linked
 1896752,Sabio Holdings Inc.,SABOF,2021,,,missing_sic
-1897087,SuperX AI Technology Ltd,SUPX,2021,0.4198503976194803,53.2,name_only
+1897087,SuperX AI Technology Ltd,SUPX,2021,0.4198503976194803,53.1,name_only
 1897245,HWH International Inc.,HWH,2021,0.0,0.0,industry_unlinked
 1897463,Graf Global Corp.,TONT,2021,0.0,0.0,industry_unlinked
 1897532,"Ping An Biomedical Co., Ltd.",PASW,2021,0.0,0.0,industry_unlinked
@@ -88523,7 +88523,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1958140,"Atlanta Braves Holdings, Inc.",BATRA,2021,0.0,0.0,industry_unlinked
 1958217,Lifezone Metals Ltd,LZM,2021,0.0,0.0,industry_unlinked
 1958389,Hydreight Technologies Inc.,HYDTF,2021,,,missing_sic
-1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2021,0.4198503976194803,53.2,name_only
+1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2021,0.4198503976194803,53.1,name_only
 1958489,"Cortigent, Inc.",CRGT,2021,0.2777503237985489,5.2,sic_linked
 1958713,NFT Ltd,MI,2021,0.4052288875569315,40.3,sic_linked
 1958777,"FibroBiologics, Inc.",FBLG,2021,0.5555006475970978,67.5,sic_linked
@@ -88746,7 +88746,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1999001,Six Flags Entertainment Corporation/NEW,FUN,2021,0.0,0.0,industry_unlinked
 1999111,Meta Critical Minerals Inc.,MTTAF,2021,,,missing_sic
 1999119,"Libera Gaming Operations, Inc",LBRJ,2021,0.0,0.0,industry_unlinked
-1999124,Healwell AI Inc.,HWAIF,2021,0.4198503976194803,53.2,name_only
+1999124,Healwell AI Inc.,HWAIF,2021,0.4198503976194803,53.1,name_only
 1999261,StageWise Strategies Corp.,STWI,2021,1.627037357504613,85.9,sic_linked
 1999297,Big Tree Cloud Holdings Ltd,DSY,2021,0.4009790361641007,26.0,name_only
 1999480,"Alto Neuroscience, Inc.",ANRO,2021,0.5555006475970978,67.5,sic_linked
@@ -88867,7 +88867,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2021938,Sunrise Communications AG,SNNRF,2021,0.0,0.0,industry_unlinked
 2021989,Super Copper Corp.,CUPPF,2021,,,missing_sic
 2022059,"Silver Mountain Resources, Inc.",AGMRF,2021,,,missing_sic
-2022308,KIDZ AI Inc.,KIDZ,2021,0.4198503976194803,53.2,name_only
+2022308,KIDZ AI Inc.,KIDZ,2021,0.4198503976194803,53.1,name_only
 2022416,Silexion Therapeutics Corp,SLXN,2021,0.5555006475970978,67.5,sic_linked+name
 2022626,"Upstream Bio, Inc.",UPB,2021,0.5555006475970978,67.5,sic_linked
 2023016,Turn Therapeutics Inc.,TTRX,2021,0.5555006475970978,67.5,sic_linked+name
@@ -88927,7 +88927,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2030277,"LEIFRAS Co., Ltd.",LFS,2021,0.0,0.0,industry_unlinked
 2030522,"Marwynn Holdings, Inc.",MWYN,2021,0.0,0.0,industry_unlinked
 2030617,"Picard Medical, Inc.",PMI,2021,0.2777503237985489,5.2,sic_linked
-2030763,"DataMeds AI, Inc.",MEDS,2021,0.4198503976194803,53.2,name_only
+2030763,"DataMeds AI, Inc.",MEDS,2021,0.4198503976194803,53.1,name_only
 2030781,"SailPoint, Inc.",SAIL,2021,1.8831707879058408,93.7,sic_linked
 2030834,OneConstruction Group Ltd,ONEG,2021,0.0,0.0,industry_unlinked
 2030954,"TEN Holdings, Inc.",XHLD,2021,,,uninformative_sic
@@ -89264,7 +89264,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2084227,"Advasa Holdings, Inc.",ADBT,2021,1.8831707879058408,93.7,sic_linked
 2084261,"URSB Bancorp, Inc.",URSB,2021,0.4052288875569315,40.3,sic_linked
 2084296,Nintech Mould Factory Inc.,NTMJ,2021,0.0,0.0,industry_unlinked
-2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2021,0.4198503976194803,53.2,name_only
+2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2021,0.4198503976194803,53.1,name_only
 2084698,KHEOBA Ltd,KHOBF,2021,1.8831707879058408,93.7,sic_linked
 2085187,"Bob's Discount Furniture, Inc.",BOBS,2021,0.0,0.0,industry_unlinked
 2085208,Duality Biotherapeutics Inc/ADR,DYBTY,2021,0.2777503237985489,5.2,name_only
@@ -89378,7 +89378,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096755,Texas Ventures Acquisition IV Corp,TVIV,2021,0.0,0.0,industry_unlinked
 2096861,Sinda Ltd.,SIND,2021,0.0,0.0,industry_unlinked
 2096997,"Kailera Therapeutics, Inc.",KLRA,2021,0.5555006475970978,67.5,sic_linked+name
-2097163,Xanadu Quantum Technologies Ltd,XNDU,2021,0.93088804538545,82.8,sic_linked
+2097163,Xanadu Quantum Technologies Ltd,XNDU,2021,0.93088804538545,82.7,sic_linked
 2097388,Sin Lian Seng Construction,ININ,2021,0.0,0.0,industry_unlinked
 2097461,"Bora Pharmaceuticals Co., Ltd./ADR",BORAY,2021,,,missing_sic
 2097508,"Blockfusion Digital Infrastructure, Inc.",BLDC,2021,1.627037357504613,85.9,sic_linked
@@ -89503,7 +89503,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2119416,OpenPayd Global Holdings Ltd,OP,2021,,,uninformative_sic
 2120046,CVC Capital Partners plc/ADR,CVCPY,2021,,,missing_sic
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2021,,,missing_sic
-2120528,Kainan Holding Group Ltd,KHG,2021,0.4052288875569315,40.3,sic_linked
+2120528,Kainan Holding Group Ltd,KHG,2021,0.0,0.0,industry_unlinked
 2120882,SK hynix Inc.,SKHY,2021,0.5467821092594551,55.4,sic_linked
 2122392,Pelican Acquisition II Corp,PLCI,2021,0.0,0.0,industry_unlinked
 2123232,Cumberland Farms Ltd,CMBY,2021,0.0,0.0,industry_unlinked
@@ -89543,7 +89543,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2129466,"Guangdong Huayan Robotics Co, Ltd./ADR",GDHRY,2021,0.3039769857729243,10.6,name_only
 2130386,Yorkville International Capital Corp.,YICC,2021,0.0,0.0,industry_unlinked
 2130606,"Obsidian Therapeutics, Inc.",OBX,2021,0.5555006475970978,67.5,sic_linked+name
-2131101,Powercheck AI Holdings Ltd,PCAI,2021,0.4198503976194803,53.2,name_only
+2131101,Powercheck AI Holdings Ltd,PCAI,2021,0.4198503976194803,53.1,name_only
 2131322,"Victory Giant Technology (HuiZhou) Co., Ltd./ADR",VGTHY,2021,,,missing_sic
 2131350,B&R Technology Merger Corp.,BRTM,2021,0.0,0.0,industry_unlinked
 2131524,"Braveheart Bio, Inc.",BRVE,2021,0.5555006475970978,67.5,sic_linked
@@ -90559,7 +90559,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 948072,BIRNER DENTAL MANAGEMENT SERVICES INC,,2021,0.0,0.0,industry_unlinked
 948426,COATES INTERNATIONAL LTD,,2021,0.32666488605571714,18.1,sic_linked
 949039,"DIAMOND OFFSHORE DRILLING, INC.",,2021,0.32666488605571714,18.1,sic_linked
-949158,CRAY INC,,2021,0.93088804538545,82.8,sic_linked
+949158,CRAY INC,,2021,0.93088804538545,82.7,sic_linked
 949428,"CDTI ADVANCED MATERIALS, INC.",,2021,0.3039769857729243,10.6,sic_linked
 949721,Attis Industries Inc.,,2021,0.32666488605571714,18.1,sic_linked
 949852,THANKSGIVING COFFEE CO INC,,2021,0.0,0.0,industry_unlinked
@@ -90876,7 +90876,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1071760,ECOSPHERE TECHNOLOGIES INC,,2021,0.0,0.0,industry_unlinked
 1071993,CONTANGO OIL & GAS CO,,2021,0.32666488605571714,18.1,sic_linked
 1072772,TOMBSTONE EXPLORATION CORP,,2021,0.0,0.0,industry_unlinked
-1072842,FIRST CAPITAL INTERNATIONAL INC,,2021,0.93088804538545,82.8,sic_linked
+1072842,FIRST CAPITAL INTERNATIONAL INC,,2021,0.93088804538545,82.7,sic_linked
 1073349,BOTTOMLINE TECHNOLOGIES INC,,2021,1.8831707879058408,93.7,sic_linked
 1073362,"Occidental Development Group, Inc.",,2021,0.0,0.0,industry_unlinked
 1073429,"U.S. CONCRETE, INC.",,2021,0.0,0.0,industry_unlinked
@@ -91587,7 +91587,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1316317,China Techfaith Wireless Communication Technology LTD,,2021,,,uninformative_sic
 1316360,IHS Inc.,,2021,1.8831707879058408,93.7,sic_linked
 1316517,"Kandi Technologies Group, Inc.",,2021,0.6306418718286415,79.6,sic_linked
-1316625,Silicon Graphics International Corp,,2021,0.93088804538545,82.8,sic_linked
+1316625,Silicon Graphics International Corp,,2021,0.93088804538545,82.7,sic_linked
 1316644,"AeroGrow International, Inc.",,2021,0.0,0.0,industry_unlinked
 1316645,"American CareSource Holdings, Inc.",,2021,0.0,0.0,industry_unlinked
 1316898,"JAMBA, INC.",,2021,0.0,0.0,industry_unlinked
@@ -92398,7 +92398,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1446806,"ICON Equipment & Corporate Infrastructure Fund Fourteen, L.P.",,2021,0.0,0.0,industry_unlinked
 1447051,Territorial Bancorp Inc.,,2021,0.4052288875569315,40.3,sic_linked
 1447382,Ocean Rig UDW Inc.,,2021,0.32666488605571714,18.1,sic_linked
-1447599,"FITBIT, INC.",,2021,0.93088804538545,82.8,sic_linked
+1447599,"FITBIT, INC.",,2021,0.93088804538545,82.7,sic_linked
 1448056,"NEW RELIC, INC.",,2021,1.8831707879058408,93.7,sic_linked
 1448301,Anchor Bancorp,,2021,0.4052288875569315,40.3,sic_linked
 1448558,"GROW CAPITAL, INC.",,2021,1.8831707879058408,93.7,sic_linked
@@ -93080,7 +93080,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1550518,Cantabio Pharmaceuticals Inc.,,2021,0.5555006475970978,67.5,sic_linked
 1550603,"MALVERN BANCORP, INC.",,2021,0.4052288875569315,40.3,sic_linked
 1550695,Performant Healthcare Inc,,2021,0.0,0.0,industry_unlinked
-1550737,"Sector 5, Inc.",,2021,0.93088804538545,82.8,sic_linked
+1550737,"Sector 5, Inc.",,2021,0.93088804538545,82.7,sic_linked
 1551060,Qunar Cayman Islands Ltd.,,2021,1.8831707879058408,93.7,sic_linked
 1551206,Patagonia Gold Corp.,,2021,0.0,0.0,industry_unlinked
 1551390,MDS ENERGY PUBLIC 2013-A LP,,2021,0.32666488605571714,18.1,sic_linked
@@ -95278,7 +95278,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1848756,Pyrophyte Acquisition Corp.,,2021,0.0,0.0,industry_unlinked
 1848795,"GigInternational1, Inc.",,2021,0.0,0.0,industry_unlinked
 1848821,Global Technology Acquisition Corp. I,,2021,,,uninformative_sic
-1848861,Healthcare AI Acquisition Corp.,,2021,0.4198503976194803,53.2,name_only
+1848861,Healthcare AI Acquisition Corp.,,2021,0.4198503976194803,53.1,name_only
 1848898,African Agriculture Holdings Inc.,,2021,0.0,0.0,industry_unlinked
 1848948,10X Capital Venture Acquisition Corp. III,,2021,0.5555006475970978,67.5,sic_linked
 1848959,Decarbonization Plus Acquisition Corp IV,,2021,0.0,0.0,industry_unlinked
@@ -95471,7 +95471,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1865533,Emerging Markets Horizon Corp.,,2021,0.0,0.0,industry_unlinked
 1865537,DTRT Health Acquisition Corp.,,2021,0.0,0.0,industry_unlinked
 1865602,"Cantor Equity Partners, Inc.",,2021,0.0,0.0,industry_unlinked
-1865697,NeuroMind AI Corp.,,2021,0.4198503976194803,53.2,name_only
+1865697,NeuroMind AI Corp.,,2021,0.4198503976194803,53.1,name_only
 1865701,Keyarch Acquisition Corp,,2021,0.0,0.0,industry_unlinked
 1865861,Cactus Acquisition Corp. 1 Ltd,CCTSF,2021,0.0,0.0,industry_unlinked
 1865975,AfterNext HealthTech Acquisition Corp.,,2021,0.0,0.0,industry_unlinked
@@ -95722,7 +95722,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1965934,Overland Advantage,,2021,,,missing_sic
 1966394,Fortress Net Lease REIT,,2021,0.0,0.0,industry_unlinked
 1966494,"CARGO Therapeutics, Inc.",,2021,0.5555006475970978,67.5,sic_linked+name
-1966734,AI Transportation Acquisition Corp,,2021,0.4198503976194803,53.2,name_only
+1966734,AI Transportation Acquisition Corp,,2021,0.4198503976194803,53.1,name_only
 1969475,Bayview Acquisition Corp,,2021,0.0,0.0,industry_unlinked
 1970129,"LEGEND SPICES, INC.",LGSP,2021,0.0,0.0,industry_unlinked
 1970509,Haymaker Acquisition Corp. 4,,2021,0.0,0.0,industry_unlinked
@@ -95909,7 +95909,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096204,ONE Nuclear Energy LLC,,2021,,,missing_sic
 2107979,Everli Global Inc.,,2021,,,uninformative_sic
 2108121,Ionetix Corp / DE /,,2021,0.5555006475970978,67.5,sic_linked
-2129752,Goodvision AI Inc.,,2021,0.4198503976194803,53.2,name_only
+2129752,Goodvision AI Inc.,,2021,0.4198503976194803,53.1,name_only
 2136853,MN8 Energy Holdings LLC,,2021,0.32666488605571714,18.1,sic_linked
 2142801,"NuCube Energy, Inc.",,2021,0.32666488605571714,18.1,sic_linked
 2155514,InoBat AS,,2021,0.6533297721114343,81.4,sic_linked
@@ -96440,7 +96440,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 320017,"LISATA THERAPEUTICS, INC.",LSTA,2022,0.5539622768677708,67.5,sic_linked+name
 320121,TELOS CORP,TLS,2022,1.4879644870887834,83.6,sic_linked
 320187,"NIKE, Inc.",NKE,2022,0.0,0.0,industry_unlinked
-320193,Apple Inc.,AAPL,2022,0.9457023250399815,82.8,sic_linked
+320193,Apple Inc.,AAPL,2022,0.9457023250399815,82.7,sic_linked
 320335,GLOBE LIFE INC.,GL,2022,0.4139091816176059,40.8,sic_linked
 350698,"AUTONATION, INC.",AN,2022,0.0,0.0,industry_unlinked
 350852,COMMUNITY TRUST BANCORP INC /KY/,CTBI,2022,0.4139091816176059,40.8,sic_linked
@@ -97296,7 +97296,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 925528,HUDSON TECHNOLOGIES INC /NY,HDSN,2022,0.0,0.0,industry_unlinked
 925741,"BioCardia, Inc.",BCDA,2022,0.5539622768677708,67.5,sic_linked
 926282,"ADTRAN Holdings, Inc.",ADTN,2022,0.4103604092649701,26.5,sic_linked
-926326,"OMNICELL, INC.",OMCL,2022,0.9457023250399815,82.8,sic_linked
+926326,"OMNICELL, INC.",OMCL,2022,0.9457023250399815,82.7,sic_linked
 926423,"MIND TECHNOLOGY, INC",MIND,2022,0.30048113684541206,10.6,sic_linked
 926617,Aspira Women's Health Inc.,AWHL,2022,0.5539622768677708,67.5,sic_linked
 927003,ADVANCED ENERGY INDUSTRIES INC,AEIS,2022,0.1084841381058875,0.6,sic_linked
@@ -97358,7 +97358,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 943452,WESTINGHOUSE AIR BRAKE TECHNOLOGIES CORP,WAB,2022,0.0,0.0,industry_unlinked
 943535,"WORLD HEALTH ENERGY HOLDINGS, INC.",WHEN,2022,1.9148222647579074,93.7,sic_linked
 943819,RESMED INC,RMD,2022,0.2769811384338854,5.2,sic_linked
-944075,"SOCKET MOBILE, INC.",SCKT,2022,0.9457023250399815,82.8,sic_linked
+944075,"SOCKET MOBILE, INC.",SCKT,2022,0.9457023250399815,82.7,sic_linked
 944148,"CBIZ, Inc.",CBZ,2022,,,uninformative_sic
 944695,"HANOVER INSURANCE GROUP, INC.",THG,2022,0.4139091816176059,40.8,sic_linked
 944745,"CIVISTA BANCSHARES, INC.",CIVB,2022,0.4139091816176059,40.8,sic_linked
@@ -98014,7 +98014,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1130464,BLACK HILLS CORP /SD/,BKH,2022,0.3257320737076553,18.1,sic_linked
 1130598,"Traws Pharma, Inc.",TRAW,2022,0.5539622768677708,67.5,sic_linked
 1130713,"NEIGHBORHOOD INTELLIGENCE, INC.",NXH,2022,0.0,0.0,industry_unlinked
-1130781,"BMP AI Technologies, Inc.",BMPA,2022,0.42685777766912386,53.2,name_only
+1130781,"BMP AI Technologies, Inc.",BMPA,2022,0.42685777766912386,53.1,name_only
 1131312,ZION OIL & GAS INC,ZNOG,2022,0.3257320737076553,18.1,sic_linked
 1131343,ALTERITY THERAPEUTICS LTD,ATHE,2022,0.5539622768677708,67.5,sic_linked+name
 1131383,STANTEC INC,STN,2022,0.0,0.0,industry_unlinked
@@ -98670,7 +98670,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1374690,"Larimar Therapeutics, Inc.",LRMR,2022,0.5539622768677708,67.5,sic_linked+name
 1375205,UR-ENERGY INC,URG,2022,0.0,0.0,industry_unlinked
 1375348,Golden Star Resource Corp.,GLNS,2022,0.0,0.0,industry_unlinked
-1375365,"Super Micro Computer, Inc.",SMCI,2022,0.9457023250399815,82.8,sic_linked
+1375365,"Super Micro Computer, Inc.",SMCI,2022,0.9457023250399815,82.7,sic_linked
 1375877,Canadian Solar Inc.,CSIQ,2022,0.5427003499194303,55.4,sic_linked+name
 1376139,CVR ENERGY INC,CVI,2022,0.3257320737076553,18.1,sic_linked
 1376231,"VPR Brands, LP.",VPRB,2022,1.9148222647579074,93.7,sic_linked
@@ -98756,7 +98756,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1393818,Blackstone Inc.,BX,2022,0.4139091816176059,40.8,sic_linked
 1393883,"DHI GROUP, INC.",DHX,2022,,,uninformative_sic
 1394039,Century Lithium Corp.,CYDVF,2022,,,missing_sic
-1394056,"ONE STOP SYSTEMS, INC.",OSS,2022,0.9457023250399815,82.8,sic_linked
+1394056,"ONE STOP SYSTEMS, INC.",OSS,2022,0.9457023250399815,82.7,sic_linked
 1394108,SUIC Worldwide Holdings Ltd.,SUIC,2022,0.3257320737076553,18.1,sic_linked
 1394189,Chesapeake Gold Corp,CHPGF,2022,,,missing_sic
 1394638,"Driveitaway Holdings, Inc.",DWAY,2022,0.0,0.0,industry_unlinked
@@ -98867,7 +98867,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1415744,NORTHERN MINERALS & EXPLORATION LTD.,NMEX,2022,0.0,0.0,industry_unlinked
 1415758,Nevada Sunrise Metals Corp.,NVSGF,2022,,,missing_sic
 1415921,Navios Maritime Partners L.P.,NMM,2022,0.0,0.0,industry_unlinked
-1416090,BLUSKY AI INC.,BSAI,2022,0.42685777766912386,53.2,name_only
+1416090,BLUSKY AI INC.,BSAI,2022,0.42685777766912386,53.1,name_only
 1416697,"Blue Line Protection Group, Inc.",BLPG,2022,0.0,0.0,industry_unlinked
 1416876,"First Choice Healthcare Solutions, Inc.",FCHS,2022,0.2769811384338854,5.2,sic_linked
 1417663,"SANUWAVE Health, Inc.",SNWV,2022,0.2769811384338854,5.2,sic_linked
@@ -99158,7 +99158,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1472787,First American Financial Corp,FAF,2022,0.4139091816176059,40.8,sic_linked
 1472879,WHITECAP RESOURCES INC.,WCPRF,2022,0.3257320737076553,18.1,sic_linked
 1473334,XMax Inc.,XMAX,2022,0.0,0.0,industry_unlinked
-1473490,"Global AI, Inc.",GLAI,2022,0.42685777766912386,53.2,name_only
+1473490,"Global AI, Inc.",GLAI,2022,0.42685777766912386,53.1,name_only
 1474098,Pebblebrook Hotel Trust,PEB,2022,0.0,0.0,industry_unlinked
 1474167,Cosmos Health Inc.,COSM,2022,0.0,0.0,industry_unlinked
 1474432,"Everpure, Inc.",P,2022,0.5188445473708576,53.7,sic_linked
@@ -99714,7 +99714,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1571776,Cherry Hill Mortgage Investment Corp,CHMI,2022,0.0,0.0,industry_unlinked
 1571934,TAO Synergies Inc.,TAOX,2022,0.4139091816176059,40.8,sic_linked
 1571949,"Intercontinental Exchange, Inc.",ICE,2022,0.4139091816176059,40.8,sic_linked
-1571996,Dell Technologies Inc.,DELL,2022,0.9457023250399815,82.8,sic_linked
+1571996,Dell Technologies Inc.,DELL,2022,0.9457023250399815,82.7,sic_linked
 1572334,Virginia National Bankshares Corp,VABK,2022,0.4139091816176059,40.8,sic_linked
 1572386,"GREENWAY TECHNOLOGIES, INC. & SUBSIDIARIES",GWTI,2022,0.3257320737076553,18.1,sic_linked
 1572616,"FRACTYL HEALTH, INC.",GUTS,2022,0.2769811384338854,5.2,sic_linked
@@ -99845,7 +99845,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1591956,Sphere 3D Corp.,ANY,2022,0.4139091816176059,40.8,sic_linked
 1592049,Ryohin Keikaku Co/ADR,RYKKF,2022,,,missing_sic
 1592386,"Virtu Financial, Inc.",VIRT,2022,0.4139091816176059,40.8,sic_linked
-1592560,VisionSys AI Inc,VSA,2022,0.42685777766912386,53.2,name_only
+1592560,VisionSys AI Inc,VSA,2022,0.42685777766912386,53.1,name_only
 1593001,"NightFood Holdings, Inc.",NGTF,2022,0.0,0.0,industry_unlinked
 1593184,"BIOREGENX, INC.",BRGX,2022,1.9148222647579074,93.7,sic_linked
 1593275,"Hamilton Insurance Group, Ltd.",HG,2022,0.4139091816176059,40.8,sic_linked
@@ -99856,7 +99856,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1594204,ZHEN DING RESOURCES INC.,RBTK,2022,0.0,0.0,industry_unlinked
 1594805,SHOPIFY INC.,SHOP,2022,1.9148222647579074,93.7,sic_linked
 1594856,VALHALLA METALS INC.,VMXXF,2022,,,missing_sic
-1594968,Loan Artificial Intelligence Corp.,VEST,2022,0.42685777766912386,53.2,name_only
+1594968,Loan Artificial Intelligence Corp.,VEST,2022,0.42685777766912386,53.1,name_only
 1595097,"Corbus Pharmaceuticals Holdings, Inc.",CRBP,2022,0.5539622768677708,67.5,sic_linked
 1595248,"Genprex, Inc.",GNPX,2022,0.5539622768677708,67.5,sic_linked
 1595353,Galmed Pharmaceuticals Ltd.,GLMD,2022,0.5539622768677708,67.5,sic_linked
@@ -99920,7 +99920,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1604982,Sino Biopharmaceutical Limited/ADR,SBMFF,2022,0.2769811384338854,5.2,name_only
 1605057,"Vemanti Group, Inc.",VMNT,2022,0.4139091816176059,40.8,sic_linked
 1605301,"CB Financial Services, Inc.",CBFV,2022,0.4139091816176059,40.8,sic_linked
-1605331,AI Era Corp.,AERA,2022,0.42685777766912386,53.2,name_only
+1605331,AI Era Corp.,AERA,2022,0.42685777766912386,53.1,name_only
 1605481,Nevada Canyon Gold Corp.,NGLD,2022,0.0,0.0,industry_unlinked
 1605484,Stellantis N.V.,STLA,2022,0.6262132105530673,79.6,sic_linked
 1605755,Moncler S.p.A./ADR,MONRF,2022,,,missing_sic
@@ -100158,7 +100158,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1648416,Ferrari N.V.,RACE,2022,0.6262132105530673,79.6,sic_linked
 1648512,Shimadzu Corporation/ADR,SHMXY,2022,,,missing_sic
 1648636,Dune Oil Corp.,TRLEF,2022,0.3257320737076553,18.1,sic_linked
-1648960,"Myseum.AI, Inc.",MYSE,2022,0.42685777766912386,53.2,name_only
+1648960,"Myseum.AI, Inc.",MYSE,2022,0.42685777766912386,53.1,name_only
 1649009,"Core AI Holdings, Inc.",CHAI,2022,0.837218186934094,82.5,sic_linked+name
 1649094,"Vaxcyte, Inc.",PCVX,2022,0.5539622768677708,67.5,sic_linked
 1649096,Clipper Realty Inc.,CLPR,2022,0.0,0.0,industry_unlinked
@@ -100357,7 +100357,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1681622,Varex Imaging Corp,VREX,2022,0.1084841381058875,0.6,sic_linked
 1681682,ENDRA Life Sciences Inc.,NDRA,2022,0.2769811384338854,5.2,sic_linked
 1682056,Silver Storm Mining Ltd.,SVRSF,2022,,,missing_sic
-1682149,Datavault AI Inc.,DVLT,2022,0.42685777766912386,53.2,name_only
+1682149,Datavault AI Inc.,DVLT,2022,0.42685777766912386,53.1,name_only
 1682220,Sachem Capital Corp.,SACH,2022,0.0,0.0,industry_unlinked
 1682241,Metalpha Technology Holding Ltd,MATH,2022,0.4139091816176059,40.8,sic_linked
 1682265,Onar Holding Corp,ONAR,2022,0.0,0.0,industry_unlinked
@@ -100509,7 +100509,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1708055,Ribbon Communications Inc.,RBBN,2022,1.4879644870887834,83.6,sic_linked
 1708259,LexinFintech Holdings Ltd.,LX,2022,0.4139091816176059,40.8,sic_linked+name
 1708341,"All In FutureTech Alliance, Inc.",AIFA,2022,0.0,0.0,industry_unlinked
-1708441,"Mynd.ai, Inc.",MYND,2022,0.9457023250399815,82.8,sic_linked+name
+1708441,"Mynd.ai, Inc.",MYND,2022,0.9457023250399815,82.7,sic_linked+name
 1708527,ELUTIA INC.,ELUT,2022,0.5539622768677708,67.5,sic_linked
 1708599,"Serina Therapeutics, Inc.",SER,2022,0.5539622768677708,67.5,sic_linked+name
 1708688,InflaRx N.V.,IFRX,2022,0.5539622768677708,67.5,sic_linked
@@ -100594,7 +100594,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1720250,"Kandi Technologies Group, Inc.",KNDI,2022,0.6262132105530673,79.6,sic_linked
 1720420,IBEX Ltd,IBEX,2022,1.66148777781667,85.9,sic_linked
 1720424,HIVE Digital Technologies Ltd.,HIVE,2022,0.4139091816176059,40.8,sic_linked
-1720446,Zepp Health Corp,ZEPP,2022,0.9457023250399815,82.8,sic_linked
+1720446,Zepp Health Corp,ZEPP,2022,0.9457023250399815,82.7,sic_linked
 1720553,Phenom Resources Corp.,PHNMF,2022,,,missing_sic
 1720580,"Adicet Bio, Inc.",ACET,2022,0.5539622768677708,67.5,sic_linked
 1720592,Repay Holdings Corp,RPAY,2022,,,uninformative_sic
@@ -100688,7 +100688,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1734750,"Corvex, Inc.",MOVE,2022,1.66148777781667,85.9,sic_linked
 1735041,Greenland Technologies Holding Corp.,GTEC,2022,0.30048113684541206,10.6,sic_linked
 1735438,MeiraGTx Holdings plc,MGTX,2022,0.5539622768677708,67.5,sic_linked
-1735514,Light AI Inc.,OHCFF,2022,0.42685777766912386,53.2,name_only
+1735514,Light AI Inc.,OHCFF,2022,0.42685777766912386,53.1,name_only
 1735556,SANGRIX INC.,BTOG,2022,0.4139091816176059,40.8,sic_linked
 1735707,Garrett Motion Inc.,GTX,2022,0.6262132105530673,79.6,sic_linked
 1736243,"Acurx Pharmaceuticals, Inc.",ACXP,2022,0.5539622768677708,67.5,sic_linked
@@ -101141,7 +101141,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1803914,"Playboy, Inc.",PLBY,2022,0.0,0.0,industry_unlinked
 1803977,Limitless X Holdings Inc.,LIMX,2022,0.0,0.0,industry_unlinked
 1804176,"Butterfly Network, Inc.",BFLY,2022,0.2769811384338854,5.2,sic_linked
-1804469,"Guardforce AI Co., Ltd.",GFAI,2022,0.42685777766912386,53.2,name_only
+1804469,"Guardforce AI Co., Ltd.",GFAI,2022,0.42685777766912386,53.1,name_only
 1804583,Cloopen Group Holding Ltd,RAASY,2022,1.9148222647579074,93.7,sic_linked
 1804745,Driven Brands Holdings Inc.,DRVN,2022,0.0,0.0,industry_unlinked
 1804792,ARES STRATEGIC MINING INC.,USAM,2022,0.0,0.0,industry_unlinked
@@ -101258,7 +101258,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1817760,"SmartKem, Inc.",SMTK,2022,0.5427003499194303,55.4,sic_linked
 1818093,SkinHealth Systems Inc.,SKIN,2022,0.2769811384338854,5.2,sic_linked
 1818201,CCC Intelligent Solutions Holdings Inc.,CCC,2022,1.9148222647579074,93.7,sic_linked
-1818274,Arrive AI Inc.,ARAI,2022,0.42685777766912386,53.2,name_only
+1818274,Arrive AI Inc.,ARAI,2022,0.42685777766912386,53.1,name_only
 1818331,GeneDx Holdings Corp.,WGS,2022,0.0,0.0,industry_unlinked
 1818382,"Humacyte, Inc.",HUMA,2022,0.5539622768677708,67.5,sic_linked
 1818383,"MediaAlpha, Inc.",MAX,2022,,,uninformative_sic
@@ -101730,7 +101730,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1861233,illumin Holdings Inc.,ILLMF,2022,1.66148777781667,85.9,sic_linked
 1861448,"IntriEnergy, Inc.",ITRE,2022,,,missing_sic
 1861479,Terra Rossa Gold Ltd.,TRGXF,2022,,,missing_sic
-1861622,Jet.AI Inc.,JTAI,2022,0.42685777766912386,53.2,name_only
+1861622,Jet.AI Inc.,JTAI,2022,0.42685777766912386,53.1,name_only
 1861657,"Canton Strategic Holdings, Inc.",CNTN,2022,0.4139091816176059,40.8,sic_linked
 1861737,Hesai Group,HSAI,2022,0.30048113684541206,10.6,sic_linked
 1861795,Definitive Healthcare Corp.,DH,2022,1.9148222647579074,93.7,sic_linked
@@ -101744,7 +101744,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1863127,"Tyra Biosciences, Inc.",TYRA,2022,0.5539622768677708,67.5,sic_linked+name
 1863218,SHENGFENG DEVELOPMENT Ltd,SFWL,2022,0.0,0.0,industry_unlinked
 1863934,ADURO CLEAN TECHNOLOGIES INC.,ADUR,2022,0.0,0.0,industry_unlinked
-1863990,"MultiSensor AI Holdings, Inc.",MSAI,2022,0.42685777766912386,53.2,name_only
+1863990,"MultiSensor AI Holdings, Inc.",MSAI,2022,0.42685777766912386,53.1,name_only
 1864055,Abits Group Inc,ABTS,2022,0.4139091816176059,40.8,sic_linked
 1864163,"Inter & Co, Inc.",INTR,2022,0.4139091816176059,40.8,sic_linked
 1864531,"VSEE HEALTH, INC.",VSEE,2022,0.0,0.0,industry_unlinked
@@ -101945,7 +101945,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1896425,Li Bang International Corp Inc.,LBGJ,2022,0.0,0.0,industry_unlinked
 1896511,ZKGC New Energy Ltd,DAZSF,2022,0.6514641474153106,81.4,sic_linked
 1896752,Sabio Holdings Inc.,SABOF,2022,,,missing_sic
-1897087,SuperX AI Technology Ltd,SUPX,2022,0.42685777766912386,53.2,name_only
+1897087,SuperX AI Technology Ltd,SUPX,2022,0.42685777766912386,53.1,name_only
 1897245,HWH International Inc.,HWH,2022,0.0,0.0,industry_unlinked
 1897463,Graf Global Corp.,TONT,2022,0.0,0.0,industry_unlinked
 1897532,"Ping An Biomedical Co., Ltd.",PASW,2022,0.0,0.0,industry_unlinked
@@ -102225,7 +102225,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1958140,"Atlanta Braves Holdings, Inc.",BATRA,2022,0.0,0.0,industry_unlinked
 1958217,Lifezone Metals Ltd,LZM,2022,0.0,0.0,industry_unlinked
 1958389,Hydreight Technologies Inc.,HYDTF,2022,,,missing_sic
-1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2022,0.42685777766912386,53.2,name_only
+1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2022,0.42685777766912386,53.1,name_only
 1958489,"Cortigent, Inc.",CRGT,2022,0.2769811384338854,5.2,sic_linked
 1958713,NFT Ltd,MI,2022,0.4139091816176059,40.8,sic_linked
 1958777,"FibroBiologics, Inc.",FBLG,2022,0.5539622768677708,67.5,sic_linked
@@ -102448,7 +102448,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1999001,Six Flags Entertainment Corporation/NEW,FUN,2022,0.0,0.0,industry_unlinked
 1999111,Meta Critical Minerals Inc.,MTTAF,2022,,,missing_sic
 1999119,"Libera Gaming Operations, Inc",LBRJ,2022,0.0,0.0,industry_unlinked
-1999124,Healwell AI Inc.,HWAIF,2022,0.42685777766912386,53.2,name_only
+1999124,Healwell AI Inc.,HWAIF,2022,0.42685777766912386,53.1,name_only
 1999261,StageWise Strategies Corp.,STWI,2022,1.66148777781667,85.9,sic_linked
 1999297,Big Tree Cloud Holdings Ltd,DSY,2022,0.4103604092649701,26.5,name_only
 1999480,"Alto Neuroscience, Inc.",ANRO,2022,0.5539622768677708,67.5,sic_linked
@@ -102569,7 +102569,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2021938,Sunrise Communications AG,SNNRF,2022,0.0,0.0,industry_unlinked
 2021989,Super Copper Corp.,CUPPF,2022,,,missing_sic
 2022059,"Silver Mountain Resources, Inc.",AGMRF,2022,,,missing_sic
-2022308,KIDZ AI Inc.,KIDZ,2022,0.42685777766912386,53.2,name_only
+2022308,KIDZ AI Inc.,KIDZ,2022,0.42685777766912386,53.1,name_only
 2022416,Silexion Therapeutics Corp,SLXN,2022,0.5539622768677708,67.5,sic_linked+name
 2022626,"Upstream Bio, Inc.",UPB,2022,0.5539622768677708,67.5,sic_linked
 2023016,Turn Therapeutics Inc.,TTRX,2022,0.5539622768677708,67.5,sic_linked+name
@@ -102629,7 +102629,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2030277,"LEIFRAS Co., Ltd.",LFS,2022,0.0,0.0,industry_unlinked
 2030522,"Marwynn Holdings, Inc.",MWYN,2022,0.0,0.0,industry_unlinked
 2030617,"Picard Medical, Inc.",PMI,2022,0.2769811384338854,5.2,sic_linked
-2030763,"DataMeds AI, Inc.",MEDS,2022,0.42685777766912386,53.2,name_only
+2030763,"DataMeds AI, Inc.",MEDS,2022,0.42685777766912386,53.1,name_only
 2030781,"SailPoint, Inc.",SAIL,2022,1.9148222647579074,93.7,sic_linked
 2030834,OneConstruction Group Ltd,ONEG,2022,0.0,0.0,industry_unlinked
 2030954,"TEN Holdings, Inc.",XHLD,2022,,,uninformative_sic
@@ -102966,7 +102966,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2084227,"Advasa Holdings, Inc.",ADBT,2022,1.9148222647579074,93.7,sic_linked
 2084261,"URSB Bancorp, Inc.",URSB,2022,0.4139091816176059,40.8,sic_linked
 2084296,Nintech Mould Factory Inc.,NTMJ,2022,0.0,0.0,industry_unlinked
-2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2022,0.42685777766912386,53.2,name_only
+2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2022,0.42685777766912386,53.1,name_only
 2084698,KHEOBA Ltd,KHOBF,2022,1.9148222647579074,93.7,sic_linked
 2085187,"Bob's Discount Furniture, Inc.",BOBS,2022,0.0,0.0,industry_unlinked
 2085208,Duality Biotherapeutics Inc/ADR,DYBTY,2022,0.2769811384338854,5.2,name_only
@@ -103080,7 +103080,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096755,Texas Ventures Acquisition IV Corp,TVIV,2022,0.0,0.0,industry_unlinked
 2096861,Sinda Ltd.,SIND,2022,0.0,0.0,industry_unlinked
 2096997,"Kailera Therapeutics, Inc.",KLRA,2022,0.5539622768677708,67.5,sic_linked+name
-2097163,Xanadu Quantum Technologies Ltd,XNDU,2022,0.9457023250399815,82.8,sic_linked
+2097163,Xanadu Quantum Technologies Ltd,XNDU,2022,0.9457023250399815,82.7,sic_linked
 2097388,Sin Lian Seng Construction,ININ,2022,0.0,0.0,industry_unlinked
 2097461,"Bora Pharmaceuticals Co., Ltd./ADR",BORAY,2022,,,missing_sic
 2097508,"Blockfusion Digital Infrastructure, Inc.",BLDC,2022,1.66148777781667,85.9,sic_linked
@@ -103205,7 +103205,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2119416,OpenPayd Global Holdings Ltd,OP,2022,,,uninformative_sic
 2120046,CVC Capital Partners plc/ADR,CVCPY,2022,,,missing_sic
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2022,,,missing_sic
-2120528,Kainan Holding Group Ltd,KHG,2022,0.4139091816176059,40.8,sic_linked
+2120528,Kainan Holding Group Ltd,KHG,2022,0.0,0.0,industry_unlinked
 2120882,SK hynix Inc.,SKHY,2022,0.5427003499194303,55.4,sic_linked
 2122392,Pelican Acquisition II Corp,PLCI,2022,0.0,0.0,industry_unlinked
 2123232,Cumberland Farms Ltd,CMBY,2022,0.0,0.0,industry_unlinked
@@ -103245,7 +103245,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2129466,"Guangdong Huayan Robotics Co, Ltd./ADR",GDHRY,2022,0.30048113684541206,10.6,name_only
 2130386,Yorkville International Capital Corp.,YICC,2022,0.0,0.0,industry_unlinked
 2130606,"Obsidian Therapeutics, Inc.",OBX,2022,0.5539622768677708,67.5,sic_linked+name
-2131101,Powercheck AI Holdings Ltd,PCAI,2022,0.42685777766912386,53.2,name_only
+2131101,Powercheck AI Holdings Ltd,PCAI,2022,0.42685777766912386,53.1,name_only
 2131322,"Victory Giant Technology (HuiZhou) Co., Ltd./ADR",VGTHY,2022,,,missing_sic
 2131350,B&R Technology Merger Corp.,BRTM,2022,0.0,0.0,industry_unlinked
 2131524,"Braveheart Bio, Inc.",BRVE,2022,0.5539622768677708,67.5,sic_linked
@@ -104261,7 +104261,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 948072,BIRNER DENTAL MANAGEMENT SERVICES INC,,2022,0.0,0.0,industry_unlinked
 948426,COATES INTERNATIONAL LTD,,2022,0.3257320737076553,18.1,sic_linked
 949039,"DIAMOND OFFSHORE DRILLING, INC.",,2022,0.3257320737076553,18.1,sic_linked
-949158,CRAY INC,,2022,0.9457023250399815,82.8,sic_linked
+949158,CRAY INC,,2022,0.9457023250399815,82.7,sic_linked
 949428,"CDTI ADVANCED MATERIALS, INC.",,2022,0.30048113684541206,10.6,sic_linked
 949721,Attis Industries Inc.,,2022,0.3257320737076553,18.1,sic_linked
 949852,THANKSGIVING COFFEE CO INC,,2022,0.0,0.0,industry_unlinked
@@ -104578,7 +104578,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1071760,ECOSPHERE TECHNOLOGIES INC,,2022,0.0,0.0,industry_unlinked
 1071993,CONTANGO OIL & GAS CO,,2022,0.3257320737076553,18.1,sic_linked
 1072772,TOMBSTONE EXPLORATION CORP,,2022,0.0,0.0,industry_unlinked
-1072842,FIRST CAPITAL INTERNATIONAL INC,,2022,0.9457023250399815,82.8,sic_linked
+1072842,FIRST CAPITAL INTERNATIONAL INC,,2022,0.9457023250399815,82.7,sic_linked
 1073349,BOTTOMLINE TECHNOLOGIES INC,,2022,1.9148222647579074,93.7,sic_linked
 1073362,"Occidental Development Group, Inc.",,2022,0.0,0.0,industry_unlinked
 1073429,"U.S. CONCRETE, INC.",,2022,0.0,0.0,industry_unlinked
@@ -105289,7 +105289,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1316317,China Techfaith Wireless Communication Technology LTD,,2022,,,uninformative_sic
 1316360,IHS Inc.,,2022,1.9148222647579074,93.7,sic_linked
 1316517,"Kandi Technologies Group, Inc.",,2022,0.6262132105530673,79.6,sic_linked
-1316625,Silicon Graphics International Corp,,2022,0.9457023250399815,82.8,sic_linked
+1316625,Silicon Graphics International Corp,,2022,0.9457023250399815,82.7,sic_linked
 1316644,"AeroGrow International, Inc.",,2022,0.0,0.0,industry_unlinked
 1316645,"American CareSource Holdings, Inc.",,2022,0.0,0.0,industry_unlinked
 1316898,"JAMBA, INC.",,2022,0.0,0.0,industry_unlinked
@@ -106100,7 +106100,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1446806,"ICON Equipment & Corporate Infrastructure Fund Fourteen, L.P.",,2022,0.0,0.0,industry_unlinked
 1447051,Territorial Bancorp Inc.,,2022,0.4139091816176059,40.8,sic_linked
 1447382,Ocean Rig UDW Inc.,,2022,0.3257320737076553,18.1,sic_linked
-1447599,"FITBIT, INC.",,2022,0.9457023250399815,82.8,sic_linked
+1447599,"FITBIT, INC.",,2022,0.9457023250399815,82.7,sic_linked
 1448056,"NEW RELIC, INC.",,2022,1.9148222647579074,93.7,sic_linked
 1448301,Anchor Bancorp,,2022,0.4139091816176059,40.8,sic_linked
 1448558,"GROW CAPITAL, INC.",,2022,1.9148222647579074,93.7,sic_linked
@@ -106782,7 +106782,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1550518,Cantabio Pharmaceuticals Inc.,,2022,0.5539622768677708,67.5,sic_linked
 1550603,"MALVERN BANCORP, INC.",,2022,0.4139091816176059,40.8,sic_linked
 1550695,Performant Healthcare Inc,,2022,0.0,0.0,industry_unlinked
-1550737,"Sector 5, Inc.",,2022,0.9457023250399815,82.8,sic_linked
+1550737,"Sector 5, Inc.",,2022,0.9457023250399815,82.7,sic_linked
 1551060,Qunar Cayman Islands Ltd.,,2022,1.9148222647579074,93.7,sic_linked
 1551206,Patagonia Gold Corp.,,2022,0.0,0.0,industry_unlinked
 1551390,MDS ENERGY PUBLIC 2013-A LP,,2022,0.3257320737076553,18.1,sic_linked
@@ -108980,7 +108980,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1848756,Pyrophyte Acquisition Corp.,,2022,0.0,0.0,industry_unlinked
 1848795,"GigInternational1, Inc.",,2022,0.0,0.0,industry_unlinked
 1848821,Global Technology Acquisition Corp. I,,2022,,,uninformative_sic
-1848861,Healthcare AI Acquisition Corp.,,2022,0.42685777766912386,53.2,name_only
+1848861,Healthcare AI Acquisition Corp.,,2022,0.42685777766912386,53.1,name_only
 1848898,African Agriculture Holdings Inc.,,2022,0.0,0.0,industry_unlinked
 1848948,10X Capital Venture Acquisition Corp. III,,2022,0.5539622768677708,67.5,sic_linked
 1848959,Decarbonization Plus Acquisition Corp IV,,2022,0.0,0.0,industry_unlinked
@@ -109173,7 +109173,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1865533,Emerging Markets Horizon Corp.,,2022,0.0,0.0,industry_unlinked
 1865537,DTRT Health Acquisition Corp.,,2022,0.0,0.0,industry_unlinked
 1865602,"Cantor Equity Partners, Inc.",,2022,0.0,0.0,industry_unlinked
-1865697,NeuroMind AI Corp.,,2022,0.42685777766912386,53.2,name_only
+1865697,NeuroMind AI Corp.,,2022,0.42685777766912386,53.1,name_only
 1865701,Keyarch Acquisition Corp,,2022,0.0,0.0,industry_unlinked
 1865861,Cactus Acquisition Corp. 1 Ltd,CCTSF,2022,0.0,0.0,industry_unlinked
 1865975,AfterNext HealthTech Acquisition Corp.,,2022,0.0,0.0,industry_unlinked
@@ -109424,7 +109424,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1965934,Overland Advantage,,2022,,,missing_sic
 1966394,Fortress Net Lease REIT,,2022,0.0,0.0,industry_unlinked
 1966494,"CARGO Therapeutics, Inc.",,2022,0.5539622768677708,67.5,sic_linked+name
-1966734,AI Transportation Acquisition Corp,,2022,0.42685777766912386,53.2,name_only
+1966734,AI Transportation Acquisition Corp,,2022,0.42685777766912386,53.1,name_only
 1969475,Bayview Acquisition Corp,,2022,0.0,0.0,industry_unlinked
 1970129,"LEGEND SPICES, INC.",LGSP,2022,0.0,0.0,industry_unlinked
 1970509,Haymaker Acquisition Corp. 4,,2022,0.0,0.0,industry_unlinked
@@ -109611,7 +109611,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096204,ONE Nuclear Energy LLC,,2022,,,missing_sic
 2107979,Everli Global Inc.,,2022,,,uninformative_sic
 2108121,Ionetix Corp / DE /,,2022,0.5539622768677708,67.5,sic_linked
-2129752,Goodvision AI Inc.,,2022,0.42685777766912386,53.2,name_only
+2129752,Goodvision AI Inc.,,2022,0.42685777766912386,53.1,name_only
 2136853,MN8 Energy Holdings LLC,,2022,0.3257320737076553,18.1,sic_linked
 2142801,"NuCube Energy, Inc.",,2022,0.3257320737076553,18.1,sic_linked
 2155514,InoBat AS,,2022,0.6514641474153106,81.4,sic_linked
@@ -110142,7 +110142,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 320017,"LISATA THERAPEUTICS, INC.",LSTA,2023,0.533718651588981,64.8,sic_linked+name
 320121,TELOS CORP,TLS,2023,1.5057516682229946,83.6,sic_linked
 320187,"NIKE, Inc.",NKE,2023,0.0,0.0,industry_unlinked
-320193,Apple Inc.,AAPL,2023,0.957479559677446,82.8,sic_linked
+320193,Apple Inc.,AAPL,2023,0.957479559677446,82.7,sic_linked
 320335,GLOBE LIFE INC.,GL,2023,0.41562985727905494,40.8,sic_linked
 350698,"AUTONATION, INC.",AN,2023,0.0,0.0,industry_unlinked
 350852,COMMUNITY TRUST BANCORP INC /KY/,CTBI,2023,0.41562985727905494,40.8,sic_linked
@@ -110998,7 +110998,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 925528,HUDSON TECHNOLOGIES INC /NY,HDSN,2023,0.0,0.0,industry_unlinked
 925741,"BioCardia, Inc.",BCDA,2023,0.533718651588981,64.8,sic_linked
 926282,"ADTRAN Holdings, Inc.",ADTN,2023,0.4116859645784525,26.5,sic_linked
-926326,"OMNICELL, INC.",OMCL,2023,0.957479559677446,82.8,sic_linked
+926326,"OMNICELL, INC.",OMCL,2023,0.957479559677446,82.7,sic_linked
 926423,"MIND TECHNOLOGY, INC",MIND,2023,0.29613432077146945,10.6,sic_linked
 926617,Aspira Women's Health Inc.,AWHL,2023,0.533718651588981,64.8,sic_linked
 927003,ADVANCED ENERGY INDUSTRIES INC,AEIS,2023,0.1070661803244043,0.6,sic_linked
@@ -111060,7 +111060,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 943452,WESTINGHOUSE AIR BRAKE TECHNOLOGIES CORP,WAB,2023,0.0,0.0,industry_unlinked
 943535,"WORLD HEALTH ENERGY HOLDINGS, INC.",WHEN,2023,1.9444790829975838,93.7,sic_linked
 943819,RESMED INC,RMD,2023,0.2668593257944905,5.2,sic_linked
-944075,"SOCKET MOBILE, INC.",SCKT,2023,0.957479559677446,82.8,sic_linked
+944075,"SOCKET MOBILE, INC.",SCKT,2023,0.957479559677446,82.7,sic_linked
 944148,"CBIZ, Inc.",CBZ,2023,,,uninformative_sic
 944695,"HANOVER INSURANCE GROUP, INC.",THG,2023,0.41562985727905494,40.8,sic_linked
 944745,"CIVISTA BANCSHARES, INC.",CIVB,2023,0.41562985727905494,40.8,sic_linked
@@ -111716,7 +111716,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1130464,BLACK HILLS CORP /SD/,BKH,2023,0.332277268493751,18.1,sic_linked
 1130598,"Traws Pharma, Inc.",TRAW,2023,0.533718651588981,64.8,sic_linked
 1130713,"NEIGHBORHOOD INTELLIGENCE, INC.",NXH,2023,0.0,0.0,industry_unlinked
-1130781,"BMP AI Technologies, Inc.",BMPA,2023,0.43872741477458915,53.2,name_only
+1130781,"BMP AI Technologies, Inc.",BMPA,2023,0.43872741477458915,53.1,name_only
 1131312,ZION OIL & GAS INC,ZNOG,2023,0.332277268493751,18.1,sic_linked
 1131343,ALTERITY THERAPEUTICS LTD,ATHE,2023,0.533718651588981,64.8,sic_linked+name
 1131383,STANTEC INC,STN,2023,0.0,0.0,industry_unlinked
@@ -112372,7 +112372,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1374690,"Larimar Therapeutics, Inc.",LRMR,2023,0.533718651588981,64.8,sic_linked+name
 1375205,UR-ENERGY INC,URG,2023,0.0,0.0,industry_unlinked
 1375348,Golden Star Resource Corp.,GLNS,2023,0.0,0.0,industry_unlinked
-1375365,"Super Micro Computer, Inc.",SMCI,2023,0.957479559677446,82.8,sic_linked
+1375365,"Super Micro Computer, Inc.",SMCI,2023,0.957479559677446,82.7,sic_linked
 1375877,Canadian Solar Inc.,CSIQ,2023,0.5464096291425596,76.9,sic_linked+name
 1376139,CVR ENERGY INC,CVI,2023,0.332277268493751,18.1,sic_linked
 1376231,"VPR Brands, LP.",VPRB,2023,1.9444790829975838,93.7,sic_linked
@@ -112458,7 +112458,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1393818,Blackstone Inc.,BX,2023,0.41562985727905494,40.8,sic_linked
 1393883,"DHI GROUP, INC.",DHX,2023,,,uninformative_sic
 1394039,Century Lithium Corp.,CYDVF,2023,,,missing_sic
-1394056,"ONE STOP SYSTEMS, INC.",OSS,2023,0.957479559677446,82.8,sic_linked
+1394056,"ONE STOP SYSTEMS, INC.",OSS,2023,0.957479559677446,82.7,sic_linked
 1394108,SUIC Worldwide Holdings Ltd.,SUIC,2023,0.332277268493751,18.1,sic_linked
 1394189,Chesapeake Gold Corp,CHPGF,2023,,,missing_sic
 1394638,"Driveitaway Holdings, Inc.",DWAY,2023,0.0,0.0,industry_unlinked
@@ -112569,7 +112569,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1415744,NORTHERN MINERALS & EXPLORATION LTD.,NMEX,2023,0.0,0.0,industry_unlinked
 1415758,Nevada Sunrise Metals Corp.,NVSGF,2023,,,missing_sic
 1415921,Navios Maritime Partners L.P.,NMM,2023,0.0,0.0,industry_unlinked
-1416090,BLUSKY AI INC.,BSAI,2023,0.43872741477458915,53.2,name_only
+1416090,BLUSKY AI INC.,BSAI,2023,0.43872741477458915,53.1,name_only
 1416697,"Blue Line Protection Group, Inc.",BLPG,2023,0.0,0.0,industry_unlinked
 1416876,"First Choice Healthcare Solutions, Inc.",FCHS,2023,0.2668593257944905,5.2,sic_linked
 1417663,"SANUWAVE Health, Inc.",SNWV,2023,0.2668593257944905,5.2,sic_linked
@@ -112860,7 +112860,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1472787,First American Financial Corp,FAF,2023,0.41562985727905494,40.8,sic_linked
 1472879,WHITECAP RESOURCES INC.,WCPRF,2023,0.332277268493751,18.1,sic_linked
 1473334,XMax Inc.,XMAX,2023,0.0,0.0,industry_unlinked
-1473490,"Global AI, Inc.",GLAI,2023,0.43872741477458915,53.2,name_only
+1473490,"Global AI, Inc.",GLAI,2023,0.43872741477458915,53.1,name_only
 1474098,Pebblebrook Hotel Trust,PEB,2023,0.0,0.0,industry_unlinked
 1474167,Cosmos Health Inc.,COSM,2023,0.0,0.0,industry_unlinked
 1474432,"Everpure, Inc.",P,2023,0.5187521449028568,53.7,sic_linked
@@ -113416,7 +113416,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1571776,Cherry Hill Mortgage Investment Corp,CHMI,2023,0.0,0.0,industry_unlinked
 1571934,TAO Synergies Inc.,TAOX,2023,0.41562985727905494,40.8,sic_linked
 1571949,"Intercontinental Exchange, Inc.",ICE,2023,0.41562985727905494,40.8,sic_linked
-1571996,Dell Technologies Inc.,DELL,2023,0.957479559677446,82.8,sic_linked
+1571996,Dell Technologies Inc.,DELL,2023,0.957479559677446,82.7,sic_linked
 1572334,Virginia National Bankshares Corp,VABK,2023,0.41562985727905494,40.8,sic_linked
 1572386,"GREENWAY TECHNOLOGIES, INC. & SUBSIDIARIES",GWTI,2023,0.332277268493751,18.1,sic_linked
 1572616,"FRACTYL HEALTH, INC.",GUTS,2023,0.2668593257944905,5.2,sic_linked
@@ -113547,7 +113547,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1591956,Sphere 3D Corp.,ANY,2023,0.41562985727905494,40.8,sic_linked
 1592049,Ryohin Keikaku Co/ADR,RYKKF,2023,,,missing_sic
 1592386,"Virtu Financial, Inc.",VIRT,2023,0.41562985727905494,40.8,sic_linked
-1592560,VisionSys AI Inc,VSA,2023,0.43872741477458915,53.2,name_only
+1592560,VisionSys AI Inc,VSA,2023,0.43872741477458915,53.1,name_only
 1593001,"NightFood Holdings, Inc.",NGTF,2023,0.0,0.0,industry_unlinked
 1593184,"BIOREGENX, INC.",BRGX,2023,1.9444790829975838,93.7,sic_linked
 1593275,"Hamilton Insurance Group, Ltd.",HG,2023,0.41562985727905494,40.8,sic_linked
@@ -113558,7 +113558,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1594204,ZHEN DING RESOURCES INC.,RBTK,2023,0.0,0.0,industry_unlinked
 1594805,SHOPIFY INC.,SHOP,2023,1.9444790829975838,93.7,sic_linked
 1594856,VALHALLA METALS INC.,VMXXF,2023,,,missing_sic
-1594968,Loan Artificial Intelligence Corp.,VEST,2023,0.43872741477458915,53.2,name_only
+1594968,Loan Artificial Intelligence Corp.,VEST,2023,0.43872741477458915,53.1,name_only
 1595097,"Corbus Pharmaceuticals Holdings, Inc.",CRBP,2023,0.533718651588981,64.8,sic_linked
 1595248,"Genprex, Inc.",GNPX,2023,0.533718651588981,64.8,sic_linked
 1595353,Galmed Pharmaceuticals Ltd.,GLMD,2023,0.533718651588981,64.8,sic_linked
@@ -113622,7 +113622,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1604982,Sino Biopharmaceutical Limited/ADR,SBMFF,2023,0.2668593257944905,5.2,name_only
 1605057,"Vemanti Group, Inc.",VMNT,2023,0.41562985727905494,40.8,sic_linked
 1605301,"CB Financial Services, Inc.",CBFV,2023,0.41562985727905494,40.8,sic_linked
-1605331,AI Era Corp.,AERA,2023,0.43872741477458915,53.2,name_only
+1605331,AI Era Corp.,AERA,2023,0.43872741477458915,53.1,name_only
 1605481,Nevada Canyon Gold Corp.,NGLD,2023,0.0,0.0,industry_unlinked
 1605484,Stellantis N.V.,STLA,2023,0.6284115892652204,79.6,sic_linked
 1605755,Moncler S.p.A./ADR,MONRF,2023,,,missing_sic
@@ -113860,7 +113860,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1648416,Ferrari N.V.,RACE,2023,0.6284115892652204,79.6,sic_linked
 1648512,Shimadzu Corporation/ADR,SHMXY,2023,,,missing_sic
 1648636,Dune Oil Corp.,TRLEF,2023,0.332277268493751,18.1,sic_linked
-1648960,"Myseum.AI, Inc.",MYSE,2023,0.43872741477458915,53.2,name_only
+1648960,"Myseum.AI, Inc.",MYSE,2023,0.43872741477458915,53.1,name_only
 1649009,"Core AI Holdings, Inc.",CHAI,2023,0.8504133793530417,82.5,sic_linked+name
 1649094,"Vaxcyte, Inc.",PCVX,2023,0.533718651588981,64.8,sic_linked
 1649096,Clipper Realty Inc.,CLPR,2023,0.0,0.0,industry_unlinked
@@ -114059,7 +114059,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1681622,Varex Imaging Corp,VREX,2023,0.1070661803244043,0.6,sic_linked
 1681682,ENDRA Life Sciences Inc.,NDRA,2023,0.2668593257944905,5.2,sic_linked
 1682056,Silver Storm Mining Ltd.,SVRSF,2023,,,missing_sic
-1682149,Datavault AI Inc.,DVLT,2023,0.43872741477458915,53.2,name_only
+1682149,Datavault AI Inc.,DVLT,2023,0.43872741477458915,53.1,name_only
 1682220,Sachem Capital Corp.,SACH,2023,0.0,0.0,industry_unlinked
 1682241,Metalpha Technology Holding Ltd,MATH,2023,0.41562985727905494,40.8,sic_linked
 1682265,Onar Holding Corp,ONAR,2023,0.0,0.0,industry_unlinked
@@ -114211,7 +114211,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1708055,Ribbon Communications Inc.,RBBN,2023,1.5057516682229946,83.6,sic_linked
 1708259,LexinFintech Holdings Ltd.,LX,2023,0.41562985727905494,40.8,sic_linked+name
 1708341,"All In FutureTech Alliance, Inc.",AIFA,2023,0.0,0.0,industry_unlinked
-1708441,"Mynd.ai, Inc.",MYND,2023,0.957479559677446,82.8,sic_linked+name
+1708441,"Mynd.ai, Inc.",MYND,2023,0.957479559677446,82.7,sic_linked+name
 1708527,ELUTIA INC.,ELUT,2023,0.533718651588981,64.8,sic_linked
 1708599,"Serina Therapeutics, Inc.",SER,2023,0.533718651588981,64.8,sic_linked+name
 1708688,InflaRx N.V.,IFRX,2023,0.533718651588981,64.8,sic_linked
@@ -114296,7 +114296,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1720250,"Kandi Technologies Group, Inc.",KNDI,2023,0.6284115892652204,79.6,sic_linked
 1720420,IBEX Ltd,IBEX,2023,1.6777292012105491,85.9,sic_linked
 1720424,HIVE Digital Technologies Ltd.,HIVE,2023,0.41562985727905494,40.8,sic_linked
-1720446,Zepp Health Corp,ZEPP,2023,0.957479559677446,82.8,sic_linked
+1720446,Zepp Health Corp,ZEPP,2023,0.957479559677446,82.7,sic_linked
 1720553,Phenom Resources Corp.,PHNMF,2023,,,missing_sic
 1720580,"Adicet Bio, Inc.",ACET,2023,0.533718651588981,64.8,sic_linked
 1720592,Repay Holdings Corp,RPAY,2023,,,uninformative_sic
@@ -114390,7 +114390,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1734750,"Corvex, Inc.",MOVE,2023,1.6777292012105491,85.9,sic_linked
 1735041,Greenland Technologies Holding Corp.,GTEC,2023,0.29613432077146945,10.6,sic_linked
 1735438,MeiraGTx Holdings plc,MGTX,2023,0.533718651588981,64.8,sic_linked
-1735514,Light AI Inc.,OHCFF,2023,0.43872741477458915,53.2,name_only
+1735514,Light AI Inc.,OHCFF,2023,0.43872741477458915,53.1,name_only
 1735556,SANGRIX INC.,BTOG,2023,0.41562985727905494,40.8,sic_linked
 1735707,Garrett Motion Inc.,GTX,2023,0.6284115892652204,79.6,sic_linked
 1736243,"Acurx Pharmaceuticals, Inc.",ACXP,2023,0.533718651588981,64.8,sic_linked
@@ -114843,7 +114843,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1803914,"Playboy, Inc.",PLBY,2023,0.0,0.0,industry_unlinked
 1803977,Limitless X Holdings Inc.,LIMX,2023,0.0,0.0,industry_unlinked
 1804176,"Butterfly Network, Inc.",BFLY,2023,0.2668593257944905,5.2,sic_linked
-1804469,"Guardforce AI Co., Ltd.",GFAI,2023,0.43872741477458915,53.2,name_only
+1804469,"Guardforce AI Co., Ltd.",GFAI,2023,0.43872741477458915,53.1,name_only
 1804583,Cloopen Group Holding Ltd,RAASY,2023,1.9444790829975838,93.7,sic_linked
 1804745,Driven Brands Holdings Inc.,DRVN,2023,0.0,0.0,industry_unlinked
 1804792,ARES STRATEGIC MINING INC.,USAM,2023,0.0,0.0,industry_unlinked
@@ -114960,7 +114960,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1817760,"SmartKem, Inc.",SMTK,2023,0.5464096291425596,76.9,sic_linked
 1818093,SkinHealth Systems Inc.,SKIN,2023,0.2668593257944905,5.2,sic_linked
 1818201,CCC Intelligent Solutions Holdings Inc.,CCC,2023,1.9444790829975838,93.7,sic_linked
-1818274,Arrive AI Inc.,ARAI,2023,0.43872741477458915,53.2,name_only
+1818274,Arrive AI Inc.,ARAI,2023,0.43872741477458915,53.1,name_only
 1818331,GeneDx Holdings Corp.,WGS,2023,0.0,0.0,industry_unlinked
 1818382,"Humacyte, Inc.",HUMA,2023,0.533718651588981,64.8,sic_linked
 1818383,"MediaAlpha, Inc.",MAX,2023,,,uninformative_sic
@@ -115432,7 +115432,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1861233,illumin Holdings Inc.,ILLMF,2023,1.6777292012105491,85.9,sic_linked
 1861448,"IntriEnergy, Inc.",ITRE,2023,,,missing_sic
 1861479,Terra Rossa Gold Ltd.,TRGXF,2023,,,missing_sic
-1861622,Jet.AI Inc.,JTAI,2023,0.43872741477458915,53.2,name_only
+1861622,Jet.AI Inc.,JTAI,2023,0.43872741477458915,53.1,name_only
 1861657,"Canton Strategic Holdings, Inc.",CNTN,2023,0.41562985727905494,40.8,sic_linked
 1861737,Hesai Group,HSAI,2023,0.29613432077146945,10.6,sic_linked
 1861795,Definitive Healthcare Corp.,DH,2023,1.9444790829975838,93.7,sic_linked
@@ -115446,7 +115446,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1863127,"Tyra Biosciences, Inc.",TYRA,2023,0.533718651588981,64.8,sic_linked+name
 1863218,SHENGFENG DEVELOPMENT Ltd,SFWL,2023,0.0,0.0,industry_unlinked
 1863934,ADURO CLEAN TECHNOLOGIES INC.,ADUR,2023,0.0,0.0,industry_unlinked
-1863990,"MultiSensor AI Holdings, Inc.",MSAI,2023,0.43872741477458915,53.2,name_only
+1863990,"MultiSensor AI Holdings, Inc.",MSAI,2023,0.43872741477458915,53.1,name_only
 1864055,Abits Group Inc,ABTS,2023,0.41562985727905494,40.8,sic_linked
 1864163,"Inter & Co, Inc.",INTR,2023,0.41562985727905494,40.8,sic_linked
 1864531,"VSEE HEALTH, INC.",VSEE,2023,0.0,0.0,industry_unlinked
@@ -115647,7 +115647,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1896425,Li Bang International Corp Inc.,LBGJ,2023,0.0,0.0,industry_unlinked
 1896511,ZKGC New Energy Ltd,DAZSF,2023,0.664554536987502,81.4,sic_linked
 1896752,Sabio Holdings Inc.,SABOF,2023,,,missing_sic
-1897087,SuperX AI Technology Ltd,SUPX,2023,0.43872741477458915,53.2,name_only
+1897087,SuperX AI Technology Ltd,SUPX,2023,0.43872741477458915,53.1,name_only
 1897245,HWH International Inc.,HWH,2023,0.0,0.0,industry_unlinked
 1897463,Graf Global Corp.,TONT,2023,0.0,0.0,industry_unlinked
 1897532,"Ping An Biomedical Co., Ltd.",PASW,2023,0.0,0.0,industry_unlinked
@@ -115927,7 +115927,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1958140,"Atlanta Braves Holdings, Inc.",BATRA,2023,0.0,0.0,industry_unlinked
 1958217,Lifezone Metals Ltd,LZM,2023,0.0,0.0,industry_unlinked
 1958389,Hydreight Technologies Inc.,HYDTF,2023,,,missing_sic
-1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2023,0.43872741477458915,53.2,name_only
+1958399,"Huachen AI Parking Management Technology Holding Co., Ltd",HCAI,2023,0.43872741477458915,53.1,name_only
 1958489,"Cortigent, Inc.",CRGT,2023,0.2668593257944905,5.2,sic_linked
 1958713,NFT Ltd,MI,2023,0.41562985727905494,40.8,sic_linked
 1958777,"FibroBiologics, Inc.",FBLG,2023,0.533718651588981,64.8,sic_linked
@@ -116150,7 +116150,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1999001,Six Flags Entertainment Corporation/NEW,FUN,2023,0.0,0.0,industry_unlinked
 1999111,Meta Critical Minerals Inc.,MTTAF,2023,,,missing_sic
 1999119,"Libera Gaming Operations, Inc",LBRJ,2023,0.0,0.0,industry_unlinked
-1999124,Healwell AI Inc.,HWAIF,2023,0.43872741477458915,53.2,name_only
+1999124,Healwell AI Inc.,HWAIF,2023,0.43872741477458915,53.1,name_only
 1999261,StageWise Strategies Corp.,STWI,2023,1.6777292012105491,85.9,sic_linked
 1999297,Big Tree Cloud Holdings Ltd,DSY,2023,0.4116859645784525,26.5,name_only
 1999480,"Alto Neuroscience, Inc.",ANRO,2023,0.533718651588981,64.8,sic_linked
@@ -116271,7 +116271,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2021938,Sunrise Communications AG,SNNRF,2023,0.0,0.0,industry_unlinked
 2021989,Super Copper Corp.,CUPPF,2023,,,missing_sic
 2022059,"Silver Mountain Resources, Inc.",AGMRF,2023,,,missing_sic
-2022308,KIDZ AI Inc.,KIDZ,2023,0.43872741477458915,53.2,name_only
+2022308,KIDZ AI Inc.,KIDZ,2023,0.43872741477458915,53.1,name_only
 2022416,Silexion Therapeutics Corp,SLXN,2023,0.533718651588981,64.8,sic_linked+name
 2022626,"Upstream Bio, Inc.",UPB,2023,0.533718651588981,64.8,sic_linked
 2023016,Turn Therapeutics Inc.,TTRX,2023,0.533718651588981,64.8,sic_linked+name
@@ -116331,7 +116331,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2030277,"LEIFRAS Co., Ltd.",LFS,2023,0.0,0.0,industry_unlinked
 2030522,"Marwynn Holdings, Inc.",MWYN,2023,0.0,0.0,industry_unlinked
 2030617,"Picard Medical, Inc.",PMI,2023,0.2668593257944905,5.2,sic_linked
-2030763,"DataMeds AI, Inc.",MEDS,2023,0.43872741477458915,53.2,name_only
+2030763,"DataMeds AI, Inc.",MEDS,2023,0.43872741477458915,53.1,name_only
 2030781,"SailPoint, Inc.",SAIL,2023,1.9444790829975838,93.7,sic_linked
 2030834,OneConstruction Group Ltd,ONEG,2023,0.0,0.0,industry_unlinked
 2030954,"TEN Holdings, Inc.",XHLD,2023,,,uninformative_sic
@@ -116668,7 +116668,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2084227,"Advasa Holdings, Inc.",ADBT,2023,1.9444790829975838,93.7,sic_linked
 2084261,"URSB Bancorp, Inc.",URSB,2023,0.41562985727905494,40.8,sic_linked
 2084296,Nintech Mould Factory Inc.,NTMJ,2023,0.0,0.0,industry_unlinked
-2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2023,0.43872741477458915,53.2,name_only
+2084585,"Unisound AI Technology Co., Ltd./ADR",UATCY,2023,0.43872741477458915,53.1,name_only
 2084698,KHEOBA Ltd,KHOBF,2023,1.9444790829975838,93.7,sic_linked
 2085187,"Bob's Discount Furniture, Inc.",BOBS,2023,0.0,0.0,industry_unlinked
 2085208,Duality Biotherapeutics Inc/ADR,DYBTY,2023,0.2668593257944905,5.2,name_only
@@ -116782,7 +116782,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096755,Texas Ventures Acquisition IV Corp,TVIV,2023,0.0,0.0,industry_unlinked
 2096861,Sinda Ltd.,SIND,2023,0.0,0.0,industry_unlinked
 2096997,"Kailera Therapeutics, Inc.",KLRA,2023,0.533718651588981,64.8,sic_linked+name
-2097163,Xanadu Quantum Technologies Ltd,XNDU,2023,0.957479559677446,82.8,sic_linked
+2097163,Xanadu Quantum Technologies Ltd,XNDU,2023,0.957479559677446,82.7,sic_linked
 2097388,Sin Lian Seng Construction,ININ,2023,0.0,0.0,industry_unlinked
 2097461,"Bora Pharmaceuticals Co., Ltd./ADR",BORAY,2023,,,missing_sic
 2097508,"Blockfusion Digital Infrastructure, Inc.",BLDC,2023,1.6777292012105491,85.9,sic_linked
@@ -116907,7 +116907,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2119416,OpenPayd Global Holdings Ltd,OP,2023,,,uninformative_sic
 2120046,CVC Capital Partners plc/ADR,CVCPY,2023,,,missing_sic
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2023,,,missing_sic
-2120528,Kainan Holding Group Ltd,KHG,2023,0.41562985727905494,40.8,sic_linked
+2120528,Kainan Holding Group Ltd,KHG,2023,0.0,0.0,industry_unlinked
 2120882,SK hynix Inc.,SKHY,2023,0.5464096291425596,76.9,sic_linked
 2122392,Pelican Acquisition II Corp,PLCI,2023,0.0,0.0,industry_unlinked
 2123232,Cumberland Farms Ltd,CMBY,2023,0.0,0.0,industry_unlinked
@@ -116947,7 +116947,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2129466,"Guangdong Huayan Robotics Co, Ltd./ADR",GDHRY,2023,0.29613432077146945,10.6,name_only
 2130386,Yorkville International Capital Corp.,YICC,2023,0.0,0.0,industry_unlinked
 2130606,"Obsidian Therapeutics, Inc.",OBX,2023,0.533718651588981,64.8,sic_linked+name
-2131101,Powercheck AI Holdings Ltd,PCAI,2023,0.43872741477458915,53.2,name_only
+2131101,Powercheck AI Holdings Ltd,PCAI,2023,0.43872741477458915,53.1,name_only
 2131322,"Victory Giant Technology (HuiZhou) Co., Ltd./ADR",VGTHY,2023,,,missing_sic
 2131350,B&R Technology Merger Corp.,BRTM,2023,0.0,0.0,industry_unlinked
 2131524,"Braveheart Bio, Inc.",BRVE,2023,0.533718651588981,64.8,sic_linked
@@ -117963,7 +117963,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 948072,BIRNER DENTAL MANAGEMENT SERVICES INC,,2023,0.0,0.0,industry_unlinked
 948426,COATES INTERNATIONAL LTD,,2023,0.332277268493751,18.1,sic_linked
 949039,"DIAMOND OFFSHORE DRILLING, INC.",,2023,0.332277268493751,18.1,sic_linked
-949158,CRAY INC,,2023,0.957479559677446,82.8,sic_linked
+949158,CRAY INC,,2023,0.957479559677446,82.7,sic_linked
 949428,"CDTI ADVANCED MATERIALS, INC.",,2023,0.29613432077146945,10.6,sic_linked
 949721,Attis Industries Inc.,,2023,0.332277268493751,18.1,sic_linked
 949852,THANKSGIVING COFFEE CO INC,,2023,0.0,0.0,industry_unlinked
@@ -118280,7 +118280,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1071760,ECOSPHERE TECHNOLOGIES INC,,2023,0.0,0.0,industry_unlinked
 1071993,CONTANGO OIL & GAS CO,,2023,0.332277268493751,18.1,sic_linked
 1072772,TOMBSTONE EXPLORATION CORP,,2023,0.0,0.0,industry_unlinked
-1072842,FIRST CAPITAL INTERNATIONAL INC,,2023,0.957479559677446,82.8,sic_linked
+1072842,FIRST CAPITAL INTERNATIONAL INC,,2023,0.957479559677446,82.7,sic_linked
 1073349,BOTTOMLINE TECHNOLOGIES INC,,2023,1.9444790829975838,93.7,sic_linked
 1073362,"Occidental Development Group, Inc.",,2023,0.0,0.0,industry_unlinked
 1073429,"U.S. CONCRETE, INC.",,2023,0.0,0.0,industry_unlinked
@@ -118991,7 +118991,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1316317,China Techfaith Wireless Communication Technology LTD,,2023,,,uninformative_sic
 1316360,IHS Inc.,,2023,1.9444790829975838,93.7,sic_linked
 1316517,"Kandi Technologies Group, Inc.",,2023,0.6284115892652204,79.6,sic_linked
-1316625,Silicon Graphics International Corp,,2023,0.957479559677446,82.8,sic_linked
+1316625,Silicon Graphics International Corp,,2023,0.957479559677446,82.7,sic_linked
 1316644,"AeroGrow International, Inc.",,2023,0.0,0.0,industry_unlinked
 1316645,"American CareSource Holdings, Inc.",,2023,0.0,0.0,industry_unlinked
 1316898,"JAMBA, INC.",,2023,0.0,0.0,industry_unlinked
@@ -119802,7 +119802,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1446806,"ICON Equipment & Corporate Infrastructure Fund Fourteen, L.P.",,2023,0.0,0.0,industry_unlinked
 1447051,Territorial Bancorp Inc.,,2023,0.41562985727905494,40.8,sic_linked
 1447382,Ocean Rig UDW Inc.,,2023,0.332277268493751,18.1,sic_linked
-1447599,"FITBIT, INC.",,2023,0.957479559677446,82.8,sic_linked
+1447599,"FITBIT, INC.",,2023,0.957479559677446,82.7,sic_linked
 1448056,"NEW RELIC, INC.",,2023,1.9444790829975838,93.7,sic_linked
 1448301,Anchor Bancorp,,2023,0.41562985727905494,40.8,sic_linked
 1448558,"GROW CAPITAL, INC.",,2023,1.9444790829975838,93.7,sic_linked
@@ -120484,7 +120484,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1550518,Cantabio Pharmaceuticals Inc.,,2023,0.533718651588981,64.8,sic_linked
 1550603,"MALVERN BANCORP, INC.",,2023,0.41562985727905494,40.8,sic_linked
 1550695,Performant Healthcare Inc,,2023,0.0,0.0,industry_unlinked
-1550737,"Sector 5, Inc.",,2023,0.957479559677446,82.8,sic_linked
+1550737,"Sector 5, Inc.",,2023,0.957479559677446,82.7,sic_linked
 1551060,Qunar Cayman Islands Ltd.,,2023,1.9444790829975838,93.7,sic_linked
 1551206,Patagonia Gold Corp.,,2023,0.0,0.0,industry_unlinked
 1551390,MDS ENERGY PUBLIC 2013-A LP,,2023,0.332277268493751,18.1,sic_linked
@@ -122682,7 +122682,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1848756,Pyrophyte Acquisition Corp.,,2023,0.0,0.0,industry_unlinked
 1848795,"GigInternational1, Inc.",,2023,0.0,0.0,industry_unlinked
 1848821,Global Technology Acquisition Corp. I,,2023,,,uninformative_sic
-1848861,Healthcare AI Acquisition Corp.,,2023,0.43872741477458915,53.2,name_only
+1848861,Healthcare AI Acquisition Corp.,,2023,0.43872741477458915,53.1,name_only
 1848898,African Agriculture Holdings Inc.,,2023,0.0,0.0,industry_unlinked
 1848948,10X Capital Venture Acquisition Corp. III,,2023,0.533718651588981,64.8,sic_linked
 1848959,Decarbonization Plus Acquisition Corp IV,,2023,0.0,0.0,industry_unlinked
@@ -122875,7 +122875,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1865533,Emerging Markets Horizon Corp.,,2023,0.0,0.0,industry_unlinked
 1865537,DTRT Health Acquisition Corp.,,2023,0.0,0.0,industry_unlinked
 1865602,"Cantor Equity Partners, Inc.",,2023,0.0,0.0,industry_unlinked
-1865697,NeuroMind AI Corp.,,2023,0.43872741477458915,53.2,name_only
+1865697,NeuroMind AI Corp.,,2023,0.43872741477458915,53.1,name_only
 1865701,Keyarch Acquisition Corp,,2023,0.0,0.0,industry_unlinked
 1865861,Cactus Acquisition Corp. 1 Ltd,CCTSF,2023,0.0,0.0,industry_unlinked
 1865975,AfterNext HealthTech Acquisition Corp.,,2023,0.0,0.0,industry_unlinked
@@ -123126,7 +123126,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 1965934,Overland Advantage,,2023,,,missing_sic
 1966394,Fortress Net Lease REIT,,2023,0.0,0.0,industry_unlinked
 1966494,"CARGO Therapeutics, Inc.",,2023,0.533718651588981,64.8,sic_linked+name
-1966734,AI Transportation Acquisition Corp,,2023,0.43872741477458915,53.2,name_only
+1966734,AI Transportation Acquisition Corp,,2023,0.43872741477458915,53.1,name_only
 1969475,Bayview Acquisition Corp,,2023,0.0,0.0,industry_unlinked
 1970129,"LEGEND SPICES, INC.",LGSP,2023,0.0,0.0,industry_unlinked
 1970509,Haymaker Acquisition Corp. 4,,2023,0.0,0.0,industry_unlinked
@@ -123313,7 +123313,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2096204,ONE Nuclear Energy LLC,,2023,,,missing_sic
 2107979,Everli Global Inc.,,2023,,,uninformative_sic
 2108121,Ionetix Corp / DE /,,2023,0.533718651588981,64.8,sic_linked
-2129752,Goodvision AI Inc.,,2023,0.43872741477458915,53.2,name_only
+2129752,Goodvision AI Inc.,,2023,0.43872741477458915,53.1,name_only
 2136853,MN8 Energy Holdings LLC,,2023,0.332277268493751,18.1,sic_linked
 2142801,"NuCube Energy, Inc.",,2023,0.332277268493751,18.1,sic_linked
 2155514,InoBat AS,,2023,0.664554536987502,81.4,sic_linked
@@ -130609,7 +130609,7 @@ company_id,company_name,ticker,year,startup_activity_raw,startup_score,coverage_
 2119416,OpenPayd Global Holdings Ltd,OP,2024,,,uninformative_sic
 2120046,CVC Capital Partners plc/ADR,CVCPY,2024,,,missing_sic
 2120422,Pfisterer Holdings SE/ADR,PFSTY,2024,,,missing_sic
-2120528,Kainan Holding Group Ltd,KHG,2024,0.40743193252677856,40.3,sic_linked
+2120528,Kainan Holding Group Ltd,KHG,2024,0.0,0.0,industry_unlinked
 2120882,SK hynix Inc.,SKHY,2024,0.6680981908472174,79.5,sic_linked
 2122392,Pelican Acquisition II Corp,PLCI,2024,0.0,0.0,industry_unlinked
 2123232,Cumberland Farms Ltd,CMBY,2024,0.0,0.0,industry_unlinked

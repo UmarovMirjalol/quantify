@@ -336,7 +336,7 @@ sic,sic_description,n_companies,categories,rules
 6163,Loan Brokers,6,Fintech=0.5,Non-depository credit institutions
 6172,Finance Lessors,2,Fintech=0.5,Non-depository credit institutions
 6189,Asset-Backed Securities,13,Fintech=0.5,Non-depository credit institutions
-6199,Finance Services,213,Fintech=0.5,Non-depository credit institutions
+6199,Finance Services,212,Fintech=0.5,Non-depository credit institutions
 6200,"Security & Commodity Brokers, Dealers, Exchanges & Services",24,Fintech=0.5,Security & commodity brokers
 6211,"Security Brokers, Dealers & Flotation Companies",55,Fintech=0.5,Security & commodity brokers
 6221,Commodity Contracts Brokers & Dealers,165,Fintech=0.5,Security & commodity brokers
@@ -375,7 +375,7 @@ sic,sic_description,n_companies,categories,rules
 7350,Services-Miscellaneous Equipment Rental & Leasing,14,,
 7359,"Services-Equipment Rental & Leasing, NEC",46,,
 7361,Services-Employment Agencies,12,,
-7363,Services-Help Supply Services,33,,
+7363,Services-Help Supply Services,34,,
 7370,"Services-Computer Programming, Data Processing, Etc.",158,AI=1.0; Cloud=1.0; Cybersecurity=0.5,Computer programming & services
 7371,Services-Computer Programming Services,108,AI=1.0; Cloud=1.0; Cybersecurity=0.5,Computer programming & services
 7372,Services-Prepackaged Software,566,AI=1.0; Cloud=1.0; Cybersecurity=0.5,Prepackaged software

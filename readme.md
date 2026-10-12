@@ -151,9 +151,10 @@ not causal effects**. Output: `results/regression_results.csv`, `results/researc
 
 ## 11. Limitations (please read)
 
-1. **Patent coverage is partial** (3,786 of 13,702 companies, 27.6%). Patents come from the open
+1. **Patent coverage is partial** (3,970 of 13,702 companies, 29.0%). Patents come from the open
    PatentsView-to-Compustat linkage of Ma (2025) mapped to CIK via the `farr` gvkey-CIK table;
-   622 gvkeys linked to several CIKs are skipped as ambiguous. Unlinked firms (mostly small,
+   622 gvkeys link to several CIKs and are assigned year by year by link date (158 resolved,
+   the rest skipped). Unlinked firms (mostly small,
    foreign or historical registrants) have a missing patent component, so for them the index is
    the startup-exposure component only. Linkage errors in the source cannot be ruled out.
 2. The startup component is **industry-level exposure**, nearly time-invariant within a firm; it
@@ -176,13 +177,13 @@ not causal effects**. Output: `results/regression_results.csv`, `results/researc
 | Item | Value |
 |---|---|
 | Universe | **13,702** companies = 7,385 currently listed (unique CIK) + 6,317 historical XBRL filers 2015-2024 (`INCLUDE_XBRL_FILERS`) |
-| SIC known / country known | 12,769 (93.2%) / 12,599 |
+| SIC known / country known | 12,769 (93.2%) / 12,726 (business address, mailing address fallback) |
 | Startup component available | 12,445 (90.8%): 6,555 SIC-linked, 132 name-only, 5,758 industry-unlinked (score 0) |
 | Startup component missing | 1,257 (916 no SIC, 341 catch-all SIC such as 7389) |
-| Patent component available | 3,786 (27.6%) - PatentsView linkage (Ma, 2025), grant years 2010-2024 |
-| Index available | 12,530 (91.4%) |
+| Patent component available | 3,970 (29.0%) - PatentsView linkage (Ma, 2025), grant years 2010-2024 |
+| Index available | 12,533 (91.5%) |
 | Index rows (company x 2015-2024) | 137,020 (all 13,702 companies) |
-| Companies with any SEC financials | 11,963 (87.3%) |
+| Companies with any SEC financials | 12,542 (91.5%): 11,963 from XBRL frames + 579 IFRS / non-calendar filers from companyfacts (FX-converted; ARS, CLP, COP, PEN etc. left missing) |
 | Research panel rows (2014-2025) | 164,424 |
 | Validation | 40 PASS, 8 WARN (documented limitations), 0 FAIL |
 

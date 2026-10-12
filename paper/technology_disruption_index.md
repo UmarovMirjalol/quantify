@@ -9,8 +9,8 @@ public companies over 2015-2024. The index combines (i) patent volume and moment
 startup activity, measured across 19,820 accelerator-backed startups, in the technology domains
 in which each company operates. Linking the index to SEC XBRL fundamentals, I test whether technology exposure
 predicts market valuation before it predicts revenue growth, R&D intensity and capital expenditure. A 10-point
-higher index is associated with about 5.5% higher public float one year later (p < 0.001)
-and with 0.61 percentage points higher revenue growth (p < 0.001), controlling for
+higher index is associated with about 5.7% higher public float one year later (p < 0.001)
+and with 0.60 percentage points higher revenue growth (p < 0.001), controlling for
 size and year effects. The robustness of these associations differs across fixed-effect specifications (see Table 1). Because patent data currently cover few firms,
 the index is mainly an industry-level exposure measure; results are predictive associations, not causal effects.
 
@@ -43,11 +43,11 @@ Semiconductors, Energy, Quantum) using word-bounded keyword rules on tags and de
 **Patents.** U.S. utility patent grants from USPTO PatentsView (release 2026-04-10), linked to public firms by the
 open patent-firm linkage of Ma (2025, *Review of Financial Studies*) and from Compustat identifiers to SEC CIKs via the
 `farr` gvkey-CIK table. Patents are counted by grant year. Patent data are available for
-3,786 companies; firms without a link (mostly small or historical registrants) have a missing,
+3,970 companies; firms without a link (mostly small or historical registrants) have a missing,
 not zero, patent component.
 
 **Fundamentals.** Revenue, total assets, R&D, capital expenditure, cash, long-term debt and public float from the
-SEC XBRL frames API for 11,963 companies. Market capitalisation is not used because SEC does
+SEC XBRL frames API for 12,542 companies. Market capitalisation is not used because SEC does
 not publish prices; public float (the market value of non-affiliate equity reported by the company) is the
 valuation measure.
 
@@ -58,7 +58,7 @@ from documented SIC-to-category rules (1 = core activity, 0.5 = adjacent industr
 from the company's legal name. Category activity in year t is intensity(c,t) = log(1+n(c,t)) / log(1+N(t)), where n
 counts startups of category c in cohorts t-2..t. The company's raw activity is the exposure-weighted sum, converted to a
 within-year percentile (0-100). Companies whose industry is known but not linked to any category score 0
-(5,758 firms, flagged); companies without a usable industry code are missing
+(5,759 firms, flagged); companies without a usable industry code are missing
 (1,257 firms).
 
 **Patent score.** volume score = 100 * log(1+patents) / log(1+10,000); momentum = (recent 3-year mean + 1) / (previous
@@ -66,7 +66,7 @@ within-year percentile (0-100). Companies whose industry is known but not linked
 
 **Index.** TDI = weighted average of available components (default 50/50), with the number of available components
 and a coverage score reported for every company-year. In 2024, the index is available for
-12,530 companies (mean 25.6, median 18.1).
+12,532 companies (mean 25.5, median 18.1).
 
 **Empirical model.** For outcome Y and horizon h:
 
@@ -83,15 +83,15 @@ at 1%/99% by year. Non-operating entities are excluded.
 
 | Outcome (t+1) | Year FE | Year + SIC2 FE | SIC2 x year FE | Firm + year FE | N obs | N firms |
 |---|---|---|---|---|---|---|
-| M1: ln public float | 0.0550***<br>(0.0065) | 0.0797***<br>(0.0098) | 0.0796***<br>(0.0099) | 0.0000<br>(0.0151) | 47,590 | 7,928 |
-| M1b: valuation change | 0.0154***<br>(0.0027) | 0.0221***<br>(0.0044) | 0.0219***<br>(0.0045) | -0.0016<br>(0.0129) | 44,088 | 7,426 |
-| M2: revenue growth | 0.0061***<br>(0.0012) | 0.0081***<br>(0.0017) | 0.0082***<br>(0.0017) | -0.0128**<br>(0.0061) | 44,251 | 7,622 |
-| M3: R&D / assets | 0.0245***<br>(0.0031) | 0.0232***<br>(0.0041) | 0.0233***<br>(0.0042) | 0.0101<br>(0.0066) | 23,605 | 4,040 |
-| M4: CAPEX / assets | -0.0029***<br>(0.0001) | -0.0005**<br>(0.0002) | -0.0005**<br>(0.0002) | -0.0002<br>(0.0003) | 42,646 | 7,300 |
+| M1: ln public float | 0.0567***<br>(0.0066) | 0.0833***<br>(0.0098) | 0.0831***<br>(0.0099) | -0.0008<br>(0.0148) | 47,627 | 7,934 |
+| M1b: valuation change | 0.0161***<br>(0.0028) | 0.0239***<br>(0.0045) | 0.0236***<br>(0.0045) | -0.0013<br>(0.0127) | 44,121 | 7,431 |
+| M2: revenue growth | 0.0060***<br>(0.0011) | 0.0080***<br>(0.0017) | 0.0081***<br>(0.0017) | -0.0131**<br>(0.0058) | 46,990 | 8,093 |
+| M3: R&D / assets | 0.0238***<br>(0.0029) | 0.0242***<br>(0.0039) | 0.0244***<br>(0.0040) | 0.0102*<br>(0.0059) | 25,017 | 4,290 |
+| M4: CAPEX / assets | -0.0029***<br>(0.0001) | -0.0004*<br>(0.0002) | -0.0004*<br>(0.0002) | -0.0002<br>(0.0003) | 45,230 | 7,767 |
 
-With year effects, a 10-point higher index is associated with about 5.5% higher public float
+With year effects, a 10-point higher index is associated with about 5.7% higher public float
 one year later (p < 0.001). The valuation-change model (M1b), which conditions on current public float,
-yields a coefficient of 0.0154 (p < 0.001), i.e. the index is also associated with subsequent
+yields a coefficient of 0.0161 (p < 0.001), i.e. the index is also associated with subsequent
 valuation *changes*, not only levels. Comparing firms within the same two-digit industry, and absorbing
 industry-specific annual shocks (SIC2 x year), makes a pure sector-cycle explanation less likely, although it
 cannot rule out other omitted firm characteristics.
@@ -102,21 +102,21 @@ Table 1 shows how the associations change when comparing firms within industries
 
 | Outcome | t+1 | t+2 | t+3 |
 |---|---|---|---|
-| M1: ln public float | 0.0550***<br>(0.0065) | 0.0579***<br>(0.0071) | 0.0566***<br>(0.0079) |
-| M1b: valuation change | 0.0154***<br>(0.0027) | 0.0217***<br>(0.0042) | 0.0238***<br>(0.0055) |
-| M2: revenue growth | 0.0061***<br>(0.0012) | 0.0052***<br>(0.0012) | 0.0054***<br>(0.0013) |
-| M3: R&D / assets | 0.0245***<br>(0.0031) | 0.0243***<br>(0.0032) | 0.0236***<br>(0.0030) |
+| M1: ln public float | 0.0567***<br>(0.0066) | 0.0600***<br>(0.0072) | 0.0588***<br>(0.0080) |
+| M1b: valuation change | 0.0161***<br>(0.0028) | 0.0229***<br>(0.0042) | 0.0251***<br>(0.0056) |
+| M2: revenue growth | 0.0060***<br>(0.0011) | 0.0051***<br>(0.0012) | 0.0053***<br>(0.0013) |
+| M3: R&D / assets | 0.0238***<br>(0.0029) | 0.0234***<br>(0.0030) | 0.0227***<br>(0.0029) |
 | M4: CAPEX / assets | -0.0029***<br>(0.0001) | -0.0029***<br>(0.0002) | -0.0029***<br>(0.0002) |
 
 **Table 3. Robustness** (year FE, t+1)
 
 | Outcome | Unwinsorized ratios | Excl. largest 10% | Tech-linked industries only | Startup component only |
 |---|---|---|---|---|
-| M1: ln public float | n/a | 0.0541***<br>(0.0066) | 0.0953***<br>(0.0107) | 0.0314***<br>(0.0054) |
-| M1b: valuation change | n/a | 0.0155***<br>(0.0030) | 0.0278***<br>(0.0047) | 0.0084***<br>(0.0022) |
-| M2: revenue growth | 0.0060***<br>(0.0014) | 0.0064***<br>(0.0013) | 0.0072***<br>(0.0018) | 0.0049***<br>(0.0009) |
-| M3: R&D / assets | -0.0268<br>(0.1667) | 0.0258***<br>(0.0032) | 0.0187***<br>(0.0044) | 0.0175***<br>(0.0020) |
-| M4: CAPEX / assets | -0.0244<br>(0.0244) | -0.0029***<br>(0.0001) | -0.0018***<br>(0.0002) | -0.0024***<br>(0.0001) |
+| M1: ln public float | n/a | 0.0532***<br>(0.0066) | 0.0955***<br>(0.0108) | 0.0313***<br>(0.0054) |
+| M1b: valuation change | n/a | 0.0154***<br>(0.0029) | 0.0284***<br>(0.0047) | 0.0084***<br>(0.0022) |
+| M2: revenue growth | 0.0060***<br>(0.0014) | 0.0063***<br>(0.0012) | 0.0074***<br>(0.0018) | 0.0049***<br>(0.0009) |
+| M3: R&D / assets | -0.0311<br>(0.1623) | 0.0249***<br>(0.0030) | 0.0166***<br>(0.0041) | 0.0166***<br>(0.0018) |
+| M4: CAPEX / assets | -0.0231<br>(0.0232) | -0.0029***<br>(0.0002) | -0.0019***<br>(0.0002) | -0.0024***<br>(0.0001) |
 
 ## 5. Discussion
 
@@ -124,13 +124,13 @@ The evidence does not show a uniform pattern across specifications, so it neithe
 
 First, the within-firm variation of the index comes from shifts in the composition of accelerator cohorts, an
 industry-level signal; it does not identify firm-specific innovation. Second, the R&D result is sensitive to extreme
-values: without winsorisation its coefficient is -0.027 (p = 0.872). Third, 69 of
+values: without winsorisation its coefficient is -0.031 (p = 0.848). Third, 67 of
 78 estimated coefficients have p < 0.05; consistent patterns across specifications are more informative than
 any single p-value.
 
 ## 6. Limitations
 
-1. Patent data currently cover 3786 companies, so the index is predominantly the startup component.
+1. Patent data currently cover 3970 companies, so the index is predominantly the startup component.
 2. The SIC-to-technology mapping is expert judgement, documented rule by rule, not an estimated model; SIC codes are current rather than historical.
 3. Accelerator data over-represent software and U.S. startups.
 4. The universe consists of currently listed firms (survivorship bias).

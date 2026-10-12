@@ -1,6 +1,6 @@
 # Validation report
 
-Generated 2026-10-12 17:57. Summary: {'PASS': 40, 'WARN': 8}
+Generated 2026-10-12 18:36. Summary: {'PASS': 40, 'WARN': 8}
 
 | Dataset | Check | Status | Flagged | Total | Detail |
 |---|---|---|---|---|---|
@@ -9,14 +9,14 @@ Generated 2026-10-12 17:57. Summary: {'PASS': 40, 'WARN': 8}
 | companies_master | missing ticker (listed companies) | PASS | 0 | 7385 |  |
 | companies_master | missing ticker (historical XBRL filers, expected) | WARN | 6164 | 6317 | delisted/historical filers often have no current ticker |
 | companies_master | missing SIC | WARN | 933 | 13702 | SEC submissions without SIC (mostly foreign/non-operating filers) |
-| companies_master | missing country | WARN | 1103 | 13702 |  |
+| companies_master | missing country | WARN | 976 | 13702 |  |
 | startups_clean | duplicate dedupe_key | PASS | 0 | 19820 |  |
 | startups_clean | duplicate normalized startup names (distinct websites) | WARN | 797 | 19820 | kept: same name, different domain = different startup |
 | startups_clean | impossible cohort years | PASS | 0 | 19820 |  |
-| patent_counts | duplicate company-year observations | PASS | 0 | 56790 |  |
-| patent_counts | negative patent counts | PASS | 0 | 56790 |  |
-| patent_counts | impossible years | PASS | 0 | 56790 |  |
-| patent_counts | companies without patent data (treated as missing) | WARN | 9916 | 13702 | BigQuery extraction not yet run for the full universe |
+| patent_counts | duplicate company-year observations | PASS | 0 | 60300 |  |
+| patent_counts | negative patent counts | PASS | 0 | 60300 |  |
+| patent_counts | impossible years | PASS | 0 | 60300 |  |
+| patent_counts | companies without patent data (treated as missing) | WARN | 9731 | 13702 | BigQuery extraction not yet run for the full universe |
 | technology_index | duplicate company-year rows | PASS | 0 | 137020 |  |
 | technology_index | years outside INDEX_YEARS | PASS | 0 | 137020 |  |
 | technology_index | patent_score outside [0,100] | PASS | 0 | 137020 |  |
@@ -29,24 +29,24 @@ Generated 2026-10-12 17:57. Summary: {'PASS': 40, 'WARN': 8}
 | technology_index | index present without any component | PASS | 0 | 137020 |  |
 | technology_index | components_available inconsistent | PASS | 0 | 137020 |  |
 | technology_index | universe companies missing from index | PASS | 0 | 13702 |  |
-| technology_index | company-years without any component | WARN | 11720 | 137020 | kept in file with NaN index |
-| financials | duplicate company-year rows | PASS | 0 | 91979 |  |
-| financials | impossible years | PASS | 0 | 91979 |  |
-| financials | infinite values in revenue | PASS | 0 | 91979 |  |
-| financials | infinite values in assets | PASS | 0 | 91979 |  |
-| financials | negative assets | PASS | 0 | 91979 |  |
-| financials | infinite values in rd | PASS | 0 | 91979 |  |
-| financials | negative rd | PASS | 0 | 91979 |  |
-| financials | infinite values in capex | PASS | 0 | 91979 |  |
-| financials | negative capex | PASS | 0 | 91979 |  |
-| financials | infinite values in cash | PASS | 0 | 91979 |  |
-| financials | negative cash | PASS | 0 | 91979 |  |
-| financials | infinite values in debt | PASS | 0 | 91979 |  |
-| financials | negative debt | PASS | 0 | 91979 |  |
-| financials | infinite values in public_float | PASS | 0 | 91979 |  |
-| financials | negative public_float | PASS | 0 | 91979 |  |
-| financials | zero assets (division by zero risk in ratios) | WARN | 751 | 91979 | ratios use assets > 0 only |
-| financials | market_cap unavailable | WARN | 91979 | 91979 | no reliable SEC price source; public_float used instead |
+| technology_index | company-years without any component | WARN | 11691 | 137020 | kept in file with NaN index |
+| financials | duplicate company-year rows | PASS | 0 | 96890 |  |
+| financials | impossible years | PASS | 0 | 96890 |  |
+| financials | infinite values in revenue | PASS | 0 | 96890 |  |
+| financials | infinite values in assets | PASS | 0 | 96890 |  |
+| financials | negative assets | PASS | 0 | 96890 |  |
+| financials | infinite values in rd | PASS | 0 | 96890 |  |
+| financials | negative rd | PASS | 0 | 96890 |  |
+| financials | infinite values in capex | PASS | 0 | 96890 |  |
+| financials | negative capex | PASS | 0 | 96890 |  |
+| financials | infinite values in cash | PASS | 0 | 96890 |  |
+| financials | negative cash | PASS | 0 | 96890 |  |
+| financials | infinite values in debt | PASS | 0 | 96890 |  |
+| financials | negative debt | PASS | 0 | 96890 |  |
+| financials | infinite values in public_float | PASS | 0 | 96890 |  |
+| financials | negative public_float | PASS | 0 | 96890 |  |
+| financials | zero assets (division by zero risk in ratios) | WARN | 751 | 96890 | ratios use assets > 0 only |
+| financials | market_cap unavailable | WARN | 96890 | 96890 | no reliable SEC price source; public_float used instead |
 | final_panel | duplicate company-year rows | PASS | 0 | 164424 |  |
 | final_panel | universe companies missing from panel | PASS | 0 | 13702 |  |
 | final_panel | infinite values in technology_disruption_index | PASS | 0 | 164424 |  |
