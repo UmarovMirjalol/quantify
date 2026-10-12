@@ -151,10 +151,11 @@ not causal effects**. Output: `results/regression_results.csv`, `results/researc
 
 ## 11. Limitations (please read)
 
-1. **Patent coverage is currently tiny** (9 firms from a manual BigQuery pull). PatentsView and
-   the USPTO Open Data Portal were not reachable/authorized from this environment and no
-   BigQuery credentials are configured. Until `src/patents/patents_bigquery.sql` is run, the index
-   is effectively the startup-exposure component for almost all firms.
+1. **Patent coverage is partial** (3,786 of 13,702 companies, 27.6%). Patents come from the open
+   PatentsView-to-Compustat linkage of Ma (2025) mapped to CIK via the `farr` gvkey-CIK table;
+   622 gvkeys linked to several CIKs are skipped as ambiguous. Unlinked firms (mostly small,
+   foreign or historical registrants) have a missing patent component, so for them the index is
+   the startup-exposure component only. Linkage errors in the source cannot be ruled out.
 2. The startup component is **industry-level exposure**, nearly time-invariant within a firm; it
    cannot distinguish an innovative firm from a laggard in the same industry. Company fixed
    effects absorb most of it; SIC2 fixed effects absorb most of its cross-section.
@@ -178,19 +179,21 @@ not causal effects**. Output: `results/regression_results.csv`, `results/researc
 | SIC known / country known | 12,769 (93.2%) / 12,599 |
 | Startup component available | 12,445 (90.8%): 6,555 SIC-linked, 132 name-only, 5,758 industry-unlinked (score 0) |
 | Startup component missing | 1,257 (916 no SIC, 341 catch-all SIC such as 7389) |
-| Patent component available | 9 - legacy manual pull only |
+| Patent component available | 3,786 (27.6%) - PatentsView linkage (Ma, 2025), grant years 2010-2024 |
+| Index available | 12,530 (91.4%) |
 | Index rows (company x 2015-2024) | 137,020 (all 13,702 companies) |
 | Companies with any SEC financials | 11,963 (87.3%) |
 | Research panel rows (2014-2025) | 164,424 |
 | Validation | 40 PASS, 8 WARN (documented limitations), 0 FAIL |
 
-Research findings (year FE, t -> t+1; see `results/research_report.md`): a higher index is
-associated with higher subsequent public float, revenue growth and R&D intensity and lower
-CAPEX intensity; associations largely survive SIC2 and SIC2 x year FE, but revenue growth,
-R&D and CAPEX associations disappear with company FE, and the R&D association is not robust to
-removing winsorization. Given that the index is currently an industry-exposure measure, these
-are predictive associations about technology-exposed industries, not evidence that markets
-price firm-specific disruption before fundamentals.
+Research findings (t -> t+1, per 10 index points; see `results/research_report.md`): with year
+FE a higher index is associated with higher subsequent public float (+0.055 log points),
+valuation change, revenue growth and R&D intensity and slightly lower CAPEX intensity; these
+associations persist with SIC2 and SIC2 x year FE. With company FE the valuation and R&D
+associations vanish (valuation coefficient ~0) and the revenue-growth coefficient turns
+slightly negative (p = 0.04). The index therefore ranks firms and industries cross-sectionally
+but within-firm changes do not predict outcomes. These are predictive associations, not
+evidence that markets price firm-specific disruption before fundamentals.
 
 ## 13. How to run
 
@@ -209,7 +212,15 @@ python run_pipeline.py --only research # single step
 Set `SEC_USER_AGENT="Your Name your@email"` (SEC fair-access policy). All downloads are cached
 in `data/raw/` and re-used; the SIC lookup is restartable (`data/raw/sec/submissions_cache.jsonl`).
 
-### Enabling full patent coverage (manual/credentialed step)
+### Patent data
+
+The default source needs no credentials: step `patents_patentsview` downloads (once, ~1 GB,
+cached in `data/raw/patents/ma_patentsview/`, git-ignored) the public patent-level file of
+Song Ma's [patent-firm-link-share](https://github.com/songma/patent-firm-link-share)
+(PatentsView release 2026-04-10, cite Ma, "Technological Obsolescence", RFS 2025) and the
+gvkey-CIK table of the [`farr`](https://github.com/iangow/farr) R package (read with `pyreadr`).
+
+Optional additional source for firms not covered by the linkage (credentialed BigQuery):
 
 1. Either `pip install google-cloud-bigquery`, authenticate with
    `gcloud auth application-default login`, set `BIGQUERY_PROJECT=<your-project>` and run

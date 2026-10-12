@@ -100,8 +100,8 @@ def main() -> None:
     log.info("Normalization: %s | company-year scores: %d | companies: %d | snapshot %d rows",
              config.PATENT_NORMALIZATION, len(scores), scores["company_id"].nunique(), len(snap))
     if not snap.empty:
-        log.info("Snapshot %d:\n%s", config.PATENT_SNAPSHOT_YEAR,
-                 snap.drop(columns=["company_id"]).to_string(index=False))
+        log.info("Snapshot %d (top 20):\n%s", config.PATENT_SNAPSHOT_YEAR,
+                 snap.drop(columns=["company_id"]).head(20).to_string(index=False))
 
 
 if __name__ == "__main__":

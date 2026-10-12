@@ -182,7 +182,7 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <select id="cat"><option value="">All technologies</option></select>
 <select id="lst"><option value="">All companies</option><option value="1">Currently listed</option><option value="0">Historical filers</option></select></div>
 <div class="tw"><table><thead><tr><th data-k="name">Company</th><th data-k="ticker">Ticker</th><th data-k="industry">Industry</th>
-<th data-k="tdi" class="r">Index</th><th data-k="startup" class="r">Startup</th><th data-k="revenue" class="r">Revenue</th></tr></thead><tbody id="tb"></tbody></table></div>
+<th data-k="tdi" class="r">Index</th><th data-k="startup" class="r">Startup</th><th data-k="patent" class="r">Patent</th><th data-k="revenue" class="r">Revenue</th></tr></thead><tbody id="tb"></tbody></table></div>
 <div class="pager"><span id="pg"></span>
 <select id="per"><option value="25">25 per page</option><option value="50" selected>50 per page</option><option value="100">100 per page</option><option value="500">500 per page</option><option value="0">Show all</option></select>
 <button id="first" title="First page">«</button><button id="prev" title="Previous page">←</button>
@@ -197,7 +197,7 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <p class="sub">Lagged panel regressions: index in year t, outcomes in year t+1, standard errors clustered by company. Coefficients per 10 index points. These are predictive associations, not causal effects.</p>
 <div class="g2"><div class="card"><div class="tw" id="res"></div><p class="small muted">Green = p &lt; 0.05. __NREG__ specifications in total incl. robustness checks; full results in the repository.</p></div>
 <div class="card"><h3 style="margin:0 0 6px">Average index by industry</h3><div id="inds"></div></div></div>
-<div class="note" style="margin-top:20px"><b>Read with care.</b> Patent data currently cover few companies, so for most firms the index reflects industry-level exposure to startup activity. Firm-specific innovation is not yet measured for the full universe.</div>
+<div class="note" style="margin-top:20px"><b>Read with care.</b> Patent data cover __NPAT__ companies — those whose patents could be linked to an SEC registrant. For the remaining firms the index reflects industry-level exposure to startup activity only; a blank patent score means “not linked”, not “zero patents”.</div>
 </section>
 
 <section id="method" class="method"><div class="kicker">Methodology</div><h2>How the index is built</h2>
@@ -205,7 +205,7 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <div class="g3">
 <div class="card"><div class="num">1</div><h3>Company universe</h3><p>__NCOMP__ SEC registrants: __NLISTED__ currently listed companies plus historical XBRL filers (reducing survivorship bias). Funds and SPAC shells are flagged.</p></div>
 <div class="card"><div class="num">2</div><h3>Startup ecosystem</h3><p>__NSTART__ accelerator startups (YC, Techstars, Plug and Play, 500 Global, Antler, Alchemist, EF) tagged into 9 technology categories; activity is mapped to companies via documented SIC rules.</p></div>
-<div class="card"><div class="num">3</div><h3>Patents</h3><p>US patent grants from Google Patents Public Data: log-scaled volume and 3-year momentum, so the largest patent holders do not dominate.</p></div>
+<div class="card"><div class="num">3</div><h3>Patents</h3><p>US patent grants (USPTO PatentsView, linked to public firms by Ma, 2025, and to SEC CIKs) for __NPAT__ companies: log-scaled volume and 3-year momentum, so the largest patent holders do not dominate.</p></div>
 <div class="card"><div class="num">4</div><h3>Normalization</h3><p>Within-year percentiles for startup exposure, fixed log anchors for patents, all on 0–100 and rounded to one decimal.</p></div>
 <div class="card"><div class="num">5</div><h3>Index</h3><p>Weighted average of available components (default __WP__/__WS__). Each company-year reports components available and a coverage score.</p></div>
 <div class="card"><div class="num">6</div><h3>Fundamentals</h3><p>Revenue, assets, R&D, CAPEX, cash, debt and public float from SEC XBRL, used to test predictive relationships with year, industry and firm fixed effects.</p></div>
@@ -216,7 +216,7 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <div class="card" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between"><div><h3 style="margin:0">Download the data</h3><p class="muted small" style="margin:4px 0 0">Latest scores for all __NCOMP__ companies and the full regression results (CSV).</p></div>
 <div><a class="btn p" href="data/company_technology_index_latest.csv" download>Index scores (CSV)</a><a class="btn s" href="data/regression_results.csv" download>Regression results</a></div></div></section>
 </div>
-<footer>Technology Disruption Index · Data: SEC EDGAR, Google Patents Public Data, accelerator portfolios · Not investment advice</footer>
+<footer>Technology Disruption Index · Data: SEC EDGAR, USPTO PatentsView (firm linkage: Ma, 2025, RFS), accelerator portfolios · Not investment advice</footer>
 
 <script>
 const D=__DATA__;const F=D.fields,C=D.companies.map(r=>Object.fromEntries(F.map((f,i)=>[f,r[i]])));
@@ -239,7 +239,7 @@ function rows(){const q=$('q').value.trim().toLowerCase(),i=$('ind').value,c=$('
  .sort((a,b)=>{const x=a[sortK],y=b[sortK];if(x==null)return 1;if(y==null)return -1;return(x>y?1:x<y?-1:0)*dir})}
 function render(){const r=rows(),PER=+$('per').value||r.length||1,P=Math.max(1,Math.ceil(r.length/PER));page=Math.max(0,Math.min(page,P-1));
  $('tb').innerHTML=r.slice(page*PER,page*PER+PER).map(c=>`<tr data-id="${c.id}"><td>${esc(c.name)} ${c.listed?'':'<span class="badge">historical</span>'}</td><td>${esc(c.ticker)}</td><td class="muted">${esc(c.industry)}</td>
- <td class="r"><b>${fmt(c.tdi)}</b>${c.tdi!=null?`<span class="meter"><i style="width:${c.tdi}%"></i></span>`:''}</td><td class="r">${fmt(c.startup)}</td><td class="r">${usd(c.revenue)}</td></tr>`).join('');
+ <td class="r"><b>${fmt(c.tdi)}</b>${c.tdi!=null?`<span class="meter"><i style="width:${c.tdi}%"></i></span>`:''}</td><td class="r">${fmt(c.startup)}</td><td class="r">${fmt(c.patent)}</td><td class="r">${usd(c.revenue)}</td></tr>`).join('');
  const a=r.length?page*PER+1:0,b=Math.min(r.length,page*PER+PER);
  $('pg').textContent=`Showing ${a.toLocaleString()}–${b.toLocaleString()} of ${r.length.toLocaleString()} companies`;
  $('pno').value=page+1;$('pno').max=P;$('pmax').textContent=P.toLocaleString();
@@ -265,7 +265,7 @@ function bars(v){if(!v||v.every(x=>x==null))return '';const W=640,H=170,P=32,ys=
 function kpi(v,l){return `<div class="kpi"><b>${v}</b><span>${l}</span></div>`}
 function detail(c){const tags=(c.categories||'').split(';').map(s=>s.trim()).filter(Boolean).map(s=>`<span class="pill">${esc(s.replace('=',' · '))}</span>`).join('')||'<span class="muted small">No tracked technology linked</span>';
  const f=c.fin,rdp=f&&f[1]>0&&f[3]!=null?(100*f[3]/f[1]).toFixed(1)+'%':'<span class="muted">–</span>';
- const pat=c.patent!=null?fmt(c.patent):'<span class="muted small" style="font-size:13px">not yet collected</span>';
+ const pat=c.patent!=null?fmt(c.patent):'<span class="muted small" style="font-size:13px">not linked</span>';
  $('detail').innerHTML=`<div class="muted small">${esc(c.ticker||'no ticker')}${c.exchange?' · '+esc(c.exchange):''}${c.listed?'':' · <span class="badge">historical filer</span>'}</div><h3 style="margin:2px 0 4px;font-size:22px">${esc(c.name)}</h3>
  <div class="muted small">${esc(c.sic||'Industry unknown')}${c.country?' · '+esc(c.country):''}</div>
  <div style="display:flex;flex-wrap:wrap;gap:28px;margin:16px 0"><div><div class="big">${fmt(c.tdi)}</div><div class="muted small">Index ${D.years[D.years.length-1]}</div></div>
@@ -296,6 +296,7 @@ def main() -> None:
             .replace("__NCOMP__", f"{p['coverage']['total_companies']:,}")
             .replace("__NLISTED__", f"{p['n_listed']:,}")
             .replace("__NSTART__", f"{p['n_startups']:,}")
+            .replace("__NPAT__", f"{p['n_patent']:,}")
             .replace("__NREG__", str(p["n_regressions"]))
             .replace("__Y0__", str(min(p["years"]))).replace("__Y1__", str(max(p["years"])))
             .replace("__WP__", f"{int(p['weights']['patent_score'] * 100)}")

@@ -6,3 +6,4 @@ linearmodels>=5.0
 # optional: full-universe patent extraction from Google BigQuery
 # google-cloud-bigquery>=3.0
 # db-dtypes>=1.0
+pyreadr>=0.5        # gvkey-CIK crosswalk (.rda) for the PatentsView patent linkage

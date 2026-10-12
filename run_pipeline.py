@@ -29,6 +29,7 @@ STEPS = [
     ("startups_clean", "src.companies.startups.clean_startups", "3. startup cleaning", False, False, []),
     ("startups_tag", "src.companies.startups.calculate_startup", "4. startup technology tagging", False, False, []),
     ("startups_company", "src.companies.startups.build_company_startup_scores", "4. company startup exposure", False, False, []),
+    ("patents_patentsview", "src.patents.extract_patents_patentsview", "5. patent grants (PatentsView public linkage)", True, True, ["--offline"]),
     ("patents_bigquery", "src.patents.extract_patents_bigquery", "5. patent extraction (BigQuery, optional)", True, True, None),
     ("patents_process", "src.patents.process_patents", "5. patent company-year counts", False, False, []),
     ("patents_score", "src.patents.calculate_patent_scores", "5. patent scores", False, False, []),

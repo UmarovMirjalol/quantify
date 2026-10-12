@@ -8,10 +8,10 @@ companies_master,missing country,WARN,1103,13702,
 startups_clean,duplicate dedupe_key,PASS,0,19820,
 startups_clean,duplicate normalized startup names (distinct websites),WARN,797,19820,"kept: same name, different domain = different startup"
 startups_clean,impossible cohort years,PASS,0,19820,
-patent_counts,duplicate company-year observations,PASS,0,99,
-patent_counts,negative patent counts,PASS,0,99,
-patent_counts,impossible years,PASS,0,99,
-patent_counts,companies without patent data (treated as missing),WARN,13693,13702,BigQuery extraction not yet run for the full universe
+patent_counts,duplicate company-year observations,PASS,0,56790,
+patent_counts,negative patent counts,PASS,0,56790,
+patent_counts,impossible years,PASS,0,56790,
+patent_counts,companies without patent data (treated as missing),WARN,9916,13702,BigQuery extraction not yet run for the full universe
 technology_index,duplicate company-year rows,PASS,0,137020,
 technology_index,years outside INDEX_YEARS,PASS,0,137020,
 technology_index,"patent_score outside [0,100]",PASS,0,137020,
@@ -24,7 +24,7 @@ technology_index,NaN propagation: component present but index NaN,PASS,0,137020,
 technology_index,index present without any component,PASS,0,137020,
 technology_index,components_available inconsistent,PASS,0,137020,
 technology_index,universe companies missing from index,PASS,0,13702,
-technology_index,company-years without any component,WARN,12570,137020,kept in file with NaN index
+technology_index,company-years without any component,WARN,11720,137020,kept in file with NaN index
 financials,duplicate company-year rows,PASS,0,91979,
 financials,impossible years,PASS,0,91979,
 financials,infinite values in revenue,PASS,0,91979,

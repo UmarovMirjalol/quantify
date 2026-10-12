@@ -160,8 +160,11 @@ come from the SEC submissions API.
 are assigned to at least one of nine technology categories (AI, Fintech, Cloud, Robotics, Cybersecurity, Biotech,
 Semiconductors, Energy, Quantum) using word-bounded keyword rules on tags and descriptions.
 
-**Patents.** U.S. patent counts from Google Patents Public Data (BigQuery). In the current version patent data are
-available for {int(cv['patent_coverage'])} companies; the extraction query for the full universe is part of the pipeline.
+**Patents.** U.S. utility patent grants from USPTO PatentsView (release 2026-04-10), linked to public firms by the
+open patent-firm linkage of Ma (2025, *Review of Financial Studies*) and from Compustat identifiers to SEC CIKs via the
+`farr` gvkey-CIK table. Patents are counted by grant year. Patent data are available for
+{int(cv['patent_coverage']):,} companies; firms without a link (mostly small or historical registrants) have a missing,
+not zero, patent component.
 
 **Fundamentals.** Revenue, total assets, R&D, capital expenditure, cash, long-term debt and public float from the
 SEC XBRL frames API for {fin['company_id'].nunique():,} companies. Market capitalisation is not used because SEC does

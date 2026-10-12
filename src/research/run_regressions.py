@@ -363,8 +363,9 @@ def write_report(results: pd.DataFrame, sample: pd.DataFrame) -> None:
         "market capitalization.",
         "- **R&D sample selection.** Many firms do not report R&D separately; M3 is estimated on "
         "reporters only (missing R&D is not treated as zero).",
-        "- **Patent coverage.** See the coverage section; until the BigQuery extraction is run "
-        "for the full universe, patent-related robustness rows have very few firms.",
+        "- **Patent coverage.** Patent data come from the PatentsView public-firm linkage and "
+        "cover only linked companies (see the coverage section); unlinked firms are missing, "
+        "not zero, so patent-related rows use a selected sample of larger, innovating firms.",
         "- **Foreign filers.** SEC frames only cover US-GAAP facts in USD, so most IFRS filers "
         "(20-F) have no fundamentals and drop out of the regressions.",
         "- **Winsorization sensitivity.** Ratio outcomes are winsorized 1%/99% by year in the main "

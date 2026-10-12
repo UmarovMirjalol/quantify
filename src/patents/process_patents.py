@@ -71,6 +71,17 @@ def load_bigquery_export(master: pd.DataFrame):
     return counts, matches
 
 
+def load_patentsview() -> pd.DataFrame:
+    if not config.PATENTS_PATENTSVIEW_COUNTS.exists():
+        log.warning("No PatentsView linkage counts (%s); run step patents_patentsview.",
+                    config.PATENTS_PATENTSVIEW_COUNTS)
+        return pd.DataFrame()
+    pv = pd.read_csv(config.PATENTS_PATENTSVIEW_COUNTS)
+    pv["source"] = "patentsview_ma2025"
+    log.info("PatentsView linkage: %d companies", pv["company_id"].nunique())
+    return pv[["company_id", "year", "patent_count", "source"]]
+
+
 def load_legacy(master: pd.DataFrame) -> pd.DataFrame:
     if not config.PATENTS_LEGACY_BY_YEAR.exists():
         return pd.DataFrame()
@@ -88,10 +99,15 @@ def load_legacy(master: pd.DataFrame) -> pd.DataFrame:
 
 
 def complete_grid(counts: pd.DataFrame) -> pd.DataFrame:
-    """Within each company's observed source span, absent years are genuine zeros."""
+    """Within each company's observed source span, absent years are genuine zeros.
+    The PatentsView linkage covers every grant year, so linked firms span the full window."""
     rows = []
+    lo, hi = config.PATENT_COUNT_YEARS
     for (cid, source), grp in counts.groupby(["company_id", "source"]):
-        years = range(int(grp["year"].min()), int(grp["year"].max()) + 1)
+        if source == "patentsview_ma2025":
+            years = range(lo, hi + 1)
+        else:
+            years = range(int(grp["year"].min()), int(grp["year"].max()) + 1)
         full = grp.set_index("year").reindex(years)
         full["patent_count"] = full["patent_count"].fillna(0).astype(int)
         full["company_id"], full["source"] = cid, source
@@ -101,11 +117,18 @@ def complete_grid(counts: pd.DataFrame) -> pd.DataFrame:
 
 def main() -> None:
     master = pd.read_csv(config.COMPANIES_MASTER)
+    pv = load_patentsview()
     bq, matches = load_bigquery_export(master)
     legacy = load_legacy(master)
-    if not bq.empty and not legacy.empty:
-        legacy = legacy[~legacy["company_id"].isin(bq["company_id"])]   # BigQuery wins
-    counts = pd.concat([x for x in (bq, legacy) if not x.empty], ignore_index=True)
+    covered = set()
+    sources = []
+    for src in (pv, bq, legacy):                     # priority: PatentsView > BigQuery > legacy
+        if src.empty:
+            continue
+        src = src[~src["company_id"].isin(covered)]
+        covered |= set(src["company_id"])
+        sources.append(src)
+    counts = pd.concat(sources, ignore_index=True) if sources else pd.DataFrame()
     if counts.empty:
         log.warning("No patent data available at all.")
         counts = pd.DataFrame(columns=["company_id", "year", "patent_count", "source"])

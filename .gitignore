@@ -7,3 +7,6 @@ venv/
 .env
 *.json.key
 application_default_credentials.json
+# large public downloads, re-fetched by run_pipeline.py (step patents_patentsview)
+data/raw/patents/ma_patentsview/
+*.part

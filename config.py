@@ -44,6 +44,7 @@ SIC_TECHNOLOGY_MAP_OUT = DATA / "startups" / "sic_technology_map.csv"
 PATENTS_LEGACY_BY_YEAR = DATA / "patents" / "patents_by_year.csv"   # manual BigQuery pull, name keyed
 PATENTS_BIGQUERY_EXPORT = RAW_PATENTS / "assignee_year_counts.csv.gz"
 PATENTS_ASSIGNEE_CROSSWALK = RAW_PATENTS / "assignee_crosswalk.csv"  # optional curated additions
+PATENTS_PATENTSVIEW_COUNTS = DATA / "patents" / "patentsview_company_year_counts.csv"
 PATENT_COUNTS = DATA / "patents" / "patent_counts_company_year.csv"
 PATENT_MATCHES = DATA / "patents" / "patent_assignee_matches.csv"
 PATENT_SCORES = DATA / "patents" / "patent_scores.csv"
