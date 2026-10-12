@@ -135,6 +135,7 @@ button{font:inherit;background:#fff;border:1px solid var(--line);border-radius:1
 .note{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:12px;padding:14px 16px;font-size:14px}
 footer{margin-top:80px;border-top:1px solid var(--line);padding:32px 24px;color:var(--muted);font-size:13px;text-align:center}
 svg text{fill:var(--muted);font-size:11px}
+body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:auto}
 @media(max-width:900px){.stats,.top{grid-template-columns:repeat(2,1fr)}.g2,.g3{grid-template-columns:1fr}.nav .links{display:none}}
 </style></head><body>
 <nav><div class="nav"><a class="logo" href="#"><i></i>Technology Disruption Index</a>
