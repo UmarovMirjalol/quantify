@@ -108,7 +108,7 @@ TEMPLATE = r"""<!doctype html>
 <meta name="description" content="An open, reproducible index of technology-disruption exposure for __NCOMP__ SEC-registered companies, built from patents, startup-ecosystem activity and SEC fundamentals.">
 <link rel="canonical" href="__SITE__/">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#4f46e5">
+<meta name="theme-color" content="#0f172a">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -131,7 +131,7 @@ body{margin:0;font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Rob
 a{color:var(--acc);text-decoration:none}
 nav{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(12px);background:rgba(247,248,251,.8);border-bottom:1px solid var(--line)}
 .nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:28px;padding:14px 24px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}.logo i{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:inline-block}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}.logo img{width:28px;height:28px;display:block}
 .nav .links{display:flex;gap:22px;margin-left:auto}.nav .links a{color:var(--muted);font-size:14px}.nav .links a:hover{color:var(--ink)}
 .hero{position:relative;overflow:hidden;padding:88px 24px 64px;text-align:center}
 .hero:before{content:"";position:absolute;inset:-40% -10% auto;height:620px;background:radial-gradient(closest-side,rgba(79,70,229,.18),transparent),radial-gradient(closest-side at 70% 40%,rgba(6,182,212,.16),transparent);z-index:-1}
@@ -177,7 +177,7 @@ svg text{fill:var(--muted);font-size:11px}
 body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:auto}
 @media(max-width:900px){.stats,.top{grid-template-columns:repeat(2,1fr)}.g2,.g3{grid-template-columns:1fr}.nav .links{display:none}}
 </style></head><body>
-<nav><div class="nav"><a class="logo" href="#"><i></i>Technology Disruption Index</a>
+<nav><div class="nav"><a class="logo" href="#"><img src="/favicon.svg" alt="" width="28" height="28">Technology Disruption Index</a>
 <div class="links"><a href="#explore">Explore</a><a href="#research">Research</a><a href="#method">Methodology</a><a href="#about">About</a></div></div></nav>
 
 <header class="hero"><span class="tag">Open data · __Y0__–__Y1__ · updated from SEC filings</span>

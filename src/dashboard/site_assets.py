@@ -13,38 +13,24 @@ from PIL import Image, ImageDraw, ImageFont
 
 import config
 
-ACC, ACC2, INK = (79, 70, 229), (6, 182, 212), (15, 23, 42)
-LINE = [(7, 22), (13, 15), (18, 19), (25, 10)]          # logo chart line on a 32-unit grid
-SVG = ("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient "
-       "id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#4f46e5'/><stop "
-       "offset='1' stop-color='#06b6d4'/></linearGradient></defs><rect width='32' height='32' "
-       "rx='8' fill='url(#g)'/><path d='M7 22l6-7 5 4 7-9' stroke='white' stroke-width='3' "
-       "fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>")
-
-
-def gradient(size, c1, c2) -> Image.Image:
-    w, h = size
-    img = Image.new("RGB", size)
-    px = img.load()
-    for y in range(h):
-        for x in range(w):
-            t = (x / w + y / h) / 2
-            px[x, y] = tuple(int(a + (b - a) * t) for a, b in zip(c1, c2))
-    return img
+INK, AMBER, WHITE = (15, 23, 42), (245, 158, 11), (255, 255, 255)
+# logo: navy tile with three rising index bars, the last one highlighted (32-unit grid)
+BARS = [((7, 17, 11, 25), WHITE), ((14, 12, 18, 25), WHITE), ((21, 7, 25, 25), AMBER)]
+SVG = ("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>"
+       "<rect width='32' height='32' rx='6' fill='#0f172a'/>"
+       + "".join(f"<rect x='{x0}' y='{y0}' width='{x1 - x0}' height='{y1 - y0}' rx='1' "
+                 f"fill='#{c[0]:02x}{c[1]:02x}{c[2]:02x}'/>" for (x0, y0, x1, y1), c in BARS)
+       + "</svg>")
 
 
 def logo(px: int) -> Image.Image:
     s = 4 * px                                            # supersample, then downscale
-    mask = Image.new("L", (s, s), 0)
-    ImageDraw.Draw(mask).rounded_rectangle([0, 0, s - 1, s - 1], radius=s // 4, fill=255)
-    img = Image.new("RGBA", (s, s), (0, 0, 0, 0))
-    img.paste(gradient((s, s), ACC, ACC2), (0, 0), mask)
     k = s / 32
-    ImageDraw.Draw(img).line([(x * k, y * k) for x, y in LINE], fill="white",
-                             width=int(3 * k), joint="curve")
-    for x, y in (LINE[0], LINE[-1]):
-        r = 1.5 * k
-        ImageDraw.Draw(img).ellipse([x * k - r, y * k - r, x * k + r, y * k + r], fill="white")
+    img = Image.new("RGBA", (s, s), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle([0, 0, s - 1, s - 1], radius=int(6 * k), fill=INK)
+    for (x0, y0, x1, y1), color in BARS:
+        d.rounded_rectangle([x0 * k, y0 * k, x1 * k, y1 * k], radius=int(k), fill=color)
     return img.resize((px, px), Image.LANCZOS)
 
 
@@ -59,10 +45,9 @@ def font(size: int, bold: bool = False):
 
 def og_image(path: Path, n_companies: str, years: str) -> None:
     img = Image.new("RGB", (1200, 630), (247, 248, 251))
-    glow = gradient((1200, 630), (230, 232, 255), (224, 247, 252))
-    img.paste(glow)
     img.paste(logo(120), (80, 80), logo(120))
     d = ImageDraw.Draw(img)
+    d.rectangle([0, 618, 1200, 630], fill=AMBER)
     d.text((80, 250), "Technology Disruption Index", font=font(68, True), fill=INK)
     d.text((80, 345), f"Tech-exposure scores for {n_companies} public companies, {years}",
            font=font(36), fill=(71, 85, 105))
@@ -86,7 +71,7 @@ def write_all(out: Path, n_companies: str, years: str) -> None:
         "name": "Technology Disruption Index", "short_name": "TDI",
         "icons": [{"src": "/icon-192.png", "sizes": "192x192", "type": "image/png"},
                   {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png"}],
-        "theme_color": "#4f46e5", "background_color": "#f7f8fb", "display": "standalone",
+        "theme_color": "#0f172a", "background_color": "#f7f8fb", "display": "standalone",
         "start_url": "/"}, indent=1), encoding="utf-8")
     (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n",
                                     encoding="utf-8")
