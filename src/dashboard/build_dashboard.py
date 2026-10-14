@@ -12,6 +12,7 @@ import pandas as pd
 
 import config
 from src.common import get_logger
+from src.dashboard import site_assets
 
 log = get_logger("build_dashboard")
 OUT_DIR = config.ROOT / "docs"
@@ -105,9 +106,23 @@ TEMPLATE = r"""<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Technology Disruption Index — tech exposure scores for __NCOMP__ public companies</title>
 <meta name="description" content="An open, reproducible index of technology-disruption exposure for __NCOMP__ SEC-registered companies, built from patents, startup-ecosystem activity and SEC fundamentals.">
-<meta property="og:title" content="Technology Disruption Index">
-<meta property="og:description" content="Tech-exposure scores for __NCOMP__ public companies, 2015-2024. Open data and research.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234f46e5'/><path d='M7 22l6-7 5 4 7-9' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="canonical" href="__SITE__/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Technology Disruption Index">
+<meta property="og:url" content="__SITE__/">
+<meta property="og:title" content="Technology Disruption Index — which companies are most exposed to tech disruption?">
+<meta property="og:description" content="Tech-exposure scores for __NCOMP__ public companies, __Y0__–__Y1__, from 1.6M patents, 19,820 startups and SEC filings. Open data and research.">
+<meta property="og:image" content="__SITE__/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="__SITE__/og-image.png">
+<script type="application/ld+json">__LDJSON__</script>
 <style>
 :root{--bg:#f7f8fb;--card:#fff;--ink:#0f172a;--muted:#64748b;--line:#e6e9f0;--acc:#4f46e5;--acc2:#06b6d4;--good:#059669;--warn:#d97706;--r:16px;
 --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06)}
@@ -292,7 +307,28 @@ render();detail(C.find(c=>c.id==$('top').firstElementChild.dataset.id));
 def main() -> None:
     p = build_payload()
     data = json.dumps(p, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
-    html = (TEMPLATE.replace("__DATA__", data)
+    site = config.SITE_URL.rstrip("/")
+    ncomp, y0, y1 = f"{p['coverage']['total_companies']:,}", min(p["years"]), max(p["years"])
+    ld = json.dumps([
+        {"@context": "https://schema.org", "@type": "WebSite", "name": "Technology Disruption Index",
+         "alternateName": "TDI", "url": f"{site}/"},
+        {"@context": "https://schema.org", "@type": "Dataset",
+         "name": "Technology Disruption Index — company technology-exposure scores",
+         "description": f"Annual technology-exposure scores (0-100) for {ncomp} SEC-registered "
+                        f"companies, {y0}-{y1}, built from US patent grants (USPTO PatentsView), "
+                        "accelerator startup activity mapped to industries, and SEC XBRL "
+                        "fundamentals, with panel regressions testing whether markets price "
+                        "technology exposure before fundamentals.",
+         "url": f"{site}/", "sameAs": "https://github.com/UmarovMirjalol/quantify",
+         "keywords": ["technology disruption", "innovation index", "patents", "startups",
+                      "SEC EDGAR", "public companies", "stock market", "panel data"],
+         "temporalCoverage": f"{y0}/{y1}", "isAccessibleForFree": True,
+         "creator": {"@type": "Person", "name": "Mirjalol Umarov",
+                     "url": "https://github.com/UmarovMirjalol"},
+         "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
+                           "contentUrl": f"{site}/data/company_technology_index_latest.csv"}]},
+    ], ensure_ascii=False).replace("</", "<\\/")
+    html = (TEMPLATE.replace("__DATA__", data).replace("__LDJSON__", ld).replace("__SITE__", site)
             .replace("__NCOMP__", f"{p['coverage']['total_companies']:,}")
             .replace("__NLISTED__", f"{p['n_listed']:,}")
             .replace("__NSTART__", f"{p['n_startups']:,}")
@@ -308,7 +344,7 @@ def main() -> None:
     shutil.copy(config.TECH_INDEX_LATEST, OUT_DIR / "data" / "company_technology_index_latest.csv")
     shutil.copy(config.REGRESSION_RESULTS, OUT_DIR / "data" / "regression_results.csv")
     (OUT_DIR / "vercel.json").write_text('{"cleanUrls": true}\n', encoding="utf-8")
-    (OUT_DIR / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
+    site_assets.write_all(OUT_DIR, ncomp, f"{y0}–{y1}")
     log.info("Website: %d companies, %.1f MB -> %s", len(p["companies"]), OUT.stat().st_size / 1e6, OUT)
 
 

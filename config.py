@@ -58,6 +58,9 @@ COVERAGE_REPORT = INDEX_DIR / "coverage_report.csv"
 
 # Financials / research
 FINANCIALS = DATA / "financials" / "company_financials.csv"
+# Public address of the website (canonical URL, sitemap, link previews). Change after
+# attaching a custom domain, then rebuild: python run_pipeline.py --only dashboard
+SITE_URL = "https://quantify.vercel.app"
 FINAL_PANEL = DATA / "research" / "final_panel.csv"
 REGRESSION_RESULTS = RESULTS / "regression_results.csv"
 RESEARCH_REPORT = RESULTS / "research_report.md"
