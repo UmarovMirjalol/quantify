@@ -21,72 +21,95 @@
 <meta name="twitter:image" content="https://quantify.vercel.app/og-image.png">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebSite", "name": "Technology Disruption Index", "alternateName": "TDI", "url": "https://quantify.vercel.app/"}, {"@context": "https://schema.org", "@type": "Dataset", "name": "Technology Disruption Index — company technology-exposure scores", "description": "Annual technology-exposure scores (0-100) for 13,702 SEC-registered companies, 2015-2024, built from US patent grants (USPTO PatentsView), accelerator startup activity mapped to industries, and SEC XBRL fundamentals, with panel regressions testing whether markets price technology exposure before fundamentals.", "url": "https://quantify.vercel.app/", "sameAs": "https://github.com/UmarovMirjalol/quantify", "keywords": ["technology disruption", "innovation index", "patents", "startups", "SEC EDGAR", "public companies", "stock market", "panel data"], "temporalCoverage": "2015/2024", "isAccessibleForFree": true, "creator": {"@type": "Person", "name": "Mirjalol Umarov", "url": "https://github.com/UmarovMirjalol"}, "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://quantify.vercel.app/data/company_technology_index_latest.csv"}]}]</script>
 <style>
-:root{--bg:#f7f8fb;--card:#fff;--ink:#0f172a;--muted:#64748b;--line:#e6e9f0;--acc:#4f46e5;--acc2:#06b6d4;--good:#059669;--warn:#d97706;--r:16px;
---shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06)}
+:root{--bg:#faf8f4;--card:#fff;--ink:#0f172a;--ink2:#1e293b;--muted:#5b6474;--line:#e6e0d4;--amber:#d97706;--amber-d:#b45309;--amber-l:#fef3c7;
+--good:#047857;--bad:#b91c1c;--r:10px;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+--shadow:0 1px 2px rgba(15,23,42,.05)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
-a{color:var(--acc);text-decoration:none}
-nav{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(12px);background:rgba(247,248,251,.8);border-bottom:1px solid var(--line)}
-.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:28px;padding:14px 24px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}.logo img{width:28px;height:28px;display:block}
-.nav .links{display:flex;gap:22px;margin-left:auto}.nav .links a{color:var(--muted);font-size:14px}.nav .links a:hover{color:var(--ink)}
-.hero{position:relative;overflow:hidden;padding:88px 24px 64px;text-align:center}
-.hero:before{content:"";position:absolute;inset:-40% -10% auto;height:620px;background:radial-gradient(closest-side,rgba(79,70,229,.18),transparent),radial-gradient(closest-side at 70% 40%,rgba(6,182,212,.16),transparent);z-index:-1}
-.tag{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:13px}
-h1{font-size:clamp(34px,5.4vw,62px);line-height:1.05;letter-spacing:-.03em;margin:18px auto 16px;max-width:900px}
-h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--muted);font-size:18px;max-width:720px;margin:0 auto 30px}
-.btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:600;font-size:15px}.btn.p{background:var(--ink);color:#fff}.btn.s{background:#fff;border:1px solid var(--line);color:var(--ink);margin-left:8px}
+body{margin:0;font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.01em}
+nav{position:sticky;top:0;z-index:10;background:rgba(250,248,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:28px;padding:12px 24px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:17px;color:var(--ink);text-decoration:none}.logo img{width:28px;height:28px;display:block}
+.nav .links{display:flex;gap:24px;margin-left:auto}.nav .links a{color:var(--muted);font-size:14px;text-decoration:none}.nav .links a:hover{color:var(--ink)}
+.nav .gh{border:1px solid var(--ink);color:var(--ink)!important;padding:5px 12px;border-radius:8px}
+.hero{max-width:1180px;margin:auto;padding:72px 24px 40px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-d)}
+h1{font-size:clamp(36px,5vw,60px);line-height:1.05;margin:14px 0 18px}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--amber-l) 62%)}
+.lead{color:var(--muted);font-size:18px;max-width:600px;margin:0 0 28px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none}.btn.p{background:var(--ink);color:#fff}.btn.s{border:1px solid var(--ink);color:var(--ink);margin-left:8px}
+.btn.p:hover{background:var(--ink2)}.btn.s:hover{background:#fff}
+.finding{background:var(--ink);color:#e2e8f0;border-radius:14px;padding:30px;box-shadow:0 20px 40px -20px rgba(15,23,42,.45)}
+.finding .eyebrow{color:#fbbf24}.finding .fig{font-family:var(--serif);font-size:76px;line-height:1;color:#fff;margin:14px 0 8px;font-weight:700}
+.finding p{margin:0 0 14px;font-size:15px}.finding hr{border:0;border-top:1px solid rgba(255,255,255,.15);margin:18px 0}
+.finding .src{font-size:12px;color:#94a3b8;margin:0}
 .wrap{max-width:1180px;margin:auto;padding:0 24px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:48px auto 0;max-width:1000px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);text-align:left}
-.stat b{display:block;font-size:30px;letter-spacing:-.02em}.stat span{color:var(--muted);font-size:13px}
-section{padding:72px 0 8px}.kicker{color:var(--acc);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
-h2{font-size:clamp(26px,3vw,36px);letter-spacing:-.02em;margin:6px 0 10px}.sub{color:var(--muted);max-width:760px;margin:0 0 28px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line);margin:8px 0 0}
+.stat{padding:20px 24px 20px 0}.stat+.stat{border-left:1px solid var(--line);padding-left:24px}
+.stat b{display:block;font-family:var(--serif);font-size:34px;line-height:1.1;font-variant-numeric:tabular-nums}.stat span{color:var(--muted);font-size:13px}
+section{padding:80px 0 8px}.kicker{color:var(--amber-d);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.12em;display:flex;align-items:center;gap:10px}
+.kicker:before{content:"";width:24px;height:2px;background:var(--amber)}
+h2{font-size:clamp(28px,3.2vw,40px);line-height:1.15;margin:10px 0 10px}.sub{color:var(--muted);max-width:760px;margin:0 0 28px;font-size:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.card h3{font-size:20px}
 .g2{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .top{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.tc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s}.tc:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.tc .n{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tc .t{color:var(--muted);font-size:12px}.tc .s{font-size:26px;font-weight:700;color:var(--acc)}
+.tc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;cursor:pointer;transition:border-color .15s,transform .15s;position:relative}
+.tc:hover{border-color:var(--ink);transform:translateY(-2px)}
+.tc .rk{position:absolute;top:14px;right:14px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tc .n{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tc .t{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tc .s{font-family:var(--serif);font-size:30px;font-weight:700;line-height:1.2}
+.tc .bar{height:3px;background:#efeae0;margin:8px 0 10px;border-radius:2px}.tc .bar i{display:block;height:100%;background:var(--amber);border-radius:2px}
 .controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
-input,select{font:inherit;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--ink)}input{flex:1;min-width:220px}
-input:focus,select:focus{outline:2px solid rgba(79,70,229,.25);border-color:var(--acc)}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
-th{color:var(--muted);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;user-select:none}
-tbody tr{cursor:pointer}tbody tr:hover{background:#f5f6ff}td.r,th.r{text-align:right}
-.meter{display:inline-block;width:70px;height:6px;border-radius:6px;background:#eef0f6;vertical-align:middle;margin-left:8px;overflow:hidden}.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
-.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;background:#eef2ff;color:#3730a3;margin:2px 6px 2px 0}
-.badge{font-size:11px;padding:2px 8px;border-radius:999px;background:#f1f5f9;color:var(--muted)}
+input,select{font:inherit;border:1px solid var(--line);background:#fff;border-radius:8px;padding:10px 12px;color:var(--ink)}input{flex:1;min-width:220px}
+input:focus,select:focus{outline:2px solid var(--amber-l);border-color:var(--amber)}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;user-select:none;border-bottom:1px solid var(--ink)}
+tbody tr{cursor:pointer}tbody tr:hover{background:#fbf6ea}td.r,th.r{text-align:right}
+.meter{display:inline-block;width:64px;height:4px;border-radius:2px;background:#efeae0;vertical-align:middle;margin-left:8px;overflow:hidden}.meter i{display:block;height:100%;background:var(--amber)}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;background:var(--amber-l);color:#92400e;margin:2px 6px 2px 0}
+.badge{font-size:11px;padding:2px 8px;border-radius:999px;background:#f1ede4;color:var(--muted)}
 .pager{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;justify-content:flex-end;margin-top:12px;color:var(--muted);font-size:13px}
-.pager #pg{margin-right:auto}.pager select{padding:6px 10px;border-radius:10px}.pager input{flex:0 0 70px;width:70px;min-width:0;padding:6px 8px;border:1px solid var(--line);border-radius:10px;font:inherit;text-align:center}
-.pager button:disabled{opacity:.4;cursor:default}
-.tw.scroll{max-height:75vh;overflow-y:auto}.tw thead th{position:sticky;top:0;background:#fff;z-index:1}
-button{font:inherit;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 14px;cursor:pointer}
-.tw{overflow-x:auto}.muted{color:var(--muted)}.small{font-size:13px}.sig{color:var(--good);font-weight:600}
-.big{font-size:44px;font-weight:700;letter-spacing:-.03em}
-.method .card h3{margin:0 0 6px;font-size:17px}.method .card p{margin:0;color:var(--muted);font-size:14px}
-.num{display:inline-flex;width:30px;height:30px;border-radius:10px;align-items:center;justify-content:center;background:#eef2ff;color:var(--acc);font-weight:700;margin-bottom:10px}
-.note{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:12px;padding:14px 16px;font-size:14px}
-footer{margin-top:80px;border-top:1px solid var(--line);padding:32px 24px;color:var(--muted);font-size:13px;text-align:center}
-svg text{fill:var(--muted);font-size:11px}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}.kpi{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-.kpi b{display:block;font-size:18px}.kpi span{color:var(--muted);font-size:12px}#detail h4{margin:18px 0 8px;font-size:14px}
-body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:auto}
-@media(max-width:900px){.stats,.top{grid-template-columns:repeat(2,1fr)}.g2,.g3{grid-template-columns:1fr}.nav .links{display:none}}
+.pager #pg{margin-right:auto}.pager select{padding:6px 10px}.pager input{flex:0 0 70px;width:70px;min-width:0;padding:6px 8px;text-align:center}
+.pager button:disabled{opacity:.35;cursor:default}
+.tw{overflow-x:auto}.tw.scroll{max-height:75vh;overflow-y:auto}.tw thead th{position:sticky;top:0;background:#fff;z-index:1}
+button{font:inherit;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 14px;cursor:pointer;color:var(--ink)}button:hover:not(:disabled){border-color:var(--ink)}
+.muted{color:var(--muted)}.small{font-size:13px}.sig{color:var(--good);font-weight:700}
+.big{font-family:var(--serif);font-size:48px;font-weight:700;line-height:1}
+.method .card h3{margin:0 0 6px;font-size:19px}.method .card p{margin:0;color:var(--muted);font-size:14px}
+.num{display:inline-flex;width:28px;height:28px;border-radius:6px;align-items:center;justify-content:center;background:var(--ink);color:#fff;font-weight:700;font-size:13px;margin-bottom:12px}
+.note{background:#fffbeb;border-left:3px solid var(--amber);color:#78350f;border-radius:6px;padding:14px 18px;font-size:14px}
+footer{margin-top:96px;background:var(--ink);color:#94a3b8;font-size:13px}
+.foot{max-width:1180px;margin:auto;padding:40px 24px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
+.foot b{display:block;color:#fff;font-family:var(--serif);font-size:16px;margin-bottom:8px}.foot a{color:#cbd5e1;text-decoration:none;display:block;margin:4px 0}.foot a:hover{color:#fff}
+.foot .logo{color:#fff;margin-bottom:10px}
+svg text{fill:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}.kpi{background:#faf8f4;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.kpi b{display:block;font-size:18px;font-variant-numeric:tabular-nums}.kpi span{color:var(--muted);font-size:12px}#detail h4{margin:20px 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:auto}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:48px;gap:32px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0;padding-left:0}
+.stat:nth-child(n+3){border-top:1px solid var(--line)}.top{grid-template-columns:repeat(2,1fr)}.g2,.g3,.foot{grid-template-columns:1fr}.nav .links a:not(.gh){display:none}.finding .fig{font-size:60px}}
+
 </style></head><body>
 <nav><div class="nav"><a class="logo" href="#"><img src="/favicon.svg" alt="" width="28" height="28">Technology Disruption Index</a>
-<div class="links"><a href="#explore">Explore</a><a href="#research">Research</a><a href="#method">Methodology</a><a href="#about">About</a></div></div></nav>
+<div class="links"><a href="#explore">Explore</a><a href="#research">Research</a><a href="#method">Methodology</a><a href="#about">Data</a><a class="gh" href="https://github.com/UmarovMirjalol/quantify" target="_blank" rel="noopener">GitHub</a></div></div></nav>
 
-<header class="hero"><span class="tag">Open data · 2015–2024 · updated from SEC filings</span>
-<h1>Which companies are most exposed to <span>technological disruption?</span></h1>
+<header class="hero"><div>
+<div class="eyebrow">Open research · 2015–2024 · SEC filings, patents, startups</div>
+<h1>Which companies are most exposed to <em>technological disruption?</em></h1>
 <p class="lead">A transparent, reproducible index scoring 13,702 SEC-registered companies on patent activity and startup-ecosystem activity in their technology domains — and a test of whether markets price it before fundamentals.</p>
-<a class="btn p" href="#explore">Explore companies</a><a class="btn s" href="#research">See the research</a>
-<div class="stats" id="stats"></div></header>
+<a class="btn p" href="#explore">Explore companies</a><a class="btn s" href="#research">See the research</a></div>
+<aside class="finding"><div class="eyebrow">Key finding</div><div class="fig">+8.7%</div>
+<p>higher market valuation the following year for a company scoring 10 index points above its industry peers in the same year.</p>
+<hr><p>But when a company’s own score rises over time, its valuation does not follow (p = 0.96). Markets appear to price <i>which</i> firms are exposed, not changes in exposure.</p>
+<p class="src">Lagged panel regressions, 47,627 firm-years, industry×year fixed effects, clustered SEs. Predictive, not causal.</p></aside>
+</header>
 
-<div class="wrap">
+<div class="wrap"><div class="stats" id="stats"></div>
 <section id="explore"><div class="kicker">Explore</div><h2>Highest-scoring companies</h2>
-<p class="sub">Index on a 0–100 scale for 2024. Click any company to see its score history and technology exposure.</p>
-<div class="top" id="top"><div class="tc" data-id="1070050"><div class="s">100.0</div><div class="n">AppTech Payments Corp.</div><div class="t">APCX · Services</div></div><div class="tc" data-id="1730869"><div class="s">100.0</div><div class="n">Everything Blockchain, Inc.</div><div class="t">EBZT · Services</div></div><div class="tc" data-id="1437283"><div class="s">100.0</div><div class="n">REGO PAYMENT ARCHITECTURES, INC.</div><div class="t">RPMT · Services</div></div><div class="tc" data-id="1691221"><div class="s">99.9</div><div class="n">Foresight Autonomous Holdings Ltd.</div><div class="t">FRSX · Services</div></div><div class="tc" data-id="2113060"><div class="s">99.9</div><div class="n">IQM Quantum Computers Oyj</div><div class="t">IQMX · Services</div></div><div class="tc" data-id="2007599"><div class="s">99.9</div><div class="n">Robot Consulting Co., Ltd.</div><div class="t">LAWR · Services</div></div><div class="tc" data-id="1877461"><div class="s">93.7</div><div class="n">1606 CORP.</div><div class="t">CBDW · Services</div></div><div class="tc" data-id="1993097"><div class="s">93.7</div><div class="n">3 E Network Technology Group Ltd</div><div class="t">MASK · Services</div></div><div class="tc" data-id="2092287"><div class="s">93.7</div><div class="n">3KNIGHTS DYNAMICS GROUP Ltd</div><div class="t">TKDG · Services</div></div><div class="tc" data-id="1705402"><div class="s">93.7</div><div class="n">AGM GROUP HOLDINGS, INC.</div><div class="t">AGMH · Services</div></div></div>
+<p class="sub">Index on a 0–100 scale for 2024. Cards show listed companies scored on both patents and startup activity; the table below covers all 13,702. Click any company for its score history and fundamentals.</p>
+<div class="top" id="top"><div class="tc" data-id="1564408"><span class="rk">#1</span><div class="s">89.9</div><div class="bar"><i style="width:89.9%"></i></div><div class="n">Snap Inc</div><div class="t">SNAP · Services</div></div><div class="tc" data-id="1585521"><span class="rk">#2</span><div class="s">86.4</div><div class="bar"><i style="width:86.4%"></i></div><div class="n">Zoom Communications, Inc.</div><div class="t">ZM · Services</div></div><div class="tc" data-id="1640147"><span class="rk">#3</span><div class="s">86.3</div><div class="bar"><i style="width:86.3%"></i></div><div class="n">Snowflake Inc.</div><div class="t">SNOW · Services</div></div><div class="tc" data-id="1943896"><span class="rk">#4</span><div class="s">83.3</div><div class="bar"><i style="width:83.3%"></i></div><div class="n">Rubrik, Inc.</div><div class="t">RBRK · Services</div></div><div class="tc" data-id="1594805"><span class="rk">#5</span><div class="s">83.2</div><div class="bar"><i style="width:83.2%"></i></div><div class="n">SHOPIFY INC.</div><div class="t">SHOP · Services</div></div><div class="tc" data-id="1560327"><span class="rk">#6</span><div class="s">82.9</div><div class="bar"><i style="width:82.9%"></i></div><div class="n">Rapid7, Inc.</div><div class="t">RPD · Services</div></div><div class="tc" data-id="1571996"><span class="rk">#7</span><div class="s">82.8</div><div class="bar"><i style="width:82.8%"></i></div><div class="n">Dell Technologies Inc.</div><div class="t">DELL · Manufacturing</div></div><div class="tc" data-id="1734722"><span class="rk">#8</span><div class="s">82.2</div><div class="bar"><i style="width:82.2%"></i></div><div class="n">UiPath, Inc.</div><div class="t">PATH · Services</div></div><div class="tc" data-id="1713683"><span class="rk">#9</span><div class="s">82.2</div><div class="bar"><i style="width:82.2%"></i></div><div class="n">Zscaler, Inc.</div><div class="t">ZS · Services</div></div><div class="tc" data-id="2063196"><span class="rk">#10</span><div class="s">82.1</div><div class="bar"><i style="width:82.1%"></i></div><div class="n">Netskope Inc</div><div class="t">NTSK · Services</div></div></div>
 
 <div class="card" style="margin-top:20px">
 <div class="controls"><input id="q" placeholder="Search by company name or ticker…">
@@ -123,12 +146,17 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <div class="card"><div class="num">6</div><h3>Fundamentals</h3><p>Revenue, assets, R&D, CAPEX, cash, debt and public float from SEC XBRL, used to test predictive relationships with year, industry and firm fixed effects.</p></div>
 </div></section>
 
-<section id="about"><div class="kicker">About</div><h2>Open and reproducible</h2>
+<section id="about"><div class="kicker">Data</div><h2>Open and reproducible</h2>
 <p class="sub">The full pipeline — data collection, scoring, validation and regressions — runs with one command. The index is a measurable proxy for technology exposure, not an objective measure of “true” disruption.</p>
 <div class="card" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between"><div><h3 style="margin:0">Download the data</h3><p class="muted small" style="margin:4px 0 0">Latest scores for all 13,702 companies and the full regression results (CSV).</p></div>
 <div><a class="btn p" href="data/company_technology_index_latest.csv" download>Index scores (CSV)</a><a class="btn s" href="data/regression_results.csv" download>Regression results</a></div></div></section>
 </div>
-<footer>Technology Disruption Index · Data: SEC EDGAR, USPTO PatentsView (firm linkage: Ma, 2025, RFS), accelerator portfolios · Not investment advice</footer>
+<footer><div class="foot">
+<div><a class="logo" href="#"><img src="/favicon.svg" alt="" width="28" height="28">Technology Disruption Index</a>
+<p>An open, reproducible measure of technology exposure for 13,702 public companies. Research project; not investment advice.</p></div>
+<div><b>Explore</b><a href="#explore">Companies</a><a href="#research">Research results</a><a href="#method">Methodology</a><a href="data/company_technology_index_latest.csv">Download data (CSV)</a></div>
+<div><b>Sources</b><a href="https://www.sec.gov/edgar" target="_blank" rel="noopener">SEC EDGAR</a><a href="https://www.uspto.gov/ip-policy/economic-research/patentsview" target="_blank" rel="noopener">USPTO PatentsView</a><a href="https://github.com/songma/patent-firm-link-share" target="_blank" rel="noopener">Patent–firm linkage (Ma, 2025)</a><a href="https://github.com/UmarovMirjalol/quantify" target="_blank" rel="noopener">Source code on GitHub</a></div>
+</div></footer>
 
 <script>
 fetch('/data/site.json?v=3d5476479d').then(r=>r.json()).then(D=>{
@@ -143,8 +171,8 @@ const FL={sic_linked:'Industry linked to technology',"sic_linked+name":'Industry
 const cats=['AI','Fintech','Cloud','Robotics','Cybersecurity','Biotech','Semiconductors','Energy','Quantum'];
 cats.forEach(c=>$('cat').insertAdjacentHTML('beforeend',`<option>${c}</option>`));
 [...new Set(C.map(c=>c.industry).filter(Boolean))].sort().forEach(i=>$('ind').insertAdjacentHTML('beforeend',`<option>${esc(i)}</option>`));
-$('top').innerHTML=C.filter(c=>c.tdi!=null&&c.listed).sort((a,b)=>b.tdi-a.tdi||a.name.localeCompare(b.name)).slice(0,10)
- .map(c=>`<div class="tc" data-id="${c.id}"><div class="s">${c.tdi.toFixed(1)}</div><div class="n">${esc(c.name)}</div><div class="t">${esc(c.ticker)} · ${esc(c.industry)}</div></div>`).join('');
+$('top').innerHTML=C.filter(c=>c.tdi!=null&&c.listed&&c.components==2).sort((a,b)=>b.tdi-a.tdi||a.name.localeCompare(b.name)).slice(0,10)
+ .map((c,i)=>`<div class="tc" data-id="${c.id}"><span class="rk">#${i+1}</span><div class="s">${c.tdi.toFixed(1)}</div><div class="bar"><i style="width:${c.tdi}%"></i></div><div class="n">${esc(c.name)}</div><div class="t">${esc(c.ticker)} · ${esc(c.industry)}</div></div>`).join('');
 $('top').onclick=e=>{const t=e.target.closest('.tc');if(t){detail(C.find(c=>c.id==t.dataset.id));$('detail').scrollIntoView({behavior:'smooth',block:'center'})}};
 let sortK='tdi',dir=-1,page=0;
 function rows(){const q=$('q').value.trim().toLowerCase(),i=$('ind').value,c=$('cat').value,l=$('lst').value;
@@ -167,13 +195,13 @@ $('tb').onclick=e=>{const t=e.target.closest('tr');if(t){detail(C.find(c=>c.id==
 function line(v){const W=640,H=210,P=32,ys=D.years,X=i=>P+i*(W-2*P)/(ys.length-1),Y=s=>H-P-(s/100)*(H-2*P);
  let d='',o=false,area='';v.forEach((s,i)=>{if(s==null){o=false;return}d+=(o?'L':'M')+X(i)+','+Y(s);o=true});
  const pts=v.map((s,i)=>s==null?null:[X(i),Y(s)]).filter(Boolean);if(pts.length>1)area=`<path d="M${pts[0][0]},${H-P} L${pts.map(p=>p.join(',')).join(' L')} L${pts[pts.length-1][0]},${H-P}Z" fill="url(#g)"/>`;
- return `<svg viewBox="0 0 ${W} ${H}" width="100%"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#4f46e5" stop-opacity=".25"/><stop offset="1" stop-color="#4f46e5" stop-opacity="0"/></linearGradient></defs>
- ${[0,50,100].map(g=>`<line x1="${P}" x2="${W-P}" y1="${Y(g)}" y2="${Y(g)}" stroke="#e6e9f0"/><text x="4" y="${Y(g)+4}">${g}</text>`).join('')}
- ${ys.map((y,i)=>i%3==0||i==ys.length-1?`<text x="${X(i)-14}" y="${H-10}">${y}</text>`:'').join('')}${area}<path d="${d}" fill="none" stroke="#4f46e5" stroke-width="2.5"/>
- ${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" stroke="#4f46e5" stroke-width="2"/>`).join('')}</svg>`}
+ return `<svg viewBox="0 0 ${W} ${H}" width="100%"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#d97706" stop-opacity=".22"/><stop offset="1" stop-color="#d97706" stop-opacity="0"/></linearGradient></defs>
+ ${[0,50,100].map(g=>`<line x1="${P}" x2="${W-P}" y1="${Y(g)}" y2="${Y(g)}" stroke="#e6e0d4"/><text x="4" y="${Y(g)+4}">${g}</text>`).join('')}
+ ${ys.map((y,i)=>i%3==0||i==ys.length-1?`<text x="${X(i)-14}" y="${H-10}">${y}</text>`:'').join('')}${area}<path d="${d}" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+ ${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" stroke="#0f172a" stroke-width="2"/>`).join('')}</svg>`}
 const WHY={missing_sic:'SEC filings list no industry code for this company, so its technology exposure cannot be measured. The index is left blank rather than set to zero.',uninformative_sic:'The company’s SEC industry code is a catch-all category (e.g. “business services, not elsewhere classified”) that says nothing about its technology domain. The index is left blank rather than set to zero.',industry_unlinked:'The company’s industry is not linked to any of the nine tracked technology categories, so its startup-ecosystem exposure is 0.'};
 function bars(v){if(!v||v.every(x=>x==null))return '';const W=640,H=170,P=32,ys=D.years,bw=(W-2*P)/ys.length,m=Math.max(...v.map(x=>Math.abs(x||0)))||1;
- return `<svg viewBox="0 0 ${W} ${H}" width="100%">`+v.map((x,i)=>{if(x==null)return '';const h=Math.abs(x)/m*(H-2*P-10);return `<rect x="${P+i*bw+4}" y="${H-P-h}" width="${bw-8}" height="${h}" rx="5" fill="${x<0?'#f43f5e':'#06b6d4'}" opacity=".85"><title>${ys[i]}: ${usd(x).replace(/<[^>]+>/g,'')}</title></rect>`}).join('')
+ return `<svg viewBox="0 0 ${W} ${H}" width="100%">`+v.map((x,i)=>{if(x==null)return '';const h=Math.abs(x)/m*(H-2*P-10);return `<rect x="${P+i*bw+4}" y="${H-P-h}" width="${bw-8}" height="${h}" rx="3" fill="${x<0?'#b91c1c':'#334155'}"><title>${ys[i]}: ${usd(x).replace(/<[^>]+>/g,'')}</title></rect>`}).join('')
  +ys.map((y,i)=>i%3==0||i==ys.length-1?`<text x="${P+i*bw+bw/2-14}" y="${H-10}">${y}</text>`:'').join('')+`<text x="4" y="14">max ${usd(m).replace(/<[^>]+>/g,'')}</text></svg>`}
 function kpi(v,l){return `<div class="kpi"><b>${v}</b><span>${l}</span></div>`}
 function detail(c){const tags=(c.categories||'').split(';').map(s=>s.trim()).filter(Boolean).map(s=>`<span class="pill">${esc(s.replace('=',' · '))}</span>`).join('')||'<span class="muted small">No tracked technology linked</span>';
@@ -191,7 +219,7 @@ function detail(c){const tags=(c.categories||'').split(';').map(s=>s.trim()).fil
  <div class="muted small" style="margin-top:8px">Components available: ${c.components}/2 · ${esc(FL[c.flag]||'no data')} · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${c.id}" target="_blank" rel="noopener">SEC filings ↗</a></div>`}
 (function(){const b=new Array(10).fill(0);let z=0;C.forEach(c=>{if(c.tdi==null)return;if(c.tdi===0){z++;return}b[Math.min(9,Math.floor(c.tdi/10))]++});
  const bins=[['=0',z],...b.map((n,i)=>[i?i*10+'+':'>0',n])],W=640,H=230,P=26,m=Math.max(...bins.map(x=>x[1])),bw=(W-2*P)/bins.length;
- $('hist').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%">`+bins.map((x,i)=>{const h=x[1]/m*(H-2*P-14);return `<rect x="${P+i*bw+3}" y="${H-P-h}" width="${bw-6}" height="${h}" rx="6" fill="${i?'#6366f1':'#f59e0b'}" opacity="${i?.85:1}"/><text x="${P+i*bw+bw/2-8}" y="${H-8}">${x[0]}</text><text x="${P+i*bw+bw/2-12}" y="${H-P-h-6}">${x[1]>=1000?(x[1]/1000).toFixed(1)+'k':x[1]}</text>`}).join('')+'</svg>'})();
+ $('hist').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%">`+bins.map((x,i)=>{const h=x[1]/m*(H-2*P-14);return `<rect x="${P+i*bw+3}" y="${H-P-h}" width="${bw-6}" height="${h}" rx="3" fill="${i?'#1e293b':'#d97706'}"/><text x="${P+i*bw+bw/2-8}" y="${H-8}">${x[0]}</text><text x="${P+i*bw+bw/2-12}" y="${H-P-h-6}">${x[1]>=1000?(x[1]/1000).toFixed(1)+'k':x[1]}</text>`}).join('')+'</svg>'})();
 $('inds').innerHTML='<table>'+D.industries.map(r=>`<tr><td>${esc(r[0])}</td><td class="r"><b>${r[1].toFixed(1)}</b><span class="meter"><i style="width:${r[1]}%"></i></span></td><td class="r muted small">${r[2].toLocaleString()}</td></tr>`).join('')+'</table>';
 (function(){const L={M1:'Market valuation',M1b:'Valuation change',M2:'Revenue growth',M3:'R&D / assets',M4:'CAPEX / assets'},S={main_year:'Year FE',main_year_sic2:'+ Industry FE',main_sic2xyear:'Industry×year FE',main_firm_year:'Firm FE'};
  const specs=Object.keys(S);let h='<table><tr><th>Outcome (t+1)</th>'+specs.map(s=>`<th class="r">${S[s]}</th>`).join('')+'</tr>';

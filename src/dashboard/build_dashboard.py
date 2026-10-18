@@ -8,6 +8,7 @@ All numbers are read from pipeline outputs at build time.
 import hashlib
 import html as html_lib
 import json
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -126,71 +127,25 @@ TEMPLATE = r"""<!doctype html>
 <meta name="twitter:image" content="__SITE__/og-image.png">
 <script type="application/ld+json">__LDJSON__</script>
 <style>
-:root{--bg:#f7f8fb;--card:#fff;--ink:#0f172a;--muted:#64748b;--line:#e6e9f0;--acc:#4f46e5;--acc2:#06b6d4;--good:#059669;--warn:#d97706;--r:16px;
---shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
-a{color:var(--acc);text-decoration:none}
-nav{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(12px);background:rgba(247,248,251,.8);border-bottom:1px solid var(--line)}
-.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:28px;padding:14px 24px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}.logo img{width:28px;height:28px;display:block}
-.nav .links{display:flex;gap:22px;margin-left:auto}.nav .links a{color:var(--muted);font-size:14px}.nav .links a:hover{color:var(--ink)}
-.hero{position:relative;overflow:hidden;padding:88px 24px 64px;text-align:center}
-.hero:before{content:"";position:absolute;inset:-40% -10% auto;height:620px;background:radial-gradient(closest-side,rgba(79,70,229,.18),transparent),radial-gradient(closest-side at 70% 40%,rgba(6,182,212,.16),transparent);z-index:-1}
-.tag{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:13px}
-h1{font-size:clamp(34px,5.4vw,62px);line-height:1.05;letter-spacing:-.03em;margin:18px auto 16px;max-width:900px}
-h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--muted);font-size:18px;max-width:720px;margin:0 auto 30px}
-.btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:600;font-size:15px}.btn.p{background:var(--ink);color:#fff}.btn.s{background:#fff;border:1px solid var(--line);color:var(--ink);margin-left:8px}
-.wrap{max-width:1180px;margin:auto;padding:0 24px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:48px auto 0;max-width:1000px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);text-align:left}
-.stat b{display:block;font-size:30px;letter-spacing:-.02em}.stat span{color:var(--muted);font-size:13px}
-section{padding:72px 0 8px}.kicker{color:var(--acc);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
-h2{font-size:clamp(26px,3vw,36px);letter-spacing:-.02em;margin:6px 0 10px}.sub{color:var(--muted);max-width:760px;margin:0 0 28px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
-.g2{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.top{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.tc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s}.tc:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.tc .n{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tc .t{color:var(--muted);font-size:12px}.tc .s{font-size:26px;font-weight:700;color:var(--acc)}
-.controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
-input,select{font:inherit;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--ink)}input{flex:1;min-width:220px}
-input:focus,select:focus{outline:2px solid rgba(79,70,229,.25);border-color:var(--acc)}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
-th{color:var(--muted);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;user-select:none}
-tbody tr{cursor:pointer}tbody tr:hover{background:#f5f6ff}td.r,th.r{text-align:right}
-.meter{display:inline-block;width:70px;height:6px;border-radius:6px;background:#eef0f6;vertical-align:middle;margin-left:8px;overflow:hidden}.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
-.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;background:#eef2ff;color:#3730a3;margin:2px 6px 2px 0}
-.badge{font-size:11px;padding:2px 8px;border-radius:999px;background:#f1f5f9;color:var(--muted)}
-.pager{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;justify-content:flex-end;margin-top:12px;color:var(--muted);font-size:13px}
-.pager #pg{margin-right:auto}.pager select{padding:6px 10px;border-radius:10px}.pager input{flex:0 0 70px;width:70px;min-width:0;padding:6px 8px;border:1px solid var(--line);border-radius:10px;font:inherit;text-align:center}
-.pager button:disabled{opacity:.4;cursor:default}
-.tw.scroll{max-height:75vh;overflow-y:auto}.tw thead th{position:sticky;top:0;background:#fff;z-index:1}
-button{font:inherit;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 14px;cursor:pointer}
-.tw{overflow-x:auto}.muted{color:var(--muted)}.small{font-size:13px}.sig{color:var(--good);font-weight:600}
-.big{font-size:44px;font-weight:700;letter-spacing:-.03em}
-.method .card h3{margin:0 0 6px;font-size:17px}.method .card p{margin:0;color:var(--muted);font-size:14px}
-.num{display:inline-flex;width:30px;height:30px;border-radius:10px;align-items:center;justify-content:center;background:#eef2ff;color:var(--acc);font-weight:700;margin-bottom:10px}
-.note{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:12px;padding:14px 16px;font-size:14px}
-footer{margin-top:80px;border-top:1px solid var(--line);padding:32px 24px;color:var(--muted);font-size:13px;text-align:center}
-svg text{fill:var(--muted);font-size:11px}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}.kpi{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-.kpi b{display:block;font-size:18px}.kpi span{color:var(--muted);font-size:12px}#detail h4{margin:18px 0 8px;font-size:14px}
-body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:auto}
-@media(max-width:900px){.stats,.top{grid-template-columns:repeat(2,1fr)}.g2,.g3{grid-template-columns:1fr}.nav .links{display:none}}
+__CSS__
 </style></head><body>
 <nav><div class="nav"><a class="logo" href="#"><img src="/favicon.svg" alt="" width="28" height="28">Technology Disruption Index</a>
-<div class="links"><a href="#explore">Explore</a><a href="#research">Research</a><a href="#method">Methodology</a><a href="#about">About</a></div></div></nav>
+<div class="links"><a href="#explore">Explore</a><a href="#research">Research</a><a href="#method">Methodology</a><a href="#about">Data</a><a class="gh" href="https://github.com/UmarovMirjalol/quantify" target="_blank" rel="noopener">GitHub</a></div></div></nav>
 
-<header class="hero"><span class="tag">Open data · __Y0__–__Y1__ · updated from SEC filings</span>
-<h1>Which companies are most exposed to <span>technological disruption?</span></h1>
+<header class="hero"><div>
+<div class="eyebrow">Open research · __Y0__–__Y1__ · SEC filings, patents, startups</div>
+<h1>Which companies are most exposed to <em>technological disruption?</em></h1>
 <p class="lead">A transparent, reproducible index scoring __NCOMP__ SEC-registered companies on patent activity and startup-ecosystem activity in their technology domains — and a test of whether markets price it before fundamentals.</p>
-<a class="btn p" href="#explore">Explore companies</a><a class="btn s" href="#research">See the research</a>
-<div class="stats" id="stats"></div></header>
+<a class="btn p" href="#explore">Explore companies</a><a class="btn s" href="#research">See the research</a></div>
+<aside class="finding"><div class="eyebrow">Key finding</div><div class="fig">+__FPCT__%</div>
+<p>higher market valuation the following year for a company scoring 10 index points above its industry peers in the same year.</p>
+<hr><p>But when a company’s own score rises over time, its valuation does not follow (p = __FIRMP__). Markets appear to price <i>which</i> firms are exposed, not changes in exposure.</p>
+<p class="src">Lagged panel regressions, __NOBS__ firm-years, industry×year fixed effects, clustered SEs. Predictive, not causal.</p></aside>
+</header>
 
-<div class="wrap">
+<div class="wrap"><div class="stats" id="stats"></div>
 <section id="explore"><div class="kicker">Explore</div><h2>Highest-scoring companies</h2>
-<p class="sub">Index on a 0–100 scale for __Y1__. Click any company to see its score history and technology exposure.</p>
+<p class="sub">Index on a 0–100 scale for __Y1__. Cards show listed companies scored on both patents and startup activity; the table below covers all __NCOMP__. Click any company for its score history and fundamentals.</p>
 <div class="top" id="top">__TOPHTML__</div>
 
 <div class="card" style="margin-top:20px">
@@ -228,12 +183,17 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <div class="card"><div class="num">6</div><h3>Fundamentals</h3><p>Revenue, assets, R&D, CAPEX, cash, debt and public float from SEC XBRL, used to test predictive relationships with year, industry and firm fixed effects.</p></div>
 </div></section>
 
-<section id="about"><div class="kicker">About</div><h2>Open and reproducible</h2>
+<section id="about"><div class="kicker">Data</div><h2>Open and reproducible</h2>
 <p class="sub">The full pipeline — data collection, scoring, validation and regressions — runs with one command. The index is a measurable proxy for technology exposure, not an objective measure of “true” disruption.</p>
 <div class="card" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between"><div><h3 style="margin:0">Download the data</h3><p class="muted small" style="margin:4px 0 0">Latest scores for all __NCOMP__ companies and the full regression results (CSV).</p></div>
 <div><a class="btn p" href="data/company_technology_index_latest.csv" download>Index scores (CSV)</a><a class="btn s" href="data/regression_results.csv" download>Regression results</a></div></div></section>
 </div>
-<footer>Technology Disruption Index · Data: SEC EDGAR, USPTO PatentsView (firm linkage: Ma, 2025, RFS), accelerator portfolios · Not investment advice</footer>
+<footer><div class="foot">
+<div><a class="logo" href="#"><img src="/favicon.svg" alt="" width="28" height="28">Technology Disruption Index</a>
+<p>An open, reproducible measure of technology exposure for __NCOMP__ public companies. Research project; not investment advice.</p></div>
+<div><b>Explore</b><a href="#explore">Companies</a><a href="#research">Research results</a><a href="#method">Methodology</a><a href="data/company_technology_index_latest.csv">Download data (CSV)</a></div>
+<div><b>Sources</b><a href="https://www.sec.gov/edgar" target="_blank" rel="noopener">SEC EDGAR</a><a href="https://www.uspto.gov/ip-policy/economic-research/patentsview" target="_blank" rel="noopener">USPTO PatentsView</a><a href="https://github.com/songma/patent-firm-link-share" target="_blank" rel="noopener">Patent–firm linkage (Ma, 2025)</a><a href="https://github.com/UmarovMirjalol/quantify" target="_blank" rel="noopener">Source code on GitHub</a></div>
+</div></footer>
 
 <script>
 fetch('/data/site.json?v=__VER__').then(r=>r.json()).then(D=>{
@@ -248,8 +208,8 @@ const FL={sic_linked:'Industry linked to technology',"sic_linked+name":'Industry
 const cats=['AI','Fintech','Cloud','Robotics','Cybersecurity','Biotech','Semiconductors','Energy','Quantum'];
 cats.forEach(c=>$('cat').insertAdjacentHTML('beforeend',`<option>${c}</option>`));
 [...new Set(C.map(c=>c.industry).filter(Boolean))].sort().forEach(i=>$('ind').insertAdjacentHTML('beforeend',`<option>${esc(i)}</option>`));
-$('top').innerHTML=C.filter(c=>c.tdi!=null&&c.listed).sort((a,b)=>b.tdi-a.tdi||a.name.localeCompare(b.name)).slice(0,10)
- .map(c=>`<div class="tc" data-id="${c.id}"><div class="s">${c.tdi.toFixed(1)}</div><div class="n">${esc(c.name)}</div><div class="t">${esc(c.ticker)} · ${esc(c.industry)}</div></div>`).join('');
+$('top').innerHTML=C.filter(c=>c.tdi!=null&&c.listed&&c.components==2).sort((a,b)=>b.tdi-a.tdi||a.name.localeCompare(b.name)).slice(0,10)
+ .map((c,i)=>`<div class="tc" data-id="${c.id}"><span class="rk">#${i+1}</span><div class="s">${c.tdi.toFixed(1)}</div><div class="bar"><i style="width:${c.tdi}%"></i></div><div class="n">${esc(c.name)}</div><div class="t">${esc(c.ticker)} · ${esc(c.industry)}</div></div>`).join('');
 $('top').onclick=e=>{const t=e.target.closest('.tc');if(t){detail(C.find(c=>c.id==t.dataset.id));$('detail').scrollIntoView({behavior:'smooth',block:'center'})}};
 let sortK='tdi',dir=-1,page=0;
 function rows(){const q=$('q').value.trim().toLowerCase(),i=$('ind').value,c=$('cat').value,l=$('lst').value;
@@ -272,13 +232,13 @@ $('tb').onclick=e=>{const t=e.target.closest('tr');if(t){detail(C.find(c=>c.id==
 function line(v){const W=640,H=210,P=32,ys=D.years,X=i=>P+i*(W-2*P)/(ys.length-1),Y=s=>H-P-(s/100)*(H-2*P);
  let d='',o=false,area='';v.forEach((s,i)=>{if(s==null){o=false;return}d+=(o?'L':'M')+X(i)+','+Y(s);o=true});
  const pts=v.map((s,i)=>s==null?null:[X(i),Y(s)]).filter(Boolean);if(pts.length>1)area=`<path d="M${pts[0][0]},${H-P} L${pts.map(p=>p.join(',')).join(' L')} L${pts[pts.length-1][0]},${H-P}Z" fill="url(#g)"/>`;
- return `<svg viewBox="0 0 ${W} ${H}" width="100%"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#4f46e5" stop-opacity=".25"/><stop offset="1" stop-color="#4f46e5" stop-opacity="0"/></linearGradient></defs>
- ${[0,50,100].map(g=>`<line x1="${P}" x2="${W-P}" y1="${Y(g)}" y2="${Y(g)}" stroke="#e6e9f0"/><text x="4" y="${Y(g)+4}">${g}</text>`).join('')}
- ${ys.map((y,i)=>i%3==0||i==ys.length-1?`<text x="${X(i)-14}" y="${H-10}">${y}</text>`:'').join('')}${area}<path d="${d}" fill="none" stroke="#4f46e5" stroke-width="2.5"/>
- ${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" stroke="#4f46e5" stroke-width="2"/>`).join('')}</svg>`}
+ return `<svg viewBox="0 0 ${W} ${H}" width="100%"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#d97706" stop-opacity=".22"/><stop offset="1" stop-color="#d97706" stop-opacity="0"/></linearGradient></defs>
+ ${[0,50,100].map(g=>`<line x1="${P}" x2="${W-P}" y1="${Y(g)}" y2="${Y(g)}" stroke="#e6e0d4"/><text x="4" y="${Y(g)+4}">${g}</text>`).join('')}
+ ${ys.map((y,i)=>i%3==0||i==ys.length-1?`<text x="${X(i)-14}" y="${H-10}">${y}</text>`:'').join('')}${area}<path d="${d}" fill="none" stroke="#0f172a" stroke-width="2.5"/>
+ ${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" stroke="#0f172a" stroke-width="2"/>`).join('')}</svg>`}
 const WHY={missing_sic:'SEC filings list no industry code for this company, so its technology exposure cannot be measured. The index is left blank rather than set to zero.',uninformative_sic:'The company’s SEC industry code is a catch-all category (e.g. “business services, not elsewhere classified”) that says nothing about its technology domain. The index is left blank rather than set to zero.',industry_unlinked:'The company’s industry is not linked to any of the nine tracked technology categories, so its startup-ecosystem exposure is 0.'};
 function bars(v){if(!v||v.every(x=>x==null))return '';const W=640,H=170,P=32,ys=D.years,bw=(W-2*P)/ys.length,m=Math.max(...v.map(x=>Math.abs(x||0)))||1;
- return `<svg viewBox="0 0 ${W} ${H}" width="100%">`+v.map((x,i)=>{if(x==null)return '';const h=Math.abs(x)/m*(H-2*P-10);return `<rect x="${P+i*bw+4}" y="${H-P-h}" width="${bw-8}" height="${h}" rx="5" fill="${x<0?'#f43f5e':'#06b6d4'}" opacity=".85"><title>${ys[i]}: ${usd(x).replace(/<[^>]+>/g,'')}</title></rect>`}).join('')
+ return `<svg viewBox="0 0 ${W} ${H}" width="100%">`+v.map((x,i)=>{if(x==null)return '';const h=Math.abs(x)/m*(H-2*P-10);return `<rect x="${P+i*bw+4}" y="${H-P-h}" width="${bw-8}" height="${h}" rx="3" fill="${x<0?'#b91c1c':'#334155'}"><title>${ys[i]}: ${usd(x).replace(/<[^>]+>/g,'')}</title></rect>`}).join('')
  +ys.map((y,i)=>i%3==0||i==ys.length-1?`<text x="${P+i*bw+bw/2-14}" y="${H-10}">${y}</text>`:'').join('')+`<text x="4" y="14">max ${usd(m).replace(/<[^>]+>/g,'')}</text></svg>`}
 function kpi(v,l){return `<div class="kpi"><b>${v}</b><span>${l}</span></div>`}
 function detail(c){const tags=(c.categories||'').split(';').map(s=>s.trim()).filter(Boolean).map(s=>`<span class="pill">${esc(s.replace('=',' · '))}</span>`).join('')||'<span class="muted small">No tracked technology linked</span>';
@@ -296,7 +256,7 @@ function detail(c){const tags=(c.categories||'').split(';').map(s=>s.trim()).fil
  <div class="muted small" style="margin-top:8px">Components available: ${c.components}/2 · ${esc(FL[c.flag]||'no data')} · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${c.id}" target="_blank" rel="noopener">SEC filings ↗</a></div>`}
 (function(){const b=new Array(10).fill(0);let z=0;C.forEach(c=>{if(c.tdi==null)return;if(c.tdi===0){z++;return}b[Math.min(9,Math.floor(c.tdi/10))]++});
  const bins=[['=0',z],...b.map((n,i)=>[i?i*10+'+':'>0',n])],W=640,H=230,P=26,m=Math.max(...bins.map(x=>x[1])),bw=(W-2*P)/bins.length;
- $('hist').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%">`+bins.map((x,i)=>{const h=x[1]/m*(H-2*P-14);return `<rect x="${P+i*bw+3}" y="${H-P-h}" width="${bw-6}" height="${h}" rx="6" fill="${i?'#6366f1':'#f59e0b'}" opacity="${i?.85:1}"/><text x="${P+i*bw+bw/2-8}" y="${H-8}">${x[0]}</text><text x="${P+i*bw+bw/2-12}" y="${H-P-h-6}">${x[1]>=1000?(x[1]/1000).toFixed(1)+'k':x[1]}</text>`}).join('')+'</svg>'})();
+ $('hist').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%">`+bins.map((x,i)=>{const h=x[1]/m*(H-2*P-14);return `<rect x="${P+i*bw+3}" y="${H-P-h}" width="${bw-6}" height="${h}" rx="3" fill="${i?'#1e293b':'#d97706'}"/><text x="${P+i*bw+bw/2-8}" y="${H-8}">${x[0]}</text><text x="${P+i*bw+bw/2-12}" y="${H-P-h-6}">${x[1]>=1000?(x[1]/1000).toFixed(1)+'k':x[1]}</text>`}).join('')+'</svg>'})();
 $('inds').innerHTML='<table>'+D.industries.map(r=>`<tr><td>${esc(r[0])}</td><td class="r"><b>${r[1].toFixed(1)}</b><span class="meter"><i style="width:${r[1]}%"></i></span></td><td class="r muted small">${r[2].toLocaleString()}</td></tr>`).join('')+'</table>';
 (function(){const L={M1:'Market valuation',M1b:'Valuation change',M2:'Revenue growth',M3:'R&D / assets',M4:'CAPEX / assets'},S={main_year:'Year FE',main_year_sic2:'+ Industry FE',main_sic2xyear:'Industry×year FE',main_firm_year:'Firm FE'};
  const specs=Object.keys(S);let h='<table><tr><th>Outcome (t+1)</th>'+specs.map(s=>`<th class="r">${S[s]}</th>`).join('')+'</tr>';
@@ -318,11 +278,13 @@ def static_html(p: dict):
     f = {k: i for i, k in enumerate(p["fields"])}
     comps = [c for c in p["companies"] if c[f["tdi"]] is not None]
     comps.sort(key=lambda c: (-c[f["tdi"]], c[f["name"]]))
-    top = [c for c in comps if c[f["listed"]]][:10]
+    top = [c for c in comps if c[f["listed"]] and c[f["components"]] == 2][:10]
     cards = "".join(
-        f'<div class="tc" data-id="{c[f["id"]]}"><div class="s">{c[f["tdi"]]:.1f}</div>'
-        f'<div class="n">{esc(c[f["name"]])}</div><div class="t">{esc(c[f["ticker"]])} · '
-        f'{esc(c[f["industry"]])}</div></div>' for c in top)
+        f'<div class="tc" data-id="{c[f["id"]]}"><span class="rk">#{i}</span>'
+        f'<div class="s">{c[f["tdi"]]:.1f}</div><div class="bar"><i style="width:{c[f["tdi"]]}%">'
+        f'</i></div><div class="n">{esc(c[f["name"]])}</div><div class="t">'
+        f'{esc(c[f["ticker"]])} · {esc(c[f["industry"]])}</div></div>'
+        for i, c in enumerate(top, 1))
     num = lambda v: "–" if v is None else f"{v:.1f}"
     rows = "".join(
         f'<tr data-id="{c[f["id"]]}"><td>{esc(c[f["name"]])}</td><td>{esc(c[f["ticker"]])}</td>'
@@ -358,7 +320,14 @@ def main() -> None:
          "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
                            "contentUrl": f"{site}/data/company_technology_index_latest.csv"}]},
     ], ensure_ascii=False).replace("</", "<\\/")
-    html = (TEMPLATE.replace("__VER__", version).replace("__TOPHTML__", top_html)
+    res = {(r["model"], r["spec"]): r for r in p["results"]}
+    peer, firm = res[("M1", "main_sic2xyear")], res[("M1", "main_firm_year")]
+    css = (Path(__file__).with_name("style.css")).read_text(encoding="utf-8")
+    html = (TEMPLATE.replace("__CSS__", css).replace("__VER__", version)
+            .replace("__FPCT__", f"{100 * (np.exp(peer['coef']) - 1):.1f}")
+            .replace("__FIRMP__", f"{firm['p_value']:.2f}")
+            .replace("__NOBS__", f"{int(peer['n_obs']):,}")
+            .replace("__TOPHTML__", top_html)
             .replace("__ROWSHTML__", rows_html).replace("__LDJSON__", ld).replace("__SITE__", site)
             .replace("__NCOMP__", f"{p['coverage']['total_companies']:,}")
             .replace("__NLISTED__", f"{p['n_listed']:,}")
