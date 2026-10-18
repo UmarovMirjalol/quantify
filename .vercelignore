@@ -1,0 +1,8 @@
+# Only the static website in docs/ is deployed; the Python research pipeline is not.
+data/
+results/
+paper/
+src/
+logs/
+*.py
+requirements.txt
