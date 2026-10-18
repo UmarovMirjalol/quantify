@@ -5,6 +5,8 @@ Single self-contained HTML file (no external libraries, fonts or CDNs). Deployab
 Vercel, Netlify, Cloudflare Pages or GitHub Pages; works with a custom domain.
 All numbers are read from pipeline outputs at build time.
 """
+import hashlib
+import html as html_lib
 import json
 
 import numpy as np
@@ -189,7 +191,7 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <div class="wrap">
 <section id="explore"><div class="kicker">Explore</div><h2>Highest-scoring companies</h2>
 <p class="sub">Index on a 0–100 scale for __Y1__. Click any company to see its score history and technology exposure.</p>
-<div class="top" id="top"></div>
+<div class="top" id="top">__TOPHTML__</div>
 
 <div class="card" style="margin-top:20px">
 <div class="controls"><input id="q" placeholder="Search by company name or ticker…">
@@ -197,7 +199,7 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <select id="cat"><option value="">All technologies</option></select>
 <select id="lst"><option value="">All companies</option><option value="1">Currently listed</option><option value="0">Historical filers</option></select></div>
 <div class="tw"><table><thead><tr><th data-k="name">Company</th><th data-k="ticker">Ticker</th><th data-k="industry">Industry</th>
-<th data-k="tdi" class="r">Index</th><th data-k="startup" class="r">Startup</th><th data-k="patent" class="r">Patent</th><th data-k="revenue" class="r">Revenue</th></tr></thead><tbody id="tb"></tbody></table></div>
+<th data-k="tdi" class="r">Index</th><th data-k="startup" class="r">Startup</th><th data-k="patent" class="r">Patent</th><th data-k="revenue" class="r">Revenue</th></tr></thead><tbody id="tb">__ROWSHTML__</tbody></table></div>
 <div class="pager"><span id="pg"></span>
 <select id="per"><option value="25">25 per page</option><option value="50" selected>50 per page</option><option value="100">100 per page</option><option value="500">500 per page</option><option value="0">Show all</option></select>
 <button id="first" title="First page">«</button><button id="prev" title="Previous page">←</button>
@@ -234,7 +236,8 @@ body{overflow-x:hidden}.card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:
 <footer>Technology Disruption Index · Data: SEC EDGAR, USPTO PatentsView (firm linkage: Ma, 2025, RFS), accelerator portfolios · Not investment advice</footer>
 
 <script>
-const D=__DATA__;const F=D.fields,C=D.companies.map(r=>Object.fromEntries(F.map((f,i)=>[f,r[i]])));
+fetch('/data/site.json?v=__VER__').then(r=>r.json()).then(D=>{
+const F=D.fields,C=D.companies.map(r=>Object.fromEntries(F.map((f,i)=>[f,r[i]])));
 const $=id=>document.getElementById(id),fmt=v=>v==null?'<span class="muted">–</span>':v.toFixed(1);
 const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 const cv=D.coverage,pct=(a,b)=>Math.round(100*a/b)+'%';
@@ -300,13 +303,40 @@ $('inds').innerHTML='<table>'+D.industries.map(r=>`<tr><td>${esc(r[0])}</td><td 
  Object.keys(L).forEach(m=>{h+=`<tr><td>${L[m]}</td>`+specs.map(s=>{const r=D.results.find(x=>x.model==m&&x.spec==s);return r&&r.coef!=null?`<td class="r ${r.p_value<.05?'sig':''}">${r.coef.toFixed(3)}</td>`:'<td class="r muted">–</td>'}).join('')+'</tr>'});
  $('res').innerHTML=h+'</table>'})();
 render();detail(C.find(c=>c.id==$('top').firstElementChild.dataset.id));
+});
 </script></body></html>
 """
 
 
+def esc(v) -> str:
+    return html_lib.escape("" if v is None else str(v), quote=True)
+
+
+def static_html(p: dict):
+    """Server-rendered top cards and first table page, so crawlers see content without JS
+    (the script re-renders the same elements once the data file has loaded)."""
+    f = {k: i for i, k in enumerate(p["fields"])}
+    comps = [c for c in p["companies"] if c[f["tdi"]] is not None]
+    comps.sort(key=lambda c: (-c[f["tdi"]], c[f["name"]]))
+    top = [c for c in comps if c[f["listed"]]][:10]
+    cards = "".join(
+        f'<div class="tc" data-id="{c[f["id"]]}"><div class="s">{c[f["tdi"]]:.1f}</div>'
+        f'<div class="n">{esc(c[f["name"]])}</div><div class="t">{esc(c[f["ticker"]])} · '
+        f'{esc(c[f["industry"]])}</div></div>' for c in top)
+    num = lambda v: "–" if v is None else f"{v:.1f}"
+    rows = "".join(
+        f'<tr data-id="{c[f["id"]]}"><td>{esc(c[f["name"]])}</td><td>{esc(c[f["ticker"]])}</td>'
+        f'<td class="muted">{esc(c[f["industry"]])}</td><td class="r"><b>{num(c[f["tdi"]])}</b></td>'
+        f'<td class="r">{num(c[f["startup"]])}</td><td class="r">{num(c[f["patent"]])}</td>'
+        f'<td class="r">–</td></tr>' for c in comps[:50])
+    return cards, rows
+
+
 def main() -> None:
     p = build_payload()
-    data = json.dumps(p, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+    data = json.dumps(p, separators=(",", ":"), ensure_ascii=False)
+    version = hashlib.sha1(data.encode("utf-8")).hexdigest()[:10]
+    top_html, rows_html = static_html(p)
     site = config.SITE_URL.rstrip("/")
     ncomp, y0, y1 = f"{p['coverage']['total_companies']:,}", min(p["years"]), max(p["years"])
     ld = json.dumps([
@@ -328,7 +358,8 @@ def main() -> None:
          "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv",
                            "contentUrl": f"{site}/data/company_technology_index_latest.csv"}]},
     ], ensure_ascii=False).replace("</", "<\\/")
-    html = (TEMPLATE.replace("__DATA__", data).replace("__LDJSON__", ld).replace("__SITE__", site)
+    html = (TEMPLATE.replace("__VER__", version).replace("__TOPHTML__", top_html)
+            .replace("__ROWSHTML__", rows_html).replace("__LDJSON__", ld).replace("__SITE__", site)
             .replace("__NCOMP__", f"{p['coverage']['total_companies']:,}")
             .replace("__NLISTED__", f"{p['n_listed']:,}")
             .replace("__NSTART__", f"{p['n_startups']:,}")
@@ -343,9 +374,11 @@ def main() -> None:
     (OUT_DIR / "data").mkdir(exist_ok=True)
     shutil.copy(config.TECH_INDEX_LATEST, OUT_DIR / "data" / "company_technology_index_latest.csv")
     shutil.copy(config.REGRESSION_RESULTS, OUT_DIR / "data" / "regression_results.csv")
+    (OUT_DIR / "data" / "site.json").write_text(data, encoding="utf-8")
     (OUT_DIR / "vercel.json").write_text('{"cleanUrls": true}\n', encoding="utf-8")
     site_assets.write_all(OUT_DIR, ncomp, f"{y0}–{y1}")
-    log.info("Website: %d companies, %.1f MB -> %s", len(p["companies"]), OUT.stat().st_size / 1e6, OUT)
+    log.info("Website: %d companies | index.html %.0f KB + data/site.json %.1f MB -> %s",
+             len(p["companies"]), OUT.stat().st_size / 1e3, len(data) / 1e6, OUT_DIR)
 
 
 if __name__ == "__main__":

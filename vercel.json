@@ -2,7 +2,11 @@
   "version": 2,
   "builds": [{ "src": "docs/**", "use": "@vercel/static" }],
   "routes": [
+    { "src": "/(.*)", "headers": { "x-content-type-options": "nosniff", "referrer-policy": "strict-origin-when-cross-origin" }, "continue": true },
+    { "src": "/(.*\\.(?:png|ico|svg|webmanifest))", "headers": { "cache-control": "public, max-age=604800" }, "continue": true },
     { "src": "/", "dest": "/docs/index.html" },
-    { "src": "/(.*)", "dest": "/docs/$1" }
+    { "src": "/index.html", "status": 308, "headers": { "location": "/" } },
+    { "src": "/(.*)", "dest": "/docs/$1", "check": true },
+    { "src": "/(.*)", "status": 404, "dest": "/docs/404.html" }
   ]
 }

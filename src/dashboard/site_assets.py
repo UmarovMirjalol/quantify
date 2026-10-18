@@ -73,6 +73,17 @@ def write_all(out: Path, n_companies: str, years: str) -> None:
                   {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png"}],
         "theme_color": "#0f172a", "background_color": "#f7f8fb", "display": "standalone",
         "start_url": "/"}, indent=1), encoding="utf-8")
+    (out / "404.html").write_text(
+        '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" '
+        'content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">'
+        '<title>Page not found · Technology Disruption Index</title><link rel="icon" '
+        'href="/favicon.svg" type="image/svg+xml"></head><body style="margin:0;min-height:100vh;'
+        'display:grid;place-items:center;font:16px system-ui,sans-serif;background:#f7f8fb;'
+        'color:#0f172a;text-align:center"><div><img src="/favicon.svg" width="56" height="56" '
+        'alt=""><h1 style="margin:16px 0 6px">Page not found</h1><p style="color:#64748b">'
+        'This page does not exist.</p><a href="/" style="display:inline-block;margin-top:12px;'
+        'padding:10px 18px;border-radius:10px;background:#0f172a;color:#fff;text-decoration:none">'
+        'Go to the Technology Disruption Index</a></div></body></html>', encoding="utf-8")
     (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n",
                                     encoding="utf-8")
     (out / "sitemap.xml").write_text(
