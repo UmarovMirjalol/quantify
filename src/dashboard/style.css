@@ -17,8 +17,21 @@ nav{position:sticky;top:0;z-index:10;background:rgba(250,248,244,.92);backdrop-f
 h1{font-size:clamp(36px,5vw,60px);line-height:1.05;margin:14px 0 18px}
 h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--amber-l) 62%)}
 .lead{color:var(--muted);font-size:18px;max-width:600px;margin:0 0 28px}
-.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none}.btn.p{background:var(--ink);color:#fff}.btn.s{border:1px solid var(--ink);color:var(--ink);margin-left:8px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;font:inherit;cursor:pointer}.btn.p{background:var(--ink);color:#fff;border:0}.btn.s{border:1px solid var(--ink);color:var(--ink);margin-left:8px;background:transparent}
 .btn.p:hover{background:var(--ink2)}.btn.s:hover{background:#fff}
+.askwrap{margin:18px 0 0;max-width:520px}.askwrap input{width:100%;min-width:0}
+.yearbar{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;margin:0 0 18px}
+.yearbar b{font-family:var(--serif);font-size:28px;display:block;line-height:1}
+.yearbar input[type=range]{flex:1;min-width:180px;accent-color:var(--amber)}
+.impl{background:var(--ink);color:#e2e8f0;border-radius:12px;padding:16px 18px;margin:12px 0}
+.impl .eyebrow{color:#fbbf24}.impl .big{color:#fff;margin:6px 0 8px}.impl p{margin:0;color:#cbd5e1}
+.near{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}
+.mixleg{justify-content:space-between}.mixleg b{color:var(--ink)}
+input[type=range]#mix{width:100%;accent-color:var(--amber);margin:8px 0}
+.finding.pulse{outline:3px solid #fbbf24;outline-offset:6px;animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{outline-color:transparent}}
+.tour{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:50;background:var(--ink);color:#fff;padding:14px 18px;border-radius:12px;display:flex;gap:16px;align-items:center;max-width:min(640px,calc(100% - 32px));box-shadow:0 20px 50px rgba(15,23,42,.35)}
+.tour[hidden]{display:none!important}.tour p{margin:0;font-size:14px}.tour button{flex:0 0 auto}
 .finding{background:var(--ink);color:#e2e8f0;border-radius:14px;padding:30px;box-shadow:0 20px 40px -20px rgba(15,23,42,.45)}
 .finding .eyebrow{color:#fbbf24}.finding .fig{font-family:var(--serif);font-size:76px;line-height:1;color:#fff;margin:14px 0 8px;font-weight:700}
 .finding p{margin:0 0 14px;font-size:15px}.finding hr{border:0;border-top:1px solid rgba(255,255,255,.15);margin:18px 0}
@@ -122,4 +135,4 @@ svg text{fill:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
 .fb b.pos{color:var(--good)}.fb b.zero{color:var(--muted)}
 @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:48px;gap:32px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0;padding-left:0}
 .stat:nth-child(n+3){border-top:1px solid var(--line)}.top{grid-template-columns:repeat(2,1fr)}.g2,.g3,.foot,.techmap,.vsgrid{grid-template-columns:1fr}.nav .links a:not(.gh){display:none}.finding .fig{font-size:60px}
-.fb{grid-template-columns:1fr 56px}.fb span:first-child{grid-column:1/-1}}
+.fb{grid-template-columns:1fr 56px}.fb span:first-child{grid-column:1/-1}.btn.s{margin:8px 0 0}.yearbar{flex-direction:column;align-items:stretch}}

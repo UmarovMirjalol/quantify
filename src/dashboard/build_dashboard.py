@@ -138,7 +138,9 @@ __CSS__
 <div class="eyebrow">Open research · __Y0__–__Y1__ · SEC filings, patents, startups</div>
 <h1>Which companies are most exposed to <em>technological disruption?</em></h1>
 <p class="lead">A transparent, reproducible index scoring __NCOMP__ SEC-registered companies on patent activity and startup-ecosystem activity in their technology domains — and a test of whether markets price it before fundamentals.</p>
-<a class="btn p" href="#explore">Explore companies</a><a class="btn s" href="#research">See the research</a></div>
+<a class="btn p" href="#explore">Explore companies</a>
+<button type="button" class="btn s" id="tourBtn">45-second tour</button>
+<p class="askwrap"><input id="ask" placeholder="Try NVDA vs INTC, top AI, 2018, or tour" autocomplete="off"></p></div>
 <aside class="finding"><div class="eyebrow">Key finding</div><div class="fig">+__FPCT__%</div>
 <p>higher next-year public float for a company scoring 10 index points above its industry peers in the same year.</p>
 <div class="cmpfind">
@@ -151,7 +153,12 @@ __CSS__
 
 <div class="wrap"><div class="stats" id="stats"></div>
 <section id="explore"><div class="kicker">Explore</div><h2>Highest-scoring companies</h2>
-<p class="sub">Index on a 0–100 scale for __Y1__. Open a well-known ticker, compare two firms, or click any row. Cards are listed companies scored on both patents and startup activity; the table covers all __NCOMP__.</p>
+<p class="sub">Index on a 0–100 scale. Drag the year or hit Play decade — the ranking is the real historical index, not a forecast. Cards are listed companies scored on both patents and startup activity.</p>
+<div class="yearbar card" id="yearbar">
+<div><b id="yval">__Y1__</b><span class="muted small">Index year · fully scored listed firms</span></div>
+<input id="yslider" type="range" min="0" max="9" value="9">
+<button type="button" class="btn s" id="yplay">Play decade</button>
+</div>
 <div class="chips" id="chips"></div>
 <div class="top" id="top">__TOPHTML__</div>
 <h3 style="margin:28px 0 10px;font-size:20px">Companies by technology tag</h3>
@@ -210,6 +217,7 @@ __CSS__
 
 <div class="ov" id="ov" hidden><aside class="drawer" role="dialog" aria-modal="true"><button type="button" class="ovx" id="ovx" aria-label="Close">×</button><div id="dbody"></div></aside></div>
 <div class="pal" id="pal" hidden><div class="pal-box" role="dialog" aria-label="Search companies"><input id="pq" placeholder="Search 13,702 companies by name or ticker…" autocomplete="off"><div class="palhint" id="palhint"></div><div id="pl"></div></div></div>
+<div class="tour" id="tour" hidden><p id="tourtxt"></p><button type="button" id="tourx">Skip</button></div>
 <script>
 __JS__
 </script></body></html>

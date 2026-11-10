@@ -30,6 +30,17 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
   };
   const cats = ["AI", "Fintech", "Cloud", "Robotics", "Cybersecurity", "Biotech", "Semiconductors", "Energy", "Quantum"];
   const FAMOUS = ["NVDA", "AAPL", "MSFT", "TSLA", "AMZN", "GOOGL", "GOOG", "META", "INTC", "AMD", "JPM", "PFE"];
+  const peerR = D.results.find(x => x.model === "M1" && x.spec === "main_sic2xyear");
+  const COEF10 = peerR && peerR.coef != null ? peerR.coef : 0.0831;
+  const assocPct = d => (Math.exp(COEF10 * d / 10) - 1) * 100;
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  let yi = Y.length - 1, playing = false, touring = false;
+  function tdiAt(c, i) {
+    i = i == null ? yi : i;
+    if (c.history && c.history[i] != null) return c.history[i];
+    if (i === Y.length - 1) return c.tdi;
+    return null;
+  }
 
   const scored = C.filter(c => c.tdi != null).sort((a, b) => b.tdi - a.tdi || a.name.localeCompare(b.name));
   const rankOf = {};
@@ -68,16 +79,35 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
   [...new Set(C.map(c => c.industry).filter(Boolean))].sort()
     .forEach(i => $("ind").insertAdjacentHTML("beforeend", `<option>${esc(i)}</option>`));
 
-  const top = C.filter(c => c.tdi != null && c.listed && c.components == 2)
-    .sort((a, b) => b.tdi - a.tdi || a.name.localeCompare(b.name)).slice(0, 10);
-  $("top").innerHTML = top.map((c, i) =>
-    `<div class="tc" data-id="${c.id}"><span class="rk">#${i + 1}</span><div class="s">${c.tdi.toFixed(1)}</div>
-     <div class="bar"><i style="width:${c.tdi}%"></i></div><div class="n">${esc(c.name)}</div>
-     <div class="t">${esc(c.ticker)} · ${esc(c.industry)}</div></div>`).join("");
-  $("top").onclick = e => { const t = e.target.closest(".tc"); if (t) openCompany(+t.dataset.id); };
-
   const tickIndex = {};
   C.forEach(c => { if (c.ticker) tickIndex[String(c.ticker).toUpperCase()] = c; });
+  function resolveFirm(q) {
+    q = (q || "").trim();
+    if (!q) return null;
+    const hit = tickIndex[q.toUpperCase()];
+    if (hit) return hit;
+    const list = searchHits(q, 1);
+    return list[0] || null;
+  }
+  function paintTop() {
+    const top = C.filter(c => c.listed && c.components == 2 && tdiAt(c) != null)
+      .sort((a, b) => tdiAt(b) - tdiAt(a) || a.name.localeCompare(b.name)).slice(0, 10);
+    $("top").innerHTML = top.map((c, i) => {
+      const t = tdiAt(c);
+      return `<div class="tc" data-id="${c.id}"><span class="rk">#${i + 1}</span><div class="s">${t.toFixed(1)}</div>
+       <div class="bar"><i style="width:${t}%"></i></div><div class="n">${esc(c.name)}</div>
+       <div class="t">${esc(c.ticker)} · ${esc(c.industry)}</div></div>`;
+    }).join("");
+  }
+  $("top").onclick = e => { const t = e.target.closest(".tc"); if (t) openCompany(+t.dataset.id); };
+  function setYear(i, rerender) {
+    yi = Math.max(0, Math.min(Y.length - 1, i));
+    if ($("yslider")) $("yslider").value = yi;
+    if ($("yval")) $("yval").textContent = Y[yi];
+    if ($("ychip")) $("ychip").textContent = Y[yi];
+    paintTop();
+    if (rerender !== false) { page = 0; render(); }
+  }
   const chips = [];
   const seen = new Set();
   FAMOUS.forEach(t => {
@@ -125,7 +155,7 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
       (!i || x.industry === i) && (!c || (x.categories || "").includes(c + "=")) &&
       (l === "" || x.listed == +l)
     ).sort((a, b) => {
-      const x = a[sortK], y = b[sortK];
+      const x = sortK === "tdi" ? tdiAt(a) : a[sortK], y = sortK === "tdi" ? tdiAt(b) : b[sortK];
       if (x == null) return 1;
       if (y == null) return -1;
       return (x > y ? 1 : x < y ? -1 : 0) * dir;
@@ -133,19 +163,22 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
   }
   function spark(v) {
     if (!v || v.filter(x => x != null).length < 2) return "";
+    const n = v.length - 1;
     const pts = v.map((s, i) => s == null ? null : `${i},${100 - s}`).filter(Boolean);
-    return `<svg class="spark" viewBox="0 0 ${v.length - 1} 100" preserveAspectRatio="none"><polyline fill="none" stroke="#0f172a" stroke-width="10" points="${pts.join(" ")}"/></svg>`;
+    const cur = v[yi] != null ? `<circle cx="${yi}" cy="${100 - v[yi]}" r="8" fill="#d97706"/>` : "";
+    return `<svg class="spark" viewBox="0 0 ${n} 100" preserveAspectRatio="none"><polyline fill="none" stroke="#0f172a" stroke-width="10" points="${pts.join(" ")}"/>${cur}</svg>`;
   }
   function render() {
     const r = rows(), PER = +$("per").value || r.length || 1, P = Math.max(1, Math.ceil(r.length / PER));
     page = Math.max(0, Math.min(page, P - 1));
-    $("tb").innerHTML = r.slice(page * PER, page * PER + PER).map(c =>
-      `<tr data-id="${c.id}"><td>${esc(c.name)} ${c.listed ? "" : '<span class="badge">historical</span>'}</td>
+    $("tb").innerHTML = r.slice(page * PER, page * PER + PER).map(c => {
+      const t = tdiAt(c);
+      return `<tr data-id="${c.id}"><td>${esc(c.name)} ${c.listed ? "" : '<span class="badge">historical</span>'}</td>
        <td>${esc(c.ticker)}</td><td class="muted">${esc(c.industry)}</td>
-       <td class="r"><b>${fmt(c.tdi)}</b>${c.tdi != null ? `<span class="meter"><i style="width:${c.tdi}%"></i></span>` : ""}</td>
+       <td class="r"><b>${fmt(t)}</b>${t != null ? `<span class="meter"><i style="width:${t}%"></i></span>` : ""}</td>
        <td>${spark(c.history)}</td>
-       <td class="r">${fmt(c.startup)}</td><td class="r">${fmt(c.patent)}</td><td class="r">${usd(c.revenue)}</td></tr>`
-    ).join("");
+       <td class="r">${fmt(c.startup)}</td><td class="r">${fmt(c.patent)}</td><td class="r">${usd(c.revenue)}</td></tr>`;
+    }).join("");
     const a = r.length ? page * PER + 1 : 0, b = Math.min(r.length, page * PER + PER);
     $("pg").textContent = `Showing ${a.toLocaleString()}–${b.toLocaleString()} of ${r.length.toLocaleString()} companies`;
     $("pno").value = page + 1; $("pno").max = P; $("pmax").textContent = P.toLocaleString();
@@ -174,6 +207,7 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
       `<line x1="${P}" x2="${W - P}" y1="${Ys(g)}" y2="${Ys(g)}" stroke="#e6e0d4"/><text x="4" y="${Ys(g) + 4}">${g}</text>`
     ).join("");
     const years = Y.map((y, i) => i % 3 == 0 || i == Y.length - 1 ? `<text x="${X(i) - 14}" y="${H - 10}">${y}</text>` : "").join("");
+    const mark = `<line x1="${X(yi)}" x2="${X(yi)}" y1="${P}" y2="${H - P}" stroke="#d97706" stroke-dasharray="3 3"/>`;
     const paths = series.map((v, si) => {
       let d = "", o = false;
       v.forEach((s, i) => {
@@ -192,7 +226,7 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
       return `${area}<path d="${d}" fill="none" stroke="${col}" stroke-width="${si ? 2 : 2.5}"${dash}/>
         ${si ? "" : pts.map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" stroke="${col}" stroke-width="2"/>`).join("")}`;
     }).join("");
-    return `<svg viewBox="0 0 ${W} ${H}" width="100%">${grid}${years}${paths}</svg>`;
+    return `<svg viewBox="0 0 ${W} ${H}" width="100%">${grid}${mark}${years}${paths}</svg>`;
   }
   function bars(v) {
     if (!v || v.every(x => x == null)) return "";
@@ -211,14 +245,45 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
       '<span class="muted small">No tracked technology linked</span>';
   }
   function peerBlock(c) {
+    const t = tdiAt(c, Y.length - 1);
     const ir = indRank(c);
-    if (!ir || c.tdi == null) return "";
+    if (!ir || t == null) return "";
     const pctile = Math.round(100 * (ir.n - ir.rank) / Math.max(ir.n - 1, 1));
     return `<div class="peerbox">
-      <div class="peer"><span>This firm</span><span class="track"><i style="width:${c.tdi}%"></i></span><b>${c.tdi.toFixed(1)}</b></div>
+      <div class="peer"><span>This firm</span><span class="track"><i style="width:${t}%"></i></span><b>${t.toFixed(1)}</b></div>
       <div class="peer"><span>Industry avg</span><span class="track"><i class="avg" style="width:${ir.avg}%"></i></span><b>${ir.avg.toFixed(1)}</b></div>
       <p class="muted small">#${ir.rank} of ${ir.n.toLocaleString()} in ${esc(c.industry)} · higher than ${pctile}% of industry peers · #${rankOf[c.id].toLocaleString()} of ${scored.length.toLocaleString()} overall</p>
     </div>`;
+  }
+  function impliedHTML(c) {
+    const ir = indRank(c);
+    if (!ir || c.tdi == null) return "";
+    const d = c.tdi - ir.avg, p = assocPct(d), sign = p >= 0 ? "+" : "";
+    return `<div class="impl">
+      <div class="eyebrow">Associated next-year public float vs industry mean</div>
+      <div class="big sm">${sign}${p.toFixed(1)}%</div>
+      <p class="muted small">${d >= 0 ? "+" : ""}${d.toFixed(1)} index points vs the ${esc(c.industry)} average of ${ir.avg.toFixed(1)}.
+        Formula: exp(β × Δ/10) − 1, with β = ${COEF10.toFixed(3)} from industry×year FE. Predictive, not causal. A firm’s own score changes over time were ~0.</p>
+    </div>`;
+  }
+  function neighborHTML(c) {
+    if (c.tdi == null) return "";
+    const near = peersOf(c).filter(x => x.id !== c.id)
+      .map(x => ({ x, d: Math.abs(x.tdi - c.tdi) }))
+      .sort((a, b) => (b.x.listed - a.x.listed) || ((b.x.ticker ? 1 : 0) - (a.x.ticker ? 1 : 0)) || a.d - b.d)
+      .slice(0, 5);
+    if (!near.length) return "";
+    return `<h4>Closest industry peers</h4><div class="near">${near.map(n =>
+      `<button type="button" class="chip" data-id="${n.x.id}">${esc(n.x.ticker || n.x.name)} <span>${n.x.tdi.toFixed(1)}</span></button>`
+    ).join("")}</div>`;
+  }
+  function mixHTML(c) {
+    if (c.patent == null || c.startup == null) return "";
+    const mid = ((c.startup + c.patent) / 2).toFixed(1);
+    return `<h4>What-if component mix</h4>
+      <p class="muted small">Published index is 50/50 when both scores exist. Drag to reweight <i>this firm only</i> — this does not rerun the regressions.</p>
+      <input type="range" id="mix" min="0" max="100" value="50">
+      <p class="legend mixleg"><span>Startup ${c.startup.toFixed(1)}</span><b id="mixv">50 / 50 → ${mid}</b><span>Patent ${c.patent.toFixed(1)}</span></p>`;
   }
 
   let compareA = null;
@@ -239,10 +304,12 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
         <div><div class="big sm">${pat}</div><div class="muted small">Patent</div></div>
       </div>
       ${peerBlock(c)}
+      ${compact ? "" : impliedHTML(c)}
       ${WHY[c.flag] ? `<div class="note">${WHY[c.flag]}</div>` : ""}
       <div>${tagsOf(c)}</div>
       ${c.history && c.history.some(x => x != null) ? `<h4>Index vs industry average</h4>${chart(series, colors)}
         <p class="legend"><span class="lg ink"></span> ${esc(c.ticker || c.name)} <span class="lg grey"></span> ${esc(c.industry || "industry")} average</p>` : ""}
+      ${compact ? "" : neighborHTML(c) + mixHTML(c)}
       ${compact ? "" : `<h4>Fundamentals${f ? ` <span class="muted small">(SEC XBRL, FY${f[0]})</span>` : ""}</h4>
       ${f ? `<div class="kpis">${kpi(usd(f[1]), "Revenue")}${kpi(usd(f[2]), "Total assets")}${kpi(rdp, "R&amp;D / revenue")}${kpi(usd(f[4]), "Public float")}${kpi(usd(f[5]), "Cash")}</div>${bars(c.rev) ? '<div class="muted small" style="margin-top:10px">Revenue by year</div>' + bars(c.rev) : ""}` : '<p class="muted small">No XBRL financial statements reported to the SEC for 2015–2024.</p>'}
       <div class="muted small" style="margin-top:8px">Components available: ${c.components}/2 · ${esc(FL[c.flag] || "no data")} · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${c.id}" target="_blank" rel="noopener">SEC filings ↗</a></div>`}</div>`;
@@ -272,15 +339,34 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
     if (!c) return;
     history.replaceState(null, "", "#c/" + c.id);
     openOv(`<div class="dhead"><button type="button" class="btn s" id="cmpThis">Compare with…</button>
-      <button type="button" class="btn s" id="copyLink">Copy link</button></div>` + companyHTML(c), false);
+      <button type="button" class="btn s" id="copyLink">Copy link</button>
+      <button type="button" class="btn s" id="copyBrief">Copy brief</button></div>` + companyHTML(c), false);
     $("cmpThis").onclick = () => { compareA = c; openPal(true); };
     $("copyLink").onclick = async () => {
-      try {
-        await navigator.clipboard.writeText(location.href);
-        $("copyLink").textContent = "Copied";
-      } catch (err) {
-        $("copyLink").textContent = "Copy failed";
-      }
+      try { await navigator.clipboard.writeText(location.href); $("copyLink").textContent = "Copied"; }
+      catch (err) { $("copyLink").textContent = "Copy failed"; }
+    };
+    $("copyBrief").onclick = async () => {
+      const ir = indRank(c);
+      const d = ir && c.tdi != null ? c.tdi - ir.avg : null;
+      const p = d == null ? null : assocPct(d);
+      const text = `${c.name}${c.ticker ? " (" + c.ticker + ")" : ""} — Technology Disruption Index ${c.tdi != null ? c.tdi.toFixed(1) : "n/a"} (${yLast})
+${ir ? "#" + ir.rank + " of " + ir.n + " in " + c.industry + " (avg " + ir.avg.toFixed(1) + ")" : ""}
+${p == null ? "" : "Associated next-year public float vs industry mean: " + (p >= 0 ? "+" : "") + p.toFixed(1) + "% (industry×year FE, predictive not causal)."}
+Startup ${c.startup != null ? c.startup.toFixed(1) : "–"} · Patent ${c.patent != null ? c.patent.toFixed(1) : "not linked"}
+${location.origin}${location.pathname}#c/${c.id}`;
+      try { await navigator.clipboard.writeText(text); $("copyBrief").textContent = "Brief copied"; }
+      catch (err) { $("copyBrief").textContent = "Copy failed"; }
+    };
+    const mix = $("mix");
+    if (mix) mix.oninput = () => {
+      const w = +mix.value;
+      const v = (1 - w / 100) * c.startup + (w / 100) * c.patent;
+      $("mixv").textContent = `${100 - w} / ${w} → ${v.toFixed(1)}`;
+    };
+    dbody.onclick = e => {
+      const b = e.target.closest(".near [data-id]");
+      if (b) openCompany(+b.dataset.id);
     };
   }
   function openCompare(a, b) {
@@ -323,13 +409,53 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
         <b>${esc(c.ticker || "—")}</b><span>${esc(c.name)}</span><em>${c.tdi != null ? c.tdi.toFixed(1) : "–"}</em>
       </button>`).join("") || `<div class="hit muted">No matches</div>`;
   }
+  function parseCmd(raw) {
+    const s = (raw || "").trim().toLowerCase();
+    if (!s) return null;
+    if (/^(tour|demo|wow)$/.test(s)) return { type: "tour" };
+    if (/^play/.test(s)) return { type: "play" };
+    const yr = s.match(/^(?:year|in)\s+(20\d{2})$/) || s.match(/^(20\d{2})$/);
+    if (yr && Y.includes(+yr[1])) return { type: "year", y: +yr[1] };
+    const topm = s.match(/^top\s+([a-z]+)/);
+    if (topm) {
+      const cat = cats.find(k => k.toLowerCase() === topm[1] || k.toLowerCase().startsWith(topm[1]));
+      if (cat) return { type: "cat", cat };
+    }
+    const vs = s.match(/^compare\s+(.+?)\s+(?:and|vs|,)\s+(.+)$/) ||
+      s.match(/^(.+?)\s+(?:vs\.?|versus)\s+(.+)$/);
+    if (vs) return { type: "vs", a: vs[1], b: vs[2] };
+    return null;
+  }
+  function runCmd(cmd) {
+    closePal();
+    if (cmd.type === "tour") return runTour();
+    if (cmd.type === "play") {
+      $("explore").scrollIntoView({ behavior: "smooth" });
+      return playYears();
+    }
+    if (cmd.type === "year") {
+      setYear(Y.indexOf(cmd.y));
+      $("explore").scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    if (cmd.type === "cat") {
+      $("cat").value = cmd.cat;
+      page = 0; render();
+      $("explore").scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    if (cmd.type === "vs") {
+      const a = resolveFirm(cmd.a), b = resolveFirm(cmd.b);
+      if (a && b && a.id !== b.id) return openCompare(a, b);
+    }
+  }
   function openPal(forCompare) {
     palMode = !!forCompare;
     pal.hidden = false;
     $("pq").value = "";
     $("palhint").textContent = palMode
       ? `Comparing with ${compareA.ticker || compareA.name}. Pick a second company.`
-      : "Type a name or ticker. Enter opens the profile.";
+      : "Try NVDA, “NVDA vs INTC”, “top AI”, “2018”, or “tour”.";
     palHits = searchHits("", 10);
     palIdx = 0;
     paintPal();
@@ -349,7 +475,11 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
   $("pq").onkeydown = e => {
     if (e.key === "ArrowDown") { e.preventDefault(); palIdx = Math.min(palHits.length - 1, palIdx + 1); paintPal(); }
     if (e.key === "ArrowUp") { e.preventDefault(); palIdx = Math.max(0, palIdx - 1); paintPal(); }
-    if (e.key === "Enter" && palHits[palIdx]) pickPal(palHits[palIdx]);
+    if (e.key === "Enter") {
+      const cmd = parseCmd($("pq").value);
+      if (cmd) { e.preventDefault(); runCmd(cmd); return; }
+      if (palHits[palIdx]) pickPal(palHits[palIdx]);
+    }
     if (e.key === "Escape") closePal();
   };
   pal.addEventListener("click", e => { if (e.target === pal) closePal(); });
@@ -401,8 +531,80 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
     }).join("") + '<p class="muted small">Approximate % difference in next-year public float per +10 index points (from exp(coef)−1). Firm FE is the within-company test.</p>';
   })();
 
+  async function playYears() {
+    playing = true;
+    if ($("yplay")) $("yplay").textContent = "Pause";
+    for (let i = 0; i < Y.length && playing; i++) {
+      setYear(i);
+      await sleep(480);
+    }
+    playing = false;
+    if ($("yplay")) $("yplay").textContent = "Play decade";
+  }
+  if ($("yslider")) {
+    $("yslider").max = Y.length - 1;
+    $("yslider").value = yi;
+    $("yslider").oninput = () => { playing = false; setYear(+$("yslider").value); };
+  }
+  if ($("yplay")) $("yplay").onclick = () => {
+    if (playing) { playing = false; $("yplay").textContent = "Play decade"; }
+    else playYears();
+  };
+  if ($("tourBtn")) $("tourBtn").onclick = () => runTour();
+  if ($("ask")) {
+    $("ask").onkeydown = e => {
+      if (e.key !== "Enter") return;
+      const cmd = parseCmd($("ask").value) || { type: "firm", q: $("ask").value };
+      if (cmd.type === "firm") {
+        const f = resolveFirm(cmd.q);
+        if (f) openCompany(f.id);
+        else openPal(false);
+      } else runCmd(cmd);
+    };
+  }
+
+  async function runTour() {
+    if (touring) return;
+    touring = true;
+    const board = $("tour");
+    const txt = $("tourtxt");
+    const show = m => { if (board) { board.hidden = false; txt.textContent = m; } };
+    const skip = () => { touring = playing = false; if (board) board.hidden = true; };
+    if ($("tourx")) $("tourx").onclick = skip;
+    closePal();
+    closeOv();
+    setYear(Y.length - 1, false);
+    document.querySelector(".finding").scrollIntoView({ behavior: "smooth", block: "center" });
+    document.querySelector(".finding").classList.add("pulse");
+    show("1 / 5  The result: +8.7% next-year public float vs industry peers. Same firm over time: ~0%.");
+    await sleep(3800); if (!touring) return;
+    document.querySelector(".finding").classList.remove("pulse");
+    const nv = tickIndex.NVDA, intel = tickIndex.INTC;
+    show("2 / 5  NVIDIA — score vs its manufacturing peers, and the associated valuation gap.");
+    if (nv) openCompany(nv.id);
+    await sleep(4200); if (!touring) return;
+    show("3 / 5  NVIDIA vs Intel. Same industry, different patent momentum.");
+    if (nv && intel) openCompare(nv, intel);
+    await sleep(4500); if (!touring) return;
+    closeOv();
+    show("4 / 5  Time machine: the top-ten list from 2015 to 2024.");
+    $("explore").scrollIntoView({ behavior: "smooth" });
+    await playYears(); if (!touring) return;
+    show("5 / 5  The forest plot: only the within-firm test collapses to zero.");
+    $("research").scrollIntoView({ behavior: "smooth" });
+    await sleep(4200);
+    skip();
+  }
+
   function applyHash() {
     const h = (location.hash || "").replace(/^#/, "");
+    if (h === "tour") return runTour();
+    const y = h.match(/^y\/(20\d{2})/);
+    if (y && Y.includes(+y[1])) {
+      closeOv(true);
+      setYear(Y.indexOf(+y[1]));
+      return;
+    }
     const c = h.match(/^c\/(\d+)/);
     const v = h.match(/^vs\/(\d+)\/(\d+)/);
     if (c && byId[+c[1]]) openCompany(+c[1]);
@@ -414,10 +616,29 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
   document.addEventListener("keydown", e => {
     const inField = /INPUT|SELECT|TEXTAREA/.test(e.target.tagName);
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); openPal(false); }
-    if (e.key === "Escape") { if (!pal.hidden) closePal(); else if (!ov.hidden) closeOv(); }
+    if (e.key === "Escape") {
+      if (touring) { touring = playing = false; if ($("tour")) $("tour").hidden = true; }
+      if (!pal.hidden) closePal(); else if (!ov.hidden) closeOv();
+    }
     if (e.key === "/" && !inField) { e.preventDefault(); $("q").focus(); }
   });
 
+  const fig = document.querySelector(".finding .fig");
+  if (fig && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const target = parseFloat(fig.textContent);
+    if (!isNaN(target)) {
+      const t0 = performance.now();
+      const tick = now => {
+        const k = Math.min(1, (now - t0) / 900);
+        const eased = 1 - Math.pow(1 - k, 3);
+        fig.textContent = (target >= 0 ? "+" : "") + (target * eased).toFixed(1) + "%";
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+  }
+
+  paintTop();
   render();
   if (location.hash) applyHash();
 });
