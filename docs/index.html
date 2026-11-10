@@ -31,8 +31,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.01em}
 nav{position:sticky;top:0;z-index:10;background:rgba(250,248,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:28px;padding:12px 24px}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:17px;color:var(--ink);text-decoration:none}.logo img{width:28px;height:28px;display:block}
-.nav .links{display:flex;gap:24px;margin-left:auto}.nav .links a{color:var(--muted);font-size:14px;text-decoration:none}.nav .links a:hover{color:var(--ink)}
+.nav .links{display:flex;gap:24px;margin-left:auto;align-items:center}.nav .links a{color:var(--muted);font-size:14px;text-decoration:none}.nav .links a:hover{color:var(--ink)}
 .nav .gh{border:1px solid var(--ink);color:var(--ink)!important;padding:5px 12px;border-radius:8px}
+.kb{display:inline-flex;align-items:center;gap:8px;font:inherit;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer;color:var(--muted);font-size:13px}
+.kb:hover{border-color:var(--ink);color:var(--ink)}kbd{font:11px/1 ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--line);border-radius:4px;padding:2px 5px;background:#faf8f4}
 .hero{max-width:1180px;margin:auto;padding:72px 24px 40px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-d)}
 h1{font-size:clamp(36px,5vw,60px);line-height:1.05;margin:14px 0 18px}
@@ -44,6 +46,11 @@ h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--amber-l
 .finding .eyebrow{color:#fbbf24}.finding .fig{font-family:var(--serif);font-size:76px;line-height:1;color:#fff;margin:14px 0 8px;font-weight:700}
 .finding p{margin:0 0 14px;font-size:15px}.finding hr{border:0;border-top:1px solid rgba(255,255,255,.15);margin:18px 0}
 .finding .src{font-size:12px;color:#94a3b8;margin:0}
+.cmpfind{display:grid;gap:10px;margin:16px 0}
+.cmpfind div{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;font-size:13px;color:#cbd5e1}
+.cmpfind b{font-family:var(--serif);font-size:18px;color:#fff}
+.cmpfind i{display:block;grid-column:1/-1;height:6px;border-radius:99px;background:#fbbf24}
+.cmpfind i.dim{background:#334155;width:8%!important}
 .wrap{max-width:1180px;margin:auto;padding:0 24px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line);margin:8px 0 0}
 .stat{padding:20px 24px 20px 0}.stat+.stat{border-left:1px solid var(--line);padding-left:24px}
@@ -86,14 +93,65 @@ footer{margin-top:96px;background:var(--ink);color:#94a3b8;font-size:13px}
 .foot .logo{color:#fff;margin-bottom:10px}
 svg text{fill:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}.kpi{background:#faf8f4;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
-.kpi b{display:block;font-size:18px;font-variant-numeric:tabular-nums}.kpi span{color:var(--muted);font-size:12px}#detail h4{margin:20px 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.kpi b{display:block;font-size:18px;font-variant-numeric:tabular-nums}.kpi span{color:var(--muted);font-size:12px}.drawer h4,#detail h4{margin:20px 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .card,.tc,.stat,.g2>*,.g3>*{min-width:0}.card{overflow-x:auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.chip{font:inherit;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer;color:var(--ink)}
+.chip span{color:var(--muted);margin-left:6px;font-variant-numeric:tabular-nums}
+.chip:hover,.chip.ghost:hover{border-color:var(--ink)}
+.chip.ghost{color:var(--muted)}
+.techmap{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 22px}
+.tm{text-align:left;font:inherit;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;color:var(--ink);position:relative;overflow:hidden}
+.tm:hover{border-color:var(--ink)}
+.tm span{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.tm b{display:block;font-family:var(--serif);font-size:22px;margin:2px 0 8px}
+.tm i{display:block;height:3px;background:var(--amber);border-radius:2px}
+.tm em{display:block;font-style:normal;color:var(--muted);font-size:11px;margin-top:6px}
+.spark{width:76px;height:22px;display:block}
+.peerbox{margin:14px 0;padding:12px 0}
+.peer{display:grid;grid-template-columns:96px 1fr 44px;gap:8px;align-items:center;font-size:13px;margin:6px 0}
+.peer .track{height:8px;background:#efeae0;border-radius:99px;overflow:hidden}
+.peer .track i{display:block;height:100%;background:var(--amber);border-radius:99px}
+.peer .track i.avg{background:#94a3b8}
+.peer b{text-align:right;font-variant-numeric:tabular-nums}
+.scoreline{display:flex;flex-wrap:wrap;gap:28px;margin:16px 0}
+.big.sm{font-size:28px;margin-top:12px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:12px;color:var(--muted);margin:6px 0 0}
+.lg{display:inline-block;width:18px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.lg.ink{background:#0f172a}.lg.grey{background:#94a3b8}.lg.amb{background:#d97706}
+.ov{position:fixed;inset:0;background:rgba(15,23,42,.42);z-index:30;display:flex;justify-content:flex-end}
+.ov[hidden],.pal[hidden]{display:none!important}
+.drawer{width:min(640px,100%);height:100%;background:#fff;overflow:auto;padding:28px 28px 48px;box-shadow:-24px 0 60px rgba(15,23,42,.18);position:relative}
+.ov.wide .drawer{width:min(980px,100%)}
+.ovx{position:absolute;top:16px;right:16px;z-index:1;width:36px;height:36px;border-radius:8px}
+.drawer{padding-top:56px}
+.dhead{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 16px}
+.vsgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.vsgrid>div,.vsgrid>*{min-width:0}
+.drawer h3{margin:2px 0 4px;font-size:22px}
+.pal{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:40;display:flex;align-items:flex-start;justify-content:center;padding:12vh 16px 16px}
+.pal-box{width:min(640px,100%);background:#fff;border-radius:14px;box-shadow:0 24px 80px rgba(15,23,42,.28);overflow:hidden}
+.pal-box input{width:100%;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:16px 18px;font-size:16px;min-width:0}
+.palhint{padding:8px 18px;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line)}
+.hit{display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0;border-radius:0;padding:12px 18px;background:#fff}
+.hit:hover,.hit.on{background:#fbf6ea}
+.hit b{width:64px;flex:0 0 64px;font-variant-numeric:tabular-nums}
+.hit span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hit em{font-style:normal;color:var(--muted);font-variant-numeric:tabular-nums}
+.fb{display:grid;grid-template-columns:140px 1fr 64px;gap:10px;align-items:center;margin:8px 0;font-size:13px}
+.fbar{height:10px;background:#efeae0;border-radius:99px;overflow:hidden}
+.fbar i{display:block;height:100%;border-radius:99px}
+.fbar i.pos{background:var(--good)}.fbar i.zero{background:#94a3b8}
+.fb b.pos{color:var(--good)}.fb b.zero{color:var(--muted)}
 @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:48px;gap:32px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0;padding-left:0}
-.stat:nth-child(n+3){border-top:1px solid var(--line)}.top{grid-template-columns:repeat(2,1fr)}.g2,.g3,.foot{grid-template-columns:1fr}.nav .links a:not(.gh){display:none}.finding .fig{font-size:60px}}
+.stat:nth-child(n+3){border-top:1px solid var(--line)}.top{grid-template-columns:repeat(2,1fr)}.g2,.g3,.foot,.techmap,.vsgrid{grid-template-columns:1fr}.nav .links a:not(.gh){display:none}.finding .fig{font-size:60px}
+.fb{grid-template-columns:1fr 56px}.fb span:first-child{grid-column:1/-1}}
 
 </style></head><body>
 <nav><div class="nav"><a class="logo" href="#"><img src="/favicon.svg" alt="" width="28" height="28">Technology Disruption Index</a>
-<div class="links"><a href="#explore">Explore</a><a href="#research">Research</a><a href="#method">Methodology</a><a href="#about">Data</a><a class="gh" href="https://github.com/UmarovMirjalol/quantify" target="_blank" rel="noopener">GitHub</a></div></div></nav>
+<div class="links"><a href="#explore">Explore</a><a href="#research">Research</a><a href="#method">Methodology</a><a href="#about">Data</a>
+<button type="button" class="kb" id="openK">Search <kbd>⌘K</kbd></button>
+<a class="gh" href="https://github.com/UmarovMirjalol/quantify" target="_blank" rel="noopener">GitHub</a></div></div></nav>
 
 <header class="hero"><div>
 <div class="eyebrow">Open research · 2015–2024 · SEC filings, patents, startups</div>
@@ -101,15 +159,23 @@ svg text{fill:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
 <p class="lead">A transparent, reproducible index scoring 13,702 SEC-registered companies on patent activity and startup-ecosystem activity in their technology domains — and a test of whether markets price it before fundamentals.</p>
 <a class="btn p" href="#explore">Explore companies</a><a class="btn s" href="#research">See the research</a></div>
 <aside class="finding"><div class="eyebrow">Key finding</div><div class="fig">+8.7%</div>
-<p>higher market valuation the following year for a company scoring 10 index points above its industry peers in the same year.</p>
-<hr><p>But when a company’s own score rises over time, its valuation does not follow (p = 0.96). Markets appear to price <i>which</i> firms are exposed, not changes in exposure.</p>
-<p class="src">Lagged panel regressions, 47,627 firm-years, industry×year fixed effects, clustered SEs. Predictive, not causal.</p></aside>
+<p>higher next-year public float for a company scoring 10 index points above its industry peers in the same year.</p>
+<div class="cmpfind">
+<div><span>vs industry peers, same year</span><b>+8.7%</b><i style="width:100%"></i></div>
+<div><span>same company over time (p = 0.96)</span><b>~0%</b><i class="dim"></i></div>
+</div>
+<p>Markets appear to price <i>which</i> firms are exposed, not changes in exposure.</p>
+<p class="src">Lagged panel regressions, 47,627 firm-years, industry×year fixed effects, clustered SEs. Predictive, not causal. Public float, not Tobin’s Q.</p></aside>
 </header>
 
 <div class="wrap"><div class="stats" id="stats"></div>
 <section id="explore"><div class="kicker">Explore</div><h2>Highest-scoring companies</h2>
-<p class="sub">Index on a 0–100 scale for 2024. Cards show listed companies scored on both patents and startup activity; the table below covers all 13,702. Click any company for its score history and fundamentals.</p>
+<p class="sub">Index on a 0–100 scale for 2024. Open a well-known ticker, compare two firms, or click any row. Cards are listed companies scored on both patents and startup activity; the table covers all 13,702.</p>
+<div class="chips" id="chips"></div>
 <div class="top" id="top"><div class="tc" data-id="1564408"><span class="rk">#1</span><div class="s">89.9</div><div class="bar"><i style="width:89.9%"></i></div><div class="n">Snap Inc</div><div class="t">SNAP · Services</div></div><div class="tc" data-id="1585521"><span class="rk">#2</span><div class="s">86.4</div><div class="bar"><i style="width:86.4%"></i></div><div class="n">Zoom Communications, Inc.</div><div class="t">ZM · Services</div></div><div class="tc" data-id="1640147"><span class="rk">#3</span><div class="s">86.3</div><div class="bar"><i style="width:86.3%"></i></div><div class="n">Snowflake Inc.</div><div class="t">SNOW · Services</div></div><div class="tc" data-id="1943896"><span class="rk">#4</span><div class="s">83.3</div><div class="bar"><i style="width:83.3%"></i></div><div class="n">Rubrik, Inc.</div><div class="t">RBRK · Services</div></div><div class="tc" data-id="1594805"><span class="rk">#5</span><div class="s">83.2</div><div class="bar"><i style="width:83.2%"></i></div><div class="n">SHOPIFY INC.</div><div class="t">SHOP · Services</div></div><div class="tc" data-id="1560327"><span class="rk">#6</span><div class="s">82.9</div><div class="bar"><i style="width:82.9%"></i></div><div class="n">Rapid7, Inc.</div><div class="t">RPD · Services</div></div><div class="tc" data-id="1571996"><span class="rk">#7</span><div class="s">82.8</div><div class="bar"><i style="width:82.8%"></i></div><div class="n">Dell Technologies Inc.</div><div class="t">DELL · Manufacturing</div></div><div class="tc" data-id="1734722"><span class="rk">#8</span><div class="s">82.2</div><div class="bar"><i style="width:82.2%"></i></div><div class="n">UiPath, Inc.</div><div class="t">PATH · Services</div></div><div class="tc" data-id="1713683"><span class="rk">#9</span><div class="s">82.2</div><div class="bar"><i style="width:82.2%"></i></div><div class="n">Zscaler, Inc.</div><div class="t">ZS · Services</div></div><div class="tc" data-id="2063196"><span class="rk">#10</span><div class="s">82.1</div><div class="bar"><i style="width:82.1%"></i></div><div class="n">Netskope Inc</div><div class="t">NTSK · Services</div></div></div>
+<h3 style="margin:28px 0 10px;font-size:20px">Companies by technology tag</h3>
+<p class="sub" style="margin-bottom:12px">Click a category to filter the table. A firm can belong to more than one tag.</p>
+<div class="techmap" id="techmap"></div>
 
 <div class="card" style="margin-top:20px">
 <div class="controls"><input id="q" placeholder="Search by company name or ticker…">
@@ -117,20 +183,23 @@ svg text{fill:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
 <select id="cat"><option value="">All technologies</option></select>
 <select id="lst"><option value="">All companies</option><option value="1">Currently listed</option><option value="0">Historical filers</option></select></div>
 <div class="tw"><table><thead><tr><th data-k="name">Company</th><th data-k="ticker">Ticker</th><th data-k="industry">Industry</th>
-<th data-k="tdi" class="r">Index</th><th data-k="startup" class="r">Startup</th><th data-k="patent" class="r">Patent</th><th data-k="revenue" class="r">Revenue</th></tr></thead><tbody id="tb"><tr data-id="1070050"><td>AppTech Payments Corp.</td><td>APCX</td><td class="muted">Services</td><td class="r"><b>100.0</b></td><td class="r">100.0</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1730869"><td>Everything Blockchain, Inc.</td><td>EBZT</td><td class="muted">Services</td><td class="r"><b>100.0</b></td><td class="r">100.0</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1627452"><td>ME Renewable Power Corp</td><td></td><td class="muted">Services</td><td class="r"><b>100.0</b></td><td class="r">100.0</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1437283"><td>REGO PAYMENT ARCHITECTURES, INC.</td><td>RPMT</td><td class="muted">Services</td><td class="r"><b>100.0</b></td><td class="r">100.0</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1691221"><td>Foresight Autonomous Holdings Ltd.</td><td>FRSX</td><td class="muted">Services</td><td class="r"><b>99.9</b></td><td class="r">99.9</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="2113060"><td>IQM Quantum Computers Oyj</td><td>IQMX</td><td class="muted">Services</td><td class="r"><b>99.9</b></td><td class="r">99.9</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1543272"><td>MJ BIOTECH, INC.</td><td></td><td class="muted">Services</td><td class="r"><b>99.9</b></td><td class="r">99.9</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="2007599"><td>Robot Consulting Co., Ltd.</td><td>LAWR</td><td class="muted">Services</td><td class="r"><b>99.9</b></td><td class="r">99.9</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1627611"><td>12 Retech Corp</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1877461"><td>1606 CORP.</td><td>CBDW</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1459417"><td>2U, LLC</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1993097"><td>3 E Network Technology Group Ltd</td><td>MASK</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1556753"><td>3D PIONEER SYSTEMS, INC.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1730732"><td>3FORCES INC.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="2092287"><td>3KNIGHTS DYNAMICS GROUP Ltd</td><td>TKDG</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1525494"><td>58.com Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1705402"><td>AGM GROUP HOLDINGS, INC.</td><td>AGMH</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1932244"><td>AI Unlimited Group, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1674440"><td>AIRWA INC.</td><td>YYAI</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1126003"><td>ALTERNET SYSTEMS INC</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1557565"><td>AMI JAMES BRANDS, INC.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1593773"><td>AMJ Global Technology</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1669513"><td>APP Incline Corp</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="879796"><td>ARI NETWORK SERVICES INC /WI</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="929940"><td>ASPENTECH Corp</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="945989"><td>ASTEA INTERNATIONAL INC</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="893821"><td>ATTUNITY LTD</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1971975"><td>Abaxx Technologies Inc.</td><td>ABXXF</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1838672"><td>AdTheorent Holding Company, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="2084227"><td>Advasa Holdings, Inc.</td><td>ADBT</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="2026353"><td>Aether Holdings, Inc.</td><td>ATHR</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1802883"><td>Agora, Inc.</td><td>API</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1842566"><td>Airship AI Holdings, Inc.</td><td>AISP</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1725332"><td>Alarum Technologies Ltd.</td><td>ALAR</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1833908"><td>Alfi, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1734520"><td>Alithya Group inc</td><td>ALYAF</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1865111"><td>Alpha Star Acquisition Corp</td><td>ALSAF</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1967621"><td>Alpha Technology Group Ltd</td><td>ATGL</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1314223"><td>Amber Road, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="277905"><td>American Retail Group, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1707258"><td>Amesite Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1781629"><td>Ankam, Inc.</td><td>ANKM</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1528875"><td>Anpulo Food Development, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1751008"><td>AppLovin Corp</td><td>APP</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1353538"><td>Appgate, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1651992"><td>Appsoft Technologies, Inc.</td><td>ASFT</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1562738"><td>Apptigo International, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1585755"><td>Arias Intel Corp.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1881741"><td>Arogo Capital Acquisition Corp.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1859690"><td>Arqit Quantum Inc.</td><td>ARQQ</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr></tbody></table></div>
+<th data-k="tdi" class="r">Index</th><th>Trend</th><th data-k="startup" class="r">Startup</th><th data-k="patent" class="r">Patent</th><th data-k="revenue" class="r">Revenue</th></tr></thead><tbody id="tb"><tr data-id="1070050"><td>AppTech Payments Corp.</td><td>APCX</td><td class="muted">Services</td><td class="r"><b>100.0</b></td><td></td><td class="r">100.0</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1730869"><td>Everything Blockchain, Inc.</td><td>EBZT</td><td class="muted">Services</td><td class="r"><b>100.0</b></td><td></td><td class="r">100.0</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1627452"><td>ME Renewable Power Corp</td><td></td><td class="muted">Services</td><td class="r"><b>100.0</b></td><td></td><td class="r">100.0</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1437283"><td>REGO PAYMENT ARCHITECTURES, INC.</td><td>RPMT</td><td class="muted">Services</td><td class="r"><b>100.0</b></td><td></td><td class="r">100.0</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1691221"><td>Foresight Autonomous Holdings Ltd.</td><td>FRSX</td><td class="muted">Services</td><td class="r"><b>99.9</b></td><td></td><td class="r">99.9</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="2113060"><td>IQM Quantum Computers Oyj</td><td>IQMX</td><td class="muted">Services</td><td class="r"><b>99.9</b></td><td></td><td class="r">99.9</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1543272"><td>MJ BIOTECH, INC.</td><td></td><td class="muted">Services</td><td class="r"><b>99.9</b></td><td></td><td class="r">99.9</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="2007599"><td>Robot Consulting Co., Ltd.</td><td>LAWR</td><td class="muted">Services</td><td class="r"><b>99.9</b></td><td></td><td class="r">99.9</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1627611"><td>12 Retech Corp</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1877461"><td>1606 CORP.</td><td>CBDW</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1459417"><td>2U, LLC</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1993097"><td>3 E Network Technology Group Ltd</td><td>MASK</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1556753"><td>3D PIONEER SYSTEMS, INC.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1730732"><td>3FORCES INC.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="2092287"><td>3KNIGHTS DYNAMICS GROUP Ltd</td><td>TKDG</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1525494"><td>58.com Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1705402"><td>AGM GROUP HOLDINGS, INC.</td><td>AGMH</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1932244"><td>AI Unlimited Group, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1674440"><td>AIRWA INC.</td><td>YYAI</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1126003"><td>ALTERNET SYSTEMS INC</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1557565"><td>AMI JAMES BRANDS, INC.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1593773"><td>AMJ Global Technology</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1669513"><td>APP Incline Corp</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="879796"><td>ARI NETWORK SERVICES INC /WI</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="929940"><td>ASPENTECH Corp</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="945989"><td>ASTEA INTERNATIONAL INC</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="893821"><td>ATTUNITY LTD</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1971975"><td>Abaxx Technologies Inc.</td><td>ABXXF</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1838672"><td>AdTheorent Holding Company, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="2084227"><td>Advasa Holdings, Inc.</td><td>ADBT</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="2026353"><td>Aether Holdings, Inc.</td><td>ATHR</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1802883"><td>Agora, Inc.</td><td>API</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1842566"><td>Airship AI Holdings, Inc.</td><td>AISP</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1725332"><td>Alarum Technologies Ltd.</td><td>ALAR</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1833908"><td>Alfi, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1734520"><td>Alithya Group inc</td><td>ALYAF</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1865111"><td>Alpha Star Acquisition Corp</td><td>ALSAF</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1967621"><td>Alpha Technology Group Ltd</td><td>ATGL</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1314223"><td>Amber Road, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="277905"><td>American Retail Group, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1707258"><td>Amesite Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1781629"><td>Ankam, Inc.</td><td>ANKM</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1528875"><td>Anpulo Food Development, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1751008"><td>AppLovin Corp</td><td>APP</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1353538"><td>Appgate, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1651992"><td>Appsoft Technologies, Inc.</td><td>ASFT</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1562738"><td>Apptigo International, Inc.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1585755"><td>Arias Intel Corp.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1881741"><td>Arogo Capital Acquisition Corp.</td><td></td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr><tr data-id="1859690"><td>Arqit Quantum Inc.</td><td>ARQQ</td><td class="muted">Services</td><td class="r"><b>93.7</b></td><td></td><td class="r">93.7</td><td class="r">–</td><td class="r">–</td></tr></tbody></table></div>
 <div class="pager"><span id="pg"></span>
 <select id="per"><option value="25">25 per page</option><option value="50" selected>50 per page</option><option value="100">100 per page</option><option value="500">500 per page</option><option value="0">Show all</option></select>
 <button id="first" title="First page">«</button><button id="prev" title="Previous page">←</button>
 <span>Page <input id="pno" type="number" min="1" value="1"> of <b id="pmax">1</b></span>
 <button id="next" title="Next page">→</button><button id="last" title="Last page">»</button></div></div>
 
-<div class="g2" style="margin-top:20px"><div class="card" id="detail"><h3 style="margin:0">Company profile</h3><p class="muted">Select a company to see details.</p></div>
-<div class="card"><h3 style="margin:0 0 6px">Score distribution</h3><div id="hist"></div><p class="small muted">Amber bar: industries not linked to any tracked technology category (score 0).</p></div></div>
+<div class="card" style="margin-top:20px"><h3 style="margin:0 0 6px">Score distribution</h3><div id="hist"></div><p class="small muted">Amber bar: industries not linked to any tracked technology category (score 0). Open a company from the table for its profile, industry rank, and history.</p></div>
 </section>
 
 <section id="research"><div class="kicker">Research</div><h2>Do markets price technology exposure before fundamentals?</h2>
 <p class="sub">Lagged panel regressions: index in year t, outcomes in year t+1, standard errors clustered by company. Coefficients per 10 index points. These are predictive associations, not causal effects.</p>
-<div class="g2"><div class="card"><div class="tw" id="res"></div><p class="small muted">Green = p &lt; 0.05. 78 specifications in total incl. robustness checks; full results in the repository.</p></div>
+<div class="g2"><div class="card"><h3 style="margin:0 0 8px">The valuation result, in one picture</h3>
+<p class="muted small" style="margin:0 0 12px">Next-year public float, per +10 index points. Green = statistically distinguishable from zero.</p>
+<div id="forest"></div>
+<div class="tw" id="res" style="margin-top:18px"></div>
+<p class="small muted">Coefficients as estimated. Green = p &lt; 0.05. 78 specifications in total incl. robustness checks; full results in the repository.</p></div>
 <div class="card"><h3 style="margin:0 0 6px">Average index by industry</h3><div id="inds"></div></div></div>
 <div class="note" style="margin-top:20px"><b>Read with care.</b> Patent data cover 3,891 companies — those whose patents could be linked to an SEC registrant. For the remaining firms the index reflects industry-level exposure to startup activity only; a blank patent score means “not linked”, not “zero patents”.</div>
 </section>
@@ -158,73 +227,431 @@ svg text{fill:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
 <div><b>Sources</b><a href="https://www.sec.gov/edgar" target="_blank" rel="noopener">SEC EDGAR</a><a href="https://www.uspto.gov/ip-policy/economic-research/patentsview" target="_blank" rel="noopener">USPTO PatentsView</a><a href="https://github.com/songma/patent-firm-link-share" target="_blank" rel="noopener">Patent–firm linkage (Ma, 2025)</a><a href="https://github.com/UmarovMirjalol/quantify" target="_blank" rel="noopener">Source code on GitHub</a></div>
 </div></footer>
 
+<div class="ov" id="ov" hidden><aside class="drawer" role="dialog" aria-modal="true"><button type="button" class="ovx" id="ovx" aria-label="Close">×</button><div id="dbody"></div></aside></div>
+<div class="pal" id="pal" hidden><div class="pal-box" role="dialog" aria-label="Search companies"><input id="pq" placeholder="Search 13,702 companies by name or ticker…" autocomplete="off"><div class="palhint" id="palhint"></div><div id="pl"></div></div></div>
 <script>
-fetch('/data/site.json?v=3d5476479d').then(r=>r.json()).then(D=>{
-const F=D.fields,C=D.companies.map(r=>Object.fromEntries(F.map((f,i)=>[f,r[i]])));
-const $=id=>document.getElementById(id),fmt=v=>v==null?'<span class="muted">–</span>':v.toFixed(1);
-const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-const cv=D.coverage,pct=(a,b)=>Math.round(100*a/b)+'%';
-const usd=v=>{if(v==null)return '<span class="muted">–</span>';const a=Math.abs(v),s=v<0?'−$':'$';return a>=1e6?s+(a/1e6).toFixed(2)+'T':a>=1e3?s+(a/1e3).toFixed(1)+'B':a>=1?s+a.toFixed(0)+'M':s+(a*1000).toFixed(0)+'K'};
-$('stats').innerHTML=[[cv.total_companies.toLocaleString(),'companies in the universe'],[pct(cv.index_coverage,cv.total_companies),'with an index score'],[D.n_fin.toLocaleString(),'with SEC financials'],[D.n_startups.toLocaleString(),'startups analysed']]
- .map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
-const FL={sic_linked:'Industry linked to technology',"sic_linked+name":'Industry + company name',name_only:'Company name only',industry_unlinked:'Industry not linked (score 0)',missing_sic:'No industry data',uninformative_sic:'Industry code too broad'};
-const cats=['AI','Fintech','Cloud','Robotics','Cybersecurity','Biotech','Semiconductors','Energy','Quantum'];
-cats.forEach(c=>$('cat').insertAdjacentHTML('beforeend',`<option>${c}</option>`));
-[...new Set(C.map(c=>c.industry).filter(Boolean))].sort().forEach(i=>$('ind').insertAdjacentHTML('beforeend',`<option>${esc(i)}</option>`));
-$('top').innerHTML=C.filter(c=>c.tdi!=null&&c.listed&&c.components==2).sort((a,b)=>b.tdi-a.tdi||a.name.localeCompare(b.name)).slice(0,10)
- .map((c,i)=>`<div class="tc" data-id="${c.id}"><span class="rk">#${i+1}</span><div class="s">${c.tdi.toFixed(1)}</div><div class="bar"><i style="width:${c.tdi}%"></i></div><div class="n">${esc(c.name)}</div><div class="t">${esc(c.ticker)} · ${esc(c.industry)}</div></div>`).join('');
-$('top').onclick=e=>{const t=e.target.closest('.tc');if(t){detail(C.find(c=>c.id==t.dataset.id));$('detail').scrollIntoView({behavior:'smooth',block:'center'})}};
-let sortK='tdi',dir=-1,page=0;
-function rows(){const q=$('q').value.trim().toLowerCase(),i=$('ind').value,c=$('cat').value,l=$('lst').value;
- return C.filter(x=>(!q||x.name.toLowerCase().includes(q)||(x.ticker||'').toLowerCase().includes(q))&&(!i||x.industry===i)&&(!c||(x.categories||'').includes(c+'='))&&(l===''||x.listed==+l))
- .sort((a,b)=>{const x=a[sortK],y=b[sortK];if(x==null)return 1;if(y==null)return -1;return(x>y?1:x<y?-1:0)*dir})}
-function render(){const r=rows(),PER=+$('per').value||r.length||1,P=Math.max(1,Math.ceil(r.length/PER));page=Math.max(0,Math.min(page,P-1));
- $('tb').innerHTML=r.slice(page*PER,page*PER+PER).map(c=>`<tr data-id="${c.id}"><td>${esc(c.name)} ${c.listed?'':'<span class="badge">historical</span>'}</td><td>${esc(c.ticker)}</td><td class="muted">${esc(c.industry)}</td>
- <td class="r"><b>${fmt(c.tdi)}</b>${c.tdi!=null?`<span class="meter"><i style="width:${c.tdi}%"></i></span>`:''}</td><td class="r">${fmt(c.startup)}</td><td class="r">${fmt(c.patent)}</td><td class="r">${usd(c.revenue)}</td></tr>`).join('');
- const a=r.length?page*PER+1:0,b=Math.min(r.length,page*PER+PER);
- $('pg').textContent=`Showing ${a.toLocaleString()}–${b.toLocaleString()} of ${r.length.toLocaleString()} companies`;
- $('pno').value=page+1;$('pno').max=P;$('pmax').textContent=P.toLocaleString();
- $('first').disabled=$('prev').disabled=page===0;$('next').disabled=$('last').disabled=page>=P-1;
- document.querySelector('.tw').classList.toggle('scroll',PER>100)}
-document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;dir=sortK===k?-dir:(['name','ticker','industry'].includes(k)?1:-1);sortK=k;render()});
-['q','ind','cat','lst','per'].forEach(id=>$(id).oninput=()=>{page=0;render()});
-$('prev').onclick=()=>{page--;render()};$('next').onclick=()=>{page++;render()};
-$('first').onclick=()=>{page=0;render()};$('last').onclick=()=>{page=1e9;render()};
-$('pno').onchange=()=>{page=(+$('pno').value||1)-1;render()};
-$('tb').onclick=e=>{const t=e.target.closest('tr');if(t){detail(C.find(c=>c.id==t.dataset.id));$('detail').scrollIntoView({behavior:'smooth',block:'center'})}};
-function line(v){const W=640,H=210,P=32,ys=D.years,X=i=>P+i*(W-2*P)/(ys.length-1),Y=s=>H-P-(s/100)*(H-2*P);
- let d='',o=false,area='';v.forEach((s,i)=>{if(s==null){o=false;return}d+=(o?'L':'M')+X(i)+','+Y(s);o=true});
- const pts=v.map((s,i)=>s==null?null:[X(i),Y(s)]).filter(Boolean);if(pts.length>1)area=`<path d="M${pts[0][0]},${H-P} L${pts.map(p=>p.join(',')).join(' L')} L${pts[pts.length-1][0]},${H-P}Z" fill="url(#g)"/>`;
- return `<svg viewBox="0 0 ${W} ${H}" width="100%"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#d97706" stop-opacity=".22"/><stop offset="1" stop-color="#d97706" stop-opacity="0"/></linearGradient></defs>
- ${[0,50,100].map(g=>`<line x1="${P}" x2="${W-P}" y1="${Y(g)}" y2="${Y(g)}" stroke="#e6e0d4"/><text x="4" y="${Y(g)+4}">${g}</text>`).join('')}
- ${ys.map((y,i)=>i%3==0||i==ys.length-1?`<text x="${X(i)-14}" y="${H-10}">${y}</text>`:'').join('')}${area}<path d="${d}" fill="none" stroke="#0f172a" stroke-width="2.5"/>
- ${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" stroke="#0f172a" stroke-width="2"/>`).join('')}</svg>`}
-const WHY={missing_sic:'SEC filings list no industry code for this company, so its technology exposure cannot be measured. The index is left blank rather than set to zero.',uninformative_sic:'The company’s SEC industry code is a catch-all category (e.g. “business services, not elsewhere classified”) that says nothing about its technology domain. The index is left blank rather than set to zero.',industry_unlinked:'The company’s industry is not linked to any of the nine tracked technology categories, so its startup-ecosystem exposure is 0.'};
-function bars(v){if(!v||v.every(x=>x==null))return '';const W=640,H=170,P=32,ys=D.years,bw=(W-2*P)/ys.length,m=Math.max(...v.map(x=>Math.abs(x||0)))||1;
- return `<svg viewBox="0 0 ${W} ${H}" width="100%">`+v.map((x,i)=>{if(x==null)return '';const h=Math.abs(x)/m*(H-2*P-10);return `<rect x="${P+i*bw+4}" y="${H-P-h}" width="${bw-8}" height="${h}" rx="3" fill="${x<0?'#b91c1c':'#334155'}"><title>${ys[i]}: ${usd(x).replace(/<[^>]+>/g,'')}</title></rect>`}).join('')
- +ys.map((y,i)=>i%3==0||i==ys.length-1?`<text x="${P+i*bw+bw/2-14}" y="${H-10}">${y}</text>`:'').join('')+`<text x="4" y="14">max ${usd(m).replace(/<[^>]+>/g,'')}</text></svg>`}
-function kpi(v,l){return `<div class="kpi"><b>${v}</b><span>${l}</span></div>`}
-function detail(c){const tags=(c.categories||'').split(';').map(s=>s.trim()).filter(Boolean).map(s=>`<span class="pill">${esc(s.replace('=',' · '))}</span>`).join('')||'<span class="muted small">No tracked technology linked</span>';
- const f=c.fin,rdp=f&&f[1]>0&&f[3]!=null?(100*f[3]/f[1]).toFixed(1)+'%':'<span class="muted">–</span>';
- const pat=c.patent!=null?fmt(c.patent):'<span class="muted small" style="font-size:13px">not linked</span>';
- $('detail').innerHTML=`<div class="muted small">${esc(c.ticker||'no ticker')}${c.exchange?' · '+esc(c.exchange):''}${c.listed?'':' · <span class="badge">historical filer</span>'}</div><h3 style="margin:2px 0 4px;font-size:22px">${esc(c.name)}</h3>
- <div class="muted small">${esc(c.sic||'Industry unknown')}${c.country?' · '+esc(c.country):''}</div>
- <div style="display:flex;flex-wrap:wrap;gap:28px;margin:16px 0"><div><div class="big">${fmt(c.tdi)}</div><div class="muted small">Index ${D.years[D.years.length-1]}</div></div>
- <div><div class="big" style="font-size:28px;margin-top:12px">${fmt(c.startup)}</div><div class="muted small">Startup score</div></div>
- <div><div class="big" style="font-size:28px;margin-top:12px">${pat}</div><div class="muted small">Patent score</div></div></div>
- ${WHY[c.flag]?`<div class="note" style="margin-bottom:12px;font-size:13px">${WHY[c.flag]}</div>`:''}
- <div>${tags}</div>${c.history&&c.history.some(x=>x!=null)?'<h4>Index history</h4>'+line(c.history):''}
- <h4>Fundamentals${f?` <span class="muted small">(SEC XBRL, FY${f[0]})</span>`:''}</h4>
- ${f?`<div class="kpis">${kpi(usd(f[1]),'Revenue')}${kpi(usd(f[2]),'Total assets')}${kpi(rdp,'R&amp;D / revenue')}${kpi(usd(f[4]),'Public float')}${kpi(usd(f[5]),'Cash')}</div>${bars(c.rev)?'<div class="muted small" style="margin-top:10px">Revenue by year</div>'+bars(c.rev):''}`:'<p class="muted small">No XBRL financial statements reported to the SEC for 2015–2024.</p>'}
- <div class="muted small" style="margin-top:8px">Components available: ${c.components}/2 · ${esc(FL[c.flag]||'no data')} · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${c.id}" target="_blank" rel="noopener">SEC filings ↗</a></div>`}
-(function(){const b=new Array(10).fill(0);let z=0;C.forEach(c=>{if(c.tdi==null)return;if(c.tdi===0){z++;return}b[Math.min(9,Math.floor(c.tdi/10))]++});
- const bins=[['=0',z],...b.map((n,i)=>[i?i*10+'+':'>0',n])],W=640,H=230,P=26,m=Math.max(...bins.map(x=>x[1])),bw=(W-2*P)/bins.length;
- $('hist').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%">`+bins.map((x,i)=>{const h=x[1]/m*(H-2*P-14);return `<rect x="${P+i*bw+3}" y="${H-P-h}" width="${bw-6}" height="${h}" rx="3" fill="${i?'#1e293b':'#d97706'}"/><text x="${P+i*bw+bw/2-8}" y="${H-8}">${x[0]}</text><text x="${P+i*bw+bw/2-12}" y="${H-P-h-6}">${x[1]>=1000?(x[1]/1000).toFixed(1)+'k':x[1]}</text>`}).join('')+'</svg>'})();
-$('inds').innerHTML='<table>'+D.industries.map(r=>`<tr><td>${esc(r[0])}</td><td class="r"><b>${r[1].toFixed(1)}</b><span class="meter"><i style="width:${r[1]}%"></i></span></td><td class="r muted small">${r[2].toLocaleString()}</td></tr>`).join('')+'</table>';
-(function(){const L={M1:'Market valuation',M1b:'Valuation change',M2:'Revenue growth',M3:'R&D / assets',M4:'CAPEX / assets'},S={main_year:'Year FE',main_year_sic2:'+ Industry FE',main_sic2xyear:'Industry×year FE',main_firm_year:'Firm FE'};
- const specs=Object.keys(S);let h='<table><tr><th>Outcome (t+1)</th>'+specs.map(s=>`<th class="r">${S[s]}</th>`).join('')+'</tr>';
- Object.keys(L).forEach(m=>{h+=`<tr><td>${L[m]}</td>`+specs.map(s=>{const r=D.results.find(x=>x.model==m&&x.spec==s);return r&&r.coef!=null?`<td class="r ${r.p_value<.05?'sig':''}">${r.coef.toFixed(3)}</td>`:'<td class="r muted">–</td>'}).join('')+'</tr>'});
- $('res').innerHTML=h+'</table>'})();
-render();detail(C.find(c=>c.id==$('top').firstElementChild.dataset.id));
+fetch("/data/site.json?v=3d5476479d").then(r => r.json()).then(D => {
+  const F = D.fields;
+  const C = D.companies.map(r => Object.fromEntries(F.map((f, i) => [f, r[i]])));
+  const byId = Object.fromEntries(C.map(c => [c.id, c]));
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
+  const fmt = v => v == null ? '<span class="muted">–</span>' : v.toFixed(1);
+  const usd = v => {
+    if (v == null) return '<span class="muted">–</span>';
+    const a = Math.abs(v), s = v < 0 ? "−$" : "$";
+    return a >= 1e6 ? s + (a / 1e6).toFixed(2) + "T" : a >= 1e3 ? s + (a / 1e3).toFixed(1) + "B" : a >= 1 ? s + a.toFixed(0) + "M" : s + (a * 1000).toFixed(0) + "K";
+  };
+  const cv = D.coverage;
+  const pct = (a, b) => Math.round(100 * a / b) + "%";
+  const Y = D.years;
+  const yLast = Y[Y.length - 1];
+  const mac = /Mac|iPhone|iPad/.test(navigator.platform || "");
+  const FL = {
+    sic_linked: "Industry linked to technology",
+    "sic_linked+name": "Industry + company name",
+    name_only: "Company name only",
+    industry_unlinked: "Industry not linked (score 0)",
+    missing_sic: "No industry data",
+    uninformative_sic: "Industry code too broad"
+  };
+  const WHY = {
+    missing_sic: "SEC filings list no industry code for this company, so its technology exposure cannot be measured. The index is left blank rather than set to zero.",
+    uninformative_sic: "The company’s SEC industry code is a catch-all category that says nothing about its technology domain. The index is left blank rather than set to zero.",
+    industry_unlinked: "The company’s industry is not linked to any of the nine tracked technology categories, so its startup-ecosystem exposure is 0."
+  };
+  const cats = ["AI", "Fintech", "Cloud", "Robotics", "Cybersecurity", "Biotech", "Semiconductors", "Energy", "Quantum"];
+  const FAMOUS = ["NVDA", "AAPL", "MSFT", "TSLA", "AMZN", "GOOGL", "GOOG", "META", "INTC", "AMD", "JPM", "PFE"];
+
+  const scored = C.filter(c => c.tdi != null).sort((a, b) => b.tdi - a.tdi || a.name.localeCompare(b.name));
+  const rankOf = {};
+  scored.forEach((c, i) => { rankOf[c.id] = i + 1; });
+  const indPeers = {};
+  C.forEach(c => {
+    if (!c.industry || c.tdi == null) return;
+    (indPeers[c.industry] || (indPeers[c.industry] = [])).push(c);
+  });
+  Object.values(indPeers).forEach(arr => arr.sort((a, b) => b.tdi - a.tdi));
+
+  function peersOf(c) {
+    return c.industry ? (indPeers[c.industry] || []) : [];
+  }
+  function indRank(c) {
+    const p = peersOf(c);
+    const i = p.findIndex(x => x.id === c.id);
+    return i < 0 ? null : { rank: i + 1, n: p.length, avg: p.reduce((s, x) => s + x.tdi, 0) / p.length };
+  }
+  function indPath(ind) {
+    const peers = C.filter(x => x.industry === ind && x.history);
+    return Y.map((_, i) => {
+      const xs = peers.map(p => p.history[i]).filter(v => v != null);
+      return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null;
+    });
+  }
+
+  $("stats").innerHTML = [
+    [cv.total_companies.toLocaleString(), "companies in the universe"],
+    [pct(cv.index_coverage, cv.total_companies), "with an index score"],
+    [D.n_fin.toLocaleString(), "with SEC financials"],
+    [D.n_startups.toLocaleString(), "startups analysed"]
+  ].map(s => `<div class="stat"><b data-n="${s[0]}">${s[0]}</b><span>${s[1]}</span></div>`).join("");
+
+  cats.forEach(c => $("cat").insertAdjacentHTML("beforeend", `<option>${c}</option>`));
+  [...new Set(C.map(c => c.industry).filter(Boolean))].sort()
+    .forEach(i => $("ind").insertAdjacentHTML("beforeend", `<option>${esc(i)}</option>`));
+
+  const top = C.filter(c => c.tdi != null && c.listed && c.components == 2)
+    .sort((a, b) => b.tdi - a.tdi || a.name.localeCompare(b.name)).slice(0, 10);
+  $("top").innerHTML = top.map((c, i) =>
+    `<div class="tc" data-id="${c.id}"><span class="rk">#${i + 1}</span><div class="s">${c.tdi.toFixed(1)}</div>
+     <div class="bar"><i style="width:${c.tdi}%"></i></div><div class="n">${esc(c.name)}</div>
+     <div class="t">${esc(c.ticker)} · ${esc(c.industry)}</div></div>`).join("");
+  $("top").onclick = e => { const t = e.target.closest(".tc"); if (t) openCompany(+t.dataset.id); };
+
+  const tickIndex = {};
+  C.forEach(c => { if (c.ticker) tickIndex[String(c.ticker).toUpperCase()] = c; });
+  const chips = [];
+  const seen = new Set();
+  FAMOUS.forEach(t => {
+    const c = tickIndex[t];
+    if (!c || seen.has(c.id)) return;
+    seen.add(c.id);
+    chips.push(c);
+  });
+  $("chips").innerHTML = chips.map(c =>
+    `<button type="button" class="chip" data-id="${c.id}">${esc(c.ticker)} <span>${c.tdi != null ? c.tdi.toFixed(1) : "–"}</span></button>`
+  ).join("") + `<button type="button" class="chip ghost" id="rnd">Random company</button>`;
+  $("chips").onclick = e => {
+    const b = e.target.closest("[data-id]");
+    if (b) openCompany(+b.dataset.id);
+    if (e.target.closest("#rnd")) {
+      const pool = C.filter(c => c.listed && c.tdi != null);
+      openCompany(pool[Math.floor(Math.random() * pool.length)].id);
+    }
+  };
+
+  const catCount = Object.fromEntries(cats.map(c => [c, 0]));
+  C.forEach(c => {
+    const s = c.categories || "";
+    cats.forEach(k => { if (s.includes(k + "=")) catCount[k]++; });
+  });
+  const catMax = Math.max(...Object.values(catCount), 1);
+  $("techmap").innerHTML = cats.map(k =>
+    `<button type="button" class="tm" data-cat="${k}"><span>${k}</span><b>${catCount[k].toLocaleString()}</b>
+     <i style="width:${100 * catCount[k] / catMax}%"></i><em>companies tagged</em></button>`
+  ).join("");
+  $("techmap").onclick = e => {
+    const b = e.target.closest(".tm");
+    if (!b) return;
+    $("cat").value = b.dataset.cat;
+    page = 0;
+    render();
+    $("explore").scrollIntoView({ behavior: "smooth" });
+  };
+
+  let sortK = "tdi", dir = -1, page = 0;
+  function rows() {
+    const q = $("q").value.trim().toLowerCase(), i = $("ind").value, c = $("cat").value, l = $("lst").value;
+    return C.filter(x =>
+      (!q || x.name.toLowerCase().includes(q) || (x.ticker || "").toLowerCase().includes(q)) &&
+      (!i || x.industry === i) && (!c || (x.categories || "").includes(c + "=")) &&
+      (l === "" || x.listed == +l)
+    ).sort((a, b) => {
+      const x = a[sortK], y = b[sortK];
+      if (x == null) return 1;
+      if (y == null) return -1;
+      return (x > y ? 1 : x < y ? -1 : 0) * dir;
+    });
+  }
+  function spark(v) {
+    if (!v || v.filter(x => x != null).length < 2) return "";
+    const pts = v.map((s, i) => s == null ? null : `${i},${100 - s}`).filter(Boolean);
+    return `<svg class="spark" viewBox="0 0 ${v.length - 1} 100" preserveAspectRatio="none"><polyline fill="none" stroke="#0f172a" stroke-width="10" points="${pts.join(" ")}"/></svg>`;
+  }
+  function render() {
+    const r = rows(), PER = +$("per").value || r.length || 1, P = Math.max(1, Math.ceil(r.length / PER));
+    page = Math.max(0, Math.min(page, P - 1));
+    $("tb").innerHTML = r.slice(page * PER, page * PER + PER).map(c =>
+      `<tr data-id="${c.id}"><td>${esc(c.name)} ${c.listed ? "" : '<span class="badge">historical</span>'}</td>
+       <td>${esc(c.ticker)}</td><td class="muted">${esc(c.industry)}</td>
+       <td class="r"><b>${fmt(c.tdi)}</b>${c.tdi != null ? `<span class="meter"><i style="width:${c.tdi}%"></i></span>` : ""}</td>
+       <td>${spark(c.history)}</td>
+       <td class="r">${fmt(c.startup)}</td><td class="r">${fmt(c.patent)}</td><td class="r">${usd(c.revenue)}</td></tr>`
+    ).join("");
+    const a = r.length ? page * PER + 1 : 0, b = Math.min(r.length, page * PER + PER);
+    $("pg").textContent = `Showing ${a.toLocaleString()}–${b.toLocaleString()} of ${r.length.toLocaleString()} companies`;
+    $("pno").value = page + 1; $("pno").max = P; $("pmax").textContent = P.toLocaleString();
+    $("first").disabled = $("prev").disabled = page === 0;
+    $("next").disabled = $("last").disabled = page >= P - 1;
+    document.querySelector(".tw").classList.toggle("scroll", PER > 100);
+  }
+  document.querySelectorAll("th[data-k]").forEach(th => th.onclick = () => {
+    const k = th.dataset.k;
+    dir = sortK === k ? -dir : (["name", "ticker", "industry"].includes(k) ? 1 : -1);
+    sortK = k; render();
+  });
+  ["q", "ind", "cat", "lst", "per"].forEach(id => $(id).oninput = () => { page = 0; render(); });
+  $("prev").onclick = () => { page--; render(); };
+  $("next").onclick = () => { page++; render(); };
+  $("first").onclick = () => { page = 0; render(); };
+  $("last").onclick = () => { page = 1e9; render(); };
+  $("pno").onchange = () => { page = (+$("pno").value || 1) - 1; render(); };
+  $("tb").onclick = e => { const t = e.target.closest("tr"); if (t) openCompany(+t.dataset.id); };
+
+  function chart(series, colors) {
+    const W = 640, H = 210, P = 32;
+    const X = i => P + i * (W - 2 * P) / (Y.length - 1);
+    const Ys = s => H - P - (s / 100) * (H - 2 * P);
+    const grid = [0, 50, 100].map(g =>
+      `<line x1="${P}" x2="${W - P}" y1="${Ys(g)}" y2="${Ys(g)}" stroke="#e6e0d4"/><text x="4" y="${Ys(g) + 4}">${g}</text>`
+    ).join("");
+    const years = Y.map((y, i) => i % 3 == 0 || i == Y.length - 1 ? `<text x="${X(i) - 14}" y="${H - 10}">${y}</text>` : "").join("");
+    const paths = series.map((v, si) => {
+      let d = "", o = false;
+      v.forEach((s, i) => {
+        if (s == null) { o = false; return; }
+        d += (o ? "L" : "M") + X(i) + "," + Ys(s);
+        o = true;
+      });
+      const pts = v.map((s, i) => s == null ? null : [X(i), Ys(s)]).filter(Boolean);
+      const col = colors[si];
+      const gid = "g" + si + Math.round(Math.random() * 1e6);
+      const area = si === 0 && pts.length > 1
+        ? `<defs><linearGradient id="${gid}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".22"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
+           <path d="M${pts[0][0]},${H - P} L${pts.map(p => p.join(",")).join(" L")} L${pts[pts.length - 1][0]},${H - P}Z" fill="url(#${gid})"/>`
+        : "";
+      const dash = si ? ' stroke-dasharray="6 5"' : "";
+      return `${area}<path d="${d}" fill="none" stroke="${col}" stroke-width="${si ? 2 : 2.5}"${dash}/>
+        ${si ? "" : pts.map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" stroke="${col}" stroke-width="2"/>`).join("")}`;
+    }).join("");
+    return `<svg viewBox="0 0 ${W} ${H}" width="100%">${grid}${years}${paths}</svg>`;
+  }
+  function bars(v) {
+    if (!v || v.every(x => x == null)) return "";
+    const W = 640, H = 170, P = 32, bw = (W - 2 * P) / Y.length, m = Math.max(...v.map(x => Math.abs(x || 0))) || 1;
+    return `<svg viewBox="0 0 ${W} ${H}" width="100%">` + v.map((x, i) => {
+      if (x == null) return "";
+      const h = Math.abs(x) / m * (H - 2 * P - 10);
+      return `<rect x="${P + i * bw + 4}" y="${H - P - h}" width="${bw - 8}" height="${h}" rx="3" fill="${x < 0 ? "#b91c1c" : "#334155"}"><title>${Y[i]}</title></rect>`;
+    }).join("") + Y.map((y, i) => i % 3 == 0 || i == Y.length - 1 ? `<text x="${P + i * bw + bw / 2 - 14}" y="${H - 10}">${y}</text>` : "").join("") +
+      `<text x="4" y="14">max ${usd(m).replace(/<[^>]+>/g, "")}</text></svg>`;
+  }
+  function kpi(v, l) { return `<div class="kpi"><b>${v}</b><span>${l}</span></div>`; }
+  function tagsOf(c) {
+    return (c.categories || "").split(";").map(s => s.trim()).filter(Boolean)
+      .map(s => `<span class="pill">${esc(s.replace("=", " · "))}</span>`).join("") ||
+      '<span class="muted small">No tracked technology linked</span>';
+  }
+  function peerBlock(c) {
+    const ir = indRank(c);
+    if (!ir || c.tdi == null) return "";
+    const pctile = Math.round(100 * (ir.n - ir.rank) / Math.max(ir.n - 1, 1));
+    return `<div class="peerbox">
+      <div class="peer"><span>This firm</span><span class="track"><i style="width:${c.tdi}%"></i></span><b>${c.tdi.toFixed(1)}</b></div>
+      <div class="peer"><span>Industry avg</span><span class="track"><i class="avg" style="width:${ir.avg}%"></i></span><b>${ir.avg.toFixed(1)}</b></div>
+      <p class="muted small">#${ir.rank} of ${ir.n.toLocaleString()} in ${esc(c.industry)} · higher than ${pctile}% of industry peers · #${rankOf[c.id].toLocaleString()} of ${scored.length.toLocaleString()} overall</p>
+    </div>`;
+  }
+
+  let compareA = null;
+  function companyHTML(c, compact) {
+    const f = c.fin;
+    const rdp = f && f[1] > 0 && f[3] != null ? (100 * f[3] / f[1]).toFixed(1) + "%" : '<span class="muted">–</span>';
+    const pat = c.patent != null ? fmt(c.patent) : '<span class="muted small">not linked</span>';
+    const ind = c.industry ? indPath(c.industry) : null;
+    const series = [c.history || []];
+    const colors = ["#0f172a"];
+    if (ind && ind.some(x => x != null)) { series.push(ind); colors.push("#94a3b8"); }
+    return `<div class="vcol"><div class="muted small">${esc(c.ticker || "no ticker")}${c.exchange ? " · " + esc(c.exchange) : ""}${c.listed ? "" : ' · <span class="badge">historical filer</span>'}</div>
+      <h3>${esc(c.name)}</h3>
+      <div class="muted small">${esc(c.sic || "Industry unknown")}${c.country ? " · " + esc(c.country) : ""}</div>
+      <div class="scoreline">
+        <div><div class="big">${fmt(c.tdi)}</div><div class="muted small">Index ${yLast}</div></div>
+        <div><div class="big sm">${fmt(c.startup)}</div><div class="muted small">Startup</div></div>
+        <div><div class="big sm">${pat}</div><div class="muted small">Patent</div></div>
+      </div>
+      ${peerBlock(c)}
+      ${WHY[c.flag] ? `<div class="note">${WHY[c.flag]}</div>` : ""}
+      <div>${tagsOf(c)}</div>
+      ${c.history && c.history.some(x => x != null) ? `<h4>Index vs industry average</h4>${chart(series, colors)}
+        <p class="legend"><span class="lg ink"></span> ${esc(c.ticker || c.name)} <span class="lg grey"></span> ${esc(c.industry || "industry")} average</p>` : ""}
+      ${compact ? "" : `<h4>Fundamentals${f ? ` <span class="muted small">(SEC XBRL, FY${f[0]})</span>` : ""}</h4>
+      ${f ? `<div class="kpis">${kpi(usd(f[1]), "Revenue")}${kpi(usd(f[2]), "Total assets")}${kpi(rdp, "R&amp;D / revenue")}${kpi(usd(f[4]), "Public float")}${kpi(usd(f[5]), "Cash")}</div>${bars(c.rev) ? '<div class="muted small" style="margin-top:10px">Revenue by year</div>' + bars(c.rev) : ""}` : '<p class="muted small">No XBRL financial statements reported to the SEC for 2015–2024.</p>'}
+      <div class="muted small" style="margin-top:8px">Components available: ${c.components}/2 · ${esc(FL[c.flag] || "no data")} · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${c.id}" target="_blank" rel="noopener">SEC filings ↗</a></div>`}</div>`;
+  }
+
+  const ov = $("ov"), dbody = $("dbody");
+  function closeOv(keepHash) {
+    ov.hidden = true;
+    dbody.innerHTML = "";
+    document.body.style.overflow = "";
+    if (!keepHash && /^(#c\/|#vs\/)/.test(location.hash || "")) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+  }
+  function openOv(html, wide) {
+    ov.hidden = false;
+    ov.classList.toggle("wide", !!wide);
+    dbody.innerHTML = html;
+    document.body.style.overflow = "hidden";
+    dbody.scrollTop = 0;
+  }
+  $("ovx").onclick = () => closeOv();
+  ov.addEventListener("click", e => { if (e.target === ov) closeOv(); });
+
+  function openCompany(id) {
+    const c = byId[id];
+    if (!c) return;
+    history.replaceState(null, "", "#c/" + c.id);
+    openOv(`<div class="dhead"><button type="button" class="btn s" id="cmpThis">Compare with…</button>
+      <button type="button" class="btn s" id="copyLink">Copy link</button></div>` + companyHTML(c), false);
+    $("cmpThis").onclick = () => { compareA = c; openPal(true); };
+    $("copyLink").onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        $("copyLink").textContent = "Copied";
+      } catch (err) {
+        $("copyLink").textContent = "Copy failed";
+      }
+    };
+  }
+  function openCompare(a, b) {
+    compareA = null;
+    history.replaceState(null, "", "#vs/" + a.id + "/" + b.id);
+    const dt = (a.tdi != null && b.tdi != null) ? (a.tdi - b.tdi) : null;
+    const lead = dt == null ? "" : (dt === 0 ? "Tied on the latest index." :
+      `${esc(dt > 0 ? a.ticker || a.name : b.ticker || b.name)} scores ${Math.abs(dt).toFixed(1)} points higher.`);
+    openOv(`<div class="dhead"><h3 style="margin:0">Compare</h3>
+      <p class="muted small" style="margin:4px 0 0">${lead} Same scale (0–100), latest year ${yLast}.</p></div>
+      <div class="vsgrid">${companyHTML(a, true)}${companyHTML(b, true)}</div>
+      <h4>Both index histories</h4>
+      ${chart([a.history || [], b.history || []], ["#0f172a", "#d97706"])}
+      <p class="legend"><span class="lg ink"></span> ${esc(a.ticker || a.name)} <span class="lg amb"></span> ${esc(b.ticker || b.name)}</p>`, true);
+  }
+
+  function searchHits(q, limit) {
+    q = (q || "").trim().toLowerCase();
+    if (!q) return chips.slice(0, limit);
+    const scoredHits = [];
+    C.forEach(c => {
+      const name = c.name.toLowerCase();
+      const tick = (c.ticker || "").toLowerCase();
+      let s = 0;
+      if (tick === q) s = 100;
+      else if (tick.startsWith(q)) s = 80;
+      else if (tick.includes(q)) s = 50;
+      else if (name.startsWith(q)) s = 40;
+      else if (name.includes(q)) s = 20;
+      if (s) scoredHits.push([s, c]);
+    });
+    scoredHits.sort((a, b) => b[0] - a[0] || (b[1].tdi || 0) - (a[1].tdi || 0));
+    return scoredHits.slice(0, limit).map(x => x[1]);
+  }
+  let palMode = false, palIdx = 0, palHits = [];
+  const pal = $("pal");
+  function paintPal() {
+    $("pl").innerHTML = palHits.map((c, i) =>
+      `<button type="button" class="hit${i === palIdx ? " on" : ""}" data-i="${i}">
+        <b>${esc(c.ticker || "—")}</b><span>${esc(c.name)}</span><em>${c.tdi != null ? c.tdi.toFixed(1) : "–"}</em>
+      </button>`).join("") || `<div class="hit muted">No matches</div>`;
+  }
+  function openPal(forCompare) {
+    palMode = !!forCompare;
+    pal.hidden = false;
+    $("pq").value = "";
+    $("palhint").textContent = palMode
+      ? `Comparing with ${compareA.ticker || compareA.name}. Pick a second company.`
+      : "Type a name or ticker. Enter opens the profile.";
+    palHits = searchHits("", 10);
+    palIdx = 0;
+    paintPal();
+    $("pq").focus();
+  }
+  function closePal() { pal.hidden = true; }
+  function pickPal(c) {
+    closePal();
+    if (palMode && compareA && c.id !== compareA.id) openCompare(compareA, c);
+    else openCompany(c.id);
+  }
+  $("pq").oninput = () => { palHits = searchHits($("pq").value, 12); palIdx = 0; paintPal(); };
+  $("pl").onclick = e => {
+    const h = e.target.closest(".hit[data-i]");
+    if (h) pickPal(palHits[+h.dataset.i]);
+  };
+  $("pq").onkeydown = e => {
+    if (e.key === "ArrowDown") { e.preventDefault(); palIdx = Math.min(palHits.length - 1, palIdx + 1); paintPal(); }
+    if (e.key === "ArrowUp") { e.preventDefault(); palIdx = Math.max(0, palIdx - 1); paintPal(); }
+    if (e.key === "Enter" && palHits[palIdx]) pickPal(palHits[palIdx]);
+    if (e.key === "Escape") closePal();
+  };
+  pal.addEventListener("click", e => { if (e.target === pal) closePal(); });
+  $("openK").onclick = () => openPal(false);
+  $("openK").querySelector("kbd").textContent = mac ? "⌘K" : "Ctrl K";
+  $("pq").placeholder = `Search ${cv.total_companies.toLocaleString()} companies by name or ticker…`;
+
+  (function hist() {
+    const b = new Array(10).fill(0); let z = 0;
+    C.forEach(c => { if (c.tdi == null) return; if (c.tdi === 0) { z++; return; } b[Math.min(9, Math.floor(c.tdi / 10))]++; });
+    const bins = [["=0", z], ...b.map((n, i) => [i ? i * 10 + "+" : ">0", n])];
+    const W = 640, H = 230, P = 26, m = Math.max(...bins.map(x => x[1])), bw = (W - 2 * P) / bins.length;
+    $("hist").innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%">` + bins.map((x, i) => {
+      const h = x[1] / m * (H - 2 * P - 14);
+      return `<rect x="${P + i * bw + 3}" y="${H - P - h}" width="${bw - 6}" height="${h}" rx="3" fill="${i ? "#1e293b" : "#d97706"}"/>
+        <text x="${P + i * bw + bw / 2 - 8}" y="${H - 8}">${x[0]}</text>
+        <text x="${P + i * bw + bw / 2 - 12}" y="${H - P - h - 6}">${x[1] >= 1000 ? (x[1] / 1000).toFixed(1) + "k" : x[1]}</text>`;
+    }).join("") + "</svg>";
+  })();
+
+  $("inds").innerHTML = "<table>" + D.industries.map(r =>
+    `<tr><td>${esc(r[0])}</td><td class="r"><b>${r[1].toFixed(1)}</b><span class="meter"><i style="width:${r[1]}%"></i></span></td>
+     <td class="r muted small">${r[2].toLocaleString()}</td></tr>`).join("") + "</table>";
+
+  (function results() {
+    const L = { M1: "Market valuation", M1b: "Valuation change", M2: "Revenue growth", M3: "R&D / assets", M4: "CAPEX / assets" };
+    const S = { main_year: "Year FE", main_year_sic2: "+ Industry FE", main_sic2xyear: "Industry×year FE", main_firm_year: "Firm FE" };
+    const specs = Object.keys(S);
+    let h = "<table><tr><th>Outcome (t+1)</th>" + specs.map(s => `<th class="r">${S[s]}</th>`).join("") + "</tr>";
+    Object.keys(L).forEach(m => {
+      h += `<tr><td>${L[m]}</td>` + specs.map(s => {
+        const r = D.results.find(x => x.model == m && x.spec == s);
+        return r && r.coef != null
+          ? `<td class="r ${r.p_value < .05 ? "sig" : ""}">${r.coef.toFixed(3)}</td>`
+          : '<td class="r muted">–</td>';
+      }).join("") + "</tr>";
+    });
+    $("res").innerHTML = h + "</table>";
+
+    const m1 = specs.map(s => D.results.find(x => x.model === "M1" && x.spec === s)).filter(Boolean);
+    const maxAbs = Math.max(...m1.map(r => Math.abs((Math.exp(r.coef) - 1) * 100)), 1);
+    $("forest").innerHTML = m1.map(r => {
+      const pctV = (Math.exp(r.coef) - 1) * 100;
+      const w = Math.max(2, Math.abs(pctV) / maxAbs * 100);
+      const lab = S[r.spec];
+      const cls = r.p_value < 0.05 ? "pos" : "zero";
+      return `<div class="fb"><span>${lab}</span><span class="fbar"><i class="${cls}" style="width:${w}%"></i></span>
+        <b class="${cls}">${pctV >= 0 ? "+" : ""}${pctV.toFixed(1)}%</b></div>`;
+    }).join("") + '<p class="muted small">Approximate % difference in next-year public float per +10 index points (from exp(coef)−1). Firm FE is the within-company test.</p>';
+  })();
+
+  function applyHash() {
+    const h = (location.hash || "").replace(/^#/, "");
+    const c = h.match(/^c\/(\d+)/);
+    const v = h.match(/^vs\/(\d+)\/(\d+)/);
+    if (c && byId[+c[1]]) openCompany(+c[1]);
+    else if (v && byId[+v[1]] && byId[+v[2]]) openCompare(byId[+v[1]], byId[+v[2]]);
+    else closeOv(true);
+  }
+  window.addEventListener("hashchange", applyHash);
+
+  document.addEventListener("keydown", e => {
+    const inField = /INPUT|SELECT|TEXTAREA/.test(e.target.tagName);
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); openPal(false); }
+    if (e.key === "Escape") { if (!pal.hidden) closePal(); else if (!ov.hidden) closeOv(); }
+    if (e.key === "/" && !inField) { e.preventDefault(); $("q").focus(); }
+  });
+
+  render();
+  if (location.hash) applyHash();
 });
+
 </script></body></html>
