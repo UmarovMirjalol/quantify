@@ -106,6 +106,8 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
     if ($("yval")) $("yval").textContent = Y[yi];
     if ($("ychip")) $("ychip").textContent = Y[yi];
     paintTop();
+    if (typeof paintMovers === "function") paintMovers();
+    if (typeof paintLanes === "function") paintLanes();
     if (rerender !== false) { page = 0; render(); }
   }
   const chips = [];
@@ -199,7 +201,8 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
   $("pno").onchange = () => { page = (+$("pno").value || 1) - 1; render(); };
   $("tb").onclick = e => { const t = e.target.closest("tr"); if (t) openCompany(+t.dataset.id); };
 
-  function chart(series, colors) {
+  function chart(series, colors, opt) {
+    opt = opt || {};
     const W = 640, H = 210, P = 32;
     const X = i => P + i * (W - 2 * P) / (Y.length - 1);
     const Ys = s => H - P - (s / 100) * (H - 2 * P);
@@ -218,13 +221,16 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
       const pts = v.map((s, i) => s == null ? null : [X(i), Ys(s)]).filter(Boolean);
       const col = colors[si];
       const gid = "g" + si + Math.round(Math.random() * 1e6);
-      const area = si === 0 && pts.length > 1
+      const area = !opt.bare && si === 0 && pts.length > 1
         ? `<defs><linearGradient id="${gid}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".22"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
            <path d="M${pts[0][0]},${H - P} L${pts.map(p => p.join(",")).join(" L")} L${pts[pts.length - 1][0]},${H - P}Z" fill="url(#${gid})"/>`
         : "";
-      const dash = si ? ' stroke-dasharray="6 5"' : "";
-      return `${area}<path d="${d}" fill="none" stroke="${col}" stroke-width="${si ? 2 : 2.5}"${dash}/>
-        ${si ? "" : pts.map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" stroke="${col}" stroke-width="2"/>`).join("")}`;
+      const dash = opt.bare || !si ? "" : ' stroke-dasharray="6 5"';
+      const dots = (opt.all || !si) ? pts.map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#fff" stroke="${col}" stroke-width="2"/>`).join("") : "";
+      const lab = opt.labels && opt.labels[si] && pts.length
+        ? `<text x="${Math.min(W - 8, pts[pts.length - 1][0] + 6)}" y="${pts[pts.length - 1][1] + 4}" style="fill:${col}" font-size="11">${esc(opt.labels[si])}</text>`
+        : "";
+      return `${area}<path d="${d}" fill="none" stroke="${col}" stroke-width="${si ? 2 : 2.5}"${dash}/>${dots}${lab}`;
     }).join("");
     return `<svg viewBox="0 0 ${W} ${H}" width="100%">${grid}${mark}${years}${paths}</svg>`;
   }
@@ -337,6 +343,7 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
   function openCompany(id) {
     const c = byId[id];
     if (!c) return;
+    if (typeof paintHist === "function") paintHist(c.tdi);
     history.replaceState(null, "", "#c/" + c.id);
     openOv(`<div class="dhead"><button type="button" class="btn s" id="cmpThis">Compare with…</button>
       <button type="button" class="btn s" id="copyLink">Copy link</button>
@@ -487,18 +494,151 @@ ${location.origin}${location.pathname}#c/${c.id}`;
   $("openK").querySelector("kbd").textContent = mac ? "⌘K" : "Ctrl K";
   $("pq").placeholder = `Search ${cv.total_companies.toLocaleString()} companies by name or ticker…`;
 
-  (function hist() {
+  const LANE = [
+    ["NVDA", "#0f172a"], ["INTC", "#d97706"], ["AMD", "#047857"], ["AAPL", "#1d4ed8"],
+    ["MSFT", "#7c3aed"], ["GOOGL", "#0e7490"], ["META", "#b45309"], ["TSLA", "#b91c1c"]
+  ];
+  function paintLanes() {
+    if (!$("lanes")) return;
+    const firms = LANE.map(([t, col]) => ({ c: tickIndex[t], col, t })).filter(x => x.c);
+    if (!firms.length) return;
+    $("lanes").innerHTML = chart(
+      firms.map(x => x.c.history || []),
+      firms.map(x => x.col),
+      { bare: true }
+    );
+    $("laneleg").innerHTML = firms.map(x =>
+      `<button type="button" class="chip" data-id="${x.c.id}"><i class="lg" style="background:${x.col};width:12px"></i>${x.t} <span>${tdiAt(x.c) != null ? tdiAt(x.c).toFixed(1) : "–"}</span></button>`
+    ).join("");
+  }
+  if ($("laneleg")) $("laneleg").onclick = e => {
+    const b = e.target.closest("[data-id]");
+    if (b) openCompany(+b.dataset.id);
+  };
+
+  function paintMovers() {
+    if (!$("movers")) return;
+    if (yi === 0) {
+      $("movers").innerHTML = `<p class="muted small">Move the year slider past ${Y[0]} to see who climbed or slipped.</p>`;
+      return;
+    }
+    const rows = C.filter(c => c.listed && c.ticker && c.components == 2
+      && tdiAt(c, 0) != null && tdiAt(c, yi) != null)
+      .map(c => ({ c, a: tdiAt(c, 0), b: tdiAt(c, yi), d: tdiAt(c, yi) - tdiAt(c, 0) }))
+      .filter(x => Math.abs(x.d) >= 1);
+    const up = [...rows].sort((a, b) => b.d - a.d || b.b - a.b).slice(0, 8);
+    const down = [...rows].sort((a, b) => a.d - b.d || a.b - b.b).slice(0, 8);
+    const mk = (list, upFlag) => list.map(x =>
+      `<button type="button" class="mv" data-id="${x.c.id}" title="${x.a.toFixed(1)} → ${x.b.toFixed(1)}">
+        <b>${esc(x.c.ticker)}</b><span class="muted">${esc(x.c.name)}</span>
+        <em class="${upFlag ? "up" : "dn"}">${x.d > 0 ? "+" : ""}${x.d.toFixed(1)}</em>
+      </button>`
+    ).join("");
+    $("movers").innerHTML = `<div class="mvgrid"><div><div class="muted small" style="margin-bottom:6px">Climbed ${Y[0]}–${Y[yi]}</div>${mk(up, true)}</div>
+      <div><div class="muted small" style="margin-bottom:6px">Slipped ${Y[0]}–${Y[yi]}</div>${mk(down, false)}</div></div>`;
+  }
+  if ($("movers")) $("movers").onclick = e => {
+    const b = e.target.closest("[data-id]");
+    if (b) openCompany(+b.dataset.id);
+  };
+
+  let scatPts = [];
+  function paintScatter() {
+    const cv = $("scat");
+    if (!cv) return;
+    scatPts = C.filter(c => c.listed && c.patent != null && c.startup != null);
+    const wrap = cv.parentElement;
+    const cssW = Math.max(280, (wrap && wrap.clientWidth ? wrap.clientWidth : 640) - 48);
+    const cssH = 400;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = cssW * dpr;
+    cv.height = cssH * dpr;
+    cv.style.width = cssW + "px";
+    cv.style.height = cssH + "px";
+    const ctx = cv.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, cssW, cssH);
+    const pad = 36;
+    const X = p => pad + (p / 100) * (cssW - 2 * pad);
+    const Yy = s => cssH - pad - (s / 100) * (cssH - 2 * pad);
+    ctx.strokeStyle = "#e6e0d4";
+    ctx.lineWidth = 1;
+    [0, 50, 100].forEach(g => {
+      ctx.beginPath(); ctx.moveTo(pad, Yy(g)); ctx.lineTo(cssW - pad, Yy(g)); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(X(g), pad); ctx.lineTo(X(g), cssH - pad); ctx.stroke();
+    });
+    ctx.fillStyle = "#5b6474";
+    ctx.font = "11px ui-sans-serif, system-ui, sans-serif";
+    ctx.fillText("Patent →", cssW - pad - 52, cssH - 10);
+    ctx.fillText("Startup →", 8, 16);
+    scatPts.forEach(c => {
+      ctx.fillStyle = "rgba(15,23,42,0.22)";
+      ctx.beginPath();
+      ctx.arc(X(c.patent), Yy(c.startup), 2.6, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    const named = LANE.map(([t, col]) => ({ c: tickIndex[t], col, t })).filter(x => x.c && x.c.patent != null && x.c.startup != null);
+    named.forEach(x => {
+      ctx.fillStyle = x.col;
+      ctx.beginPath();
+      ctx.arc(X(x.c.patent), Yy(x.c.startup), 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "#fff";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.fillStyle = x.col;
+      ctx.fillText(x.t, X(x.c.patent) + 7, Yy(x.c.startup) - 6);
+    });
+    cv._map = { X, Yy, cssW, cssH };
+  }
+  function nearestDot(mx, my) {
+    const m = $("scat") && $("scat")._map;
+    if (!m) return null;
+    let best = null, bd = 14 * 14;
+    scatPts.forEach(c => {
+      const dx = m.X(c.patent) - mx, dy = m.Yy(c.startup) - my, d = dx * dx + dy * dy;
+      if (d < bd) { bd = d; best = c; }
+    });
+    return best;
+  }
+  if ($("scat")) {
+    $("scat").onclick = e => {
+      const r = $("scat").getBoundingClientRect();
+      const hit = nearestDot(e.clientX - r.left, e.clientY - r.top);
+      if (hit) openCompany(hit.id);
+    };
+    $("scat").onmousemove = e => {
+      const r = $("scat").getBoundingClientRect();
+      const hit = nearestDot(e.clientX - r.left, e.clientY - r.top);
+      $("scat").style.cursor = hit ? "pointer" : "crosshair";
+      if ($("scattip")) {
+        $("scattip").textContent = hit
+          ? `${hit.ticker || hit.name}: patent ${hit.patent.toFixed(1)} · startup ${hit.startup.toFixed(1)} · index ${hit.tdi != null ? hit.tdi.toFixed(1) : "–"}`
+          : `${scatPts.length.toLocaleString()} listed firms with both scores. Click a point.`;
+      }
+    };
+  }
+
+  function paintHist(mark) {
     const b = new Array(10).fill(0); let z = 0;
     C.forEach(c => { if (c.tdi == null) return; if (c.tdi === 0) { z++; return; } b[Math.min(9, Math.floor(c.tdi / 10))]++; });
     const bins = [["=0", z], ...b.map((n, i) => [i ? i * 10 + "+" : ">0", n])];
     const W = 640, H = 230, P = 26, m = Math.max(...bins.map(x => x[1])), bw = (W - 2 * P) / bins.length;
+    let pin = "";
+    if (mark != null) {
+      const idx = mark === 0 ? 0 : 1 + Math.min(9, Math.floor(mark / 10));
+      const x = P + idx * bw + bw / 2;
+      pin = `<line x1="${x}" x2="${x}" y1="8" y2="${H - P}" stroke="#d97706" stroke-width="2"/>
+        <text x="${Math.max(4, x - 18)}" y="14" style="fill:#d97706">${mark.toFixed(1)}</text>`;
+    }
     $("hist").innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%">` + bins.map((x, i) => {
       const h = x[1] / m * (H - 2 * P - 14);
       return `<rect x="${P + i * bw + 3}" y="${H - P - h}" width="${bw - 6}" height="${h}" rx="3" fill="${i ? "#1e293b" : "#d97706"}"/>
         <text x="${P + i * bw + bw / 2 - 8}" y="${H - 8}">${x[0]}</text>
         <text x="${P + i * bw + bw / 2 - 12}" y="${H - P - h - 6}">${x[1] >= 1000 ? (x[1] / 1000).toFixed(1) + "k" : x[1]}</text>`;
-    }).join("") + "</svg>";
-  })();
+    }).join("") + pin + "</svg>";
+  }
+  paintHist();
 
   $("inds").innerHTML = "<table>" + D.industries.map(r =>
     `<tr><td>${esc(r[0])}</td><td class="r"><b>${r[1].toFixed(1)}</b><span class="meter"><i style="width:${r[1]}%"></i></span></td>
@@ -639,6 +779,10 @@ ${location.origin}${location.pathname}#c/${c.id}`;
   }
 
   paintTop();
+  paintLanes();
+  paintMovers();
+  paintScatter();
+  window.addEventListener("resize", () => { paintScatter(); });
   render();
   if (location.hash) applyHash();
 });

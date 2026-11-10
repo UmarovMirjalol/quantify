@@ -161,6 +161,21 @@ __CSS__
 </div>
 <div class="chips" id="chips"></div>
 <div class="top" id="top">__TOPHTML__</div>
+
+<h3 style="margin:32px 0 8px;font-size:20px">Names you know, over the decade</h3>
+<p class="sub" style="margin-bottom:12px">Index paths for a handful of well-known listed firms. The dashed line is the year on the slider. Click a name in the legend to open the firm.</p>
+<div class="card" id="lanecard"><div id="lanes"></div><div class="chips" id="laneleg"></div></div>
+
+<div class="g2" style="margin-top:20px">
+<div class="card"><h3 style="margin:0 0 6px">Who climbed, who slipped</h3>
+<p class="muted small" style="margin:0 0 12px">Change in the index from __Y0__ to the year on the slider, among listed firms scored on both patents and startup activity. Firms that only inherit an industry startup score are excluded so the list is not a copy of one industry. History of the index, not a forecast.</p>
+<div id="movers"></div></div>
+<div class="card"><h3 style="margin:0 0 6px">The two ingredients</h3>
+<p class="muted small" style="margin:0 0 12px">Each dot is a listed firm with both scores. Horizontal bands are real: startup exposure is mostly industry-level, so firms in one industry share a y-value; patents spread them on x. The index is their average. Click a dot.</p>
+<canvas id="scat" width="640" height="400"></canvas>
+<p class="muted small" id="scattip">Hover or click a point.</p></div>
+</div>
+
 <h3 style="margin:28px 0 10px;font-size:20px">Companies by technology tag</h3>
 <p class="sub" style="margin-bottom:12px">Click a category to filter the table. A firm can belong to more than one tag.</p>
 <div class="techmap" id="techmap"></div>
