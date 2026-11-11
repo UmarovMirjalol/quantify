@@ -318,3 +318,9 @@ WINSORIZE_LIMITS = (0.01, 0.99)          # per-year winsorization of financial r
 LARGEST_FIRMS_QUANTILE = 0.90            # "exclude largest firms" = top 10% assets per year
 LEAD_HORIZONS = [1, 2, 3]
 INDEX_SCALE_FOR_REGRESSION = 10.0        # coefficients reported per 10 index points
+PLACEBO_DRAWS = 1000                     # within-(SIC2 x year) permutations of the index
+PLACEBO_SEED = 20240101                  # fixed seed: the placebo test is reproducible
+BINSCATTER_BINS = 20
+EXTRA_TESTS_JSON = RESULTS / "extra_tests.json"
+EXTRA_TESTS_MD = RESULTS / "extra_tests.md"
+REPLICATION_PANEL = DATA / "research" / "replication_panel.json"

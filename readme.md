@@ -149,6 +149,34 @@ startup-only / patent-only / log-patent-count regressors, technology-linked indu
 both-components-only sample. Every row reports N. Results are **predictive associations,
 not causal effects**. Output: `results/regression_results.csv`, `results/research_report.md`.
 
+**Extra diagnostics** (`src/research/extra_tests.py`, pipeline step `research_extra`) for the
+headline model M1 with SIC2 x year FE, all fixed in advance:
+
+- *Placebo / permutation*: the index is shuffled across firms within each SIC2 x year cell
+  (`PLACEBO_DRAWS` = 1,000, `PLACEBO_SEED` fixed) and the model re-estimated each time.
+  Last run: placebo coefficients mean 0.000, SD 0.005, largest |b| 0.018; real 0.083;
+  0 of 1,000 shuffles as extreme (permutation p ≤ 0.001, the minimum with 1,000 draws).
+- *Binned scatter*: index and outcome residualised on ln(assets) and the FE, 20 equal bins.
+- *Year by year*: the model on each single year (SIC2 FE, HC1 SEs). Positive in every year
+  2015-2024 (+4.4% to +16.1% per 10 points), largest in 2019-2020.
+- *Leave one industry out* (industries with ≥ 100 firm-years): estimate stays in 0.079-0.093.
+- *Specification curve*: every estimated row of `regression_results.csv` whose regressor is on
+  the 0-100 scale (the log-patent-count row is not comparable and stays in the CSV only).
+
+These checks rule out chance and industry-year composition. They do **not** address
+unobserved firm traits: with company FE the association is ~0. Output:
+`results/extra_tests.json`, `results/extra_tests.md`.
+
+**In-browser replication.** The same step writes `data/research/replication_panel.json`
+(the 47,627-row M1 sample: firm, year, SIC2, industry, both index components, ln assets,
+next-year ln public float; scores x10, logs x1000 as integers). The website's "Run it yourself"
+section loads it and re-estimates M1 in JavaScript (absorbed fixed effects via alternating
+projections, company-clustered SEs) for any index weights, fixed-effect choice, year range,
+industry exclusions and sample filters. With default settings it reproduces all four published
+fixed-effect variants to the third decimal (e.g. 0.0832 vs 0.0831; the gap is rounding in the
+shared file). Every run a visitor makes is logged and plotted, so the tool shows the full set
+of specifications tried rather than the most favourable one.
+
 ## 11. Limitations (please read)
 
 1. **Patent coverage is partial** (3,970 of 13,702 companies, 29.0%). Patents come from the open
@@ -259,7 +287,7 @@ paper/                        auto-generated research paper draft
 data/raw/                     cached downloads / manual inputs (never overwritten)
 data/technology_index/        company_technology_index.csv, coverage_report.csv
 data/research/final_panel.csv
-results/                      regression_results.csv, research_report.md
+results/                      regression_results.csv, research_report.md, extra_tests.json/.md
 ```
 
 Not part of the index: `src/companies/github_activity.py` / `data/github_activity.csv` (GitHub

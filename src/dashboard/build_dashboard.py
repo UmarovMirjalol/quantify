@@ -101,6 +101,8 @@ def build_payload() -> dict:
         "n_patent": int(latest["patent_score"].notna().sum()),
         "n_listed": int((master["universe_source"] == "sec_ticker_list").sum()),
         "n_regressions": int(results["coef"].notna().sum()),
+        "extra": (json.loads(config.EXTRA_TESTS_JSON.read_text(encoding="utf-8"))
+                  if config.EXTRA_TESTS_JSON.exists() else None),
     }
 
 
@@ -130,7 +132,7 @@ TEMPLATE = r"""<!doctype html>
 __CSS__
 </style></head><body>
 <nav><div class="nav"><a class="logo" href="#"><img src="/favicon.svg" alt="" width="28" height="28">Technology Disruption Index</a>
-<div class="links"><a href="#explore">Explore</a><a href="#research">Research</a><a href="#method">Methodology</a><a href="#about">Data</a>
+<div class="links"><a href="#explore">Explore</a><a href="#research">Research</a><a href="#lab">Stress test</a><a href="#replicate">Run it yourself</a><a href="#method">Methodology</a><a href="#about">Data</a>
 <button type="button" class="kb" id="openK">Search <kbd>⌘K</kbd></button>
 <a class="gh" href="https://github.com/UmarovMirjalol/quantify" target="_blank" rel="noopener">GitHub</a></div></div></nav>
 
@@ -207,6 +209,64 @@ __CSS__
 <div class="note" style="margin-top:20px"><b>Read with care.</b> Patent data cover __NPAT__ companies — those whose patents could be linked to an SEC registrant. For the remaining firms the index reflects industry-level exposure to startup activity only; a blank patent score means “not linked”, not “zero patents”.</div>
 </section>
 
+<section id="lab"><div class="kicker">Stress test</div><h2>Trying to break the result</h2>
+<p class="sub">Five checks on the headline association (next-year public float vs industry-and-year peers), fixed in advance and re-run by the pipeline. None was picked for its p-value, and none turns a correlation into a cause.</p>
+<div class="g2 lab">
+<div class="card"><h3 style="margin:0 0 4px">1,000 fake indexes</h3>
+<p class="muted small" style="margin:0 0 10px">The index is shuffled between firms inside each industry-year, so a fake score carries the same industry and year mix but no firm information. The model is re-run on every shuffle.</p>
+<div id="placebo"></div><p class="small" id="placebocap"></p></div>
+<div class="card"><h3 style="margin:0 0 4px">The relationship, binned</h3>
+<p class="muted small" style="margin:0 0 10px">__NOBS__ firm-years in 20 equal groups, after removing size (ln assets) and industry×year averages. Each dot is one group; the line is the regression slope.</p>
+<div id="binsc"></div></div>
+</div>
+<div class="g2 lab" style="margin-top:20px">
+<div class="card"><h3 style="margin:0 0 4px">Every year on its own</h3>
+<p class="muted small" style="margin:0 0 10px">The same model on each single year’s cross-section (industry FE, robust 95% intervals). A result driven by one boom year would show up here.</p>
+<div id="byyear"></div></div>
+<div class="card"><h3 style="margin:0 0 4px">Drop one industry at a time</h3>
+<p class="muted small" style="margin:0 0 10px">Re-estimated without each broad industry. If one sector carried the result, removing it would move the estimate toward zero.</p>
+<div id="loo"></div></div>
+</div>
+<div class="card" style="margin-top:20px"><h3 style="margin:0 0 4px">Specification curve: every model we ran</h3>
+<p class="muted small" style="margin:0 0 10px">All estimated specifications for each outcome, sorted by estimate, with 95% intervals: fixed-effect variants, alternative weights, longer horizons, single components, sub-samples. Green intervals exclude zero; amber is the headline model. Hover a point for the specification. The log-patent-count model is left out here because its regressor is not on the 0–100 scale; it is in the CSV.</p>
+<div class="chips" id="sctabs"></div><div id="scurve"></div><p class="small muted" id="sctip">&nbsp;</p></div>
+<div class="note" style="margin-top:20px"><b>What this does not show.</b> The shuffle test rules out chance and industry-year composition; it does not rule out unobserved firm traits. When firm fixed effects are added, the association disappears (p = __FIRMP__), so the index identifies firms the market already values more, not firms whose value rises as their score rises.</div>
+</section>
+
+<section id="replicate"><div class="kicker">Replicate it</div><h2>Run the regression yourself</h2>
+<p class="sub">The full research sample (__NOBS__ firm-years) loads into your browser. Change how the index is built and how the model is specified, and the regression is re-estimated on the spot, with standard errors clustered by company. No server, no pre-computed answers.</p>
+<div class="rep">
+<div class="card repctl">
+<label class="rl">Index weights <b id="rwv">Patents 50 · Startups 50</b></label>
+<input type="range" id="rw" min="0" max="100" step="5" value="50" aria-label="Patent weight">
+<label class="rl">Compare each firm with</label>
+<div class="seg" id="rfe">
+<button type="button" data-fe="year">Same year</button><button type="button" data-fe="sic2+year">Industry + year</button><button type="button" data-fe="sic2xyear" class="on">Industry × year</button><button type="button" data-fe="firm+year">Itself over time</button>
+</div>
+<label class="rl">Years <b id="ryv"></b></label>
+<div class="ryr"><select id="ry0" aria-label="First year"></select><span>to</span><select id="ry1" aria-label="Last year"></select></div>
+<label class="rl">Sample</label>
+<label class="ck"><input type="checkbox" id="rsize" checked> Control for firm size (ln assets)</label>
+<label class="ck"><input type="checkbox" id="rboth"> Only firms scored on both patents and startups</label>
+<label class="ck"><input type="checkbox" id="rbig"> Drop the largest 10% of firms each year</label>
+<label class="rl">Industries <span class="muted small">(click to drop)</span></label>
+<div class="chips" id="rind"></div>
+<button type="button" class="btn s" id="rreset">Reset to the published model</button>
+</div>
+<div class="card repout">
+<div id="rstat" class="muted">Scroll here to load the data…</div>
+<div class="rbig"><span id="rfig">–</span><small>next-year public float per +10 index points</small></div>
+<div id="rmeta" class="small"></div>
+<div id="rbadge"></div>
+<h3 style="margin:22px 0 4px">Every model you have run</h3>
+<p class="muted small" style="margin:0 0 8px">Each dot is one of your runs, with its 95% interval; amber is the published estimate. Trying many versions and reporting only the best one is p-hacking, so this log keeps all of them.</p>
+<div id="rlog"></div><p class="small" id="rlogtxt"></p>
+<button type="button" class="btn s" id="rclear" style="margin-top:6px">Clear my runs</button>
+</div>
+</div>
+<p class="small muted" style="margin-top:12px">Same estimator as the paper (OLS with absorbed fixed effects, company-clustered SEs); with the default settings it reproduces the published estimates to the third decimal (the shared file rounds logs to 3 decimals). Results here are exploratory and predictive, not causal. Data: <a href="data/panel.json" download>panel.json</a>.</p>
+</section>
+
 <section id="method" class="method"><div class="kicker">Methodology</div><h2>How the index is built</h2>
 <p class="sub">Every parameter lives in one configuration file; every company in the universe is kept, and missing data are never treated as zero.</p>
 <div class="g3">
@@ -221,7 +281,7 @@ __CSS__
 <section id="about"><div class="kicker">Data</div><h2>Open and reproducible</h2>
 <p class="sub">The full pipeline — data collection, scoring, validation and regressions — runs with one command. The index is a measurable proxy for technology exposure, not an objective measure of “true” disruption.</p>
 <div class="card" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between"><div><h3 style="margin:0">Download the data</h3><p class="muted small" style="margin:4px 0 0">Latest scores for all __NCOMP__ companies and the full regression results (CSV).</p></div>
-<div><a class="btn p" href="data/company_technology_index_latest.csv" download>Index scores (CSV)</a><a class="btn s" href="data/regression_results.csv" download>Regression results</a></div></div></section>
+<div><a class="btn p" href="data/company_technology_index_latest.csv" download>Index scores (CSV)</a><a class="btn s" href="data/regression_results.csv" download>Regression results</a><a class="btn s" href="data/extra_tests.json" download>Stress tests (JSON)</a></div></div></section>
 </div>
 <footer><div class="foot">
 <div><a class="logo" href="#"><img src="/favicon.svg" alt="" width="28" height="28">Technology Disruption Index</a>
@@ -315,6 +375,10 @@ def main() -> None:
     (OUT_DIR / "data").mkdir(exist_ok=True)
     shutil.copy(config.TECH_INDEX_LATEST, OUT_DIR / "data" / "company_technology_index_latest.csv")
     shutil.copy(config.REGRESSION_RESULTS, OUT_DIR / "data" / "regression_results.csv")
+    if config.EXTRA_TESTS_JSON.exists():
+        shutil.copy(config.EXTRA_TESTS_JSON, OUT_DIR / "data" / "extra_tests.json")
+    if config.REPLICATION_PANEL.exists():
+        shutil.copy(config.REPLICATION_PANEL, OUT_DIR / "data" / "panel.json")
     (OUT_DIR / "data" / "site.json").write_text(data, encoding="utf-8")
     (OUT_DIR / "vercel.json").write_text('{"cleanUrls": true}\n', encoding="utf-8")
     site_assets.write_all(OUT_DIR, ncomp, f"{y0}–{y1}")

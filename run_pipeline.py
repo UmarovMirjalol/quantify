@@ -39,6 +39,7 @@ STEPS = [
     ("panel", "src.research.build_panel", "8. research panel", False, False, []),
     ("validate", "src.validate_data", "9. validation", True, False, []),
     ("research", "src.research.run_regressions", "10. research analysis", False, False, []),
+    ("research_extra", "src.research.extra_tests", "10b. placebo, binned scatter, by-year, leave-one-industry-out", True, False, []),
     ("dashboard", "src.dashboard.build_dashboard", "11. interactive dashboard (docs/index.html)", True, False, []),
     ("paper", "src.research.write_paper", "12. research paper draft (paper/)", True, False, []),
 ]

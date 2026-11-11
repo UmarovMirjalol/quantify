@@ -671,6 +671,333 @@ ${location.origin}${location.pathname}#c/${c.id}`;
     }).join("") + '<p class="muted small">Approximate % difference in next-year public float per +10 index points (from exp(coef)−1). Firm FE is the within-company test.</p>';
   })();
 
+  (function lab() {
+    const E = D.extra;
+    if (!E || !$("placebo")) { if ($("lab")) $("lab").hidden = true; return; }
+    const toPct = b => (Math.exp(b) - 1) * 100;
+    const sp = v => (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(1) + "%";
+    const GOOD = "#047857", INK = "#1e293b", AMB = "#d97706", GRID = "#e6e0d4";
+    const scale = (a, b, c, d) => v => c + (v - a) / (b - a) * (d - c);
+    const ticks = (lo, hi, n) => {
+      const raw = (hi - lo) / n, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+      const step = [1, 2, 2.5, 5, 10].map(k => k * mag).find(s => s >= raw);
+      const out = [];
+      for (let t = Math.ceil(lo / step) * step; t <= hi + 1e-12; t += step) out.push(+t.toFixed(10));
+      return out;
+    };
+
+    const pl = E.placebo, W = 640, H = 260, P = 40, L = 64;
+    const lo = Math.min(pl.edges[0], 0), hi = Math.max(pl.actual * 1.12, pl.edges[pl.edges.length - 1]);
+    const sx = scale(lo, hi, 24, W - 24), hm = Math.max(...pl.hist);
+    const sy = v => H - P - v / hm * (H - P - 50);
+    const pb = pl.hist.map((n, i) => {
+      const x0 = sx(pl.edges[i]), x1 = sx(pl.edges[i + 1]);
+      return `<rect x="${x0}" y="${sy(n)}" width="${Math.max(1, x1 - x0 - 0.5)}" height="${H - P - sy(n)}" fill="#94a3b8"/>`;
+    }).join("");
+    const ax = ticks(toPct(lo), toPct(hi), 5).map(t => {
+      const x = sx(Math.log(1 + t / 100));
+      return `<line x1="${x}" x2="${x}" y1="${H - P}" y2="${H - P + 4}" stroke="#94a3b8"/><text text-anchor="middle" x="${x}" y="${H - P + 24}">${t > 0 ? "+" : ""}${t}%</text>`;
+    }).join("");
+    const xa = sx(pl.actual);
+    const extreme = Math.max(0, Math.round(pl.perm_p * (pl.draws + 1)) - 1);
+    $("placebo").innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Placebo distribution">
+      <line x1="24" x2="${W - 24}" y1="${H - P}" y2="${H - P}" stroke="${GRID}"/>${pb}${ax}
+      <text x="${sx(pl.p95) + 14}" y="${sy(hm) + 20}">← fake indexes</text>
+      <line x1="${xa}" x2="${xa}" y1="34" y2="${H - P}" stroke="${GOOD}" stroke-width="4"/>
+      <text text-anchor="end" x="${xa + 20}" y="22" style="fill:${GOOD};font-weight:700">Real index ${sp(toPct(pl.actual))}</text></svg>`;
+    $("placebocap").innerHTML = `95% of fake indexes land between <b>${sp(toPct(pl.p05))}</b> and <b>${sp(toPct(pl.p95))}</b>; the largest of ${pl.draws.toLocaleString()} is ${sp(toPct(pl.max_abs)).replace("+", "±")}. The real index: <b>${sp(toPct(pl.actual))}</b>, about ${Math.round(pl.z)} standard deviations away. ${extreme} of ${pl.draws.toLocaleString()} shuffles were as extreme (permutation p ${extreme ? "= " + pl.perm_p.toFixed(3) : "&lt; " + (1 / pl.draws).toFixed(3)}). <span class="muted">Fixed seed ${pl.seed}.</span>`;
+
+    const bs = E.binscatter.bins;
+    const bx = bs.map(b => b.x), by = bs.map(b => b.y);
+    const xl = Math.min(...bx) * 1.08, xh = Math.max(...bx) * 1.08;
+    const yl = Math.min(...by, E.binscatter.slope_per_point * xl) - 0.05, yh = Math.max(...by, E.binscatter.slope_per_point * xh) + 0.05;
+    const bX = scale(xl, xh, L + 6, W - 16), bY = scale(yl, yh, H - P - 14, 40);
+    const bgrid = ticks(toPct(yl), toPct(yh), 4).map(t => {
+      const y = bY(Math.log(1 + t / 100));
+      return `<line x1="${L}" x2="${W - 16}" y1="${y}" y2="${y}" stroke="${GRID}"/><text text-anchor="end" x="${L - 8}" y="${y + 6}">${t > 0 ? "+" : ""}${t}%</text>`;
+    }).join("") + ticks(xl, xh, 5).map(t => `<text text-anchor="middle" x="${bX(t)}" y="${H - P + 12}">${t > 0 ? "+" : ""}${t}</text>`).join("");
+    const s = E.binscatter.slope_per_point;
+    $("binsc").innerHTML = `<svg viewBox="0 0 ${W} ${H + 20}" width="100%" role="img" aria-label="Binned scatter">${bgrid}
+      <line x1="${bX(xl)}" x2="${bX(xh)}" y1="${bY(s * xl)}" y2="${bY(s * xh)}" stroke="${AMB}" stroke-width="2.5" stroke-dasharray="7 5"/>
+      ${bs.map(b => `<circle cx="${bX(b.x)}" cy="${bY(b.y)}" r="7" fill="${INK}"><title>${b.n.toLocaleString()} firm-years · index ${b.x > 0 ? "+" : ""}${b.x.toFixed(1)} vs peers · public float ${sp(toPct(b.y))} vs peers</title></circle>`).join("")}
+      <text text-anchor="end" x="${W - 16}" y="${H + 14}">Index vs industry-year peers (points) →</text>
+      <text x="${L}" y="20">Next-year public float vs peers</text></svg>`;
+
+    function intervals(el, rows, label, opt) {
+      const vals = rows.flatMap(r => [toPct(r.ci_low), toPct(r.ci_high)]).concat([0, toPct(E.main.coef)]);
+      const lo2 = Math.min(...vals), hi2 = Math.max(...vals), pad = (hi2 - lo2) * 0.08;
+      if (opt.horizontal) {
+        const RH = 32, LW = 250, HH = rows.length * RH + 44;
+        const x = scale(lo2 - pad, hi2 + pad, LW, W - 20);
+        const tk = ticks(lo2 - pad, hi2 + pad, 4).map(t => `<line x1="${x(t)}" x2="${x(t)}" y1="6" y2="${HH - 34}" stroke="${GRID}"/><text text-anchor="middle" x="${x(t)}" y="${HH - 10}">${t > 0 ? "+" : ""}${t}%</text>`).join("");
+        const body = rows.map((r, i) => {
+          const y = 22 + i * RH, ok = r.ci_low > 0 || r.ci_high < 0;
+          return `<text text-anchor="end" x="${LW - 12}" y="${y + 6}">${esc(label(r))}</text>
+            <line x1="${x(toPct(r.ci_low))}" x2="${x(toPct(r.ci_high))}" y1="${y}" y2="${y}" stroke="${ok ? GOOD : "#94a3b8"}" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="${x(toPct(r.coef))}" cy="${y}" r="5" fill="${ok ? GOOD : "#94a3b8"}"><title>${sp(toPct(r.coef))} [${sp(toPct(r.ci_low))}, ${sp(toPct(r.ci_high))}] · N ${r.n_obs.toLocaleString()}</title></circle>`;
+        }).join("");
+        $(el).innerHTML = `<svg viewBox="0 0 ${W} ${HH}" width="100%">${tk}
+          <line x1="${x(0)}" x2="${x(0)}" y1="6" y2="${HH - 34}" stroke="${INK}"/>
+          <line x1="${x(toPct(E.main.coef))}" x2="${x(toPct(E.main.coef))}" y1="6" y2="${HH - 34}" stroke="${AMB}" stroke-dasharray="4 4"/>${body}</svg>`;
+        return;
+      }
+      const HH = 260, cw = (W - L - 16) / rows.length;
+      const y = scale(lo2 - pad, hi2 + pad, HH - 40, 16);
+      const tk = ticks(lo2 - pad, hi2 + pad, 4).map(t => `<line x1="${L}" x2="${W - 16}" y1="${y(t)}" y2="${y(t)}" stroke="${GRID}"/><text text-anchor="end" x="${L - 8}" y="${y(t) + 6}">${t > 0 ? "+" : ""}${t}%</text>`).join("");
+      const body = rows.map((r, i) => {
+        const cx = L + cw * i + cw / 2, ok = r.ci_low > 0 || r.ci_high < 0;
+        return `<line x1="${cx}" x2="${cx}" y1="${y(toPct(r.ci_low))}" y2="${y(toPct(r.ci_high))}" stroke="${ok ? GOOD : "#94a3b8"}" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="${cx}" cy="${y(toPct(r.coef))}" r="5.5" fill="${ok ? GOOD : "#94a3b8"}"><title>${label(r)}: ${sp(toPct(r.coef))} [${sp(toPct(r.ci_low))}, ${sp(toPct(r.ci_high))}] · N ${r.n_obs.toLocaleString()}</title></circle>
+          <text text-anchor="middle" x="${cx}" y="${HH - 12}">${i % 2 && rows.length > 12 ? "" : label(r)}</text>`;
+      }).join("");
+      $(el).innerHTML = `<svg viewBox="0 0 ${W} ${HH}" width="100%">${tk}
+        <line x1="${L}" x2="${W - 16}" y1="${y(0)}" y2="${y(0)}" stroke="${INK}"/>
+        <line x1="${L}" x2="${W - 16}" y1="${y(toPct(E.main.coef))}" y2="${y(toPct(E.main.coef))}" stroke="${AMB}" stroke-dasharray="4 4"/>
+        <text x="${L + 4}" y="${y(toPct(E.main.coef)) - 8}" style="fill:${AMB}">pooled ${sp(toPct(E.main.coef))}</text>${body}</svg>`;
+    }
+    intervals("byyear", E.by_year, r => String(r.year), {});
+    intervals("loo", E.leave_one_out, r => "− " + r.dropped.replace("Transportation, Communications & Utilities", "Transport & Utilities").replace(", Insurance & Real Estate", " & Real Estate").replace(", Forestry & Fishing", ""), { horizontal: true });
+
+    const ML = { M1: "Valuation", M1b: "Valuation change", M2: "Revenue growth", M3: "R&D / assets", M4: "CAPEX / assets" };
+    const SL = {
+      main_year: "Year FE", main_year_sic2: "Year + industry FE", main_sic2xyear: "Industry×year FE (headline)",
+      main_firm_year: "Firm + year FE (within-company)", unwinsorized: "Unwinsorized outcome",
+      exclude_largest_10pct: "Excluding the largest 10% of firms", "horizon_t+2": "Two years ahead", "horizon_t+3": "Three years ahead",
+      startup_component_only: "Startup component only", patent_component_only: "Patent component only",
+      log_patent_count: "Log patent count instead of index", tech_linked_industries_only: "Technology-linked industries only",
+      both_components_only: "Firms with both components only"
+    };
+    const specName = k => SL[k] || (k.startsWith("weights_") ? "Alternative weights: " + k.slice(8).replace(/_/g, " ") : k.replace(/_/g, " "));
+    let cur = "M1";
+    function curve() {
+      const rows = E.spec_curve.filter(r => r.model === cur).sort((a, b) => a.coef - b.coef);
+      const isPct = cur === "M1" || cur === "M1b";
+      const f = v => isPct ? toPct(v) : v;
+      const lab = v => isPct ? sp(v) : (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(4);
+      const vals = rows.flatMap(r => [f(r.ci_low), f(r.ci_high)]).concat([0]);
+      const a = Math.min(...vals), b = Math.max(...vals), pad = (b - a) * 0.08 || 1;
+      const SW = 1100, SL0 = 70, HH = 260, cw = (SW - SL0 - 16) / rows.length;
+      const y = scale(a - pad, b + pad, HH - 16, 12);
+      const tk = ticks(a - pad, b + pad, 4).map(t => `<line x1="${SL0}" x2="${SW - 16}" y1="${y(t)}" y2="${y(t)}" stroke="${GRID}"/><text text-anchor="end" x="${SL0 - 8}" y="${y(t) + 4}">${lab(t)}</text>`).join("");
+      const body = rows.map((r, i) => {
+        const cx = SL0 + cw * i + cw / 2, ok = r.ci_low > 0 || r.ci_high < 0, head = r.model === "M1" && r.spec === "main_sic2xyear";
+        const col = head ? AMB : ok ? GOOD : "#94a3b8";
+        return `<g data-i="${i}" class="scp"><rect x="${cx - cw / 2}" y="0" width="${cw}" height="${HH}" fill="transparent"/>
+          <line x1="${cx}" x2="${cx}" y1="${y(f(r.ci_low))}" y2="${y(f(r.ci_high))}" stroke="${col}" stroke-width="${Math.min(4, Math.max(2, cw / 4))}" stroke-linecap="round"/>
+          <circle cx="${cx}" cy="${y(f(r.coef))}" r="${head ? 6.5 : 4.5}" fill="${col}"/></g>`;
+      }).join("");
+      $("scurve").innerHTML = `<svg viewBox="0 0 ${SW} ${HH}" width="100%">${tk}<line x1="${SL0}" x2="${SW - 16}" y1="${y(0)}" y2="${y(0)}" stroke="${INK}"/>${body}</svg>`;
+      const nPos = rows.filter(r => r.ci_low > 0).length, nNeg = rows.filter(r => r.ci_high < 0).length;
+      const summary = `${rows.length} specifications for ${ML[cur].replace(/^[A-Z][a-z]/, s => s.toLowerCase())}: ${nPos} positive and distinguishable from zero, ${nNeg} negative, ${rows.length - nPos - nNeg} indistinguishable from zero.${isPct ? "" : " Units: change in the ratio per +10 index points."}`;
+      $("sctip").textContent = summary;
+      $("scurve").onmousemove = e => {
+        const g = e.target.closest(".scp");
+        if (!g) { $("sctip").textContent = summary; return; }
+        const r = rows[+g.dataset.i];
+        $("sctip").innerHTML = `<b>${esc(specName(r.spec))}</b> · ${lab(f(r.coef))} [${lab(f(r.ci_low))}, ${lab(f(r.ci_high))}] · p ${r.p < 0.001 ? "&lt; 0.001" : r.p.toFixed(3)} · N ${r.n_obs.toLocaleString()}`;
+      };
+      $("scurve").onmouseleave = () => { $("sctip").textContent = summary; };
+      $("sctabs").innerHTML = Object.keys(ML).filter(m => E.spec_curve.some(r => r.model === m))
+        .map(m => `<button type="button" class="chip${m === cur ? " on" : ""}" data-m="${m}">${ML[m]}<span>${E.spec_curve.filter(r => r.model === m).length}</span></button>`).join("");
+    }
+    $("sctabs").onclick = e => { const b = e.target.closest("[data-m]"); if (b) { cur = b.dataset.m; curve(); } };
+    curve();
+  })();
+
+  (function replicate() {
+    if (!$("replicate")) return;
+    const HEAD = { w: 50, fe: "sic2xyear", y0: null, y1: null, size: true, both: false, big: false, drop: [] };
+    const FEL = { year: "Same year", "sic2+year": "Industry + year", sic2xyear: "Industry × year", "firm+year": "Itself over time" };
+    const FEN = { year: "year fixed effects", "sic2+year": "industry and year fixed effects", sic2xyear: "industry × year fixed effects", "firm+year": "firm and year fixed effects" };
+    let P = null, st = null, runs = [], timer = null;
+    try { runs = JSON.parse(localStorage.getItem("tdi_runs") || "[]"); } catch (e) { runs = []; }
+
+    const erfc = x => {
+      const t = 1 / (1 + 0.5 * Math.abs(x));
+      const r = t * Math.exp(-x * x - 1.26551223 + t * (1.00002368 + t * (0.37409196 + t * (0.09678418 + t * (-0.18628806 + t * (0.27886807 + t * (-1.13520398 + t * (1.48851587 + t * (-0.82215223 + t * 0.17087277)))))))));
+      return x >= 0 ? r : 2 - r;
+    };
+    const recode = arr => {
+      const m = new Map(), out = new Int32Array(arr.length);
+      for (let i = 0; i < arr.length; i++) {
+        let k = m.get(arr[i]);
+        if (k === undefined) { k = m.size; m.set(arr[i], k); }
+        out[i] = k;
+      }
+      return { codes: out, n: m.size };
+    };
+    function demean(v, dims) {
+      const n = v.length, out = Float64Array.from(v);
+      for (let it = 0; it < (dims.length > 1 ? 1000 : 1); it++) {
+        let delta = 0;
+        for (const d of dims) {
+          const sum = new Float64Array(d.n), cnt = new Float64Array(d.n);
+          for (let i = 0; i < n; i++) { sum[d.codes[i]] += out[i]; cnt[d.codes[i]]++; }
+          for (let g = 0; g < d.n; g++) { sum[g] /= cnt[g]; if (Math.abs(sum[g]) > delta) delta = Math.abs(sum[g]); }
+          for (let i = 0; i < n; i++) out[i] -= sum[d.codes[i]];
+        }
+        if (delta < 1e-10) break;
+      }
+      return out;
+    }
+    const dot = (a, b) => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
+
+    function estimate(o) {
+      const t0 = performance.now();
+      const wp = o.w / 100, ws = 1 - wp, N0 = P.y.length;
+      const y0 = o.y0 - P.years[0], y1 = o.y1 - P.years[0];
+      const drop = new Set(o.drop.map(n => P.industries.indexOf(n)));
+      const idx = [];
+      const xs = [], ys = [], zs = [], fm = [], yr = [], s2 = [];
+      for (let i = 0; i < N0; i++) {
+        const yy = P.year[i];
+        if (yy < y0 || yy > y1 || drop.has(P.ind[i])) continue;
+        const p = P.p[i], s = P.s[i];
+        if (o.both && (p == null || s == null)) continue;
+        if (o.big && P.a[i] > P.bigCut[yy]) continue;
+        const den = (p != null ? wp : 0) + (s != null ? ws : 0);
+        if (den <= 0) continue;
+        const v = Math.round(((p != null ? wp * p / 10 : 0) + (s != null ? ws * s / 10 : 0)) / den * 10) / 10;
+        xs.push(v / 10); ys.push(P.y[i] / 1000); zs.push(P.a[i] / 1000);
+        fm.push(P.firm[i]); yr.push(yy); s2.push(P.sic2[i]); idx.push(i);
+      }
+      const n = xs.length;
+      const firm = recode(fm);
+      if (n < 30 || firm.n < 5) return { err: "Too few observations for this combination (" + n + ")." };
+      let dims = [];
+      if (o.fe === "year") dims = [recode(yr)];
+      else if (o.fe === "sic2+year") dims = [recode(s2), recode(yr)];
+      else if (o.fe === "sic2xyear") dims = [recode(s2.map((s, i) => s * 100 + yr[i]))];
+      else dims = [firm, recode(yr)];
+      let xd = demean(xs, dims), yd = demean(ys, dims);
+      if (o.size) {
+        const zd = demean(zs, dims), zz = dot(zd, zd);
+        const bx = dot(xd, zd) / zz, by = dot(yd, zd) / zz;
+        for (let i = 0; i < n; i++) { xd[i] -= bx * zd[i]; yd[i] -= by * zd[i]; }
+      }
+      const xx = dot(xd, xd);
+      if (xx < 1e-12) return { err: "The index does not vary within these comparison groups." };
+      const b = dot(xd, yd) / xx;
+      const score = new Float64Array(firm.n);
+      for (let i = 0; i < n; i++) score[firm.codes[i]] += xd[i] * (yd[i] - b * xd[i]);
+      const G = firm.n;
+      const K = 1 + (o.size ? 1 : 0) + dims.filter(d => d !== firm).reduce((a, d) => a + d.n, 0) - (dims.length > 1 && o.fe !== "firm+year" ? 1 : 0);
+      const adj = G / (G - 1) * (n - 1) / Math.max(n - K, 1);
+      const se = Math.sqrt(adj * dot(score, score)) / xx;
+      const z = b / se;
+      return { b, se, lo: b - 1.96 * se, hi: b + 1.96 * se, p: erfc(Math.abs(z) / Math.SQRT2), n, firms: G, ms: performance.now() - t0 };
+    }
+
+    const pc = b => (Math.exp(b) - 1) * 100;
+    const sg = v => (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(1) + "%";
+    const same = (a, b) => JSON.stringify({ ...a, drop: [...a.drop].sort() }) === JSON.stringify({ ...b, drop: [...b.drop].sort() });
+    const describe = o => [`patents ${o.w} / startups ${100 - o.w}`, FEL[o.fe], `${o.y0}–${o.y1}`,
+      o.size ? "" : "no size control", o.both ? "both components" : "", o.big ? "no top 10%" : "",
+      o.drop.length ? "without " + o.drop.join(", ") : ""].filter(Boolean).join(" · ");
+
+    function readUI() {
+      return {
+        w: +$("rw").value, fe: document.querySelector("#rfe .on").dataset.fe,
+        y0: +$("ry0").value, y1: +$("ry1").value, size: $("rsize").checked, both: $("rboth").checked,
+        big: $("rbig").checked, drop: [...document.querySelectorAll("#rind .chip.ghost")].map(b => b.dataset.ind)
+      };
+    }
+    function writeUI(o) {
+      $("rw").value = o.w;
+      document.querySelectorAll("#rfe button").forEach(b => b.classList.toggle("on", b.dataset.fe === o.fe));
+      $("ry0").value = o.y0; $("ry1").value = o.y1;
+      $("rsize").checked = o.size; $("rboth").checked = o.both; $("rbig").checked = o.big;
+      document.querySelectorAll("#rind .chip").forEach(b => b.classList.toggle("ghost", o.drop.includes(b.dataset.ind)));
+    }
+    function paintLog() {
+      const W = 640, H = 150, L = 50;
+      if (!runs.length) { $("rlog").innerHTML = ""; $("rlogtxt").textContent = ""; return; }
+      const vals = runs.flatMap(r => [pc(r.lo), pc(r.hi)]).concat([0, pc(st.head.b)]);
+      const a = Math.min(...vals), b = Math.max(...vals), pad = (b - a) * 0.1 || 1;
+      const y = v => H - 14 - (v - (a - pad)) / (b - a + 2 * pad) * (H - 28);
+      const cw = Math.min(28, (W - L - 10) / runs.length);
+      const dots = runs.map((r, i) => {
+        const cx = L + cw * i + cw / 2, ok = r.lo > 0 || r.hi < 0, col = r.head ? "#d97706" : ok ? "#047857" : "#94a3b8";
+        return `<g><title>${esc(r.desc)}: ${sg(pc(r.b))} [${sg(pc(r.lo))}, ${sg(pc(r.hi))}], N ${r.n.toLocaleString()}</title>
+          <line x1="${cx}" x2="${cx}" y1="${y(pc(r.lo))}" y2="${y(pc(r.hi))}" stroke="${col}" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="${cx}" cy="${y(pc(r.b))}" r="${i === runs.length - 1 ? 6 : 4.5}" fill="${col}"${i === runs.length - 1 ? ' stroke="#0f172a" stroke-width="2"' : ""}/></g>`;
+      }).join("");
+      $("rlog").innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%">
+        <line x1="${L}" x2="${W - 6}" y1="${y(0)}" y2="${y(0)}" stroke="#1e293b"/><text x="${L - 6}" y="${y(0) + 4}" text-anchor="end">0%</text>
+        <line x1="${L}" x2="${W - 6}" y1="${y(pc(st.head.b))}" y2="${y(pc(st.head.b))}" stroke="#d97706" stroke-dasharray="4 4"/>
+        <text x="${L - 6}" y="${y(pc(st.head.b)) + 4}" text-anchor="end" style="fill:#d97706">${sg(pc(st.head.b))}</text>${dots}</svg>`;
+      const sig = runs.filter(r => r.lo > 0 || r.hi < 0).length;
+      const pos = runs.filter(r => r.lo > 0).length;
+      $("rlogtxt").innerHTML = `${runs.length} run${runs.length > 1 ? "s" : ""}: <b>${pos}</b> positive and distinguishable from zero, ${sig - pos} negative, ${runs.length - sig} indistinguishable from zero. Range ${sg(Math.min(...runs.map(r => pc(r.b))))} to ${sg(Math.max(...runs.map(r => pc(r.b))))}.`;
+    }
+    function run() {
+      const o = readUI();
+      if (o.y0 > o.y1) { [o.y0, o.y1] = [o.y1, o.y0]; writeUI(o); }
+      $("rwv").textContent = `Patents ${o.w} · Startups ${100 - o.w}`;
+      $("ryv").textContent = `${o.y0}–${o.y1}`;
+      const r = estimate(o);
+      if (r.err) { $("rfig").textContent = "–"; $("rmeta").textContent = r.err; $("rbadge").innerHTML = ""; return; }
+      const head = same(o, st.headOpts);
+      const ok = r.lo > 0 || r.hi < 0;
+      $("rfig").textContent = sg(pc(r.b));
+      $("rfig").className = ok ? (r.b > 0 ? "pos" : "neg") : "zero";
+      $("rmeta").innerHTML = `95% interval ${sg(pc(r.lo))} to ${sg(pc(r.hi))} · p ${r.p < 0.001 ? "&lt; 0.001" : "= " + r.p.toFixed(3)} · coefficient ${r.b.toFixed(4)} (SE ${r.se.toFixed(4)})<br>${r.n.toLocaleString()} firm-years, ${r.firms.toLocaleString()} companies · estimated in <b>${Math.max(1, Math.round(r.ms))} ms</b> in your browser`;
+      const pub = D.results.find(x => x.model === "M1" && x.spec === (o.fe === "firm+year" ? "main_firm_year" : o.fe === "sic2xyear" ? "main_sic2xyear" : o.fe === "year" ? "main_year" : "main_year_sic2"));
+      const defaults = o.w === 50 && o.size && !o.both && !o.big && !o.drop.length && o.y0 === st.headOpts.y0 && o.y1 === st.headOpts.y1;
+      $("rbadge").innerHTML = defaults && pub
+        ? `<div class="rmatch">✓ Reproduces the published model with ${FEN[o.fe]}: paper ${pub.coef.toFixed(4)}, here ${r.b.toFixed(4)}, same N (${pub.n_obs.toLocaleString()}). Any gap in the 4th decimal comes from rounding in the shared file.</div>`
+        : `<div class="rdiff">Your specification · ${esc(describe(o))}</div>`;
+      const last = runs[runs.length - 1];
+      if (!last || last.desc !== describe(o)) {
+        runs.push({ desc: describe(o), b: r.b, lo: r.lo, hi: r.hi, n: r.n, head });
+        if (runs.length > 60) runs = runs.slice(-60);
+        try { localStorage.setItem("tdi_runs", JSON.stringify(runs)); } catch (e) { }
+      }
+      paintLog();
+    }
+    const later = () => { clearTimeout(timer); timer = setTimeout(run, 120); };
+
+    function init() {
+      P.bigCut = P.years.map((_, k) => {
+        const v = []; for (let i = 0; i < P.y.length; i++) if (P.year[i] === k) v.push(P.a[i]);
+        v.sort((a, b) => a - b);
+        return v.length ? v[Math.floor(0.9 * (v.length - 1))] : Infinity;
+      });
+      const opts = P.years.map(y => `<option value="${y}">${y}</option>`).join("");
+      $("ry0").innerHTML = opts; $("ry1").innerHTML = opts;
+      HEAD.y0 = P.years[0]; HEAD.y1 = P.years[P.years.length - 1];
+      const cnt = P.industries.map((_, k) => P.ind.filter(v => v === k).length);
+      $("rind").innerHTML = P.industries.map((n, k) => cnt[k] >= 100
+        ? `<button type="button" class="chip" data-ind="${esc(n)}">${esc(n)}<span>${cnt[k].toLocaleString()}</span></button>` : "").join("");
+      st = { headOpts: { ...HEAD } };
+      writeUI(HEAD);
+      st.head = estimate(HEAD);
+      $("rstat").innerHTML = `<span class="live"></span>${P.y.length.toLocaleString()} firm-years loaded`;
+      ["rw", "ry0", "ry1", "rsize", "rboth", "rbig"].forEach(id => $(id).addEventListener("input", later));
+      $("rfe").onclick = e => {
+        const b = e.target.closest("[data-fe]"); if (!b) return;
+        document.querySelectorAll("#rfe button").forEach(x => x.classList.toggle("on", x === b)); run();
+      };
+      $("rind").onclick = e => { const b = e.target.closest("[data-ind]"); if (b) { b.classList.toggle("ghost"); run(); } };
+      $("rreset").onclick = () => { writeUI(HEAD); run(); };
+      $("rclear").onclick = () => { runs = []; try { localStorage.removeItem("tdi_runs"); } catch (e) { } run(); };
+      run();
+    }
+    function load() {
+      if (P) return;
+      P = {};
+      $("rstat").textContent = "Loading the research sample…";
+      fetch("/data/panel.json?v=__VER__").then(r => r.json()).then(j => { P = j; init(); })
+        .catch(() => { P = null; $("rstat").textContent = "Could not load the panel."; });
+    }
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); load(); } }, { rootMargin: "600px" });
+      io.observe($("replicate"));
+      setTimeout(load, 6000);
+    } else load();
+    if (location.hash === "#replicate") { load(); $("replicate").scrollIntoView(); }
+  })();
+
   async function playYears() {
     playing = true;
     if ($("yplay")) $("yplay").textContent = "Pause";
@@ -716,23 +1043,28 @@ ${location.origin}${location.pathname}#c/${c.id}`;
     setYear(Y.length - 1, false);
     document.querySelector(".finding").scrollIntoView({ behavior: "smooth", block: "center" });
     document.querySelector(".finding").classList.add("pulse");
-    show("1 / 5  The result: +8.7% next-year public float vs industry peers. Same firm over time: ~0%.");
+    show("1 / 6  The result: +8.7% next-year public float vs industry peers. Same firm over time: ~0%.");
     await sleep(3800); if (!touring) return;
     document.querySelector(".finding").classList.remove("pulse");
     const nv = tickIndex.NVDA, intel = tickIndex.INTC;
-    show("2 / 5  NVIDIA — score vs its manufacturing peers, and the associated valuation gap.");
+    show("2 / 6  NVIDIA — score vs its manufacturing peers, and the associated valuation gap.");
     if (nv) openCompany(nv.id);
     await sleep(4200); if (!touring) return;
-    show("3 / 5  NVIDIA vs Intel. Same industry, different patent momentum.");
+    show("3 / 6  NVIDIA vs Intel. Same industry, different patent momentum.");
     if (nv && intel) openCompare(nv, intel);
     await sleep(4500); if (!touring) return;
     closeOv();
-    show("4 / 5  Time machine: the top-ten list from 2015 to 2024.");
+    show("4 / 6  Time machine: the top-ten list from 2015 to 2024.");
     $("explore").scrollIntoView({ behavior: "smooth" });
     await playYears(); if (!touring) return;
-    show("5 / 5  The forest plot: only the within-firm test collapses to zero.");
+    show("5 / 6  The forest plot: only the within-firm test collapses to zero.");
     $("research").scrollIntoView({ behavior: "smooth" });
-    await sleep(4200);
+    await sleep(4200); if (!touring) return;
+    if ($("lab") && !$("lab").hidden) {
+      show("6 / 6  Stress test: 1,000 shuffled fake indexes. None comes close to the real one.");
+      $("lab").scrollIntoView({ behavior: "smooth" });
+      await sleep(4800);
+    }
     skip();
   }
 
