@@ -19,6 +19,7 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
     sic_linked: "Industry linked to technology",
     "sic_linked+name": "Industry + company name",
     name_only: "Company name only",
+    firm_name_match: "Exact startup name match",
     industry_unlinked: "Industry not linked (score 0)",
     missing_sic: "No industry data",
     uninformative_sic: "Industry code too broad"
@@ -31,8 +32,11 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
   const cats = ["AI", "Fintech", "Cloud", "Robotics", "Cybersecurity", "Biotech", "Semiconductors", "Energy", "Quantum"];
   const FAMOUS = ["NVDA", "AAPL", "MSFT", "TSLA", "AMZN", "GOOGL", "GOOG", "META", "INTC", "AMD", "JPM", "PFE"];
   const peerR = D.results.find(x => x.model === "M1" && x.spec === "main_sic2xyear");
-  const COEF10 = peerR && peerR.coef != null ? peerR.coef : 0.0831;
+  const qR = D.results.find(x => x.model === "M1q" && x.spec === "main_sic2xyear") || peerR;
+  const COEF10 = peerR && peerR.coef != null ? peerR.coef : 0.0826;
+  const COEFQ = qR && qR.coef != null ? qR.coef : COEF10;
   const assocPct = d => (Math.exp(COEF10 * d / 10) - 1) * 100;
+  const assocQ = d => (Math.exp(COEFQ * d / 10) - 1) * 100;
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   let yi = Y.length - 1, playing = false, touring = false;
   function tdiAt(c, i) {
@@ -264,12 +268,13 @@ fetch("/data/site.json?v=__VER__").then(r => r.json()).then(D => {
   function impliedHTML(c) {
     const ir = indRank(c);
     if (!ir || c.tdi == null) return "";
-    const d = c.tdi - ir.avg, p = assocPct(d), sign = p >= 0 ? "+" : "";
+    const d = c.tdi - ir.avg, pq = assocQ(d), pf = assocPct(d);
+    const sq = pq >= 0 ? "+" : "", sf = pf >= 0 ? "+" : "";
     return `<div class="impl">
-      <div class="eyebrow">Associated next-year public float vs industry mean</div>
-      <div class="big sm">${sign}${p.toFixed(1)}%</div>
-      <p class="muted small">${d >= 0 ? "+" : ""}${d.toFixed(1)} index points vs the ${esc(c.industry)} average of ${ir.avg.toFixed(1)}.
-        Formula: exp(β × Δ/10) − 1, with β = ${COEF10.toFixed(3)} from industry×year FE. Predictive, not causal. A firm’s own score changes over time were ~0.</p>
+      <div class="eyebrow">Associated next-year valuation vs industry mean</div>
+      <div class="big sm">${sq}${pq.toFixed(1)}% <span class="muted" style="font-size:.45em">Tobin’s Q</span></div>
+      <p class="muted small">${d >= 0 ? "+" : ""}${d.toFixed(1)} pts vs ${esc(c.industry)} avg ${ir.avg.toFixed(1)}.
+        Also ${sf}${pf.toFixed(1)}% public float (β<sub>Q</sub>=${COEFQ.toFixed(3)}, β<sub>float</sub>=${COEF10.toFixed(3)}). Predictive, not causal; within-firm changes ~0.</p>
     </div>`;
   }
   function neighborHTML(c) {
@@ -645,7 +650,7 @@ ${location.origin}${location.pathname}#c/${c.id}`;
      <td class="r muted small">${r[2].toLocaleString()}</td></tr>`).join("") + "</table>";
 
   (function results() {
-    const L = { M1: "Market valuation", M1b: "Valuation change", M2: "Revenue growth", M3: "R&D / assets", M4: "CAPEX / assets" };
+    const L = { M1: "Public float", M1q: "Tobin’s Q (approx)", M1b: "Valuation change", M2: "Revenue growth", M3: "R&D / assets", M4: "CAPEX / assets" };
     const S = { main_year: "Year FE", main_year_sic2: "+ Industry FE", main_sic2xyear: "Industry×year FE", main_firm_year: "Firm FE" };
     const specs = Object.keys(S);
     let h = "<table><tr><th>Outcome (t+1)</th>" + specs.map(s => `<th class="r">${S[s]}</th>`).join("") + "</tr>";
@@ -659,7 +664,7 @@ ${location.origin}${location.pathname}#c/${c.id}`;
     });
     $("res").innerHTML = h + "</table>";
 
-    const m1 = specs.map(s => D.results.find(x => x.model === "M1" && x.spec === s)).filter(Boolean);
+    const m1 = specs.map(s => D.results.find(x => x.model === "M1q" && x.spec === s)).filter(Boolean);
     const maxAbs = Math.max(...m1.map(r => Math.abs((Math.exp(r.coef) - 1) * 100)), 1);
     $("forest").innerHTML = m1.map(r => {
       const pctV = (Math.exp(r.coef) - 1) * 100;
@@ -668,7 +673,7 @@ ${location.origin}${location.pathname}#c/${c.id}`;
       const cls = r.p_value < 0.05 ? "pos" : "zero";
       return `<div class="fb"><span>${lab}</span><span class="fbar"><i class="${cls}" style="width:${w}%"></i></span>
         <b class="${cls}">${pctV >= 0 ? "+" : ""}${pctV.toFixed(1)}%</b></div>`;
-    }).join("") + '<p class="muted small">Approximate % difference in next-year public float per +10 index points (from exp(coef)−1). Firm FE is the within-company test.</p>';
+    }).join("") + '<p class="muted small">Approximate % difference in next-year Tobin’s Q per +10 index points (from exp(coef)−1). Public-float specs are in the table. Firm FE is the within-company test.</p>';
   })();
 
   (function lab() {
@@ -758,7 +763,7 @@ ${location.origin}${location.pathname}#c/${c.id}`;
     intervals("byyear", E.by_year, r => String(r.year), {});
     intervals("loo", E.leave_one_out, r => "− " + r.dropped.replace("Transportation, Communications & Utilities", "Transport & Utilities").replace(", Insurance & Real Estate", " & Real Estate").replace(", Forestry & Fishing", ""), { horizontal: true });
 
-    const ML = { M1: "Valuation", M1b: "Valuation change", M2: "Revenue growth", M3: "R&D / assets", M4: "CAPEX / assets" };
+    const ML = { M1: "Public float", M1q: "Tobin’s Q", M1b: "Valuation change", M2: "Revenue growth", M3: "R&D / assets", M4: "CAPEX / assets" };
     const SL = {
       main_year: "Year FE", main_year_sic2: "Year + industry FE", main_sic2xyear: "Industry×year FE (headline)",
       main_firm_year: "Firm + year FE (within-company)", unwinsorized: "Unwinsorized outcome",
@@ -771,7 +776,7 @@ ${location.origin}${location.pathname}#c/${c.id}`;
     let cur = "M1";
     function curve() {
       const rows = E.spec_curve.filter(r => r.model === cur).sort((a, b) => a.coef - b.coef);
-      const isPct = cur === "M1" || cur === "M1b";
+      const isPct = cur === "M1" || cur === "M1q" || cur === "M1b";
       const f = v => isPct ? toPct(v) : v;
       const lab = v => isPct ? sp(v) : (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(4);
       const vals = rows.flatMap(r => [f(r.ci_low), f(r.ci_high)]).concat([0]);
@@ -1043,7 +1048,7 @@ ${location.origin}${location.pathname}#c/${c.id}`;
     setYear(Y.length - 1, false);
     document.querySelector(".finding").scrollIntoView({ behavior: "smooth", block: "center" });
     document.querySelector(".finding").classList.add("pulse");
-    show("1 / 6  The result: +8.7% next-year public float vs industry peers. Same firm over time: ~0%.");
+    show("1 / 6  The result: +5.7% next-year Tobin’s Q vs industry peers (+8.6% public float). Same firm over time: ~0%.");
     await sleep(3800); if (!touring) return;
     document.querySelector(".finding").classList.remove("pulse");
     const nv = tickIndex.NVDA, intel = tickIndex.INTC;

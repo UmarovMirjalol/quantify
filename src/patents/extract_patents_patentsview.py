@@ -13,10 +13,12 @@ Sources (downloaded once into data/raw/patents/ma_patentsview/, never overwritte
 Counting: patents by GRANT year (consistent with the BigQuery route). A gvkey linked
 to more than one CIK in our universe is assigned year by year to the CIK whose filing
 date range covers the grant year (skipped when none or several do); patents of several
-gvkeys linked to the same CIK are summed. Companies without a link are absent
+gvkeys linked to the same CIK are summed. Forward citations (num_cite_forward from Ma)
+are summed the same way for the quality component. Companies without a link are absent
 (missing downstream), never zero.
 
-Output: config.PATENTS_PATENTSVIEW_COUNTS (company_id, year, patent_count).
+Output: config.PATENTS_PATENTSVIEW_COUNTS
+  (company_id, year, patent_count, citation_count).
 """
 import argparse
 import subprocess
@@ -82,15 +84,22 @@ def main(offline: bool = False) -> None:
 
     lo, hi = config.PATENT_COUNT_YEARS
     parts = []
-    for chunk in pd.read_csv(pat, usecols=["grant_year", "gvkey"], chunksize=2_000_000):
+    cols = ["grant_year", "gvkey", "num_cite_forward"]
+    for chunk in pd.read_csv(pat, usecols=cols, chunksize=2_000_000):
         chunk = chunk.dropna(subset=["gvkey"])
         chunk = chunk[chunk["grant_year"].between(lo, hi + 1)]
-        parts.append(chunk.groupby(["gvkey", "grant_year"]).size())
-    by_gvkey = pd.concat(parts).groupby(level=[0, 1]).sum().rename("patent_count").reset_index()
+        chunk["num_cite_forward"] = pd.to_numeric(chunk["num_cite_forward"],
+                                                  errors="coerce").fillna(0)
+        g = chunk.groupby(["gvkey", "grant_year"], as_index=False).agg(
+            patent_count=("gvkey", "size"), citation_count=("num_cite_forward", "sum"))
+        parts.append(g)
+    by_gvkey = pd.concat(parts).groupby(["gvkey", "grant_year"], as_index=False).sum()
     by_gvkey["gvkey"] = pd.to_numeric(by_gvkey["gvkey"], errors="coerce")
     hit = map_to_cik(by_gvkey.dropna(subset=["gvkey"]).astype({"gvkey": int}), links)
-    counts = (hit.groupby(["company_id", "grant_year"], as_index=False)["patent_count"].sum()
-              .rename(columns={"grant_year": "year"}).astype(int))
+    counts = (hit.groupby(["company_id", "grant_year"], as_index=False)
+              .agg(patent_count=("patent_count", "sum"),
+                   citation_count=("citation_count", "sum"))
+              .rename(columns={"grant_year": "year"}))
     # explicit zero years only where the company's link is valid (single-CIK gvkey: whole
     # window; multi-CIK gvkey: the link's filing date range)
     n_cik = links.groupby("gvkey")["cik"].transform("nunique")
@@ -100,11 +109,13 @@ def main(offline: bool = False) -> None:
     grid = {(c, y) for c, f, l in zip(span["cik"], span["fy"], span["ly"])
             for y in range(f, l + 1)}
     grid = pd.DataFrame(sorted(grid), columns=["company_id", "year"])
-    counts = grid.merge(counts, on=["company_id", "year"], how="outer").fillna(0).astype(int)
-    log.info("Linked patents %d-%d: %d of %d gvkey-matched (%.1f%%) -> %d companies",
+    counts = grid.merge(counts, on=["company_id", "year"], how="outer").fillna(0)
+    counts = counts.astype({"company_id": int, "year": int, "patent_count": int,
+                            "citation_count": int})
+    log.info("Linked patents %d-%d: %d of %d gvkey-matched (%.1f%%) | cites %d -> %d companies",
              lo, hi + 1, hit["patent_count"].sum(), by_gvkey["patent_count"].sum(),
              100 * hit["patent_count"].sum() / by_gvkey["patent_count"].sum(),
-             counts["company_id"].nunique())
+             int(counts["citation_count"].sum()), counts["company_id"].nunique())
     write_csv(counts, config.PATENTS_PATENTSVIEW_COUNTS)
 
 

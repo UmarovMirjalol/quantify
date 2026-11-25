@@ -117,7 +117,9 @@ PATENT_NORMALIZATION = "fixed_log"
 PATENT_VOLUME_REFERENCE = 10_000         # ~ annual US grants of the very largest assignees
 PATENT_MOMENTUM_PSEUDOCOUNT = 1.0        # (recent + k) / (historical + k) avoids 0-division
 PATENT_MOMENTUM_LOG2_CAP = 1.0           # momentum 0.5x -> 0, 1x -> 50, 2x -> 100
-PATENT_SUBWEIGHTS = {"volume_score": 0.5, "momentum_score": 0.5}
+# volume + momentum + forward-citation quality (Ma 2025 PatentsView linkage)
+PATENT_SUBWEIGHTS = {"volume_score": 0.40, "momentum_score": 0.30, "quality_score": 0.30}
+PATENT_QUALITY_REFERENCE = 50_000        # log1p(forward cites) scaled vs this reference stock
 PATENT_NO_MATCH_AS_ZERO = False          # unmatched firms are MISSING, not zero patents
 
 # Legacy name-keyed patent file -> ticker crosswalk (identifier mapping only).
@@ -175,6 +177,10 @@ COMPANY_NAME_TECH_PATTERNS = {
     "Quantum": [r"quantum comput", r"\bqubits?\b"],
 }
 COMPANY_NAME_EVIDENCE_WEIGHT = 0.5
+# Exact normalized-name links between accelerator startups and SEC registrants
+# (length floor avoids false hits like "Arc" / "Tiny"). Documented matches only.
+FIRM_STARTUP_NAME_MIN_LEN = 6
+FIRM_STARTUP_MATCH_WEIGHT = 2.0          # added to raw activity per matched cohort startup
 
 # SIC -> technology category exposure.
 # Each rule: (sic_from, sic_to, {category: weight}, rationale).
@@ -324,3 +330,6 @@ BINSCATTER_BINS = 20
 EXTRA_TESTS_JSON = RESULTS / "extra_tests.json"
 EXTRA_TESTS_MD = RESULTS / "extra_tests.md"
 REPLICATION_PANEL = DATA / "research" / "replication_panel.json"
+# Approximate Tobin's Q uses EntityPublicFloat as market equity (SEC publishes no prices).
+# Q = (public_float + debt - cash) / assets. Extreme ratios are winsorized in regressions.
+TOBIN_Q_FLOOR = 0.01                     # treat non-positive Q as missing before logs

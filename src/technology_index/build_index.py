@@ -63,7 +63,8 @@ def main() -> None:
                           usecols=["company_id", "year", "startup_score", "coverage_flag"])
     patent = pd.read_csv(config.PATENT_SCORES_BY_YEAR)
     patent = patent.reindex(columns=["company_id", "year", "patent_score", "patent_count",
-                                     "patent_momentum_available"])
+                                     "citation_count", "quality_score",
+                                     "patent_momentum_available", "patent_quality_available"])
 
     grid = master[["company_id", "company_name", "ticker", "sic", "industry",
                    "is_non_operating"]].merge(pd.DataFrame({"year": config.INDEX_YEARS}),

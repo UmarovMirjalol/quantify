@@ -13,6 +13,7 @@ Inputs (whichever exist):
 Companies without any patent source are NOT given zero patents; they are
 simply absent here and appear as missing patent components downstream.
 """
+import numpy as np
 import pandas as pd
 
 import config
@@ -40,7 +41,9 @@ def load_bigquery_export(master: pd.DataFrame):
     if path is None:
         log.warning("No BigQuery patent export found (%s). Patent coverage is limited to "
                     "the legacy file.", config.PATENTS_BIGQUERY_EXPORT)
-        return pd.DataFrame(), pd.DataFrame()
+        return (pd.DataFrame(columns=["company_id", "year", "patent_count", "citation_count",
+                                      "source"]),
+                pd.DataFrame())
 
     keys = company_keys(master).set_index("name_key")["company_id"]
     crosswalk = {}
@@ -65,6 +68,7 @@ def load_bigquery_export(master: pd.DataFrame):
         matches.append(hit[["assignee_name", "company_id", "match_method"]].drop_duplicates())
     counts = pd.concat(counts).groupby(["company_id", "year"], as_index=False)["patent_count"].sum()
     matches = pd.concat(matches).drop_duplicates()
+    counts["citation_count"] = np.nan   # BigQuery export has counts only
     counts["source"] = "bigquery_export"
     log.info("BigQuery export: %d matched assignee names -> %d companies",
              len(matches), counts["company_id"].nunique())
@@ -77,9 +81,12 @@ def load_patentsview() -> pd.DataFrame:
                     config.PATENTS_PATENTSVIEW_COUNTS)
         return pd.DataFrame()
     pv = pd.read_csv(config.PATENTS_PATENTSVIEW_COUNTS)
+    if "citation_count" not in pv.columns:
+        pv["citation_count"] = np.nan
+        log.warning("PatentsView file has no citation_count; re-run patents_patentsview.")
     pv["source"] = "patentsview_ma2025"
     log.info("PatentsView linkage: %d companies", pv["company_id"].nunique())
-    return pv[["company_id", "year", "patent_count", "source"]]
+    return pv[["company_id", "year", "patent_count", "citation_count", "source"]]
 
 
 def load_legacy(master: pd.DataFrame) -> pd.DataFrame:
@@ -94,8 +101,9 @@ def load_legacy(master: pd.DataFrame) -> pd.DataFrame:
     if len(unmapped):
         log.warning("Legacy patent names without company_id: %s", list(unmapped))
     legacy = legacy.dropna(subset=["company_id"])
+    legacy["citation_count"] = np.nan
     legacy["source"] = "legacy_manual_bigquery"
-    return legacy[["company_id", "year", "patent_count", "source"]]
+    return legacy[["company_id", "year", "patent_count", "citation_count", "source"]]
 
 
 def complete_grid(counts: pd.DataFrame) -> pd.DataFrame:
@@ -106,6 +114,12 @@ def complete_grid(counts: pd.DataFrame) -> pd.DataFrame:
         years = range(int(grp["year"].min()), int(grp["year"].max()) + 1)
         full = grp.set_index("year").reindex(years)
         full["patent_count"] = full["patent_count"].fillna(0).astype(int)
+        if "citation_count" in full.columns:
+            # zeros for years with no grants inside a PatentsView span; keep NaN for other sources
+            if full["citation_count"].notna().any():
+                full["citation_count"] = full["citation_count"].fillna(0)
+        else:
+            full["citation_count"] = np.nan
         full["company_id"], full["source"] = cid, source
         rows.append(full.reset_index().rename(columns={"index": "year"}))
     return pd.concat(rows, ignore_index=True) if rows else counts
@@ -127,15 +141,18 @@ def main() -> None:
     counts = pd.concat(sources, ignore_index=True) if sources else pd.DataFrame()
     if counts.empty:
         log.warning("No patent data available at all.")
-        counts = pd.DataFrame(columns=["company_id", "year", "patent_count", "source"])
+        counts = pd.DataFrame(columns=["company_id", "year", "patent_count", "citation_count",
+                                       "source"])
     else:
         counts["company_id"] = counts["company_id"].astype(int)
+        if "citation_count" not in counts.columns:
+            counts["citation_count"] = np.nan
         counts = complete_grid(counts)
 
     counts = counts.merge(master[["company_id", "company_name"]], on="company_id", how="left")
     counts["year_complete"] = counts["year"] <= config.LAST_COMPLETE_PATENT_YEAR
-    counts = counts[["company_id", "company_name", "year", "patent_count", "source",
-                     "year_complete"]].sort_values(["company_id", "year"])
+    counts = counts[["company_id", "company_name", "year", "patent_count", "citation_count",
+                     "source", "year_complete"]].sort_values(["company_id", "year"])
     write_csv(counts, config.PATENT_COUNTS)
     if not matches.empty:
         write_csv(matches, config.PATENT_MATCHES)

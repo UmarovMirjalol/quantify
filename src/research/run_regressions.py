@@ -5,10 +5,13 @@ Does the Technology Disruption Index at t predict market valuation and firm
 fundamentals at t+h?
 
   M1  ln(public float)_{t+h}                    ~ TDI_t + ln(assets)_t + FE
+  M1q ln(Tobin's Q approx)_{t+h}                ~ TDI_t + ln(assets)_t + FE
   M1b ln(public float)_{t+h}                    ~ TDI_t + ln(assets)_t + ln(public float)_t + FE
   M2  revenue growth_{t+h} = dln(revenue)       ~ TDI_t + ln(assets)_t + FE
   M3  (R&D / assets)_{t+h}                      ~ TDI_t + ln(assets)_t + FE
   M4  (CAPEX / assets)_{t+h}                    ~ TDI_t + ln(assets)_t + FE
+
+Tobin's Q approx = (public_float + debt - cash) / assets (SEC has no prices).
 
 TDI is scaled per 10 index points. Standard errors are clustered by company.
 Specifications: year FE (main), year + SIC2 FE, company + year FE (PanelOLS).
@@ -31,8 +34,10 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 log = get_logger("run_regressions")
 
 RATIO_OUTCOMES = ["rev_growth", "rd_assets", "capex_assets"]
+LOG_OUTCOMES = ["ln_pf", "ln_q"]
 MODELS = {
     "M1": ("Market valuation (ln public float)", "ln_pf", ["ln_assets"]),
+    "M1q": ("Approx Tobin's Q (ln Q; Q=(float+debt-cash)/assets)", "ln_q", ["ln_assets"]),
     "M1b": ("Valuation change (ln public float, controlling ln public float_t)", "ln_pf",
             ["ln_assets", "ln_pf"]),
     "M2": ("Revenue growth (dln revenue)", "rev_growth", ["ln_assets"]),
@@ -47,19 +52,33 @@ def prepare(panel: pd.DataFrame) -> pd.DataFrame:
     pos_assets = df["assets"].where(df["assets"] > 0)
     df["ln_assets"] = np.log(pos_assets)
     df["ln_pf"] = np.log(df["public_float"].where(df["public_float"] > 0))
+    if "tobins_q" not in df.columns:
+        df["tobins_q"] = np.nan
+    q = df["tobins_q"].where(df["tobins_q"] >= config.TOBIN_Q_FLOOR)
+    df["tobins_q_w"] = df.groupby("year")["tobins_q"].transform(
+        lambda s: winsorize(s.where(s >= config.TOBIN_Q_FLOOR)))
+    df["ln_q"] = np.log(df["tobins_q_w"])
     df["ln_rev"] = np.log(df["revenue"].where(df["revenue"] > 0))
     df["rd_assets"] = df["rd"] / pos_assets
     df["capex_assets"] = df["capex"] / pos_assets
     g = df.groupby("company_id")
     df["rev_growth"] = df["ln_rev"] - g["ln_rev"].shift(1)
     df["log_patent_count"] = np.log1p(df["patent_count"])
+    if "citation_count" in df.columns:
+        df["log_citation_count"] = np.log1p(df["citation_count"])
+    else:
+        df["log_citation_count"] = np.nan
+    if "quality_score" not in df.columns:
+        df["quality_score"] = np.nan
+    if "startup_score_within_sic2" not in df.columns:
+        df["startup_score_within_sic2"] = np.nan
 
     for key, weights in config.ALTERNATIVE_WEIGHTS.items():
         df[f"tdi_{key}"] = combine(df, weights)["index"]
 
     g = df.groupby("company_id")
     for h in config.LEAD_HORIZONS:
-        for v in ["ln_pf"] + RATIO_OUTCOMES:
+        for v in LOG_OUTCOMES + RATIO_OUTCOMES:
             df[f"{v}_lead{h}"] = g[v].shift(-h)
             if v in RATIO_OUTCOMES:
                 df[f"{v}_lead{h}_w"] = df.groupby("year")[f"{v}_lead{h}"].transform(winsorize)
@@ -143,7 +162,8 @@ def outcome_col(base, h, winsorized=True):
 def run_all(sample: pd.DataFrame) -> pd.DataFrame:
     rows = []
     x_main = "technology_disruption_index"
-    linked = sample["startup_coverage_flag"].isin(["sic_linked", "sic_linked+name", "name_only"])
+    linked = sample["startup_coverage_flag"].isin(
+        ["sic_linked", "sic_linked+name", "name_only", "firm_name_match"])
 
     for model, (label, base, controls) in MODELS.items():
         common = {"model": model, "outcome": label}
@@ -167,10 +187,16 @@ def run_all(sample: pd.DataFrame) -> pd.DataFrame:
                                 {**common, "spec": f"horizon_t+{h}", "horizon": h}))
         rows.append(run_one(sample, y1, "startup_score", controls, "year",
                             {**common, **rob, "spec": "startup_component_only"}))
+        rows.append(run_one(sample, y1, "startup_score_within_sic2", controls, "year",
+                            {**common, **rob, "spec": "startup_within_sic2"}))
         rows.append(run_one(sample, y1, "patent_score", controls, "year",
                             {**common, **rob, "spec": "patent_component_only"}))
+        rows.append(run_one(sample, y1, "quality_score", controls, "year",
+                            {**common, **rob, "spec": "patent_quality_only"}))
         rows.append(run_one(sample, y1, "log_patent_count", controls, "year",
                             {**common, **rob, "spec": "log_patent_count"}))
+        rows.append(run_one(sample, y1, "log_citation_count", controls, "year",
+                            {**common, **rob, "spec": "log_citation_count"}))
         rows.append(run_one(sample[linked], y1, x_main, controls, "year",
                             {**common, **rob, "spec": "tech_linked_industries_only"}))
         rows.append(run_one(sample[sample["components_available"] == 2], y1, x_main, controls,

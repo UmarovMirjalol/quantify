@@ -137,10 +137,16 @@ than, revenue growth, R&D intensity and CAPEX intensity.
 | Model | Dependent variable (t+h) | Controls |
 |---|---|---|
 | M1 | ln(public float) | ln(assets)_t |
+| M1q | ln(Tobin's Q approx) | ln(assets)_t |
 | M1b | ln(public float) | ln(assets)_t, ln(public float)_t (valuation change) |
 | M2 | Δ ln(revenue) | ln(assets)_t |
 | M3 | R&D / assets | ln(assets)_t |
 | M4 | CAPEX / assets | ln(assets)_t |
+
+**Tobin's Q approximation.** SEC XBRL has no share prices, so market equity is
+`EntityPublicFloat`. Approximate Q = (public_float + debt − cash) / assets; non-positive
+values are missing; the ratio is winsorized 1%/99% by year before taking logs. This is
+not Compustat Tobin's Q.
 
 Year FE (main), year + SIC2 FE, and company + year FE; SEs clustered by company; coefficients
 per 10 index points. Robustness: unwinsorized ratios (main spec winsorizes 1%/99% by year),
@@ -198,7 +204,12 @@ of specifications tried rather than the most favourable one.
    (1,789 were extra share classes of the same company). Reaching 10,000+ genuine companies
    requires adding historical/delisted filers (e.g. every CIK in the XBRL frames), which the
    code supports architecturally (vectorized joins, cached per-CIK lookups) but is not enabled.
-7. Public float is not market capitalization.
+7. Public float is not market capitalization; Tobin's Q here is an approximation that
+   uses public float as market equity.
+8. Patent quality uses forward citations from Ma (2025); citation windows are truncated
+   for recent grants, so quality scores for the newest years are downward-biased.
+9. Firm-level startup name matches are exact normalized legal names only (min length 6);
+   short ambiguous names are skipped. Most of the startup component remains industry-level.
 
 ## 12. Current status (last full run)
 
@@ -215,14 +226,16 @@ of specifications tried rather than the most favourable one.
 | Research panel rows (2014-2025) | 164,424 |
 | Validation | 40 PASS, 8 WARN (documented limitations), 0 FAIL |
 
-Research findings (t -> t+1, per 10 index points; see `results/research_report.md`): with year
-FE a higher index is associated with higher subsequent public float (+0.055 log points),
-valuation change, revenue growth and R&D intensity and slightly lower CAPEX intensity; these
-associations persist with SIC2 and SIC2 x year FE. With company FE the valuation and R&D
-associations vanish (valuation coefficient ~0) and the revenue-growth coefficient turns
-slightly negative (p = 0.04). The index therefore ranks firms and industries cross-sectionally
-but within-firm changes do not predict outcomes. These are predictive associations, not
-evidence that markets price firm-specific disruption before fundamentals.
+Research findings (t -> t+1, per 10 index points; see `results/research_report.md`):
+
+- **Tobin's Q approx (M1q), SIC2 x year FE:** +0.055 log points (~**+5.7%**), N = 44,485;
+  firm FE ~0 (p = 0.41).
+- **Public float (M1), SIC2 x year FE:** +0.083 log points (~**+8.6%**), N = 47,632;
+  firm FE ~0 (p = 0.89).
+- Patent **quality** (forward citations) alone predicts both outcomes more strongly than
+  raw counts; within-SIC2 startup rankings also associate positively.
+- With company FE, valuation associations vanish. The index ranks firms cross-sectionally;
+  within-firm score changes do not predict outcomes. Predictive associations, not causal.
 
 ## 13. How to run
 

@@ -1,20 +1,21 @@
 """
 Stage 4b: company-level startup-ecosystem exposure signal.
 
-This measures how much emerging-startup activity takes place in the technology
-domains a company operates in. It does NOT claim any company-startup
-relationship, and it does not rely on direct name matches.
-
   1. Exposure weights w_i,c in {0, 0.5, 1}:
        - SIC -> category rules (config.SIC_TECHNOLOGY_RULES), industry level;
        - weak evidence from the company's own legal name (weight 0.5);
        combined by taking the max per category.
-  2. Raw activity   a_i,t = sum_c w_i,c * intensity_c,t   (intensity from calculate_startup)
-  3. startup_score_i,t = within-year percentile of a_i,t among firms with a_i,t > 0,
-     on a (0, 100] scale. Firms whose SIC is known but not linked to any category
-     get 0 (policy "zero", flagged) or NaN (policy "missing"). Firms with no SIC
-     and no name evidence are MISSING, never zero; so are firms whose SIC is a catch-all
-     or placeholder code (config.UNINFORMATIVE_SIC, e.g. 7389 "Business Services, NEC").
+  2. Firm-level name links (documented, not invented): accelerator startups whose
+     normalized legal name exactly matches a unique SEC registrant (min length
+     FIRM_STARTUP_NAME_MIN_LEN). Each matched cohort year adds FIRM_STARTUP_MATCH_WEIGHT
+     to raw activity for that company in years >= cohort year.
+  3. Raw activity   a_i,t = sum_c w_i,c * intensity_c,t  +  firm match boost
+  4. startup_score_i,t = within-year percentile of a_i,t among firms with a_i,t > 0.
+  5. startup_score_within_sic2 = within-(year, SIC2) percentile of the same raw activity
+     among peers with a_i,t > 0 (firm ranking inside the industry).
+
+Missing SIC / uninformative SIC / unlinked industry policies are unchanged:
+never invent zeros for firms that cannot be scored.
 """
 import re
 
@@ -22,7 +23,7 @@ import numpy as np
 import pandas as pd
 
 import config
-from src.common import get_logger, write_csv
+from src.common import get_logger, normalize_company_name, write_csv
 
 log = get_logger("company_startup_scores")
 CATS = config.TECHNOLOGY_CATEGORIES
@@ -85,17 +86,59 @@ def exposure_table(master: pd.DataFrame) -> pd.DataFrame:
     return exp
 
 
-def score_year(exp: pd.DataFrame, intensity: pd.Series) -> pd.DataFrame:
+def firm_startup_matches(master: pd.DataFrame, startups: pd.DataFrame) -> pd.DataFrame:
+    """Exact normalized-name links startup -> unique company. Short keys skipped."""
+    m = master[["company_id", "company_name"]].copy()
+    m["name_key"] = m["company_name"].map(normalize_company_name)
+    m = m[m["name_key"].str.len() >= config.FIRM_STARTUP_NAME_MIN_LEN]
+    counts = m["name_key"].value_counts()
+    m = m[m["name_key"].isin(counts[counts == 1].index)]
+    s = startups[["startup_id", "name", "year"]].copy()
+    s["name_key"] = s["name"].map(normalize_company_name)
+    s = s[s["name_key"].str.len() >= config.FIRM_STARTUP_NAME_MIN_LEN]
+    hit = s.merge(m[["company_id", "name_key"]], on="name_key")
+    hit = hit.dropna(subset=["year"])
+    hit["year"] = hit["year"].astype(int)
+    log.info("Firm-startup exact name matches: %d startups -> %d companies (key len >= %d)",
+             hit["startup_id"].nunique(), hit["company_id"].nunique(),
+             config.FIRM_STARTUP_NAME_MIN_LEN)
+    return hit[["company_id", "startup_id", "year", "name_key"]]
+
+
+def firm_match_boost(matches: pd.DataFrame, year: int, company_ids) -> pd.Series:
+    """Cumulative matched startups with cohort year <= t, scaled by FIRM_STARTUP_MATCH_WEIGHT."""
+    boost = pd.Series(0.0, index=company_ids)
+    if matches.empty:
+        return boost
+    past = matches[matches["year"] <= year]
+    if past.empty:
+        return boost
+    n = past.groupby("company_id")["startup_id"].nunique()
+    boost.loc[n.index] = config.FIRM_STARTUP_MATCH_WEIGHT * n
+    return boost
+
+
+def score_year(exp: pd.DataFrame, intensity: pd.Series, boost: pd.Series,
+               sic2: pd.Series) -> pd.DataFrame:
     wcols = [f"w_{c}" for c in CATS]
     raw = exp[wcols].to_numpy() @ intensity.reindex(CATS).fillna(0).to_numpy()
     out = exp[["company_id", "coverage_flag"]].copy()
-    out["startup_activity_raw"] = raw
+    out["firm_match_boost"] = out["company_id"].map(boost).fillna(0.0).to_numpy()
+    out["startup_activity_raw"] = raw + out["firm_match_boost"]
+    out["sic2"] = out["company_id"].map(sic2)
     positive = out["startup_activity_raw"] > 0
     n_pos = positive.sum()
     out["startup_score"] = np.nan
+    out["startup_score_within_sic2"] = np.nan
     if n_pos:
         ranks = out.loc[positive, "startup_activity_raw"].rank(method="average")
         out.loc[positive, "startup_score"] = ranks / n_pos * 100
+        def within(g):
+            if len(g) < 5:
+                return pd.Series(np.nan, index=g.index)
+            return g.rank(method="average") / len(g) * 100
+        out.loc[positive, "startup_score_within_sic2"] = (
+            out.loc[positive].groupby("sic2")["startup_activity_raw"].transform(within))
     linked_no_activity = ~positive & out["coverage_flag"].isin(
         ["sic_linked", "sic_linked+name", "name_only"])
     out.loc[linked_no_activity, "startup_score"] = 0.0
@@ -103,8 +146,17 @@ def score_year(exp: pd.DataFrame, intensity: pd.Series) -> pd.DataFrame:
     out.loc[unlinked, "startup_activity_raw"] = 0.0
     out.loc[unlinked, "startup_score"] = 0.0 if config.UNLINKED_INDUSTRY_POLICY == "zero" else np.nan
     missing = out["coverage_flag"].isin(["missing_sic", "uninformative_sic"])
-    out.loc[missing, ["startup_activity_raw", "startup_score"]] = np.nan
-    return out
+    out.loc[missing, ["startup_activity_raw", "startup_score",
+                      "startup_score_within_sic2"]] = np.nan
+    # firm name match alone is enough to score a firm that otherwise lacks SIC link
+    name_only_hit = (out["firm_match_boost"] > 0) & missing
+    if name_only_hit.any():
+        out.loc[name_only_hit, "coverage_flag"] = "firm_name_match"
+        out.loc[name_only_hit, "startup_activity_raw"] = out.loc[name_only_hit, "firm_match_boost"]
+        ranks = out.loc[out["startup_activity_raw"] > 0, "startup_activity_raw"].rank(method="average")
+        n = (out["startup_activity_raw"] > 0).sum()
+        out.loc[name_only_hit, "startup_score"] = ranks.reindex(out.index) / n * 100
+    return out.drop(columns=["sic2"])
 
 
 def export_sic_map(master: pd.DataFrame) -> None:
@@ -123,39 +175,52 @@ def export_sic_map(master: pd.DataFrame) -> None:
 def main() -> None:
     master = pd.read_csv(config.COMPANIES_MASTER)
     activity = pd.read_csv(config.STARTUP_CATEGORY_ACTIVITY)
+    startups = pd.read_csv(config.STARTUPS_CLEAN, usecols=["startup_id", "name", "year"])
+    matches = firm_startup_matches(master, startups)
+    write_csv(matches, config.DATA / "startups" / "firm_startup_name_matches.csv")
     exp = exposure_table(master)
     export_sic_map(master)
+    sic2 = master.set_index("company_id")["sic2"]
 
     frames = []
     for year in config.INDEX_YEARS:
         intensity = activity[activity["year"] == year].set_index("technology")["activity_intensity"]
-        scored = score_year(exp, intensity)
+        boost = firm_match_boost(matches, year, exp["company_id"])
+        scored = score_year(exp, intensity, boost, sic2)
         scored["year"] = year
         frames.append(scored)
     by_year = pd.concat(frames, ignore_index=True)
-    by_year["startup_score"] = by_year["startup_score"].round(config.SCORE_DECIMALS)
+    for col in ["startup_score", "startup_score_within_sic2"]:
+        by_year[col] = by_year[col].round(config.SCORE_DECIMALS)
     by_year = by_year.merge(master[["company_id", "company_name", "ticker"]], on="company_id")
     by_year = by_year[["company_id", "company_name", "ticker", "year", "startup_activity_raw",
-                       "startup_score", "coverage_flag"]]
+                       "firm_match_boost", "startup_score", "startup_score_within_sic2",
+                       "coverage_flag"]]
     write_csv(by_year, config.COMPANY_STARTUP_SCORES_BY_YEAR)
 
-    latest = by_year[by_year["year"] == max(config.INDEX_YEARS)].drop(columns="coverage_flag")
+    latest = by_year[by_year["year"] == max(config.INDEX_YEARS)]
     snap = master[["company_id", "company_name", "ticker", "sic", "sic_description"]].merge(
-        exp, on="company_id").merge(
-        latest.drop(columns=["company_name", "ticker"]), on="company_id", how="left")
+        exp.drop(columns=["coverage_flag"]), on="company_id").merge(
+        latest.drop(columns=["company_name", "ticker", "year"]), on="company_id", how="left")
     snap["startup_activity_score"] = (100 * snap["startup_activity_raw"]).round(1)
+    snap["startup_confidence"] = snap["coverage_flag"].map({
+        "sic_linked+name": "high", "sic_linked": "high", "name_only": "low",
+        "firm_name_match": "medium", "industry_unlinked": "medium",
+        "uninformative_sic": "none", "missing_sic": "none"})
     cols = ["company_id", "company_name", "ticker", "sic", "sic_description",
             "technology_exposure", "startup_activity_score", "startup_score",
+            "startup_score_within_sic2", "firm_match_boost",
             "technology_categories", "coverage_flag", "startup_confidence", "year"] + \
            [f"w_{c}" for c in CATS]
-    snap = snap[cols].rename(columns={"year": "reference_year"})
+    snap = snap.assign(year=max(config.INDEX_YEARS))[cols].rename(columns={"year": "reference_year"})
     snap["reference_year"] = max(config.INDEX_YEARS)
     write_csv(snap, config.COMPANY_STARTUP_SCORES)
 
     counts = snap["coverage_flag"].value_counts()
     have = snap["startup_score"].notna().sum()
-    log.info("Companies: %d | startup component available: %d (%.1f%%)",
-             len(snap), have, 100 * have / len(snap))
+    n_firm = int((snap["firm_match_boost"] > 0).sum())
+    log.info("Companies: %d | startup component available: %d (%.1f%%) | firm name matches: %d",
+             len(snap), have, 100 * have / len(snap), n_firm)
     log.info("Coverage flags: %s", counts.to_dict())
     log.info("Company-year rows: %d -> %s", len(by_year), config.COMPANY_STARTUP_SCORES_BY_YEAR.name)
 

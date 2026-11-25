@@ -143,14 +143,15 @@ __CSS__
 <a class="btn p" href="#explore">Explore companies</a>
 <button type="button" class="btn s" id="tourBtn">45-second tour</button>
 <p class="askwrap"><input id="ask" placeholder="Try NVDA vs INTC, top AI, 2018, or tour" autocomplete="off"></p></div>
-<aside class="finding"><div class="eyebrow">Key finding</div><div class="fig">+__FPCT__%</div>
-<p>higher next-year public float for a company scoring 10 index points above its industry peers in the same year.</p>
+<aside class="finding"><div class="eyebrow">Key finding</div><div class="fig">+__QPCT__%</div>
+<p>higher next-year Tobin’s Q for a company scoring 10 index points above its industry peers in the same year.</p>
 <div class="cmpfind">
-<div><span>vs industry peers, same year</span><b>+__FPCT__%</b><i style="width:100%"></i></div>
+<div><span>Tobin’s Q vs industry peers</span><b>+__QPCT__%</b><i style="width:100%"></i></div>
+<div><span>public float vs industry peers</span><b>+__FPCT__%</b><i style="width:__FBAR__%"></i></div>
 <div><span>same company over time (p = __FIRMP__)</span><b>~0%</b><i class="dim"></i></div>
 </div>
 <p>Markets appear to price <i>which</i> firms are exposed, not changes in exposure.</p>
-<p class="src">Lagged panel regressions, __NOBS__ firm-years, industry×year fixed effects, clustered SEs. Predictive, not causal. Public float, not Tobin’s Q.</p></aside>
+<p class="src">Q ≈ (public float + debt − cash) / assets — SEC publishes no share prices, so float stands in for market equity. __NQ__ firm-years, industry×year FE, clustered SEs. Predictive, not causal.</p></aside>
 </header>
 
 <div class="wrap"><div class="stats" id="stats"></div>
@@ -201,7 +202,7 @@ __CSS__
 <section id="research"><div class="kicker">Research</div><h2>Do markets price technology exposure before fundamentals?</h2>
 <p class="sub">Lagged panel regressions: index in year t, outcomes in year t+1, standard errors clustered by company. Coefficients per 10 index points. These are predictive associations, not causal effects.</p>
 <div class="g2"><div class="card"><h3 style="margin:0 0 8px">The valuation result, in one picture</h3>
-<p class="muted small" style="margin:0 0 12px">Next-year public float, per +10 index points. Green = statistically distinguishable from zero.</p>
+<p class="muted small" style="margin:0 0 12px">Next-year Tobin’s Q (approx), per +10 index points. Green = statistically distinguishable from zero.</p>
 <div id="forest"></div>
 <div class="tw" id="res" style="margin-top:18px"></div>
 <p class="small muted">Coefficients as estimated. Green = p &lt; 0.05. __NREG__ specifications in total incl. robustness checks; full results in the repository.</p></div>
@@ -271,8 +272,8 @@ __CSS__
 <p class="sub">Every parameter lives in one configuration file; every company in the universe is kept, and missing data are never treated as zero.</p>
 <div class="g3">
 <div class="card"><div class="num">1</div><h3>Company universe</h3><p>__NCOMP__ SEC registrants: __NLISTED__ currently listed companies plus historical XBRL filers (reducing survivorship bias). Funds and SPAC shells are flagged.</p></div>
-<div class="card"><div class="num">2</div><h3>Startup ecosystem</h3><p>__NSTART__ accelerator startups (YC, Techstars, Plug and Play, 500 Global, Antler, Alchemist, EF) tagged into 9 technology categories; activity is mapped to companies via documented SIC rules.</p></div>
-<div class="card"><div class="num">3</div><h3>Patents</h3><p>US patent grants (USPTO PatentsView, linked to public firms by Ma, 2025, and to SEC CIKs) for __NPAT__ companies: log-scaled volume and 3-year momentum, so the largest patent holders do not dominate.</p></div>
+<div class="card"><div class="num">2</div><h3>Startup ecosystem</h3><p>__NSTART__ accelerator startups tagged into 9 technology categories; industry exposure via documented SIC rules, plus exact legal-name matches to SEC registrants (min. 6 characters) as a firm-level boost — never invented relationships.</p></div>
+<div class="card"><div class="num">3</div><h3>Patents</h3><p>US patent grants (USPTO PatentsView, linked to public firms by Ma, 2025, and to SEC CIKs) for __NPAT__ companies: log-scaled volume, 3-year momentum, and forward-citation quality — so neither bulk filers nor uncited patents dominate.</p></div>
 <div class="card"><div class="num">4</div><h3>Normalization</h3><p>Within-year percentiles for startup exposure, fixed log anchors for patents, all on 0–100 and rounded to one decimal.</p></div>
 <div class="card"><div class="num">5</div><h3>Index</h3><p>Weighted average of available components (default __WP__/__WS__). Each company-year reports components available and a coverage score.</p></div>
 <div class="card"><div class="num">6</div><h3>Fundamentals</h3><p>Revenue, assets, R&D, CAPEX, cash, debt and public float from SEC XBRL, used to test predictive relationships with year, industry and firm fixed effects.</p></div>
@@ -353,12 +354,18 @@ def main() -> None:
     ], ensure_ascii=False).replace("</", "<\\/")
     res = {(r["model"], r["spec"]): r for r in p["results"]}
     peer, firm = res[("M1", "main_sic2xyear")], res[("M1", "main_firm_year")]
+    qpeer = res.get(("M1q", "main_sic2xyear"), peer)
+    fpct = 100 * (np.exp(peer["coef"]) - 1)
+    qpct = 100 * (np.exp(qpeer["coef"]) - 1)
     css = (Path(__file__).with_name("style.css")).read_text(encoding="utf-8")
     js = (Path(__file__).with_name("app.js")).read_text(encoding="utf-8").replace("__VER__", version)
     html = (TEMPLATE.replace("__CSS__", css).replace("__JS__", js)
-            .replace("__FPCT__", f"{100 * (np.exp(peer['coef']) - 1):.1f}")
+            .replace("__FPCT__", f"{fpct:.1f}")
+            .replace("__QPCT__", f"{qpct:.1f}")
+            .replace("__FBAR__", f"{min(100, 100 * fpct / max(qpct, fpct, 1)):.0f}")
             .replace("__FIRMP__", f"{firm['p_value']:.2f}")
             .replace("__NOBS__", f"{int(peer['n_obs']):,}")
+            .replace("__NQ__", f"{int(qpeer['n_obs']):,}")
             .replace("__TOPHTML__", top_html)
             .replace("__ROWSHTML__", rows_html).replace("__LDJSON__", ld).replace("__SITE__", site)
             .replace("__NCOMP__", f"{p['coverage']['total_companies']:,}")

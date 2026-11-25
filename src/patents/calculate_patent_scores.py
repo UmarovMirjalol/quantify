@@ -10,11 +10,13 @@ For index year t (only complete patent years <= LAST_COMPLETE_PATENT_YEAR):
 Normalization (config.PATENT_NORMALIZATION):
   fixed_log  : volume_score   = 100 * min(1, log1p(volume) / log1p(REFERENCE))
                momentum_score = 50 + 50 * clip(log2(momentum) / CAP, -1, 1)
-  percentile : within-year percentile ranks of log1p(volume) and log(momentum)
+               quality_score  = 100 * min(1, log1p(forward cites) / log1p(QUALITY_REF))
+  percentile : within-year percentile ranks of log1p(volume), log(momentum), log1p(cites)
 
 The log transform means a firm with 10x the patents does not get 10x the score.
 patent_score = weighted mean of the available sub-scores (flagged when momentum
-is unavailable because the firm lacks 6 years of history).
+or citation quality is unavailable). Citation counts come from Ma (2025) /
+PatentsView; other patent sources leave quality missing, never zero.
 """
 import numpy as np
 import pandas as pd
@@ -42,9 +44,14 @@ def compute_raw(counts: pd.DataFrame) -> pd.DataFrame:
                 continue
             recent = window_mean(s, year, 0, rw)
             hist = window_mean(s, year, rw, hw)
+            cites = grp.set_index("year")["citation_count"] if "citation_count" in grp.columns \
+                else pd.Series(dtype=float)
+            cite = cites[year] if year in cites.index else np.nan
             rows.append({
                 "company_id": cid, "year": year, "patent_count": s[year],
+                "citation_count": cite,
                 "log_patent_count": np.log1p(s[year]),
+                "log_citation_count": np.log1p(cite) if pd.notna(cite) else np.nan,
                 "recent_avg": recent, "historical_avg": hist,
                 "momentum": (recent + k) / (hist + k) if pd.notna(recent) and pd.notna(hist)
                 else np.nan,
@@ -58,10 +65,13 @@ def normalize(raw: pd.DataFrame) -> pd.DataFrame:
             1.0, raw["log_patent_count"] / np.log1p(config.PATENT_VOLUME_REFERENCE))
         cap = config.PATENT_MOMENTUM_LOG2_CAP
         raw["momentum_score"] = 50 + 50 * np.clip(np.log2(raw["momentum"]) / cap, -1, 1)
+        raw["quality_score"] = 100 * np.minimum(
+            1.0, raw["log_citation_count"] / np.log1p(config.PATENT_QUALITY_REFERENCE))
     elif config.PATENT_NORMALIZATION == "percentile":
         raw["volume_score"] = raw.groupby("year")["log_patent_count"].transform(percentile_score)
         raw["log_momentum"] = np.log(raw["momentum"])
         raw["momentum_score"] = raw.groupby("year")["log_momentum"].transform(percentile_score)
+        raw["quality_score"] = raw.groupby("year")["log_citation_count"].transform(percentile_score)
     else:
         raise ValueError(config.PATENT_NORMALIZATION)
 
@@ -71,14 +81,18 @@ def normalize(raw: pd.DataFrame) -> pd.DataFrame:
     raw["patent_score"] = (parts.fillna(0) * weights).sum(axis=1) / weights.sum(axis=1)
     raw.loc[weights.sum(axis=1) == 0, "patent_score"] = np.nan
     raw["patent_momentum_available"] = raw["momentum_score"].notna()
-    for col in ["volume_score", "momentum_score", "patent_score"]:
-        raw[col] = raw[col].round(config.SCORE_DECIMALS)
+    raw["patent_quality_available"] = raw["quality_score"].notna()
+    for col in ["volume_score", "momentum_score", "quality_score", "patent_score"]:
+        if col in raw.columns:
+            raw[col] = raw[col].round(config.SCORE_DECIMALS)
     return raw
 
 
 def main() -> None:
     counts = pd.read_csv(config.PATENT_COUNTS)
     counts = counts[counts["year"] <= config.LAST_COMPLETE_PATENT_YEAR]
+    if "citation_count" not in counts.columns:
+        counts["citation_count"] = np.nan
     names = pd.read_csv(config.COMPANIES_MASTER, usecols=["company_id", "company_name", "ticker"])
 
     if counts.empty:
@@ -92,13 +106,15 @@ def main() -> None:
     snap = scores[scores["year"] == config.PATENT_SNAPSHOT_YEAR].rename(
         columns={"patent_count": f"volume_{config.PATENT_SNAPSHOT_YEAR}"})
     cols = ["company_id", "company_name", "ticker", f"volume_{config.PATENT_SNAPSHOT_YEAR}",
-            "recent_avg", "historical_avg", "momentum", "volume_score", "momentum_score",
-            "patent_score", "patent_momentum_available"]
+            "citation_count", "recent_avg", "historical_avg", "momentum", "volume_score",
+            "momentum_score", "quality_score", "patent_score", "patent_momentum_available",
+            "patent_quality_available"]
     snap = snap.reindex(columns=cols).sort_values("patent_score", ascending=False)
     write_csv(snap, config.PATENT_SCORES)
 
-    log.info("Normalization: %s | company-year scores: %d | companies: %d | snapshot %d rows",
-             config.PATENT_NORMALIZATION, len(scores), scores["company_id"].nunique(), len(snap))
+    n_q = int(scores["quality_score"].notna().sum()) if "quality_score" in scores else 0
+    log.info("Normalization: %s | company-year scores: %d | with quality: %d | companies: %d",
+             config.PATENT_NORMALIZATION, len(scores), n_q, scores["company_id"].nunique())
     if not snap.empty:
         log.info("Snapshot %d (top 20):\n%s", config.PATENT_SNAPSHOT_YEAR,
                  snap.drop(columns=["company_id"]).head(20).to_string(index=False))
